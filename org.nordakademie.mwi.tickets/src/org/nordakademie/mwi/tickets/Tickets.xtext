@@ -1,0 +1,9 @@
+grammar org.nordakademie.mwi.tickets.Tickets with org.eclipse.xtext.common.Terminals
+
+generate tickets "http://www.nordakademie.org/mwi/tickets/Tickets"
+
+Model:
+	greetings+=Greeting*;
+	
+Greeting:
+	'Hello' name=ID '!';
