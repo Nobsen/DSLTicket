@@ -2,8 +2,6 @@ grammar org.nordakademie.mwi.tickets.Tickets with org.eclipse.xtext.common.Termi
 
 generate tickets "http://www.nordakademie.org/mwi/tickets/Tickets"
 
-Model:
-	greetings+=Greeting*;
-	
-Greeting:
-	'Hello' name=ID '!';
+TicketCategory:
+	'ticketCategory' name=ID 
+;
