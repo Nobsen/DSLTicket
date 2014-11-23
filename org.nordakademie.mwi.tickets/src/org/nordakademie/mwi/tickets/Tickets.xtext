@@ -9,8 +9,11 @@ TicketCategory:
 
 Role:
 	'role' name=STRING '{'
-	fields+=Field* ';'
+	(fields+=Field permission+=Permission)*';'
 	'}';
 
+enum Permission:
+	read | modify | delete 
+;
 
 
