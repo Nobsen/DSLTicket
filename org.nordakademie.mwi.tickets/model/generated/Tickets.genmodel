@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.nordakademie.mwi.tickets/src-gen" editDirectory="/org.nordakademie.mwi.tickets.edit/src"
+    editorDirectory="/org.nordakademie.mwi.tickets.editor/src" modelPluginID="org.nordakademie.mwi.tickets"
+    forceOverwrite="true" modelName="Tickets" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="5.0" copyrightFields="false" editPluginID="org.nordakademie.mwi.tickets.edit"
+    editorPluginID="org.nordakademie.mwi.tickets.editor" runtimeVersion="2.10">
+  <genPackages prefix="Tickets" basePackage="org.nordakademie.mwi.tickets" disposableProviderFactory="true"
+      fileExtensions="tickets" ecorePackage="Tickets.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Tickets.ecore#//Permission">
+      <genEnumLiterals ecoreEnumLiteral="Tickets.ecore#//Permission/create"/>
+      <genEnumLiterals ecoreEnumLiteral="Tickets.ecore#//Permission/read"/>
+      <genEnumLiterals ecoreEnumLiteral="Tickets.ecore#//Permission/modify"/>
+      <genEnumLiterals ecoreEnumLiteral="Tickets.ecore#//Permission/delete"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Tickets.ecore#//FieldType">
+      <genEnumLiterals ecoreEnumLiteral="Tickets.ecore#//FieldType/user"/>
+      <genEnumLiterals ecoreEnumLiteral="Tickets.ecore#//FieldType/string"/>
+      <genEnumLiterals ecoreEnumLiteral="Tickets.ecore#//FieldType/date"/>
+      <genEnumLiterals ecoreEnumLiteral="Tickets.ecore#//FieldType/dateTime"/>
+      <genEnumLiterals ecoreEnumLiteral="Tickets.ecore#//FieldType/int"/>
+      <genEnumLiterals ecoreEnumLiteral="Tickets.ecore#//FieldType/decimal"/>
+    </genEnums>
+    <genClasses ecoreClass="Tickets.ecore#//TicketSystem">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Tickets.ecore#//TicketSystem/states"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Tickets.ecore#//TicketSystem/flows"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Tickets.ecore#//TicketSystem/fields"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Tickets.ecore#//TicketSystem/categories"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Tickets.ecore#//TicketSystem/roles"/>
+    </genClasses>
+    <genClasses ecoreClass="Tickets.ecore#//State">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Tickets.ecore#//State/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Tickets.ecore#//State/description"/>
+    </genClasses>
+    <genClasses ecoreClass="Tickets.ecore#//Flow">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Tickets.ecore#//Flow/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Tickets.ecore#//Flow/states"/>
+    </genClasses>
+    <genClasses ecoreClass="Tickets.ecore#//Field">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Tickets.ecore#//Field/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Tickets.ecore#//Field/label"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Tickets.ecore#//Field/fieldType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Tickets.ecore#//Field/fieldEnum"/>
+    </genClasses>
+    <genClasses ecoreClass="Tickets.ecore#//Enum">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Tickets.ecore#//Enum/option"/>
+    </genClasses>
+    <genClasses ecoreClass="Tickets.ecore#//TicketCategory">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Tickets.ecore#//TicketCategory/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Tickets.ecore#//TicketCategory/description"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Tickets.ecore#//TicketCategory/flow"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Tickets.ecore#//TicketCategory/fields"/>
+    </genClasses>
+    <genClasses ecoreClass="Tickets.ecore#//Role">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Tickets.ecore#//Role/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Tickets.ecore#//Role/description"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Tickets.ecore#//Role/fields"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Tickets.ecore#//Role/permission"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

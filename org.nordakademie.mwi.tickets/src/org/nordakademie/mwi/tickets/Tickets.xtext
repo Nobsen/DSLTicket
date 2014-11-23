@@ -2,18 +2,43 @@ grammar org.nordakademie.mwi.tickets.Tickets with org.eclipse.xtext.common.Termi
 
 generate tickets "http://www.nordakademie.org/mwi/tickets/Tickets"
 
+TicketSystem:
+	(states+=State | flows+=Flow | fields+=Field | categories+=TicketCategory | roles+=Role)*
+;
+
+State:
+	'state' name=QualifiedName description=STRING ';';
+
+Flow:
+	'flow' name=QualifiedName '{'
+	states+=[State|QualifiedName] (',' states+=[State|QualifiedName])* ';'
+	'}';
+
+Field:
+	'field' name=QualifiedName label=STRING (fieldType=FieldType | fieldEnum=Enum) ';';
+
+
+Enum:
+	option+=STRING (',' option+=STRING)*;
+	
 TicketCategory:
-	'ticketCategory' name=STRING description=STRING '{'
-	(flow=Flow | fields+=Field* ';') ';'
+	'ticketCategory' name=QualifiedName description=STRING '{'
+	flow=[Flow|QualifiedName] ';'
+	fields+=[Field|QualifiedName] (',' fields+=[Field|QualifiedName])* ';'
 	'}';
 
 Role:
-	'role' name=STRING '{'
-	(fields+=Field permission+=Permission)*';'
+	'role' name=QualifiedName description=STRING'{'
+	(fields+=[Field|QualifiedName] permission+=Permission ';')*
 	'}';
 
 enum Permission:
-	read | modify | delete 
+	create | read | modify | delete 
 ;
 
+enum FieldType:
+	user | string | date | dateTime | int | decimal;
 
+QualifiedName:
+	ID('.' ID)*
+;
