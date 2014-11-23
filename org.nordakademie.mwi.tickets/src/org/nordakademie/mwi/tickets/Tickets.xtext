@@ -3,8 +3,7 @@ grammar org.nordakademie.mwi.tickets.Tickets with org.eclipse.xtext.common.Termi
 generate tickets "http://www.nordakademie.org/mwi/tickets/Tickets"
 
 TicketSystem:
-	(states+=State | flows+=Flow | fields+=Field | categories+=TicketCategory | roles+=Role)*
-;
+	(states+=State | flows+=Flow | fields+=Field | categories+=TicketCategory | roles+=Role)*;
 
 State:
 	'state' name=QualifiedName description=STRING ';';
@@ -15,30 +14,33 @@ Flow:
 	'}';
 
 Field:
-	'field' name=QualifiedName label=STRING (fieldType=FieldType | fieldEnum=Enum)  (mandatory?='mandatory')? ';'
-;
+	'field' name=QualifiedName label=STRING (fieldType=FieldType | fieldEnum=Enum) ';';
 
 Enum:
 	option+=STRING (',' option+=STRING)*;
-	
+
 TicketCategory:
 	'ticketCategory' name=QualifiedName description=STRING '{'
 	flow=[Flow|QualifiedName] ';'
-	fields+=[Field|QualifiedName] (',' fields+=[Field|QualifiedName])* ';'
+	(ticketFields+=TicketField ';')*
 	'}';
+
+TicketField:
+	field=[Field|QualifiedName] (mandatory?='mandatory')?;
 
 Role:
-	'role' name=QualifiedName description=STRING'{'
-	(fields+=[Field|QualifiedName] permission+=Permission ';')*
+	'role' name=QualifiedName description=STRING '{'
+	(rolepermissions+=RolePermission ';')*
 	'}';
 
+RolePermission:
+	field=[Field|QualifiedName] permissions+=Permission (',' permissions+=Permission)*;
+
 enum Permission:
-	create | read | modify | delete 
-;
+	create | read | modify | delete;
 
 enum FieldType:
 	user | string | date | dateTime | int | decimal;
 
 QualifiedName:
-	ID('.' ID)*
-;
+	ID ('.' ID)*;

@@ -489,11 +489,7 @@ ruleEnum returns [EObject current=null]
 	    }
 
 )
-))*	otherlv_3=';' 
-    {
-    	newLeafNode(otherlv_3, grammarAccess.getEnumAccess().getSemicolonKeyword_2());
-    }
-)
+))*)
 ;
 
 
@@ -577,49 +573,84 @@ ruleTicketCategory returns [EObject current=null]
     {
     	newLeafNode(otherlv_5, grammarAccess.getTicketCategoryAccess().getSemicolonKeyword_5());
     }
+((
 (
+		{ 
+	        newCompositeNode(grammarAccess.getTicketCategoryAccess().getTicketFieldsTicketFieldParserRuleCall_6_0_0()); 
+	    }
+		lv_ticketFields_6_0=ruleTicketField		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getTicketCategoryRule());
+	        }
+       		add(
+       			$current, 
+       			"ticketFields",
+        		lv_ticketFields_6_0, 
+        		"TicketField");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)	otherlv_7=';' 
+    {
+    	newLeafNode(otherlv_7, grammarAccess.getTicketCategoryAccess().getSemicolonKeyword_6_1());
+    }
+)*	otherlv_8='}' 
+    {
+    	newLeafNode(otherlv_8, grammarAccess.getTicketCategoryAccess().getRightCurlyBracketKeyword_7());
+    }
+)
+;
+
+
+
+
+
+// Entry rule entryRuleTicketField
+entryRuleTicketField returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getTicketFieldRule()); }
+	 iv_ruleTicketField=ruleTicketField 
+	 { $current=$iv_ruleTicketField.current; } 
+	 EOF 
+;
+
+// Rule TicketField
+ruleTicketField returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
 (
 		{
 			if ($current==null) {
-	            $current = createModelElement(grammarAccess.getTicketCategoryRule());
+	            $current = createModelElement(grammarAccess.getTicketFieldRule());
 	        }
         }
 		{ 
-	        newCompositeNode(grammarAccess.getTicketCategoryAccess().getFieldsFieldCrossReference_6_0()); 
+	        newCompositeNode(grammarAccess.getTicketFieldAccess().getFieldFieldCrossReference_0_0()); 
 	    }
 		ruleQualifiedName		{ 
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)(	otherlv_7=',' 
+)(
+(
+		lv_mandatory_1_0=	'mandatory' 
     {
-    	newLeafNode(otherlv_7, grammarAccess.getTicketCategoryAccess().getCommaKeyword_7_0());
+        newLeafNode(lv_mandatory_1_0, grammarAccess.getTicketFieldAccess().getMandatoryMandatoryKeyword_1_0());
     }
-(
-(
-		{
-			if ($current==null) {
-	            $current = createModelElement(grammarAccess.getTicketCategoryRule());
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getTicketFieldRule());
 	        }
-        }
-		{ 
-	        newCompositeNode(grammarAccess.getTicketCategoryAccess().getFieldsFieldCrossReference_7_1_0()); 
-	    }
-		ruleQualifiedName		{ 
-	        afterParserOrEnumRuleCall();
+       		setWithLastConsumed($current, "mandatory", true, "mandatory");
 	    }
 
 )
-))*	otherlv_9=';' 
-    {
-    	newLeafNode(otherlv_9, grammarAccess.getTicketCategoryAccess().getSemicolonKeyword_8());
-    }
-	otherlv_10='}' 
-    {
-    	newLeafNode(otherlv_10, grammarAccess.getTicketCategoryAccess().getRightCurlyBracketKeyword_9());
-    }
-)
+)?)
 ;
 
 
@@ -686,13 +717,60 @@ ruleRole returns [EObject current=null]
     }
 ((
 (
+		{ 
+	        newCompositeNode(grammarAccess.getRoleAccess().getRolepermissionsRolePermissionParserRuleCall_4_0_0()); 
+	    }
+		lv_rolepermissions_4_0=ruleRolePermission		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getRoleRule());
+	        }
+       		add(
+       			$current, 
+       			"rolepermissions",
+        		lv_rolepermissions_4_0, 
+        		"RolePermission");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)	otherlv_5=';' 
+    {
+    	newLeafNode(otherlv_5, grammarAccess.getRoleAccess().getSemicolonKeyword_4_1());
+    }
+)*	otherlv_6='}' 
+    {
+    	newLeafNode(otherlv_6, grammarAccess.getRoleAccess().getRightCurlyBracketKeyword_5());
+    }
+)
+;
+
+
+
+
+
+// Entry rule entryRuleRolePermission
+entryRuleRolePermission returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getRolePermissionRule()); }
+	 iv_ruleRolePermission=ruleRolePermission 
+	 { $current=$iv_ruleRolePermission.current; } 
+	 EOF 
+;
+
+// Rule RolePermission
+ruleRolePermission returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+(
 		{
 			if ($current==null) {
-	            $current = createModelElement(grammarAccess.getRoleRule());
+	            $current = createModelElement(grammarAccess.getRolePermissionRule());
 	        }
         }
 		{ 
-	        newCompositeNode(grammarAccess.getRoleAccess().getFieldsFieldCrossReference_4_0_0()); 
+	        newCompositeNode(grammarAccess.getRolePermissionAccess().getFieldFieldCrossReference_0_0()); 
 	    }
 		ruleQualifiedName		{ 
 	        afterParserOrEnumRuleCall();
@@ -702,30 +780,44 @@ ruleRole returns [EObject current=null]
 )(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getRoleAccess().getPermissionPermissionEnumRuleCall_4_1_0()); 
+	        newCompositeNode(grammarAccess.getRolePermissionAccess().getPermissionsPermissionEnumRuleCall_1_0()); 
 	    }
-		lv_permission_5_0=rulePermission		{
+		lv_permissions_1_0=rulePermission		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getRoleRule());
+	            $current = createModelElementForParent(grammarAccess.getRolePermissionRule());
 	        }
        		add(
        			$current, 
-       			"permission",
-        		lv_permission_5_0, 
+       			"permissions",
+        		lv_permissions_1_0, 
         		"Permission");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)	otherlv_6=';' 
+)(	otherlv_2=',' 
     {
-    	newLeafNode(otherlv_6, grammarAccess.getRoleAccess().getSemicolonKeyword_4_2());
+    	newLeafNode(otherlv_2, grammarAccess.getRolePermissionAccess().getCommaKeyword_2_0());
     }
-)*	otherlv_7='}' 
-    {
-    	newLeafNode(otherlv_7, grammarAccess.getRoleAccess().getRightCurlyBracketKeyword_5());
-    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getRolePermissionAccess().getPermissionsPermissionEnumRuleCall_2_1_0()); 
+	    }
+		lv_permissions_3_0=rulePermission		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getRolePermissionRule());
+	        }
+       		add(
+       			$current, 
+       			"permissions",
+        		lv_permissions_3_0, 
+        		"Permission");
+	        afterParserOrEnumRuleCall();
+	    }
+
 )
+))*)
 ;
 
 

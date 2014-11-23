@@ -16,8 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link org.nordakademie.mwi.tickets.tickets.Role#getName <em>Name</em>}</li>
  *   <li>{@link org.nordakademie.mwi.tickets.tickets.Role#getDescription <em>Description</em>}</li>
- *   <li>{@link org.nordakademie.mwi.tickets.tickets.Role#getFields <em>Fields</em>}</li>
- *   <li>{@link org.nordakademie.mwi.tickets.tickets.Role#getPermission <em>Permission</em>}</li>
+ *   <li>{@link org.nordakademie.mwi.tickets.tickets.Role#getRolepermissions <em>Rolepermissions</em>}</li>
  * </ul>
  * </p>
  *
@@ -80,37 +79,19 @@ public interface Role extends EObject
   void setDescription(String value);
 
   /**
-   * Returns the value of the '<em><b>Fields</b></em>' reference list.
-   * The list contents are of type {@link org.nordakademie.mwi.tickets.tickets.Field}.
+   * Returns the value of the '<em><b>Rolepermissions</b></em>' containment reference list.
+   * The list contents are of type {@link org.nordakademie.mwi.tickets.tickets.RolePermission}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Fields</em>' reference list isn't clear,
+   * If the meaning of the '<em>Rolepermissions</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Fields</em>' reference list.
-   * @see org.nordakademie.mwi.tickets.tickets.TicketsPackage#getRole_Fields()
-   * @model
+   * @return the value of the '<em>Rolepermissions</em>' containment reference list.
+   * @see org.nordakademie.mwi.tickets.tickets.TicketsPackage#getRole_Rolepermissions()
+   * @model containment="true"
    * @generated
    */
-  EList<Field> getFields();
-
-  /**
-   * Returns the value of the '<em><b>Permission</b></em>' attribute list.
-   * The list contents are of type {@link org.nordakademie.mwi.tickets.tickets.Permission}.
-   * The literals are from the enumeration {@link org.nordakademie.mwi.tickets.tickets.Permission}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Permission</em>' attribute list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Permission</em>' attribute list.
-   * @see org.nordakademie.mwi.tickets.tickets.Permission
-   * @see org.nordakademie.mwi.tickets.tickets.TicketsPackage#getRole_Permission()
-   * @model unique="false"
-   * @generated
-   */
-  EList<Permission> getPermission();
+  EList<RolePermission> getRolepermissions();
 
 } // Role

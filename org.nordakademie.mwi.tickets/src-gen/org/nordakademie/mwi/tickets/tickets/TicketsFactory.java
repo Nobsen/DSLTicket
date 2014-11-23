@@ -77,6 +77,15 @@ public interface TicketsFactory extends EFactory
   TicketCategory createTicketCategory();
 
   /**
+   * Returns a new object of class '<em>Ticket Field</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Ticket Field</em>'.
+   * @generated
+   */
+  TicketField createTicketField();
+
+  /**
    * Returns a new object of class '<em>Role</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -84,6 +93,15 @@ public interface TicketsFactory extends EFactory
    * @generated
    */
   Role createRole();
+
+  /**
+   * Returns a new object of class '<em>Role Permission</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Role Permission</em>'.
+   * @generated
+   */
+  RolePermission createRolePermission();
 
   /**
    * Returns the package supported by this factory.

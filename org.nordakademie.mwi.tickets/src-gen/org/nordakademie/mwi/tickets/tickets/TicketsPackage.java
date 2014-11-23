@@ -316,13 +316,13 @@ public interface TicketsPackage extends EPackage
   int TICKET_CATEGORY__FLOW = 2;
 
   /**
-   * The feature id for the '<em><b>Fields</b></em>' reference list.
+   * The feature id for the '<em><b>Ticket Fields</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TICKET_CATEGORY__FIELDS = 3;
+  int TICKET_CATEGORY__TICKET_FIELDS = 3;
 
   /**
    * The number of structural features of the '<em>Ticket Category</em>' class.
@@ -334,6 +334,43 @@ public interface TicketsPackage extends EPackage
   int TICKET_CATEGORY_FEATURE_COUNT = 4;
 
   /**
+   * The meta object id for the '{@link org.nordakademie.mwi.tickets.tickets.impl.TicketFieldImpl <em>Ticket Field</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.nordakademie.mwi.tickets.tickets.impl.TicketFieldImpl
+   * @see org.nordakademie.mwi.tickets.tickets.impl.TicketsPackageImpl#getTicketField()
+   * @generated
+   */
+  int TICKET_FIELD = 6;
+
+  /**
+   * The feature id for the '<em><b>Field</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TICKET_FIELD__FIELD = 0;
+
+  /**
+   * The feature id for the '<em><b>Mandatory</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TICKET_FIELD__MANDATORY = 1;
+
+  /**
+   * The number of structural features of the '<em>Ticket Field</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TICKET_FIELD_FEATURE_COUNT = 2;
+
+  /**
    * The meta object id for the '{@link org.nordakademie.mwi.tickets.tickets.impl.RoleImpl <em>Role</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -341,7 +378,7 @@ public interface TicketsPackage extends EPackage
    * @see org.nordakademie.mwi.tickets.tickets.impl.TicketsPackageImpl#getRole()
    * @generated
    */
-  int ROLE = 6;
+  int ROLE = 7;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -362,22 +399,13 @@ public interface TicketsPackage extends EPackage
   int ROLE__DESCRIPTION = 1;
 
   /**
-   * The feature id for the '<em><b>Fields</b></em>' reference list.
+   * The feature id for the '<em><b>Rolepermissions</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ROLE__FIELDS = 2;
-
-  /**
-   * The feature id for the '<em><b>Permission</b></em>' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ROLE__PERMISSION = 3;
+  int ROLE__ROLEPERMISSIONS = 2;
 
   /**
    * The number of structural features of the '<em>Role</em>' class.
@@ -386,7 +414,44 @@ public interface TicketsPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ROLE_FEATURE_COUNT = 4;
+  int ROLE_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link org.nordakademie.mwi.tickets.tickets.impl.RolePermissionImpl <em>Role Permission</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.nordakademie.mwi.tickets.tickets.impl.RolePermissionImpl
+   * @see org.nordakademie.mwi.tickets.tickets.impl.TicketsPackageImpl#getRolePermission()
+   * @generated
+   */
+  int ROLE_PERMISSION = 8;
+
+  /**
+   * The feature id for the '<em><b>Field</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ROLE_PERMISSION__FIELD = 0;
+
+  /**
+   * The feature id for the '<em><b>Permissions</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ROLE_PERMISSION__PERMISSIONS = 1;
+
+  /**
+   * The number of structural features of the '<em>Role Permission</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ROLE_PERMISSION_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link org.nordakademie.mwi.tickets.tickets.Permission <em>Permission</em>}' enum.
@@ -396,7 +461,7 @@ public interface TicketsPackage extends EPackage
    * @see org.nordakademie.mwi.tickets.tickets.impl.TicketsPackageImpl#getPermission()
    * @generated
    */
-  int PERMISSION = 7;
+  int PERMISSION = 9;
 
   /**
    * The meta object id for the '{@link org.nordakademie.mwi.tickets.tickets.FieldType <em>Field Type</em>}' enum.
@@ -406,7 +471,7 @@ public interface TicketsPackage extends EPackage
    * @see org.nordakademie.mwi.tickets.tickets.impl.TicketsPackageImpl#getFieldType()
    * @generated
    */
-  int FIELD_TYPE = 8;
+  int FIELD_TYPE = 10;
 
 
   /**
@@ -657,15 +722,47 @@ public interface TicketsPackage extends EPackage
   EReference getTicketCategory_Flow();
 
   /**
-   * Returns the meta object for the reference list '{@link org.nordakademie.mwi.tickets.tickets.TicketCategory#getFields <em>Fields</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.nordakademie.mwi.tickets.tickets.TicketCategory#getTicketFields <em>Ticket Fields</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Fields</em>'.
-   * @see org.nordakademie.mwi.tickets.tickets.TicketCategory#getFields()
+   * @return the meta object for the containment reference list '<em>Ticket Fields</em>'.
+   * @see org.nordakademie.mwi.tickets.tickets.TicketCategory#getTicketFields()
    * @see #getTicketCategory()
    * @generated
    */
-  EReference getTicketCategory_Fields();
+  EReference getTicketCategory_TicketFields();
+
+  /**
+   * Returns the meta object for class '{@link org.nordakademie.mwi.tickets.tickets.TicketField <em>Ticket Field</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Ticket Field</em>'.
+   * @see org.nordakademie.mwi.tickets.tickets.TicketField
+   * @generated
+   */
+  EClass getTicketField();
+
+  /**
+   * Returns the meta object for the reference '{@link org.nordakademie.mwi.tickets.tickets.TicketField#getField <em>Field</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Field</em>'.
+   * @see org.nordakademie.mwi.tickets.tickets.TicketField#getField()
+   * @see #getTicketField()
+   * @generated
+   */
+  EReference getTicketField_Field();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.nordakademie.mwi.tickets.tickets.TicketField#isMandatory <em>Mandatory</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Mandatory</em>'.
+   * @see org.nordakademie.mwi.tickets.tickets.TicketField#isMandatory()
+   * @see #getTicketField()
+   * @generated
+   */
+  EAttribute getTicketField_Mandatory();
 
   /**
    * Returns the meta object for class '{@link org.nordakademie.mwi.tickets.tickets.Role <em>Role</em>}'.
@@ -700,26 +797,47 @@ public interface TicketsPackage extends EPackage
   EAttribute getRole_Description();
 
   /**
-   * Returns the meta object for the reference list '{@link org.nordakademie.mwi.tickets.tickets.Role#getFields <em>Fields</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.nordakademie.mwi.tickets.tickets.Role#getRolepermissions <em>Rolepermissions</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Fields</em>'.
-   * @see org.nordakademie.mwi.tickets.tickets.Role#getFields()
+   * @return the meta object for the containment reference list '<em>Rolepermissions</em>'.
+   * @see org.nordakademie.mwi.tickets.tickets.Role#getRolepermissions()
    * @see #getRole()
    * @generated
    */
-  EReference getRole_Fields();
+  EReference getRole_Rolepermissions();
 
   /**
-   * Returns the meta object for the attribute list '{@link org.nordakademie.mwi.tickets.tickets.Role#getPermission <em>Permission</em>}'.
+   * Returns the meta object for class '{@link org.nordakademie.mwi.tickets.tickets.RolePermission <em>Role Permission</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Permission</em>'.
-   * @see org.nordakademie.mwi.tickets.tickets.Role#getPermission()
-   * @see #getRole()
+   * @return the meta object for class '<em>Role Permission</em>'.
+   * @see org.nordakademie.mwi.tickets.tickets.RolePermission
    * @generated
    */
-  EAttribute getRole_Permission();
+  EClass getRolePermission();
+
+  /**
+   * Returns the meta object for the reference '{@link org.nordakademie.mwi.tickets.tickets.RolePermission#getField <em>Field</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Field</em>'.
+   * @see org.nordakademie.mwi.tickets.tickets.RolePermission#getField()
+   * @see #getRolePermission()
+   * @generated
+   */
+  EReference getRolePermission_Field();
+
+  /**
+   * Returns the meta object for the attribute list '{@link org.nordakademie.mwi.tickets.tickets.RolePermission#getPermissions <em>Permissions</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Permissions</em>'.
+   * @see org.nordakademie.mwi.tickets.tickets.RolePermission#getPermissions()
+   * @see #getRolePermission()
+   * @generated
+   */
+  EAttribute getRolePermission_Permissions();
 
   /**
    * Returns the meta object for enum '{@link org.nordakademie.mwi.tickets.tickets.Permission <em>Permission</em>}'.
@@ -961,12 +1079,38 @@ public interface TicketsPackage extends EPackage
     EReference TICKET_CATEGORY__FLOW = eINSTANCE.getTicketCategory_Flow();
 
     /**
-     * The meta object literal for the '<em><b>Fields</b></em>' reference list feature.
+     * The meta object literal for the '<em><b>Ticket Fields</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference TICKET_CATEGORY__FIELDS = eINSTANCE.getTicketCategory_Fields();
+    EReference TICKET_CATEGORY__TICKET_FIELDS = eINSTANCE.getTicketCategory_TicketFields();
+
+    /**
+     * The meta object literal for the '{@link org.nordakademie.mwi.tickets.tickets.impl.TicketFieldImpl <em>Ticket Field</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.nordakademie.mwi.tickets.tickets.impl.TicketFieldImpl
+     * @see org.nordakademie.mwi.tickets.tickets.impl.TicketsPackageImpl#getTicketField()
+     * @generated
+     */
+    EClass TICKET_FIELD = eINSTANCE.getTicketField();
+
+    /**
+     * The meta object literal for the '<em><b>Field</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TICKET_FIELD__FIELD = eINSTANCE.getTicketField_Field();
+
+    /**
+     * The meta object literal for the '<em><b>Mandatory</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TICKET_FIELD__MANDATORY = eINSTANCE.getTicketField_Mandatory();
 
     /**
      * The meta object literal for the '{@link org.nordakademie.mwi.tickets.tickets.impl.RoleImpl <em>Role</em>}' class.
@@ -995,20 +1139,38 @@ public interface TicketsPackage extends EPackage
     EAttribute ROLE__DESCRIPTION = eINSTANCE.getRole_Description();
 
     /**
-     * The meta object literal for the '<em><b>Fields</b></em>' reference list feature.
+     * The meta object literal for the '<em><b>Rolepermissions</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference ROLE__FIELDS = eINSTANCE.getRole_Fields();
+    EReference ROLE__ROLEPERMISSIONS = eINSTANCE.getRole_Rolepermissions();
 
     /**
-     * The meta object literal for the '<em><b>Permission</b></em>' attribute list feature.
+     * The meta object literal for the '{@link org.nordakademie.mwi.tickets.tickets.impl.RolePermissionImpl <em>Role Permission</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.nordakademie.mwi.tickets.tickets.impl.RolePermissionImpl
+     * @see org.nordakademie.mwi.tickets.tickets.impl.TicketsPackageImpl#getRolePermission()
+     * @generated
+     */
+    EClass ROLE_PERMISSION = eINSTANCE.getRolePermission();
+
+    /**
+     * The meta object literal for the '<em><b>Field</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ROLE__PERMISSION = eINSTANCE.getRole_Permission();
+    EReference ROLE_PERMISSION__FIELD = eINSTANCE.getRolePermission_Field();
+
+    /**
+     * The meta object literal for the '<em><b>Permissions</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ROLE_PERMISSION__PERMISSIONS = eINSTANCE.getRolePermission_Permissions();
 
     /**
      * The meta object literal for the '{@link org.nordakademie.mwi.tickets.tickets.Permission <em>Permission</em>}' enum.

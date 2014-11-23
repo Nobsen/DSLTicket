@@ -15,8 +15,10 @@ import org.nordakademie.mwi.tickets.tickets.FieldType;
 import org.nordakademie.mwi.tickets.tickets.Flow;
 import org.nordakademie.mwi.tickets.tickets.Permission;
 import org.nordakademie.mwi.tickets.tickets.Role;
+import org.nordakademie.mwi.tickets.tickets.RolePermission;
 import org.nordakademie.mwi.tickets.tickets.State;
 import org.nordakademie.mwi.tickets.tickets.TicketCategory;
+import org.nordakademie.mwi.tickets.tickets.TicketField;
 import org.nordakademie.mwi.tickets.tickets.TicketSystem;
 import org.nordakademie.mwi.tickets.tickets.TicketsFactory;
 import org.nordakademie.mwi.tickets.tickets.TicketsPackage;
@@ -76,7 +78,21 @@ public class TicketsPackageImpl extends EPackageImpl implements TicketsPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass ticketFieldEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass roleEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass rolePermissionEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -390,9 +406,39 @@ public class TicketsPackageImpl extends EPackageImpl implements TicketsPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getTicketCategory_Fields()
+  public EReference getTicketCategory_TicketFields()
   {
     return (EReference)ticketCategoryEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getTicketField()
+  {
+    return ticketFieldEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTicketField_Field()
+  {
+    return (EReference)ticketFieldEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getTicketField_Mandatory()
+  {
+    return (EAttribute)ticketFieldEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -430,7 +476,7 @@ public class TicketsPackageImpl extends EPackageImpl implements TicketsPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getRole_Fields()
+  public EReference getRole_Rolepermissions()
   {
     return (EReference)roleEClass.getEStructuralFeatures().get(2);
   }
@@ -440,9 +486,29 @@ public class TicketsPackageImpl extends EPackageImpl implements TicketsPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getRole_Permission()
+  public EClass getRolePermission()
   {
-    return (EAttribute)roleEClass.getEStructuralFeatures().get(3);
+    return rolePermissionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getRolePermission_Field()
+  {
+    return (EReference)rolePermissionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getRolePermission_Permissions()
+  {
+    return (EAttribute)rolePermissionEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -523,13 +589,20 @@ public class TicketsPackageImpl extends EPackageImpl implements TicketsPackage
     createEAttribute(ticketCategoryEClass, TICKET_CATEGORY__NAME);
     createEAttribute(ticketCategoryEClass, TICKET_CATEGORY__DESCRIPTION);
     createEReference(ticketCategoryEClass, TICKET_CATEGORY__FLOW);
-    createEReference(ticketCategoryEClass, TICKET_CATEGORY__FIELDS);
+    createEReference(ticketCategoryEClass, TICKET_CATEGORY__TICKET_FIELDS);
+
+    ticketFieldEClass = createEClass(TICKET_FIELD);
+    createEReference(ticketFieldEClass, TICKET_FIELD__FIELD);
+    createEAttribute(ticketFieldEClass, TICKET_FIELD__MANDATORY);
 
     roleEClass = createEClass(ROLE);
     createEAttribute(roleEClass, ROLE__NAME);
     createEAttribute(roleEClass, ROLE__DESCRIPTION);
-    createEReference(roleEClass, ROLE__FIELDS);
-    createEAttribute(roleEClass, ROLE__PERMISSION);
+    createEReference(roleEClass, ROLE__ROLEPERMISSIONS);
+
+    rolePermissionEClass = createEClass(ROLE_PERMISSION);
+    createEReference(rolePermissionEClass, ROLE_PERMISSION__FIELD);
+    createEAttribute(rolePermissionEClass, ROLE_PERMISSION__PERMISSIONS);
 
     // Create enums
     permissionEEnum = createEEnum(PERMISSION);
@@ -595,13 +668,20 @@ public class TicketsPackageImpl extends EPackageImpl implements TicketsPackage
     initEAttribute(getTicketCategory_Name(), ecorePackage.getEString(), "name", null, 0, 1, TicketCategory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getTicketCategory_Description(), ecorePackage.getEString(), "description", null, 0, 1, TicketCategory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getTicketCategory_Flow(), this.getFlow(), null, "flow", null, 0, 1, TicketCategory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getTicketCategory_Fields(), this.getField(), null, "fields", null, 0, -1, TicketCategory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTicketCategory_TicketFields(), this.getTicketField(), null, "ticketFields", null, 0, -1, TicketCategory.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(ticketFieldEClass, TicketField.class, "TicketField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getTicketField_Field(), this.getField(), null, "field", null, 0, 1, TicketField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getTicketField_Mandatory(), ecorePackage.getEBoolean(), "mandatory", null, 0, 1, TicketField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(roleEClass, Role.class, "Role", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getRole_Name(), ecorePackage.getEString(), "name", null, 0, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getRole_Description(), ecorePackage.getEString(), "description", null, 0, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getRole_Fields(), this.getField(), null, "fields", null, 0, -1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getRole_Permission(), this.getPermission(), "permission", null, 0, -1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRole_Rolepermissions(), this.getRolePermission(), null, "rolepermissions", null, 0, -1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(rolePermissionEClass, RolePermission.class, "RolePermission", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getRolePermission_Field(), this.getField(), null, "field", null, 0, 1, RolePermission.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRolePermission_Permissions(), this.getPermission(), "permissions", null, 0, -1, RolePermission.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Initialize enums and add enum literals
     initEEnum(permissionEEnum, Permission.class, "Permission");
