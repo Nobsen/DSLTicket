@@ -15,8 +15,8 @@ Flow:
 	'}';
 
 Field:
-	'field' name=QualifiedName label=STRING (fieldType=FieldType | fieldEnum=Enum) ';';
-
+	'field' name=QualifiedName label=STRING (fieldType=FieldType | fieldEnum=Enum)  (mandatory?='mandatory')? ';'
+;
 
 Enum:
 	option+=STRING (',' option+=STRING)*;
