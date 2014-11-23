@@ -3,5 +3,14 @@ grammar org.nordakademie.mwi.tickets.Tickets with org.eclipse.xtext.common.Termi
 generate tickets "http://www.nordakademie.org/mwi/tickets/Tickets"
 
 TicketCategory:
-	'ticketCategory' name=ID 
-;
+	'ticketCategory' name=STRING description=STRING '{'
+	(flow=Flow | fields+=Field* ';') ';'
+	'}';
+
+Role:
+	'role' name=STRING '{'
+	fields+=Field* ';'
+	'}';
+
+
+
