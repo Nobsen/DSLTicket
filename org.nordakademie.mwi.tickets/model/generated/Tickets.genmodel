@@ -49,13 +49,20 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Tickets.ecore#//TicketCategory/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Tickets.ecore#//TicketCategory/description"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Tickets.ecore#//TicketCategory/flow"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Tickets.ecore#//TicketCategory/fields"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Tickets.ecore#//TicketCategory/ticketFields"/>
+    </genClasses>
+    <genClasses ecoreClass="Tickets.ecore#//TicketField">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Tickets.ecore#//TicketField/field"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Tickets.ecore#//TicketField/mandatory"/>
     </genClasses>
     <genClasses ecoreClass="Tickets.ecore#//Role">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Tickets.ecore#//Role/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Tickets.ecore#//Role/description"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Tickets.ecore#//Role/fields"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Tickets.ecore#//Role/permission"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Tickets.ecore#//Role/rolepermissions"/>
+    </genClasses>
+    <genClasses ecoreClass="Tickets.ecore#//RolePermission">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Tickets.ecore#//RolePermission/field"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Tickets.ecore#//RolePermission/permissions"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

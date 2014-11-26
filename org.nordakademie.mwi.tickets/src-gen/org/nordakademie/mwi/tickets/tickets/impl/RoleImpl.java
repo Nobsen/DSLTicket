@@ -5,20 +5,21 @@ package org.nordakademie.mwi.tickets.tickets.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EDataTypeEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.nordakademie.mwi.tickets.tickets.Field;
-import org.nordakademie.mwi.tickets.tickets.Permission;
 import org.nordakademie.mwi.tickets.tickets.Role;
+import org.nordakademie.mwi.tickets.tickets.RolePermission;
 import org.nordakademie.mwi.tickets.tickets.TicketsPackage;
 
 /**
@@ -30,8 +31,7 @@ import org.nordakademie.mwi.tickets.tickets.TicketsPackage;
  * <ul>
  *   <li>{@link org.nordakademie.mwi.tickets.tickets.impl.RoleImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.nordakademie.mwi.tickets.tickets.impl.RoleImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link org.nordakademie.mwi.tickets.tickets.impl.RoleImpl#getFields <em>Fields</em>}</li>
- *   <li>{@link org.nordakademie.mwi.tickets.tickets.impl.RoleImpl#getPermission <em>Permission</em>}</li>
+ *   <li>{@link org.nordakademie.mwi.tickets.tickets.impl.RoleImpl#getRolepermissions <em>Rolepermissions</em>}</li>
  * </ul>
  * </p>
  *
@@ -80,24 +80,14 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role
   protected String description = DESCRIPTION_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getFields() <em>Fields</em>}' reference list.
+   * The cached value of the '{@link #getRolepermissions() <em>Rolepermissions</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getFields()
+   * @see #getRolepermissions()
    * @generated
    * @ordered
    */
-  protected EList<Field> fields;
-
-  /**
-   * The cached value of the '{@link #getPermission() <em>Permission</em>}' attribute list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getPermission()
-   * @generated
-   * @ordered
-   */
-  protected EList<Permission> permission;
+  protected EList<RolePermission> rolepermissions;
 
   /**
    * <!-- begin-user-doc -->
@@ -171,13 +161,13 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Field> getFields()
+  public EList<RolePermission> getRolepermissions()
   {
-    if (fields == null)
+    if (rolepermissions == null)
     {
-      fields = new EObjectResolvingEList<Field>(Field.class, this, TicketsPackage.ROLE__FIELDS);
+      rolepermissions = new EObjectContainmentEList<RolePermission>(RolePermission.class, this, TicketsPackage.ROLE__ROLEPERMISSIONS);
     }
-    return fields;
+    return rolepermissions;
   }
 
   /**
@@ -185,13 +175,15 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Permission> getPermission()
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    if (permission == null)
+    switch (featureID)
     {
-      permission = new EDataTypeEList<Permission>(Permission.class, this, TicketsPackage.ROLE__PERMISSION);
+      case TicketsPackage.ROLE__ROLEPERMISSIONS:
+        return ((InternalEList<?>)getRolepermissions()).basicRemove(otherEnd, msgs);
     }
-    return permission;
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -208,10 +200,8 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role
         return getName();
       case TicketsPackage.ROLE__DESCRIPTION:
         return getDescription();
-      case TicketsPackage.ROLE__FIELDS:
-        return getFields();
-      case TicketsPackage.ROLE__PERMISSION:
-        return getPermission();
+      case TicketsPackage.ROLE__ROLEPERMISSIONS:
+        return getRolepermissions();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -233,13 +223,9 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role
       case TicketsPackage.ROLE__DESCRIPTION:
         setDescription((String)newValue);
         return;
-      case TicketsPackage.ROLE__FIELDS:
-        getFields().clear();
-        getFields().addAll((Collection<? extends Field>)newValue);
-        return;
-      case TicketsPackage.ROLE__PERMISSION:
-        getPermission().clear();
-        getPermission().addAll((Collection<? extends Permission>)newValue);
+      case TicketsPackage.ROLE__ROLEPERMISSIONS:
+        getRolepermissions().clear();
+        getRolepermissions().addAll((Collection<? extends RolePermission>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -261,11 +247,8 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role
       case TicketsPackage.ROLE__DESCRIPTION:
         setDescription(DESCRIPTION_EDEFAULT);
         return;
-      case TicketsPackage.ROLE__FIELDS:
-        getFields().clear();
-        return;
-      case TicketsPackage.ROLE__PERMISSION:
-        getPermission().clear();
+      case TicketsPackage.ROLE__ROLEPERMISSIONS:
+        getRolepermissions().clear();
         return;
     }
     super.eUnset(featureID);
@@ -285,10 +268,8 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case TicketsPackage.ROLE__DESCRIPTION:
         return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-      case TicketsPackage.ROLE__FIELDS:
-        return fields != null && !fields.isEmpty();
-      case TicketsPackage.ROLE__PERMISSION:
-        return permission != null && !permission.isEmpty();
+      case TicketsPackage.ROLE__ROLEPERMISSIONS:
+        return rolepermissions != null && !rolepermissions.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -308,8 +289,6 @@ public class RoleImpl extends MinimalEObjectImpl.Container implements Role
     result.append(name);
     result.append(", description: ");
     result.append(description);
-    result.append(", permission: ");
-    result.append(permission);
     result.append(')');
     return result.toString();
   }

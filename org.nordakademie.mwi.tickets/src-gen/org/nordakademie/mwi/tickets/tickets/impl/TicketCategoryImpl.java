@@ -5,6 +5,7 @@ package org.nordakademie.mwi.tickets.tickets.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -14,11 +15,12 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.nordakademie.mwi.tickets.tickets.Field;
 import org.nordakademie.mwi.tickets.tickets.Flow;
 import org.nordakademie.mwi.tickets.tickets.TicketCategory;
+import org.nordakademie.mwi.tickets.tickets.TicketField;
 import org.nordakademie.mwi.tickets.tickets.TicketsPackage;
 
 /**
@@ -31,7 +33,7 @@ import org.nordakademie.mwi.tickets.tickets.TicketsPackage;
  *   <li>{@link org.nordakademie.mwi.tickets.tickets.impl.TicketCategoryImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.nordakademie.mwi.tickets.tickets.impl.TicketCategoryImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.nordakademie.mwi.tickets.tickets.impl.TicketCategoryImpl#getFlow <em>Flow</em>}</li>
- *   <li>{@link org.nordakademie.mwi.tickets.tickets.impl.TicketCategoryImpl#getFields <em>Fields</em>}</li>
+ *   <li>{@link org.nordakademie.mwi.tickets.tickets.impl.TicketCategoryImpl#getTicketFields <em>Ticket Fields</em>}</li>
  * </ul>
  * </p>
  *
@@ -90,14 +92,14 @@ public class TicketCategoryImpl extends MinimalEObjectImpl.Container implements 
   protected Flow flow;
 
   /**
-   * The cached value of the '{@link #getFields() <em>Fields</em>}' reference list.
+   * The cached value of the '{@link #getTicketFields() <em>Ticket Fields</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getFields()
+   * @see #getTicketFields()
    * @generated
    * @ordered
    */
-  protected EList<Field> fields;
+  protected EList<TicketField> ticketFields;
 
   /**
    * <!-- begin-user-doc -->
@@ -214,13 +216,29 @@ public class TicketCategoryImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Field> getFields()
+  public EList<TicketField> getTicketFields()
   {
-    if (fields == null)
+    if (ticketFields == null)
     {
-      fields = new EObjectResolvingEList<Field>(Field.class, this, TicketsPackage.TICKET_CATEGORY__FIELDS);
+      ticketFields = new EObjectContainmentEList<TicketField>(TicketField.class, this, TicketsPackage.TICKET_CATEGORY__TICKET_FIELDS);
     }
-    return fields;
+    return ticketFields;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case TicketsPackage.TICKET_CATEGORY__TICKET_FIELDS:
+        return ((InternalEList<?>)getTicketFields()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -240,8 +258,8 @@ public class TicketCategoryImpl extends MinimalEObjectImpl.Container implements 
       case TicketsPackage.TICKET_CATEGORY__FLOW:
         if (resolve) return getFlow();
         return basicGetFlow();
-      case TicketsPackage.TICKET_CATEGORY__FIELDS:
-        return getFields();
+      case TicketsPackage.TICKET_CATEGORY__TICKET_FIELDS:
+        return getTicketFields();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -266,9 +284,9 @@ public class TicketCategoryImpl extends MinimalEObjectImpl.Container implements 
       case TicketsPackage.TICKET_CATEGORY__FLOW:
         setFlow((Flow)newValue);
         return;
-      case TicketsPackage.TICKET_CATEGORY__FIELDS:
-        getFields().clear();
-        getFields().addAll((Collection<? extends Field>)newValue);
+      case TicketsPackage.TICKET_CATEGORY__TICKET_FIELDS:
+        getTicketFields().clear();
+        getTicketFields().addAll((Collection<? extends TicketField>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -293,8 +311,8 @@ public class TicketCategoryImpl extends MinimalEObjectImpl.Container implements 
       case TicketsPackage.TICKET_CATEGORY__FLOW:
         setFlow((Flow)null);
         return;
-      case TicketsPackage.TICKET_CATEGORY__FIELDS:
-        getFields().clear();
+      case TicketsPackage.TICKET_CATEGORY__TICKET_FIELDS:
+        getTicketFields().clear();
         return;
     }
     super.eUnset(featureID);
@@ -316,8 +334,8 @@ public class TicketCategoryImpl extends MinimalEObjectImpl.Container implements 
         return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
       case TicketsPackage.TICKET_CATEGORY__FLOW:
         return flow != null;
-      case TicketsPackage.TICKET_CATEGORY__FIELDS:
-        return fields != null && !fields.isEmpty();
+      case TicketsPackage.TICKET_CATEGORY__TICKET_FIELDS:
+        return ticketFields != null && !ticketFields.isEmpty();
     }
     return super.eIsSet(featureID);
   }

@@ -16,8 +16,10 @@ import org.nordakademie.mwi.tickets.tickets.FieldType;
 import org.nordakademie.mwi.tickets.tickets.Flow;
 import org.nordakademie.mwi.tickets.tickets.Permission;
 import org.nordakademie.mwi.tickets.tickets.Role;
+import org.nordakademie.mwi.tickets.tickets.RolePermission;
 import org.nordakademie.mwi.tickets.tickets.State;
 import org.nordakademie.mwi.tickets.tickets.TicketCategory;
+import org.nordakademie.mwi.tickets.tickets.TicketField;
 import org.nordakademie.mwi.tickets.tickets.TicketSystem;
 import org.nordakademie.mwi.tickets.tickets.TicketsFactory;
 import org.nordakademie.mwi.tickets.tickets.TicketsPackage;
@@ -80,7 +82,9 @@ public class TicketsFactoryImpl extends EFactoryImpl implements TicketsFactory
       case TicketsPackage.FIELD: return createField();
       case TicketsPackage.ENUM: return createEnum();
       case TicketsPackage.TICKET_CATEGORY: return createTicketCategory();
+      case TicketsPackage.TICKET_FIELD: return createTicketField();
       case TicketsPackage.ROLE: return createRole();
+      case TicketsPackage.ROLE_PERMISSION: return createRolePermission();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -195,10 +199,32 @@ public class TicketsFactoryImpl extends EFactoryImpl implements TicketsFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public TicketField createTicketField()
+  {
+    TicketFieldImpl ticketField = new TicketFieldImpl();
+    return ticketField;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Role createRole()
   {
     RoleImpl role = new RoleImpl();
     return role;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public RolePermission createRolePermission()
+  {
+    RolePermissionImpl rolePermission = new RolePermissionImpl();
+    return rolePermission;
   }
 
   /**

@@ -48,9 +48,12 @@ public class TicketsParser extends AbstractContentAssistParser {
 					put(grammarAccess.getEnumAccess().getGroup(), "rule__Enum__Group__0");
 					put(grammarAccess.getEnumAccess().getGroup_1(), "rule__Enum__Group_1__0");
 					put(grammarAccess.getTicketCategoryAccess().getGroup(), "rule__TicketCategory__Group__0");
-					put(grammarAccess.getTicketCategoryAccess().getGroup_7(), "rule__TicketCategory__Group_7__0");
+					put(grammarAccess.getTicketCategoryAccess().getGroup_6(), "rule__TicketCategory__Group_6__0");
+					put(grammarAccess.getTicketFieldAccess().getGroup(), "rule__TicketField__Group__0");
 					put(grammarAccess.getRoleAccess().getGroup(), "rule__Role__Group__0");
 					put(grammarAccess.getRoleAccess().getGroup_4(), "rule__Role__Group_4__0");
+					put(grammarAccess.getRolePermissionAccess().getGroup(), "rule__RolePermission__Group__0");
+					put(grammarAccess.getRolePermissionAccess().getGroup_2(), "rule__RolePermission__Group_2__0");
 					put(grammarAccess.getQualifiedNameAccess().getGroup(), "rule__QualifiedName__Group__0");
 					put(grammarAccess.getQualifiedNameAccess().getGroup_1(), "rule__QualifiedName__Group_1__0");
 					put(grammarAccess.getTicketSystemAccess().getStatesAssignment_0(), "rule__TicketSystem__StatesAssignment_0");
@@ -72,12 +75,15 @@ public class TicketsParser extends AbstractContentAssistParser {
 					put(grammarAccess.getTicketCategoryAccess().getNameAssignment_1(), "rule__TicketCategory__NameAssignment_1");
 					put(grammarAccess.getTicketCategoryAccess().getDescriptionAssignment_2(), "rule__TicketCategory__DescriptionAssignment_2");
 					put(grammarAccess.getTicketCategoryAccess().getFlowAssignment_4(), "rule__TicketCategory__FlowAssignment_4");
-					put(grammarAccess.getTicketCategoryAccess().getFieldsAssignment_6(), "rule__TicketCategory__FieldsAssignment_6");
-					put(grammarAccess.getTicketCategoryAccess().getFieldsAssignment_7_1(), "rule__TicketCategory__FieldsAssignment_7_1");
+					put(grammarAccess.getTicketCategoryAccess().getTicketFieldsAssignment_6_0(), "rule__TicketCategory__TicketFieldsAssignment_6_0");
+					put(grammarAccess.getTicketFieldAccess().getFieldAssignment_0(), "rule__TicketField__FieldAssignment_0");
+					put(grammarAccess.getTicketFieldAccess().getMandatoryAssignment_1(), "rule__TicketField__MandatoryAssignment_1");
 					put(grammarAccess.getRoleAccess().getNameAssignment_1(), "rule__Role__NameAssignment_1");
 					put(grammarAccess.getRoleAccess().getDescriptionAssignment_2(), "rule__Role__DescriptionAssignment_2");
-					put(grammarAccess.getRoleAccess().getFieldsAssignment_4_0(), "rule__Role__FieldsAssignment_4_0");
-					put(grammarAccess.getRoleAccess().getPermissionAssignment_4_1(), "rule__Role__PermissionAssignment_4_1");
+					put(grammarAccess.getRoleAccess().getRolepermissionsAssignment_4_0(), "rule__Role__RolepermissionsAssignment_4_0");
+					put(grammarAccess.getRolePermissionAccess().getFieldAssignment_0(), "rule__RolePermission__FieldAssignment_0");
+					put(grammarAccess.getRolePermissionAccess().getPermissionsAssignment_1(), "rule__RolePermission__PermissionsAssignment_1");
+					put(grammarAccess.getRolePermissionAccess().getPermissionsAssignment_2_1(), "rule__RolePermission__PermissionsAssignment_2_1");
 				}
 			};
 		}

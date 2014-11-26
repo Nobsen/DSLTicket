@@ -17,8 +17,10 @@ import org.nordakademie.mwi.tickets.services.TicketsGrammarAccess;
 import org.nordakademie.mwi.tickets.tickets.Field;
 import org.nordakademie.mwi.tickets.tickets.Flow;
 import org.nordakademie.mwi.tickets.tickets.Role;
+import org.nordakademie.mwi.tickets.tickets.RolePermission;
 import org.nordakademie.mwi.tickets.tickets.State;
 import org.nordakademie.mwi.tickets.tickets.TicketCategory;
+import org.nordakademie.mwi.tickets.tickets.TicketField;
 import org.nordakademie.mwi.tickets.tickets.TicketSystem;
 import org.nordakademie.mwi.tickets.tickets.TicketsPackage;
 
@@ -54,6 +56,12 @@ public class TicketsSemanticSequencer extends AbstractDelegatingSemanticSequence
 					return; 
 				}
 				else break;
+			case TicketsPackage.ROLE_PERMISSION:
+				if(context == grammarAccess.getRolePermissionRule()) {
+					sequence_RolePermission(context, (RolePermission) semanticObject); 
+					return; 
+				}
+				else break;
 			case TicketsPackage.STATE:
 				if(context == grammarAccess.getStateRule()) {
 					sequence_State(context, (State) semanticObject); 
@@ -63,6 +71,12 @@ public class TicketsSemanticSequencer extends AbstractDelegatingSemanticSequence
 			case TicketsPackage.TICKET_CATEGORY:
 				if(context == grammarAccess.getTicketCategoryRule()) {
 					sequence_TicketCategory(context, (TicketCategory) semanticObject); 
+					return; 
+				}
+				else break;
+			case TicketsPackage.TICKET_FIELD:
+				if(context == grammarAccess.getTicketFieldRule()) {
+					sequence_TicketField(context, (TicketField) semanticObject); 
 					return; 
 				}
 				else break;
@@ -105,7 +119,16 @@ public class TicketsSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Constraint:
-	 *     (name=QualifiedName description=STRING (fields+=[Field|QualifiedName] permission+=Permission)*)
+	 *     (field=[Field|QualifiedName] permissions+=Permission permissions+=Permission*)
+	 */
+	protected void sequence_RolePermission(EObject context, RolePermission semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=QualifiedName description=STRING rolepermissions+=RolePermission*)
 	 */
 	protected void sequence_Role(EObject context, Role semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -133,9 +156,18 @@ public class TicketsSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Constraint:
-	 *     (name=QualifiedName description=STRING flow=[Flow|QualifiedName] fields+=[Field|QualifiedName] fields+=[Field|QualifiedName]*)
+	 *     (name=QualifiedName description=STRING flow=[Flow|QualifiedName] ticketFields+=TicketField*)
 	 */
 	protected void sequence_TicketCategory(EObject context, TicketCategory semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (field=[Field|QualifiedName] mandatory?='mandatory'?)
+	 */
+	protected void sequence_TicketField(EObject context, TicketField semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
