@@ -4,6 +4,11 @@
 package org.nordakademie.mwi.tickets.ui;
 
 import org.eclipse.ui.plugin.AbstractUIPlugin;
+import org.eclipse.xtext.generator.IOutputConfigurationProvider;
+import org.nordakademie.mwi.tickets.TicketsOutputConfigurationProvider;
+
+import com.google.inject.Binder;
+import com.google.inject.Singleton;
 
 /**
  * Use this class to register components to be used within the IDE.
@@ -11,5 +16,12 @@ import org.eclipse.ui.plugin.AbstractUIPlugin;
 public class TicketsUiModule extends org.nordakademie.mwi.tickets.ui.AbstractTicketsUiModule {
 	public TicketsUiModule(AbstractUIPlugin plugin) {
 		super(plugin);
+	}
+	
+	@Override
+	public void configure(Binder binder) {
+	    super.configure(binder);
+
+	    binder.bind(IOutputConfigurationProvider.class).to(TicketsOutputConfigurationProvider.class).in(Singleton.class);
 	}
 }

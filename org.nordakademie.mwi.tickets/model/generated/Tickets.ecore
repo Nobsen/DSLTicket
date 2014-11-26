@@ -64,8 +64,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="FieldType">
     <eLiterals name="user" literal="user"/>
-    <eLiterals name="string" value="1" literal="string"/>
-    <eLiterals name="date" value="2" literal="date"/>
+    <eLiterals name="String" value="1" literal="String"/>
+    <eLiterals name="Date" value="2" literal="Date"/>
     <eLiterals name="dateTime" value="3" literal="dateTime"/>
     <eLiterals name="int" value="4" literal="int"/>
     <eLiterals name="decimal" value="5" literal="decimal"/>

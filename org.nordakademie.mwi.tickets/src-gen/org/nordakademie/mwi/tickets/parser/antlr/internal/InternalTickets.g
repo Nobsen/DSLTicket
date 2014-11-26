@@ -573,31 +573,39 @@ ruleTicketCategory returns [EObject current=null]
     {
     	newLeafNode(otherlv_5, grammarAccess.getTicketCategoryAccess().getSemicolonKeyword_5());
     }
+	otherlv_6='fields {' 
+    {
+    	newLeafNode(otherlv_6, grammarAccess.getTicketCategoryAccess().getFieldsKeyword_6());
+    }
 ((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getTicketCategoryAccess().getTicketFieldsTicketFieldParserRuleCall_6_0_0()); 
+	        newCompositeNode(grammarAccess.getTicketCategoryAccess().getTicketFieldsTicketFieldParserRuleCall_7_0_0()); 
 	    }
-		lv_ticketFields_6_0=ruleTicketField		{
+		lv_ticketFields_7_0=ruleTicketField		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getTicketCategoryRule());
 	        }
        		add(
        			$current, 
        			"ticketFields",
-        		lv_ticketFields_6_0, 
+        		lv_ticketFields_7_0, 
         		"TicketField");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)	otherlv_7=';' 
+)	otherlv_8=';' 
     {
-    	newLeafNode(otherlv_7, grammarAccess.getTicketCategoryAccess().getSemicolonKeyword_6_1());
+    	newLeafNode(otherlv_8, grammarAccess.getTicketCategoryAccess().getSemicolonKeyword_7_1());
     }
-)*	otherlv_8='}' 
+)*	otherlv_9='}' 
     {
-    	newLeafNode(otherlv_8, grammarAccess.getTicketCategoryAccess().getRightCurlyBracketKeyword_7());
+    	newLeafNode(otherlv_9, grammarAccess.getTicketCategoryAccess().getRightCurlyBracketKeyword_8());
+    }
+	otherlv_10='}' 
+    {
+    	newLeafNode(otherlv_10, grammarAccess.getTicketCategoryAccess().getRightCurlyBracketKeyword_9());
     }
 )
 ;
@@ -906,13 +914,13 @@ ruleFieldType returns [Enumerator current=null]
         newLeafNode(enumLiteral_0, grammarAccess.getFieldTypeAccess().getUserEnumLiteralDeclaration_0()); 
     }
 )
-    |(	enumLiteral_1='string' 
+    |(	enumLiteral_1='String' 
 	{
         $current = grammarAccess.getFieldTypeAccess().getStringEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
         newLeafNode(enumLiteral_1, grammarAccess.getFieldTypeAccess().getStringEnumLiteralDeclaration_1()); 
     }
 )
-    |(	enumLiteral_2='date' 
+    |(	enumLiteral_2='Date' 
 	{
         $current = grammarAccess.getFieldTypeAccess().getDateEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
         newLeafNode(enumLiteral_2, grammarAccess.getFieldTypeAccess().getDateEnumLiteralDeclaration_2()); 

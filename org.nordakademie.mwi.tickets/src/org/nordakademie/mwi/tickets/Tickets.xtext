@@ -21,8 +21,10 @@ Enum:
 
 TicketCategory:
 	'ticketCategory' name=QualifiedName description=STRING '{'
-	flow=[Flow|QualifiedName] ';'
-	(ticketFields+=TicketField ';')*
+		flow=[Flow|QualifiedName] ';'
+		'fields {'
+			(ticketFields+=TicketField ';')*
+		'}'
 	'}';
 
 TicketField:
@@ -39,8 +41,9 @@ RolePermission:
 enum Permission:
 	create | read | modify | delete;
 
+// TODO genaues Mapping auf Java-Klassen
 enum FieldType:
-	user | string | date | dateTime | int | decimal;
+	user | String | Date | dateTime | int | decimal;
 
 QualifiedName:
 	ID ('.' ID)*;

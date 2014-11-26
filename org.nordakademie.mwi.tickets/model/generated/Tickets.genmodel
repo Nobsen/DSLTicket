@@ -15,8 +15,8 @@
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="Tickets.ecore#//FieldType">
       <genEnumLiterals ecoreEnumLiteral="Tickets.ecore#//FieldType/user"/>
-      <genEnumLiterals ecoreEnumLiteral="Tickets.ecore#//FieldType/string"/>
-      <genEnumLiterals ecoreEnumLiteral="Tickets.ecore#//FieldType/date"/>
+      <genEnumLiterals ecoreEnumLiteral="Tickets.ecore#//FieldType/String"/>
+      <genEnumLiterals ecoreEnumLiteral="Tickets.ecore#//FieldType/Date"/>
       <genEnumLiterals ecoreEnumLiteral="Tickets.ecore#//FieldType/dateTime"/>
       <genEnumLiterals ecoreEnumLiteral="Tickets.ecore#//FieldType/int"/>
       <genEnumLiterals ecoreEnumLiteral="Tickets.ecore#//FieldType/decimal"/>

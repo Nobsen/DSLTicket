@@ -37,7 +37,7 @@ public enum FieldType implements Enumerator
    * @generated
    * @ordered
    */
-  STRING(1, "string", "string"),
+  STRING(1, "String", "String"),
 
   /**
    * The '<em><b>Date</b></em>' literal object.
@@ -47,7 +47,7 @@ public enum FieldType implements Enumerator
    * @generated
    * @ordered
    */
-  DATE(2, "date", "date"),
+  DATE(2, "Date", "Date"),
 
   /**
    * The '<em><b>Date Time</b></em>' literal object.
@@ -103,7 +103,7 @@ public enum FieldType implements Enumerator
    * </p>
    * <!-- end-user-doc -->
    * @see #STRING
-   * @model name="string"
+   * @model name="String"
    * @generated
    * @ordered
    */
@@ -118,7 +118,7 @@ public enum FieldType implements Enumerator
    * </p>
    * <!-- end-user-doc -->
    * @see #DATE
-   * @model name="date"
+   * @model name="Date"
    * @generated
    * @ordered
    */

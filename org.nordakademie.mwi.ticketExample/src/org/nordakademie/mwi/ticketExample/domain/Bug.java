@@ -8,19 +8,12 @@ public class Bug extends AbstractDomainObject {
 
     @Basic(optional = false)
     private String title;
-
+    // TODO annotation zieht noch nciht
     @Basic(optional = false)
     private String description;
 
     public Bug () {}
     
-	public Bug(String title, String description) {
-		super();
-		this.title = title;
-		this.description = description;
-	}
-
-
 	public String getTitle() {
 		return title;
 	}
