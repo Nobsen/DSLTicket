@@ -10,10 +10,8 @@ import org.eclipse.emf.ecore.util.Switch;
 import org.nordakademie.mwi.tickets.tickets.Field;
 import org.nordakademie.mwi.tickets.tickets.Flow;
 import org.nordakademie.mwi.tickets.tickets.Role;
-import org.nordakademie.mwi.tickets.tickets.RolePermission;
 import org.nordakademie.mwi.tickets.tickets.State;
 import org.nordakademie.mwi.tickets.tickets.TicketCategory;
-import org.nordakademie.mwi.tickets.tickets.TicketField;
 import org.nordakademie.mwi.tickets.tickets.TicketSystem;
 import org.nordakademie.mwi.tickets.tickets.TicketsPackage;
 
@@ -122,24 +120,10 @@ public class TicketsSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case TicketsPackage.TICKET_FIELD:
-      {
-        TicketField ticketField = (TicketField)theEObject;
-        T result = caseTicketField(ticketField);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case TicketsPackage.ROLE:
       {
         Role role = (Role)theEObject;
         T result = caseRole(role);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case TicketsPackage.ROLE_PERMISSION:
-      {
-        RolePermission rolePermission = (RolePermission)theEObject;
-        T result = caseRolePermission(rolePermission);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -244,22 +228,6 @@ public class TicketsSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Ticket Field</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Ticket Field</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseTicketField(TicketField object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Role</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -271,22 +239,6 @@ public class TicketsSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseRole(Role object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Role Permission</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Role Permission</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseRolePermission(RolePermission object)
   {
     return null;
   }

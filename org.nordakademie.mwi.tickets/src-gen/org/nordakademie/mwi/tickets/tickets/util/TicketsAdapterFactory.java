@@ -12,10 +12,8 @@ import org.eclipse.emf.ecore.EObject;
 import org.nordakademie.mwi.tickets.tickets.Field;
 import org.nordakademie.mwi.tickets.tickets.Flow;
 import org.nordakademie.mwi.tickets.tickets.Role;
-import org.nordakademie.mwi.tickets.tickets.RolePermission;
 import org.nordakademie.mwi.tickets.tickets.State;
 import org.nordakademie.mwi.tickets.tickets.TicketCategory;
-import org.nordakademie.mwi.tickets.tickets.TicketField;
 import org.nordakademie.mwi.tickets.tickets.TicketSystem;
 import org.nordakademie.mwi.tickets.tickets.TicketsPackage;
 
@@ -113,19 +111,9 @@ public class TicketsAdapterFactory extends AdapterFactoryImpl
         return createTicketCategoryAdapter();
       }
       @Override
-      public Adapter caseTicketField(TicketField object)
-      {
-        return createTicketFieldAdapter();
-      }
-      @Override
       public Adapter caseRole(Role object)
       {
         return createRoleAdapter();
-      }
-      @Override
-      public Adapter caseRolePermission(RolePermission object)
-      {
-        return createRolePermissionAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -240,21 +228,6 @@ public class TicketsAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.nordakademie.mwi.tickets.tickets.TicketField <em>Ticket Field</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.nordakademie.mwi.tickets.tickets.TicketField
-   * @generated
-   */
-  public Adapter createTicketFieldAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link org.nordakademie.mwi.tickets.tickets.Role <em>Role</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -265,21 +238,6 @@ public class TicketsAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createRoleAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.nordakademie.mwi.tickets.tickets.RolePermission <em>Role Permission</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.nordakademie.mwi.tickets.tickets.RolePermission
-   * @generated
-   */
-  public Adapter createRolePermissionAdapter()
   {
     return null;
   }

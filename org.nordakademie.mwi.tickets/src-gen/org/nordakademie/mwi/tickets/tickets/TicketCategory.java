@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.nordakademie.mwi.tickets.tickets.TicketCategory#getName <em>Name</em>}</li>
  *   <li>{@link org.nordakademie.mwi.tickets.tickets.TicketCategory#getDescription <em>Description</em>}</li>
  *   <li>{@link org.nordakademie.mwi.tickets.tickets.TicketCategory#getFlow <em>Flow</em>}</li>
- *   <li>{@link org.nordakademie.mwi.tickets.tickets.TicketCategory#getTicketFields <em>Ticket Fields</em>}</li>
+ *   <li>{@link org.nordakademie.mwi.tickets.tickets.TicketCategory#getFields <em>Fields</em>}</li>
  * </ul>
  * </p>
  *
@@ -106,19 +106,19 @@ public interface TicketCategory extends EObject
   void setFlow(Flow value);
 
   /**
-   * Returns the value of the '<em><b>Ticket Fields</b></em>' containment reference list.
-   * The list contents are of type {@link org.nordakademie.mwi.tickets.tickets.TicketField}.
+   * Returns the value of the '<em><b>Fields</b></em>' reference list.
+   * The list contents are of type {@link org.nordakademie.mwi.tickets.tickets.Field}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Ticket Fields</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Fields</em>' reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Ticket Fields</em>' containment reference list.
-   * @see org.nordakademie.mwi.tickets.tickets.TicketsPackage#getTicketCategory_TicketFields()
-   * @model containment="true"
+   * @return the value of the '<em>Fields</em>' reference list.
+   * @see org.nordakademie.mwi.tickets.tickets.TicketsPackage#getTicketCategory_Fields()
+   * @model
    * @generated
    */
-  EList<TicketField> getTicketFields();
+  EList<Field> getFields();
 
 } // TicketCategory

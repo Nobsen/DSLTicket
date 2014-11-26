@@ -239,12 +239,13 @@ public class TicketsGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cCommaKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
 		private final Assignment cOptionAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
 		private final RuleCall cOptionSTRINGTerminalRuleCall_1_1_0 = (RuleCall)cOptionAssignment_1_1.eContents().get(0);
+		private final Keyword cSemicolonKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		
 		//Enum:
-		//	option+=STRING ("," option+=STRING)*;
+		//	option+=STRING ("," option+=STRING)* ";";
 		public ParserRule getRule() { return rule; }
 
-		//option+=STRING ("," option+=STRING)*
+		//option+=STRING ("," option+=STRING)* ";"
 		public Group getGroup() { return cGroup; }
 
 		//option+=STRING
@@ -264,6 +265,9 @@ public class TicketsGrammarAccess extends AbstractGrammarElementFinder {
 
 		//STRING
 		public RuleCall getOptionSTRINGTerminalRuleCall_1_1_0() { return cOptionSTRINGTerminalRuleCall_1_1_0; }
+
+		//";"
+		public Keyword getSemicolonKeyword_2() { return cSemicolonKeyword_2; }
 	}
 
 	public class TicketCategoryElements extends AbstractParserRuleElementFinder {
@@ -279,19 +283,24 @@ public class TicketsGrammarAccess extends AbstractGrammarElementFinder {
 		private final CrossReference cFlowFlowCrossReference_4_0 = (CrossReference)cFlowAssignment_4.eContents().get(0);
 		private final RuleCall cFlowFlowQualifiedNameParserRuleCall_4_0_1 = (RuleCall)cFlowFlowCrossReference_4_0.eContents().get(1);
 		private final Keyword cSemicolonKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
-		private final Assignment cTicketFieldsAssignment_6_0 = (Assignment)cGroup_6.eContents().get(0);
-		private final RuleCall cTicketFieldsTicketFieldParserRuleCall_6_0_0 = (RuleCall)cTicketFieldsAssignment_6_0.eContents().get(0);
-		private final Keyword cSemicolonKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
-		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Assignment cFieldsAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final CrossReference cFieldsFieldCrossReference_6_0 = (CrossReference)cFieldsAssignment_6.eContents().get(0);
+		private final RuleCall cFieldsFieldQualifiedNameParserRuleCall_6_0_1 = (RuleCall)cFieldsFieldCrossReference_6_0.eContents().get(1);
+		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
+		private final Keyword cCommaKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
+		private final Assignment cFieldsAssignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
+		private final CrossReference cFieldsFieldCrossReference_7_1_0 = (CrossReference)cFieldsAssignment_7_1.eContents().get(0);
+		private final RuleCall cFieldsFieldQualifiedNameParserRuleCall_7_1_0_1 = (RuleCall)cFieldsFieldCrossReference_7_1_0.eContents().get(1);
+		private final Keyword cSemicolonKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Keyword cRightCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
 		
 		//TicketCategory:
-		//	"ticketCategory" name=QualifiedName description=STRING "{" flow=[Flow|QualifiedName] ";" (ticketFields+=TicketField
-		//	";")* "}";
+		//	"ticketCategory" name=QualifiedName description=STRING "{" flow=[Flow|QualifiedName] ";"
+		//	fields+=[Field|QualifiedName] ("," fields+=[Field|QualifiedName])* ";" "}";
 		public ParserRule getRule() { return rule; }
 
-		//"ticketCategory" name=QualifiedName description=STRING "{" flow=[Flow|QualifiedName] ";" (ticketFields+=TicketField
-		//";")* "}"
+		//"ticketCategory" name=QualifiedName description=STRING "{" flow=[Flow|QualifiedName] ";" fields+=[Field|QualifiedName]
+		//("," fields+=[Field|QualifiedName])* ";" "}"
 		public Group getGroup() { return cGroup; }
 
 		//"ticketCategory"
@@ -324,52 +333,35 @@ public class TicketsGrammarAccess extends AbstractGrammarElementFinder {
 		//";"
 		public Keyword getSemicolonKeyword_5() { return cSemicolonKeyword_5; }
 
-		//(ticketFields+=TicketField ";")*
-		public Group getGroup_6() { return cGroup_6; }
-
-		//ticketFields+=TicketField
-		public Assignment getTicketFieldsAssignment_6_0() { return cTicketFieldsAssignment_6_0; }
-
-		//TicketField
-		public RuleCall getTicketFieldsTicketFieldParserRuleCall_6_0_0() { return cTicketFieldsTicketFieldParserRuleCall_6_0_0; }
-
-		//";"
-		public Keyword getSemicolonKeyword_6_1() { return cSemicolonKeyword_6_1; }
-
-		//"}"
-		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
-	}
-
-	public class TicketFieldElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "TicketField");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cFieldAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final CrossReference cFieldFieldCrossReference_0_0 = (CrossReference)cFieldAssignment_0.eContents().get(0);
-		private final RuleCall cFieldFieldQualifiedNameParserRuleCall_0_0_1 = (RuleCall)cFieldFieldCrossReference_0_0.eContents().get(1);
-		private final Assignment cMandatoryAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final Keyword cMandatoryMandatoryKeyword_1_0 = (Keyword)cMandatoryAssignment_1.eContents().get(0);
-		
-		//TicketField:
-		//	field=[Field|QualifiedName] mandatory?="mandatory"?;
-		public ParserRule getRule() { return rule; }
-
-		//field=[Field|QualifiedName] mandatory?="mandatory"?
-		public Group getGroup() { return cGroup; }
-
-		//field=[Field|QualifiedName]
-		public Assignment getFieldAssignment_0() { return cFieldAssignment_0; }
+		//fields+=[Field|QualifiedName]
+		public Assignment getFieldsAssignment_6() { return cFieldsAssignment_6; }
 
 		//[Field|QualifiedName]
-		public CrossReference getFieldFieldCrossReference_0_0() { return cFieldFieldCrossReference_0_0; }
+		public CrossReference getFieldsFieldCrossReference_6_0() { return cFieldsFieldCrossReference_6_0; }
 
 		//QualifiedName
-		public RuleCall getFieldFieldQualifiedNameParserRuleCall_0_0_1() { return cFieldFieldQualifiedNameParserRuleCall_0_0_1; }
+		public RuleCall getFieldsFieldQualifiedNameParserRuleCall_6_0_1() { return cFieldsFieldQualifiedNameParserRuleCall_6_0_1; }
 
-		//mandatory?="mandatory"?
-		public Assignment getMandatoryAssignment_1() { return cMandatoryAssignment_1; }
+		//("," fields+=[Field|QualifiedName])*
+		public Group getGroup_7() { return cGroup_7; }
 
-		//"mandatory"
-		public Keyword getMandatoryMandatoryKeyword_1_0() { return cMandatoryMandatoryKeyword_1_0; }
+		//","
+		public Keyword getCommaKeyword_7_0() { return cCommaKeyword_7_0; }
+
+		//fields+=[Field|QualifiedName]
+		public Assignment getFieldsAssignment_7_1() { return cFieldsAssignment_7_1; }
+
+		//[Field|QualifiedName]
+		public CrossReference getFieldsFieldCrossReference_7_1_0() { return cFieldsFieldCrossReference_7_1_0; }
+
+		//QualifiedName
+		public RuleCall getFieldsFieldQualifiedNameParserRuleCall_7_1_0_1() { return cFieldsFieldQualifiedNameParserRuleCall_7_1_0_1; }
+
+		//";"
+		public Keyword getSemicolonKeyword_8() { return cSemicolonKeyword_8; }
+
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_9() { return cRightCurlyBracketKeyword_9; }
 	}
 
 	public class RoleElements extends AbstractParserRuleElementFinder {
@@ -382,16 +374,19 @@ public class TicketsGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cDescriptionSTRINGTerminalRuleCall_2_0 = (RuleCall)cDescriptionAssignment_2.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Assignment cRolepermissionsAssignment_4_0 = (Assignment)cGroup_4.eContents().get(0);
-		private final RuleCall cRolepermissionsRolePermissionParserRuleCall_4_0_0 = (RuleCall)cRolepermissionsAssignment_4_0.eContents().get(0);
-		private final Keyword cSemicolonKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
+		private final Assignment cFieldsAssignment_4_0 = (Assignment)cGroup_4.eContents().get(0);
+		private final CrossReference cFieldsFieldCrossReference_4_0_0 = (CrossReference)cFieldsAssignment_4_0.eContents().get(0);
+		private final RuleCall cFieldsFieldQualifiedNameParserRuleCall_4_0_0_1 = (RuleCall)cFieldsFieldCrossReference_4_0_0.eContents().get(1);
+		private final Assignment cPermissionAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cPermissionPermissionEnumRuleCall_4_1_0 = (RuleCall)cPermissionAssignment_4_1.eContents().get(0);
+		private final Keyword cSemicolonKeyword_4_2 = (Keyword)cGroup_4.eContents().get(2);
 		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//Role:
-		//	"role" name=QualifiedName description=STRING "{" (rolepermissions+=RolePermission ";")* "}";
+		//	"role" name=QualifiedName description=STRING "{" (fields+=[Field|QualifiedName] permission+=Permission ";")* "}";
 		public ParserRule getRule() { return rule; }
 
-		//"role" name=QualifiedName description=STRING "{" (rolepermissions+=RolePermission ";")* "}"
+		//"role" name=QualifiedName description=STRING "{" (fields+=[Field|QualifiedName] permission+=Permission ";")* "}"
 		public Group getGroup() { return cGroup; }
 
 		//"role"
@@ -412,68 +407,29 @@ public class TicketsGrammarAccess extends AbstractGrammarElementFinder {
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 
-		//(rolepermissions+=RolePermission ";")*
+		//(fields+=[Field|QualifiedName] permission+=Permission ";")*
 		public Group getGroup_4() { return cGroup_4; }
 
-		//rolepermissions+=RolePermission
-		public Assignment getRolepermissionsAssignment_4_0() { return cRolepermissionsAssignment_4_0; }
+		//fields+=[Field|QualifiedName]
+		public Assignment getFieldsAssignment_4_0() { return cFieldsAssignment_4_0; }
 
-		//RolePermission
-		public RuleCall getRolepermissionsRolePermissionParserRuleCall_4_0_0() { return cRolepermissionsRolePermissionParserRuleCall_4_0_0; }
+		//[Field|QualifiedName]
+		public CrossReference getFieldsFieldCrossReference_4_0_0() { return cFieldsFieldCrossReference_4_0_0; }
+
+		//QualifiedName
+		public RuleCall getFieldsFieldQualifiedNameParserRuleCall_4_0_0_1() { return cFieldsFieldQualifiedNameParserRuleCall_4_0_0_1; }
+
+		//permission+=Permission
+		public Assignment getPermissionAssignment_4_1() { return cPermissionAssignment_4_1; }
+
+		//Permission
+		public RuleCall getPermissionPermissionEnumRuleCall_4_1_0() { return cPermissionPermissionEnumRuleCall_4_1_0; }
 
 		//";"
-		public Keyword getSemicolonKeyword_4_1() { return cSemicolonKeyword_4_1; }
+		public Keyword getSemicolonKeyword_4_2() { return cSemicolonKeyword_4_2; }
 
 		//"}"
 		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
-	}
-
-	public class RolePermissionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "RolePermission");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cFieldAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final CrossReference cFieldFieldCrossReference_0_0 = (CrossReference)cFieldAssignment_0.eContents().get(0);
-		private final RuleCall cFieldFieldQualifiedNameParserRuleCall_0_0_1 = (RuleCall)cFieldFieldCrossReference_0_0.eContents().get(1);
-		private final Assignment cPermissionsAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cPermissionsPermissionEnumRuleCall_1_0 = (RuleCall)cPermissionsAssignment_1.eContents().get(0);
-		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final Keyword cCommaKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final Assignment cPermissionsAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final RuleCall cPermissionsPermissionEnumRuleCall_2_1_0 = (RuleCall)cPermissionsAssignment_2_1.eContents().get(0);
-		
-		//RolePermission:
-		//	field=[Field|QualifiedName] permissions+=Permission ("," permissions+=Permission)*;
-		public ParserRule getRule() { return rule; }
-
-		//field=[Field|QualifiedName] permissions+=Permission ("," permissions+=Permission)*
-		public Group getGroup() { return cGroup; }
-
-		//field=[Field|QualifiedName]
-		public Assignment getFieldAssignment_0() { return cFieldAssignment_0; }
-
-		//[Field|QualifiedName]
-		public CrossReference getFieldFieldCrossReference_0_0() { return cFieldFieldCrossReference_0_0; }
-
-		//QualifiedName
-		public RuleCall getFieldFieldQualifiedNameParserRuleCall_0_0_1() { return cFieldFieldQualifiedNameParserRuleCall_0_0_1; }
-
-		//permissions+=Permission
-		public Assignment getPermissionsAssignment_1() { return cPermissionsAssignment_1; }
-
-		//Permission
-		public RuleCall getPermissionsPermissionEnumRuleCall_1_0() { return cPermissionsPermissionEnumRuleCall_1_0; }
-
-		//("," permissions+=Permission)*
-		public Group getGroup_2() { return cGroup_2; }
-
-		//","
-		public Keyword getCommaKeyword_2_0() { return cCommaKeyword_2_0; }
-
-		//permissions+=Permission
-		public Assignment getPermissionsAssignment_2_1() { return cPermissionsAssignment_2_1; }
-
-		//Permission
-		public RuleCall getPermissionsPermissionEnumRuleCall_2_1_0() { return cPermissionsPermissionEnumRuleCall_2_1_0; }
 	}
 
 	public class QualifiedNameElements extends AbstractParserRuleElementFinder {
@@ -615,9 +571,7 @@ public class TicketsGrammarAccess extends AbstractGrammarElementFinder {
 	private final FieldElements pField;
 	private final EnumElements pEnum;
 	private final TicketCategoryElements pTicketCategory;
-	private final TicketFieldElements pTicketField;
 	private final RoleElements pRole;
-	private final RolePermissionElements pRolePermission;
 	private final PermissionElements unknownRulePermission;
 	private final FieldTypeElements unknownRuleFieldType;
 	private final QualifiedNameElements pQualifiedName;
@@ -637,9 +591,7 @@ public class TicketsGrammarAccess extends AbstractGrammarElementFinder {
 		this.pField = new FieldElements();
 		this.pEnum = new EnumElements();
 		this.pTicketCategory = new TicketCategoryElements();
-		this.pTicketField = new TicketFieldElements();
 		this.pRole = new RoleElements();
-		this.pRolePermission = new RolePermissionElements();
 		this.unknownRulePermission = new PermissionElements();
 		this.unknownRuleFieldType = new FieldTypeElements();
 		this.pQualifiedName = new QualifiedNameElements();
@@ -713,7 +665,7 @@ public class TicketsGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Enum:
-	//	option+=STRING ("," option+=STRING)*;
+	//	option+=STRING ("," option+=STRING)* ";";
 	public EnumElements getEnumAccess() {
 		return pEnum;
 	}
@@ -723,8 +675,8 @@ public class TicketsGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//TicketCategory:
-	//	"ticketCategory" name=QualifiedName description=STRING "{" flow=[Flow|QualifiedName] ";" (ticketFields+=TicketField
-	//	";")* "}";
+	//	"ticketCategory" name=QualifiedName description=STRING "{" flow=[Flow|QualifiedName] ";"
+	//	fields+=[Field|QualifiedName] ("," fields+=[Field|QualifiedName])* ";" "}";
 	public TicketCategoryElements getTicketCategoryAccess() {
 		return pTicketCategory;
 	}
@@ -733,34 +685,14 @@ public class TicketsGrammarAccess extends AbstractGrammarElementFinder {
 		return getTicketCategoryAccess().getRule();
 	}
 
-	//TicketField:
-	//	field=[Field|QualifiedName] mandatory?="mandatory"?;
-	public TicketFieldElements getTicketFieldAccess() {
-		return pTicketField;
-	}
-	
-	public ParserRule getTicketFieldRule() {
-		return getTicketFieldAccess().getRule();
-	}
-
 	//Role:
-	//	"role" name=QualifiedName description=STRING "{" (rolepermissions+=RolePermission ";")* "}";
+	//	"role" name=QualifiedName description=STRING "{" (fields+=[Field|QualifiedName] permission+=Permission ";")* "}";
 	public RoleElements getRoleAccess() {
 		return pRole;
 	}
 	
 	public ParserRule getRoleRule() {
 		return getRoleAccess().getRule();
-	}
-
-	//RolePermission:
-	//	field=[Field|QualifiedName] permissions+=Permission ("," permissions+=Permission)*;
-	public RolePermissionElements getRolePermissionAccess() {
-		return pRolePermission;
-	}
-	
-	public ParserRule getRolePermissionRule() {
-		return getRolePermissionAccess().getRule();
 	}
 
 	//enum Permission:
