@@ -42,6 +42,16 @@ public class TicketsGenerator implements IGenerator {
         String _plus_2 = (_lowerCase + "/create.jsp");
         CharSequence _createJsp = JspGenerator.toCreateJsp(category);
         fsa.generateFile(_plus_2, TicketsOutputConfigurationProvider.JSP_OUTPUT, _createJsp);
+        String _name_2 = category.getName();
+        String _lowerCase_1 = _name_2.toLowerCase();
+        String _plus_3 = (_lowerCase_1 + "/show.jsp");
+        CharSequence _showJsp = JspGenerator.toShowJsp(category);
+        fsa.generateFile(_plus_3, TicketsOutputConfigurationProvider.JSP_OUTPUT, _showJsp);
+        String _name_3 = category.getName();
+        String _lowerCase_2 = _name_3.toLowerCase();
+        String _plus_4 = (_lowerCase_2 + "/list.jsp");
+        CharSequence _listJsp = JspGenerator.toListJsp(category);
+        fsa.generateFile(_plus_4, TicketsOutputConfigurationProvider.JSP_OUTPUT, _listJsp);
       }
     }
     CharSequence _navigation = JspGenerator.toNavigation(categories);

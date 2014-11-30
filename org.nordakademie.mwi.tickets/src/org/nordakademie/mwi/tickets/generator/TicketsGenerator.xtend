@@ -29,6 +29,12 @@ class TicketsGenerator implements IGenerator {
 			// jsps
 			fsa.generateFile(category.name.toLowerCase + '/create.jsp', TicketsOutputConfigurationProvider.JSP_OUTPUT,
 				JspGenerator.toCreateJsp(category))
+
+			fsa.generateFile(category.name.toLowerCase + '/show.jsp', TicketsOutputConfigurationProvider.JSP_OUTPUT,
+				JspGenerator.toShowJsp(category))
+
+			fsa.generateFile(category.name.toLowerCase + '/list.jsp', TicketsOutputConfigurationProvider.JSP_OUTPUT,
+				JspGenerator.toListJsp(category))
 		}
 
 		fsa.generateFile('/navigation.jspf', TicketsOutputConfigurationProvider.JSP_OUTPUT,

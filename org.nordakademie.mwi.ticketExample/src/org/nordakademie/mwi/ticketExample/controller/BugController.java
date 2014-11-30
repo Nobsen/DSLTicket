@@ -51,4 +51,10 @@ public class BugController {
 		return "bug/list";
 	}
 	
+	@RequestMapping(value = "/bug/delete", method = RequestMethod.POST)
+	public String delete(Bug bug) {
+		bugDao.makeTransient(bug);
+		
+		return "redirect:list";
+	}
 }

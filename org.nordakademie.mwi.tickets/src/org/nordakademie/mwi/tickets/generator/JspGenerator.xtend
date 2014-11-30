@@ -12,25 +12,104 @@ class JspGenerator {
 			<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 			
 			<%@include file="../navigation.jspf"%>
-			
-			<h1>«category.description» create</h1>
-			
-			<c:url var="url" value="/«category.name.toLowerCase»/create" /> 
-			<form:form action="${url}" commandName="«category.name.toLowerCase»">
-			    <form:hidden path="id" />
-			
-			    <fieldset>
-			    «FOR field : category.ticketFields»
-				<div class="form-row">
-				          <label for="title">«field.field.label»:</label>
-				          <span class="input"><form:input path="«field.field.name»" /></span>
-				</div>   
-				«ENDFOR»
-				    <div class="form-buttons">
-				<div class="button"><input name="submit" type="submit" value="Save" /></div>
+			<div class="container">
+				<h1>«category.description» create</h1>
+				
+				<c:url var="url" value="/«category.name.toLowerCase»/create" /> 
+				<form:form action="${url}" commandName="«category.name.toLowerCase»" class="form-horizontal" role="form">
+				   «FOR field : category.ticketFields»
+				   	<div class="form-group">
+				   	    <label for="title" class="control-label col-sm-2">«field.field.label»:</label>
+				   	    <div class="col-sm-6">
+				   	        <form:input class="form-control" path="«field.field.name»" />
+				   	    </div>
+				   	</div>
+				   «ENDFOR»
+				   <div class="form-group"> 
+				       <div class="col-sm-offset-2 col-sm-10">
+				           <button type="submit" class="btn btn-default">Submit</button>
+				       </div>
 				    </div>
-				   </fieldset>
-			</form:form>
+				   </form:form>
+			</div>
+		'''
+	}
+
+	def static toShowJsp(TicketCategory category) {
+		'''
+			<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+			<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+			<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+			
+			<%@include file="../navigation.jspf"%>
+			<div class="container">
+				<h1>«category.description» show</h1>
+				
+				<div class="form-horizontal">
+				   «FOR field : category.ticketFields»
+				   	<div class="form-group">
+				   	    <label for="title" class="control-label col-sm-2">«field.field.label»:</label>
+				   	    <div class="col-sm-6">
+				   	        <span class="form-control" disabled="true">${«category.name».«field.field.name»}</span>
+				   	    </div>
+				   	</div>
+				   «ENDFOR»
+				   <div class="form-group"> 
+				       <div class="col-sm-offset-2 col-sm-10">
+				           <button type="submit" class="btn btn-default">Edit</button>
+				       </div>
+				       <c:url var="deleteUrl" value="/«category.name»/delete">
+				           <c:param name="id" value="${«category.name».id}" />
+				       </c:url>
+				       <form:form action="${deleteUrl}" class="col-sm-offset-2 col-sm-10">
+				           <button type="submit" class="btn btn-default">Delete</button>
+				       </form:form>
+				    </div>
+				   </div>
+			</div>
+		'''
+	}
+
+	def static toListJsp(TicketCategory category) {
+		'''
+			<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+			<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+			<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+			
+			<%@include file="../navigation.jspf"%>
+			<div class="container">
+				<h1>«category.description»</h1>
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>ID</th>
+							«FOR field : category.ticketFields»
+								<th>«field.field.label»</th>
+							«ENDFOR»
+							<th />
+						</tr>
+					</thead>
+				<c:forEach var="«category.name.toLowerCase»" items="${«category.name.toLowerCase»s}" varStatus="status">
+				    <tr>
+				        <c:url var="showUrl" value="/«category.name.toLowerCase»/show">
+				            <c:param name="id" value="${«category.name.toLowerCase».id}" />
+				        </c:url>
+						<td>${«category.name.toLowerCase».id}</td>
+						«FOR field : category.ticketFields»
+							<td>${«category.name.toLowerCase».«field.field.name»}</td>
+						«ENDFOR»
+						<td>
+						    <a href='<c:out value="${showUrl}"/>'>Show</a>
+						   </td>
+						  </tr>
+				</c:forEach>
+				</table>
+				
+				<c:url var="createUrl" value="/«category.name.toLowerCase»/create" />
+				<div>
+				    <a href='<c:out value="${createUrl}"/>'>Create</a>
+				</div>
+			</div>
 		'''
 	}
 
