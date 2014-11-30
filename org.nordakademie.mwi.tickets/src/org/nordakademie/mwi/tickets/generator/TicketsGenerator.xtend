@@ -23,8 +23,15 @@ class TicketsGenerator implements IGenerator {
 		for (TicketCategory category : categories) {
 
 			// domain objects
-			fsa.generateFile('org/nordakademie/mwi/ticketExample/domain/' + category.name.toFirstUpper + '.java',
+			fsa.generateFile('org/nordakademie/mwi/ticketSystem/domain/' + category.name.toFirstUpper + '.java',
 				DomainGenerator.toDomainObject(category))
+			
+			// DAO and DAO-Impl
+			fsa.generateFile('org/nordakademie/mwi/ticketSystem/dao/' + category.name.toFirstUpper + 'Dao.java',
+				DaoGenerator.toDao(category))
+
+			fsa.generateFile('org/nordakademie/mwi/ticketSystem/daoimpl/' + category.name.toFirstUpper + 'DaoImpl.java',
+				DaoGenerator.toDaoImpl(category))
 
 			// jsps
 			fsa.generateFile(category.name.toLowerCase + '/create.jsp', TicketsOutputConfigurationProvider.JSP_OUTPUT,
