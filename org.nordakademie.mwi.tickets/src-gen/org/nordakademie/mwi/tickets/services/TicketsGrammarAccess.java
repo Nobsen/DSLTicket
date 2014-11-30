@@ -574,7 +574,7 @@ public class TicketsGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cDecimalDecimalKeyword_5_0 = (Keyword)cDecimalEnumLiteralDeclaration_5.eContents().get(0);
 		
 		//// TODO genaues Mapping auf Java-Klassen
-		// enum FieldType:
+		//enum FieldType:
 		//	user | String | Date | dateTime | int | decimal;
 		public EnumRule getRule() { return rule; }
 
@@ -783,7 +783,7 @@ public class TicketsGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//// TODO genaues Mapping auf Java-Klassen
-	// enum FieldType:
+	//enum FieldType:
 	//	user | String | Date | dateTime | int | decimal;
 	public FieldTypeElements getFieldTypeAccess() {
 		return unknownRuleFieldType;

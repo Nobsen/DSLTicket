@@ -23,7 +23,7 @@ public class TicketsOutputConfigurationProvider implements
 
 	    OutputConfiguration jspOutput = new OutputConfiguration(JSP_OUTPUT);
 	    jspOutput.setDescription("jsp Output");
-	    jspOutput.setOutputDirectory("./WEB-INF/jsp");
+	    jspOutput.setOutputDirectory("./WebContent/WEB-INF/jsp");
 	    jspOutput.setOverrideExistingResources(true);
 	    jspOutput.setCreateOutputDirectory(true);
 	    jspOutput.setCleanUpDerivedResources(true);

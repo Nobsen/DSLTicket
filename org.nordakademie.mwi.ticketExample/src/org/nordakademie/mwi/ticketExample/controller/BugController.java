@@ -35,9 +35,9 @@ public class BugController {
 		Bug result = bugDao.makePersistent(bug);
 		
 		map.clear();
-		map.put("bug", result);
+		map.put("id", result.getId());
 		
-		return "bug/show";
+		return "redirect:show";
 	}
 
 	@RequestMapping(value = "/bug/show", method = RequestMethod.GET)

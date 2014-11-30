@@ -18,100 +18,21 @@ import org.nordakademie.mwi.tickets.TicketsOutputConfigurationProvider
 class TicketsGenerator implements IGenerator {
 
 	override void doGenerate(Resource resource, IFileSystemAccess fsa) {
-		for (TicketCategory category : resource.contents.filter(TicketSystem).head.categories) {
+		var categories = resource.contents.filter(TicketSystem).head.categories;
+
+		for (TicketCategory category : categories) {
+
+			// domain objects
 			fsa.generateFile('org/nordakademie/mwi/ticketExample/domain/' + category.name.toFirstUpper + '.java',
-				category.toDomainObject)
+				DomainGenerator.toDomainObject(category))
+
+			// jsps
 			fsa.generateFile(category.name.toLowerCase + '/create.jsp', TicketsOutputConfigurationProvider.JSP_OUTPUT,
-				category.toJsp)
+				JspGenerator.toCreateJsp(category))
 		}
-	}
 
-	def toDomainObject(TicketCategory category) {
-
-		//				      «FOR bookentries : entries»
-		//					«bookentries.toHtml»
-		//				«ENDFOR»
-		'''
-			package org.nordakademie.mwi.ticketExample.domain;
-			
-			import javax.persistence.Basic;
-			import javax.persistence.Entity;
-			
-			@Entity
-			public class «category.name.toFirstUpper» extends AbstractDomainObject {
-			
-				«FOR field : category.ticketFields»
-					@Basic(optional = «!field.mandatory»)
-					private «field.field.fieldType.toString» «field.field.name»;
-				«ENDFOR»
-			
-			    public «category.name.toFirstUpper» () {}
-			    
-			    «FOR field : category.ticketFields»
-			    	public «field.field.fieldType.toString» get«field.field.name.toFirstUpper»() {
-			    		return «field.field.name»;
-			    	}
-			    	
-			    	public void set«field.field.name.toFirstUpper»(«field.field.fieldType.toString» «field.field.name») {
-			    	 	this.«field.field.name» = «field.field.name»;
-			    	}
-				«ENDFOR»
-			
-				@Override
-				public boolean equals(Object obj) {
-					if (this == obj)
-						return true;
-					if (obj == null)
-						return false;
-					if (getClass() != obj.getClass())
-						return false;
-						
-					«category.name.toFirstUpper» other = («category.name.toFirstUpper») obj;
-					«FOR field : category.ticketFields»
-						if («field.field.name» == null) {
-						if (other.«field.field.name» != null)
-							return false;
-						} else if (!«field.field.name».equals(other.«field.field.name»))
-							return false;
-					«ENDFOR»
-					
-					return true;
-				}
-			
-			
-			}
-		'''
-
-	// TODO equals klappt nicht mit primitiven Typen, wie int
-	}
-
-	def toJsp(TicketCategory category) {
-		'''
-			<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-			<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-			<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-			
-			<%@include file="../navigation.jspf"%>
-			
-			<h1>«category.description» create</h1>
-			
-			<c:url var="url" value="/«category.name.toLowerCase»/create" /> 
-			<form:form action="${url}" commandName="«category.name.toLowerCase»">
-			    <form:hidden path="id" />
-			
-			    <fieldset>
-			    «FOR field : category.ticketFields»
-				<div class="form-row">
-				          <label for="title">«field.field.label»:</label>
-				          <span class="input"><form:input path="«field.field.name»" /></span>
-				</div>   
-				«ENDFOR»
-				    <div class="form-buttons">
-				<div class="button"><input name="submit" type="submit" value="Save" /></div>
-				    </div>
-			    </fieldset>
-			</form:form>
-		'''
+		fsa.generateFile('/navigation.jspf', TicketsOutputConfigurationProvider.JSP_OUTPUT,
+			JspGenerator.toNavigation(categories))
 	}
 
 }
