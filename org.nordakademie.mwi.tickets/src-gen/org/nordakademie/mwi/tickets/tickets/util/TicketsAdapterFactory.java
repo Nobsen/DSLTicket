@@ -13,7 +13,7 @@ import org.nordakademie.mwi.tickets.tickets.Field;
 import org.nordakademie.mwi.tickets.tickets.Flow;
 import org.nordakademie.mwi.tickets.tickets.Role;
 import org.nordakademie.mwi.tickets.tickets.RolePermission;
-import org.nordakademie.mwi.tickets.tickets.State;
+import org.nordakademie.mwi.tickets.tickets.Status;
 import org.nordakademie.mwi.tickets.tickets.TicketCategory;
 import org.nordakademie.mwi.tickets.tickets.TicketField;
 import org.nordakademie.mwi.tickets.tickets.TicketSystem;
@@ -88,9 +88,9 @@ public class TicketsAdapterFactory extends AdapterFactoryImpl
         return createTicketSystemAdapter();
       }
       @Override
-      public Adapter caseState(State object)
+      public Adapter caseStatus(Status object)
       {
-        return createStateAdapter();
+        return createStatusAdapter();
       }
       @Override
       public Adapter caseFlow(Flow object)
@@ -165,16 +165,16 @@ public class TicketsAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.nordakademie.mwi.tickets.tickets.State <em>State</em>}'.
+   * Creates a new adapter for an object of class '{@link org.nordakademie.mwi.tickets.tickets.Status <em>Status</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.nordakademie.mwi.tickets.tickets.State
+   * @see org.nordakademie.mwi.tickets.tickets.Status
    * @generated
    */
-  public Adapter createStateAdapter()
+  public Adapter createStatusAdapter()
   {
     return null;
   }

@@ -23,6 +23,7 @@ import org.nordakademie.mwi.tickets.tickets.TicketsPackage;
  * <ul>
  *   <li>{@link org.nordakademie.mwi.tickets.tickets.impl.TicketFieldImpl#getField <em>Field</em>}</li>
  *   <li>{@link org.nordakademie.mwi.tickets.tickets.impl.TicketFieldImpl#isMandatory <em>Mandatory</em>}</li>
+ *   <li>{@link org.nordakademie.mwi.tickets.tickets.impl.TicketFieldImpl#isNotOnList <em>Not On List</em>}</li>
  * </ul>
  * </p>
  *
@@ -59,6 +60,26 @@ public class TicketFieldImpl extends MinimalEObjectImpl.Container implements Tic
    * @ordered
    */
   protected boolean mandatory = MANDATORY_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isNotOnList() <em>Not On List</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isNotOnList()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean NOT_ON_LIST_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isNotOnList() <em>Not On List</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isNotOnList()
+   * @generated
+   * @ordered
+   */
+  protected boolean notOnList = NOT_ON_LIST_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -152,6 +173,29 @@ public class TicketFieldImpl extends MinimalEObjectImpl.Container implements Tic
    * <!-- end-user-doc -->
    * @generated
    */
+  public boolean isNotOnList()
+  {
+    return notOnList;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setNotOnList(boolean newNotOnList)
+  {
+    boolean oldNotOnList = notOnList;
+    notOnList = newNotOnList;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, TicketsPackage.TICKET_FIELD__NOT_ON_LIST, oldNotOnList, notOnList));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -162,6 +206,8 @@ public class TicketFieldImpl extends MinimalEObjectImpl.Container implements Tic
         return basicGetField();
       case TicketsPackage.TICKET_FIELD__MANDATORY:
         return isMandatory();
+      case TicketsPackage.TICKET_FIELD__NOT_ON_LIST:
+        return isNotOnList();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -181,6 +227,9 @@ public class TicketFieldImpl extends MinimalEObjectImpl.Container implements Tic
         return;
       case TicketsPackage.TICKET_FIELD__MANDATORY:
         setMandatory((Boolean)newValue);
+        return;
+      case TicketsPackage.TICKET_FIELD__NOT_ON_LIST:
+        setNotOnList((Boolean)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -202,6 +251,9 @@ public class TicketFieldImpl extends MinimalEObjectImpl.Container implements Tic
       case TicketsPackage.TICKET_FIELD__MANDATORY:
         setMandatory(MANDATORY_EDEFAULT);
         return;
+      case TicketsPackage.TICKET_FIELD__NOT_ON_LIST:
+        setNotOnList(NOT_ON_LIST_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -220,6 +272,8 @@ public class TicketFieldImpl extends MinimalEObjectImpl.Container implements Tic
         return field != null;
       case TicketsPackage.TICKET_FIELD__MANDATORY:
         return mandatory != MANDATORY_EDEFAULT;
+      case TicketsPackage.TICKET_FIELD__NOT_ON_LIST:
+        return notOnList != NOT_ON_LIST_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -237,6 +291,8 @@ public class TicketFieldImpl extends MinimalEObjectImpl.Container implements Tic
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (mandatory: ");
     result.append(mandatory);
+    result.append(", notOnList: ");
+    result.append(notOnList);
     result.append(')');
     return result.toString();
   }

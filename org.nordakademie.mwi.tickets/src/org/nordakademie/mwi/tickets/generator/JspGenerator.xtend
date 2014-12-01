@@ -25,6 +25,14 @@ class JspGenerator {
 				   	    </div>
 				   	</div>
 				   «ENDFOR»
+				   «IF category.flow != null»
+				    	<div class="form-group"> 
+				    		<label for="title" class="control-label col-sm-2">Aktueller Status:</label>
+				    		   <div class="col-sm-6">
+				    		 	<form:select class="form-control" path="currentFlowState" items="${states}" itemLabel="label" />
+				    		 </div
+				    	</div>
+				   «ENDIF»
 				   <div class="form-group"> 
 				       <div class="col-sm-offset-2 col-sm-10">
 				           <button type="submit" class="btn btn-default">Submit</button>
@@ -54,6 +62,14 @@ class JspGenerator {
 				   	    </div>
 				   	</div>
 				   «ENDFOR»
+				   «IF category.flow != null»
+				    	<div class="form-group"> 
+				    		<label for="title" class="control-label col-sm-2">Aktueller Status:</label>
+				    		   <div class="col-sm-6">
+				    		 	<form:select class="form-control" path="currentFlowState" items="${states}" itemLabel="label" disabled="true"/>
+				    		 </div
+				    	</div>
+				   «ENDIF»
 				   <div class="form-group"> 
 				       <div class="col-sm-offset-2 col-sm-10">
 				           <button type="submit" class="btn btn-default">Edit</button>
@@ -83,8 +99,13 @@ class JspGenerator {
 					<thead>
 						<tr>
 							<th>ID</th>
+							«IF category.flow != null»
+								<th>Status</th>
+							«ENDIF»
 							«FOR field : category.ticketFields»
-								<th>«field.field.label»</th>
+								«IF !field.notOnList»
+									<th>«field.field.label»</th>
+								«ENDIF»
 							«ENDFOR»
 							<th />
 						</tr>
@@ -95,8 +116,13 @@ class JspGenerator {
 				            <c:param name="id" value="${«category.name.toLowerCase».id}" />
 				        </c:url>
 						<td>${«category.name.toLowerCase».id}</td>
+						«IF category.flow != null»
+							<td>${«category.name.toLowerCase».currentFlowState}</td>
+						«ENDIF»
 						«FOR field : category.ticketFields»
-							<td>${«category.name.toLowerCase».«field.field.name»}</td>
+							«IF !field.notOnList»
+								<td>${«category.name.toLowerCase».«field.field.name»}</td>
+							«ENDIF»
 						«ENDFOR»
 						<td>
 						    <a href='<c:out value="${showUrl}"/>'>Show</a>

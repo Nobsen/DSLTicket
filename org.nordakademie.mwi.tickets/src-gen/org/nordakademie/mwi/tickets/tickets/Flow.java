@@ -53,7 +53,7 @@ public interface Flow extends EObject
 
   /**
    * Returns the value of the '<em><b>States</b></em>' reference list.
-   * The list contents are of type {@link org.nordakademie.mwi.tickets.tickets.State}.
+   * The list contents are of type {@link org.nordakademie.mwi.tickets.tickets.Status}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>States</em>' reference list isn't clear,
@@ -65,6 +65,6 @@ public interface Flow extends EObject
    * @model
    * @generated
    */
-  EList<State> getStates();
+  EList<Status> getStates();
 
 } // Flow

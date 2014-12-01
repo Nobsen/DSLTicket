@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 import org.nordakademie.mwi.tickets.tickets.Flow;
-import org.nordakademie.mwi.tickets.tickets.State;
+import org.nordakademie.mwi.tickets.tickets.Status;
 import org.nordakademie.mwi.tickets.tickets.TicketsPackage;
 
 /**
@@ -63,7 +63,7 @@ public class FlowImpl extends MinimalEObjectImpl.Container implements Flow
    * @generated
    * @ordered
    */
-  protected EList<State> states;
+  protected EList<Status> states;
 
   /**
    * <!-- begin-user-doc -->
@@ -114,11 +114,11 @@ public class FlowImpl extends MinimalEObjectImpl.Container implements Flow
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<State> getStates()
+  public EList<Status> getStates()
   {
     if (states == null)
     {
-      states = new EObjectResolvingEList<State>(State.class, this, TicketsPackage.FLOW__STATES);
+      states = new EObjectResolvingEList<Status>(Status.class, this, TicketsPackage.FLOW__STATES);
     }
     return states;
   }
@@ -157,7 +157,7 @@ public class FlowImpl extends MinimalEObjectImpl.Container implements Flow
         return;
       case TicketsPackage.FLOW__STATES:
         getStates().clear();
-        getStates().addAll((Collection<? extends State>)newValue);
+        getStates().addAll((Collection<? extends Status>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

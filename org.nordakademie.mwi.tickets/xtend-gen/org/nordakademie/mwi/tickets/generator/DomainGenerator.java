@@ -1,11 +1,13 @@
 package org.nordakademie.mwi.tickets.generator;
 
+import com.google.common.base.Objects;
 import java.util.HashSet;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.xbase.lib.StringExtensions;
 import org.nordakademie.mwi.tickets.tickets.Field;
 import org.nordakademie.mwi.tickets.tickets.FieldType;
+import org.nordakademie.mwi.tickets.tickets.Flow;
 import org.nordakademie.mwi.tickets.tickets.TicketCategory;
 import org.nordakademie.mwi.tickets.tickets.TicketField;
 
@@ -46,6 +48,19 @@ public class DomainGenerator {
           _builder.newLineIfNotEmpty();
         }
       }
+      {
+        Flow _flow = category.getFlow();
+        boolean _notEquals = (!Objects.equal(_flow, null));
+        if (_notEquals) {
+          _builder.append("import org.nordakademie.mwi.ticketSystem.flows.");
+          Flow _flow_1 = category.getFlow();
+          String _name = _flow_1.getName();
+          String _firstUpper = StringExtensions.toFirstUpper(_name);
+          _builder.append(_firstUpper, "");
+          _builder.append(";");
+          _builder.newLineIfNotEmpty();
+        }
+      }
       _builder.append("import javax.persistence.Basic;");
       _builder.newLine();
       _builder.append("import javax.persistence.Entity;");
@@ -54,11 +69,25 @@ public class DomainGenerator {
       _builder.append("@Entity");
       _builder.newLine();
       _builder.append("public class ");
-      String _name = category.getName();
-      String _firstUpper = StringExtensions.toFirstUpper(_name);
-      _builder.append(_firstUpper, "");
+      String _name_1 = category.getName();
+      String _firstUpper_1 = StringExtensions.toFirstUpper(_name_1);
+      _builder.append(_firstUpper_1, "");
       _builder.append(" extends AbstractDomainObject {");
       _builder.newLineIfNotEmpty();
+      _builder.newLine();
+      {
+        Flow _flow_2 = category.getFlow();
+        boolean _notEquals_1 = (!Objects.equal(_flow_2, null));
+        if (_notEquals_1) {
+          _builder.append("\t");
+          Flow _flow_3 = category.getFlow();
+          String _name_2 = _flow_3.getName();
+          String _firstUpper_2 = StringExtensions.toFirstUpper(_name_2);
+          _builder.append(_firstUpper_2, "\t");
+          _builder.append(" currentFlowState;");
+          _builder.newLineIfNotEmpty();
+        }
+      }
       _builder.newLine();
       {
         EList<TicketField> _ticketFields_1 = category.getTicketFields();
@@ -78,8 +107,8 @@ public class DomainGenerator {
           _builder.append(_javaTypeForFieldType, "\t");
           _builder.append(" ");
           Field _field_2 = field_1.getField();
-          String _name_1 = _field_2.getName();
-          _builder.append(_name_1, "\t");
+          String _name_3 = _field_2.getName();
+          _builder.append(_name_3, "\t");
           _builder.append(";");
           _builder.newLineIfNotEmpty();
         }
@@ -87,9 +116,9 @@ public class DomainGenerator {
       _builder.newLine();
       _builder.append("    ");
       _builder.append("public ");
-      String _name_2 = category.getName();
-      String _firstUpper_1 = StringExtensions.toFirstUpper(_name_2);
-      _builder.append(_firstUpper_1, "    ");
+      String _name_4 = category.getName();
+      String _firstUpper_3 = StringExtensions.toFirstUpper(_name_4);
+      _builder.append(_firstUpper_3, "    ");
       _builder.append(" () {}");
       _builder.newLineIfNotEmpty();
       _builder.append("    ");
@@ -105,17 +134,17 @@ public class DomainGenerator {
           _builder.append(_javaTypeForFieldType_1, "    ");
           _builder.append(" get");
           Field _field_4 = field_2.getField();
-          String _name_3 = _field_4.getName();
-          String _firstUpper_2 = StringExtensions.toFirstUpper(_name_3);
-          _builder.append(_firstUpper_2, "    ");
+          String _name_5 = _field_4.getName();
+          String _firstUpper_4 = StringExtensions.toFirstUpper(_name_5);
+          _builder.append(_firstUpper_4, "    ");
           _builder.append("() {");
           _builder.newLineIfNotEmpty();
           _builder.append("    ");
           _builder.append("\t");
           _builder.append("return ");
           Field _field_5 = field_2.getField();
-          String _name_4 = _field_5.getName();
-          _builder.append(_name_4, "    \t");
+          String _name_6 = _field_5.getName();
+          _builder.append(_name_6, "    \t");
           _builder.append(";");
           _builder.newLineIfNotEmpty();
           _builder.append("    ");
@@ -126,9 +155,9 @@ public class DomainGenerator {
           _builder.append("    ");
           _builder.append("public void set");
           Field _field_6 = field_2.getField();
-          String _name_5 = _field_6.getName();
-          String _firstUpper_3 = StringExtensions.toFirstUpper(_name_5);
-          _builder.append(_firstUpper_3, "    ");
+          String _name_7 = _field_6.getName();
+          String _firstUpper_5 = StringExtensions.toFirstUpper(_name_7);
+          _builder.append(_firstUpper_5, "    ");
           _builder.append("(");
           Field _field_7 = field_2.getField();
           FieldType _fieldType_3 = _field_7.getFieldType();
@@ -136,23 +165,62 @@ public class DomainGenerator {
           _builder.append(_javaTypeForFieldType_2, "    ");
           _builder.append(" ");
           Field _field_8 = field_2.getField();
-          String _name_6 = _field_8.getName();
-          _builder.append(_name_6, "    ");
+          String _name_8 = _field_8.getName();
+          _builder.append(_name_8, "    ");
           _builder.append(") {");
           _builder.newLineIfNotEmpty();
           _builder.append("    ");
           _builder.append(" \t");
           _builder.append("this.");
           Field _field_9 = field_2.getField();
-          String _name_7 = _field_9.getName();
-          _builder.append(_name_7, "     \t");
+          String _name_9 = _field_9.getName();
+          _builder.append(_name_9, "     \t");
           _builder.append(" = ");
           Field _field_10 = field_2.getField();
-          String _name_8 = _field_10.getName();
-          _builder.append(_name_8, "     \t");
+          String _name_10 = _field_10.getName();
+          _builder.append(_name_10, "     \t");
           _builder.append(";");
           _builder.newLineIfNotEmpty();
           _builder.append("    ");
+          _builder.append("}");
+          _builder.newLine();
+        }
+      }
+      _builder.newLine();
+      {
+        Flow _flow_4 = category.getFlow();
+        boolean _notEquals_2 = (!Objects.equal(_flow_4, null));
+        if (_notEquals_2) {
+          _builder.append("\t");
+          _builder.append("public ");
+          Flow _flow_5 = category.getFlow();
+          String _name_11 = _flow_5.getName();
+          String _firstUpper_6 = StringExtensions.toFirstUpper(_name_11);
+          _builder.append(_firstUpper_6, "\t");
+          _builder.append(" getCurrentFlowState() {");
+          _builder.newLineIfNotEmpty();
+          _builder.append("\t");
+          _builder.append("  \t\t");
+          _builder.append("return currentFlowState;");
+          _builder.newLine();
+          _builder.append("\t");
+          _builder.append("}");
+          _builder.newLine();
+          _builder.append("\t");
+          _builder.newLine();
+          _builder.append("\t");
+          _builder.append("public void setCurrentFlowState(");
+          Flow _flow_6 = category.getFlow();
+          String _name_12 = _flow_6.getName();
+          String _firstUpper_7 = StringExtensions.toFirstUpper(_name_12);
+          _builder.append(_firstUpper_7, "\t");
+          _builder.append(" currentFlowState) {");
+          _builder.newLineIfNotEmpty();
+          _builder.append("\t");
+          _builder.append(" \t");
+          _builder.append("this.currentFlowState = currentFlowState;");
+          _builder.newLine();
+          _builder.append("\t");
           _builder.append("}");
           _builder.newLine();
         }
@@ -185,13 +253,13 @@ public class DomainGenerator {
       _builder.append("\t\t\t");
       _builder.newLine();
       _builder.append("\t\t");
-      String _name_9 = category.getName();
-      String _firstUpper_4 = StringExtensions.toFirstUpper(_name_9);
-      _builder.append(_firstUpper_4, "\t\t");
+      String _name_13 = category.getName();
+      String _firstUpper_8 = StringExtensions.toFirstUpper(_name_13);
+      _builder.append(_firstUpper_8, "\t\t");
       _builder.append(" other = (");
-      String _name_10 = category.getName();
-      String _firstUpper_5 = StringExtensions.toFirstUpper(_name_10);
-      _builder.append(_firstUpper_5, "\t\t");
+      String _name_14 = category.getName();
+      String _firstUpper_9 = StringExtensions.toFirstUpper(_name_14);
+      _builder.append(_firstUpper_9, "\t\t");
       _builder.append(") obj;");
       _builder.newLineIfNotEmpty();
       {
@@ -200,15 +268,15 @@ public class DomainGenerator {
           _builder.append("\t\t");
           _builder.append("if (");
           Field _field_11 = field_3.getField();
-          String _name_11 = _field_11.getName();
-          _builder.append(_name_11, "\t\t");
+          String _name_15 = _field_11.getName();
+          _builder.append(_name_15, "\t\t");
           _builder.append(" == null) {");
           _builder.newLineIfNotEmpty();
           _builder.append("\t\t");
           _builder.append("if (other.");
           Field _field_12 = field_3.getField();
-          String _name_12 = _field_12.getName();
-          _builder.append(_name_12, "\t\t");
+          String _name_16 = _field_12.getName();
+          _builder.append(_name_16, "\t\t");
           _builder.append(" != null)");
           _builder.newLineIfNotEmpty();
           _builder.append("\t\t");
@@ -218,12 +286,12 @@ public class DomainGenerator {
           _builder.append("\t\t");
           _builder.append("} else if (!");
           Field _field_13 = field_3.getField();
-          String _name_13 = _field_13.getName();
-          _builder.append(_name_13, "\t\t");
+          String _name_17 = _field_13.getName();
+          _builder.append(_name_17, "\t\t");
           _builder.append(".equals(other.");
           Field _field_14 = field_3.getField();
-          String _name_14 = _field_14.getName();
-          _builder.append(_name_14, "\t\t");
+          String _name_18 = _field_14.getName();
+          _builder.append(_name_18, "\t\t");
           _builder.append("))");
           _builder.newLineIfNotEmpty();
           _builder.append("\t\t");

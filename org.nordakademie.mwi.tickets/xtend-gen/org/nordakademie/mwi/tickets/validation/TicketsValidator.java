@@ -3,6 +3,23 @@
  */
 package org.nordakademie.mwi.tickets.validation;
 
+import com.google.common.base.Objects;
+import com.google.inject.Inject;
+import java.util.HashSet;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.xtext.naming.IQualifiedNameProvider;
+import org.eclipse.xtext.validation.Check;
+import org.eclipse.xtext.xbase.lib.Conversions;
+import org.eclipse.xtext.xbase.lib.IterableExtensions;
+import org.nordakademie.mwi.tickets.tickets.Field;
+import org.nordakademie.mwi.tickets.tickets.Flow;
+import org.nordakademie.mwi.tickets.tickets.Permission;
+import org.nordakademie.mwi.tickets.tickets.Role;
+import org.nordakademie.mwi.tickets.tickets.RolePermission;
+import org.nordakademie.mwi.tickets.tickets.Status;
+import org.nordakademie.mwi.tickets.tickets.TicketCategory;
+import org.nordakademie.mwi.tickets.tickets.TicketField;
+import org.nordakademie.mwi.tickets.tickets.TicketsPackage;
 import org.nordakademie.mwi.tickets.validation.AbstractTicketsValidator;
 
 /**
@@ -12,4 +29,213 @@ import org.nordakademie.mwi.tickets.validation.AbstractTicketsValidator;
  */
 @SuppressWarnings("all")
 public class TicketsValidator extends AbstractTicketsValidator {
+  public final static String INVALID_NAME = "invalidName";
+  
+  public final static String INVALID_FIELD = "invalidField";
+  
+  public final static String INVALID_NO_OF_STATUS = "invalidNoOfStatus";
+  
+  public final static String INVALID_PERMISSION = "invalidPermission";
+  
+  @Inject
+  private IQualifiedNameProvider qualifiedNameProvider;
+  
+  @Check
+  public void checkFieldNameNotEmpty(final Field field) {
+    boolean _or = false;
+    String _label = field.getLabel();
+    boolean _equals = Objects.equal(_label, null);
+    if (_equals) {
+      _or = true;
+    } else {
+      String _label_1 = field.getLabel();
+      String _trim = _label_1.trim();
+      boolean _isEmpty = _trim.isEmpty();
+      _or = _isEmpty;
+    }
+    if (_or) {
+      this.error("Label must not be empty", TicketsPackage.Literals.FIELD__LABEL, TicketsValidator.INVALID_NAME);
+    }
+  }
+  
+  @Check
+  public void checkStateNameNotEmpty(final Status status) {
+    boolean _or = false;
+    String _description = status.getDescription();
+    boolean _equals = Objects.equal(_description, null);
+    if (_equals) {
+      _or = true;
+    } else {
+      String _description_1 = status.getDescription();
+      String _trim = _description_1.trim();
+      boolean _isEmpty = _trim.isEmpty();
+      _or = _isEmpty;
+    }
+    if (_or) {
+      this.error("Description must not be empty", TicketsPackage.Literals.STATUS__DESCRIPTION, TicketsValidator.INVALID_NAME);
+    }
+  }
+  
+  @Check
+  public void checkTicketCategoryNameNotEmpty(final TicketCategory ticketCategory) {
+    boolean _or = false;
+    String _description = ticketCategory.getDescription();
+    boolean _equals = Objects.equal(_description, null);
+    if (_equals) {
+      _or = true;
+    } else {
+      String _description_1 = ticketCategory.getDescription();
+      String _trim = _description_1.trim();
+      boolean _isEmpty = _trim.isEmpty();
+      _or = _isEmpty;
+    }
+    if (_or) {
+      this.error("Description must not be empty", TicketsPackage.Literals.TICKET_CATEGORY__DESCRIPTION, TicketsValidator.INVALID_NAME);
+    }
+  }
+  
+  @Check
+  public void checkRoleNameNotEmpty(final Role role) {
+    boolean _or = false;
+    String _description = role.getDescription();
+    boolean _equals = Objects.equal(_description, null);
+    if (_equals) {
+      _or = true;
+    } else {
+      String _description_1 = role.getDescription();
+      String _trim = _description_1.trim();
+      boolean _isEmpty = _trim.isEmpty();
+      _or = _isEmpty;
+    }
+    if (_or) {
+      this.error("Description must not be empty", TicketsPackage.Literals.ROLE__DESCRIPTION, TicketsValidator.INVALID_NAME);
+    }
+  }
+  
+  @Check
+  public void samesFieldsInCategroy(final TicketCategory ticketCategory) {
+    final HashSet<String> fields = new HashSet<String>();
+    final HashSet<String> dublicates = new HashSet<String>();
+    EList<TicketField> _ticketFields = ticketCategory.getTicketFields();
+    for (final TicketField field : _ticketFields) {
+      Field _field = field.getField();
+      String _name = _field.getName();
+      boolean _add = fields.add(_name);
+      boolean _not = (!_add);
+      if (_not) {
+        Field _field_1 = field.getField();
+        String _name_1 = _field_1.getName();
+        dublicates.add(_name_1);
+      }
+    }
+    boolean _isEmpty = dublicates.isEmpty();
+    boolean _not_1 = (!_isEmpty);
+    if (_not_1) {
+      String _join = IterableExtensions.join(dublicates, ", ");
+      String _plus = ("The ticketCategory contains duplicate entries in fields: " + _join);
+      this.error(_plus, 
+        TicketsPackage.Literals.TICKET_CATEGORY__NAME, TicketsValidator.INVALID_FIELD);
+    }
+  }
+  
+  @Check
+  public void sameStatesInFlow(final Flow flow) {
+    final HashSet<String> fields = new HashSet<String>();
+    final HashSet<String> dublicates = new HashSet<String>();
+    EList<Status> _states = flow.getStates();
+    for (final Status status : _states) {
+      String _name = status.getName();
+      boolean _add = fields.add(_name);
+      boolean _not = (!_add);
+      if (_not) {
+        String _name_1 = status.getName();
+        dublicates.add(_name_1);
+      }
+    }
+    boolean _isEmpty = dublicates.isEmpty();
+    boolean _not_1 = (!_isEmpty);
+    if (_not_1) {
+      String _join = IterableExtensions.join(dublicates, ", ");
+      String _plus = ("The flow contains duplicate entries in states: " + _join);
+      this.error(_plus, 
+        TicketsPackage.Literals.FLOW__NAME, TicketsValidator.INVALID_FIELD);
+    }
+  }
+  
+  @Check
+  public void samePermissionInField(final RolePermission rolePermission) {
+    final HashSet<String> permissions = new HashSet<String>();
+    final HashSet<String> dublicates = new HashSet<String>();
+    EList<Permission> _permissions = rolePermission.getPermissions();
+    for (final Permission fieldPermission : _permissions) {
+      String _string = fieldPermission.toString();
+      boolean _add = permissions.add(_string);
+      boolean _not = (!_add);
+      if (_not) {
+        String _string_1 = fieldPermission.toString();
+        dublicates.add(_string_1);
+      }
+    }
+    boolean _isEmpty = dublicates.isEmpty();
+    boolean _not_1 = (!_isEmpty);
+    if (_not_1) {
+      String _join = IterableExtensions.join(dublicates, ", ");
+      String _plus = ("The Field contains duplicate entries in permissions: " + _join);
+      this.error(_plus, 
+        TicketsPackage.Literals.ROLE_PERMISSION__FIELD, TicketsValidator.INVALID_PERMISSION);
+    }
+  }
+  
+  @Check
+  public void sameFieldsInRole(final Role role) {
+    final HashSet<String> fields = new HashSet<String>();
+    final HashSet<String> dublicates = new HashSet<String>();
+    EList<RolePermission> _rolepermissions = role.getRolepermissions();
+    for (final RolePermission rolePermission : _rolepermissions) {
+      Field _field = rolePermission.getField();
+      String _name = _field.getName();
+      boolean _add = fields.add(_name);
+      boolean _not = (!_add);
+      if (_not) {
+        Field _field_1 = rolePermission.getField();
+        String _name_1 = _field_1.getName();
+        dublicates.add(_name_1);
+      }
+    }
+    boolean _isEmpty = dublicates.isEmpty();
+    boolean _not_1 = (!_isEmpty);
+    if (_not_1) {
+      String _join = IterableExtensions.join(dublicates, ", ");
+      String _plus = ("The Role contains duplicate entries in Fields: " + _join);
+      this.error(_plus, 
+        TicketsPackage.Literals.ROLE__NAME, TicketsValidator.INVALID_PERMISSION);
+    }
+  }
+  
+  @Check
+  public void checkMoreThanOneStatusInFlow(final Flow flow) {
+    EList<Status> _states = flow.getStates();
+    int _length = ((Object[])Conversions.unwrapArray(_states, Object.class)).length;
+    boolean _lessThan = (_length < 2);
+    if (_lessThan) {
+      this.error("There must be at least 2 Status in the flow", TicketsPackage.Literals.FLOW__NAME, 
+        TicketsValidator.INVALID_NO_OF_STATUS);
+    }
+  }
+  
+  @Check
+  public void checkAtleastOneFieldOnList(final TicketCategory ticketCategory) {
+    boolean oneOnList = false;
+    EList<TicketField> _ticketFields = ticketCategory.getTicketFields();
+    for (final TicketField field : _ticketFields) {
+      boolean _isNotOnList = field.isNotOnList();
+      boolean _not = (!_isNotOnList);
+      if (_not) {
+        oneOnList = true;
+      }
+    }
+    if ((!oneOnList)) {
+      this.warning("At least one field should be displayed on the list view", TicketsPackage.Literals.TICKET_CATEGORY__NAME);
+    }
+  }
 }

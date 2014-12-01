@@ -3,14 +3,14 @@ grammar org.nordakademie.mwi.tickets.Tickets with org.eclipse.xtext.common.Termi
 generate tickets "http://www.nordakademie.org/mwi/tickets/Tickets"
 
 TicketSystem:
-	(states+=State | flows+=Flow | fields+=Field | categories+=TicketCategory | roles+=Role)*;
+	(states+=Status | flows+=Flow | fields+=Field | categories+=TicketCategory | roles+=Role)*;
 
-State:
-	'state' name=QualifiedName description=STRING ';';
+Status:
+	'status' name=QualifiedName description=STRING ';';
 
 Flow:
 	'flow' name=QualifiedName '{'
-	states+=[State|QualifiedName] (',' states+=[State|QualifiedName])* ';'
+	(states+=[Status|QualifiedName] ';')* 
 	'}';
 
 Field:
@@ -21,14 +21,14 @@ Enum:
 
 TicketCategory:
 	'ticketCategory' name=QualifiedName description=STRING '{'
-		flow=[Flow|QualifiedName] ';'
+		(flow=[Flow|QualifiedName] ';')?
 		'fields {'
 			(ticketFields+=TicketField ';')*
 		'}'
 	'}';
 
 TicketField:
-	field=[Field|QualifiedName] (mandatory?='mandatory')?;
+	field=[Field|QualifiedName] (mandatory?='mandatory')? (notOnList?='notOnList')?;
 
 Role:
 	'role' name=QualifiedName description=STRING '{'
@@ -41,7 +41,7 @@ RolePermission:
 enum Permission:
 	create | read | modify | delete;
 
-// TODO genaues Mapping auf Java-Klassen
+// TODO user
 enum FieldType:
 	user | String | Date | dateTime | int | decimal;
 

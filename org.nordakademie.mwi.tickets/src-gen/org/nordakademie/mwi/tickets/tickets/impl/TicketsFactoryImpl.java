@@ -17,7 +17,7 @@ import org.nordakademie.mwi.tickets.tickets.Flow;
 import org.nordakademie.mwi.tickets.tickets.Permission;
 import org.nordakademie.mwi.tickets.tickets.Role;
 import org.nordakademie.mwi.tickets.tickets.RolePermission;
-import org.nordakademie.mwi.tickets.tickets.State;
+import org.nordakademie.mwi.tickets.tickets.Status;
 import org.nordakademie.mwi.tickets.tickets.TicketCategory;
 import org.nordakademie.mwi.tickets.tickets.TicketField;
 import org.nordakademie.mwi.tickets.tickets.TicketSystem;
@@ -77,7 +77,7 @@ public class TicketsFactoryImpl extends EFactoryImpl implements TicketsFactory
     switch (eClass.getClassifierID())
     {
       case TicketsPackage.TICKET_SYSTEM: return createTicketSystem();
-      case TicketsPackage.STATE: return createState();
+      case TicketsPackage.STATUS: return createStatus();
       case TicketsPackage.FLOW: return createFlow();
       case TicketsPackage.FIELD: return createField();
       case TicketsPackage.ENUM: return createEnum();
@@ -144,10 +144,10 @@ public class TicketsFactoryImpl extends EFactoryImpl implements TicketsFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public State createState()
+  public Status createStatus()
   {
-    StateImpl state = new StateImpl();
-    return state;
+    StatusImpl status = new StatusImpl();
+    return status;
   }
 
   /**

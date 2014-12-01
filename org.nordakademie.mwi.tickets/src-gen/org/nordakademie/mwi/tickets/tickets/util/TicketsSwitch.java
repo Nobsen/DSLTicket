@@ -11,7 +11,7 @@ import org.nordakademie.mwi.tickets.tickets.Field;
 import org.nordakademie.mwi.tickets.tickets.Flow;
 import org.nordakademie.mwi.tickets.tickets.Role;
 import org.nordakademie.mwi.tickets.tickets.RolePermission;
-import org.nordakademie.mwi.tickets.tickets.State;
+import org.nordakademie.mwi.tickets.tickets.Status;
 import org.nordakademie.mwi.tickets.tickets.TicketCategory;
 import org.nordakademie.mwi.tickets.tickets.TicketField;
 import org.nordakademie.mwi.tickets.tickets.TicketSystem;
@@ -87,10 +87,10 @@ public class TicketsSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case TicketsPackage.STATE:
+      case TicketsPackage.STATUS:
       {
-        State state = (State)theEObject;
-        T result = caseState(state);
+        Status status = (Status)theEObject;
+        T result = caseStatus(status);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -164,17 +164,17 @@ public class TicketsSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>State</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Status</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>State</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Status</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseState(State object)
+  public T caseStatus(Status object)
   {
     return null;
   }

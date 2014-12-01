@@ -4,11 +4,12 @@
 package org.nordakademie.mwi.tickets.generator
 
 import org.eclipse.emf.ecore.resource.Resource
-import org.eclipse.xtext.generator.IGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess
+import org.eclipse.xtext.generator.IGenerator
+import org.nordakademie.mwi.tickets.TicketsOutputConfigurationProvider
+import org.nordakademie.mwi.tickets.tickets.Flow
 import org.nordakademie.mwi.tickets.tickets.TicketCategory
 import org.nordakademie.mwi.tickets.tickets.TicketSystem
-import org.nordakademie.mwi.tickets.TicketsOutputConfigurationProvider
 
 /**
  * Generates code from your model files on save.
@@ -25,7 +26,7 @@ class TicketsGenerator implements IGenerator {
 			// domain objects
 			fsa.generateFile('org/nordakademie/mwi/ticketSystem/domain/' + category.name.toFirstUpper + '.java',
 				DomainGenerator.toDomainObject(category))
-			
+
 			// DAO and DAO-Impl
 			fsa.generateFile('org/nordakademie/mwi/ticketSystem/dao/' + category.name.toFirstUpper + 'Dao.java',
 				DaoGenerator.toDao(category))
@@ -42,6 +43,13 @@ class TicketsGenerator implements IGenerator {
 
 			fsa.generateFile(category.name.toLowerCase + '/list.jsp', TicketsOutputConfigurationProvider.JSP_OUTPUT,
 				JspGenerator.toListJsp(category))
+		}
+
+		var flows = resource.contents.filter(TicketSystem).head.flows;
+
+		for (Flow flow : flows) {
+			fsa.generateFile('org/nordakademie/mwi/ticketSystem/flows/' + flow.name.toFirstUpper + '.java',
+				FlowGenerator.toFlowEnum(flow))
 		}
 
 		fsa.generateFile('/navigation.jspf', TicketsOutputConfigurationProvider.JSP_OUTPUT,

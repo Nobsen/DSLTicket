@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link org.nordakademie.mwi.tickets.tickets.TicketField#getField <em>Field</em>}</li>
  *   <li>{@link org.nordakademie.mwi.tickets.tickets.TicketField#isMandatory <em>Mandatory</em>}</li>
+ *   <li>{@link org.nordakademie.mwi.tickets.tickets.TicketField#isNotOnList <em>Not On List</em>}</li>
  * </ul>
  * </p>
  *
@@ -74,5 +75,31 @@ public interface TicketField extends EObject
    * @generated
    */
   void setMandatory(boolean value);
+
+  /**
+   * Returns the value of the '<em><b>Not On List</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Not On List</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Not On List</em>' attribute.
+   * @see #setNotOnList(boolean)
+   * @see org.nordakademie.mwi.tickets.tickets.TicketsPackage#getTicketField_NotOnList()
+   * @model
+   * @generated
+   */
+  boolean isNotOnList();
+
+  /**
+   * Sets the value of the '{@link org.nordakademie.mwi.tickets.tickets.TicketField#isNotOnList <em>Not On List</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Not On List</em>' attribute.
+   * @see #isNotOnList()
+   * @generated
+   */
+  void setNotOnList(boolean value);
 
 } // TicketField

@@ -5,32 +5,40 @@ import org.nordakademie.mwi.tickets.tickets.TicketCategory
 import org.nordakademie.mwi.tickets.tickets.FieldType
 
 class DomainGenerator {
-	
-		def static toDomainObject(TicketCategory category) {
 
-			var imports = new HashSet<String>();
-			
-			for (field : category.ticketFields) {
-				switch(field.field.fieldType) {
-					case DATE:
-						imports.add("java.util.Calendar")
-					case DATE_TIME:
-						imports.add("java.util.Calendar")
-					default: {}
+	def static toDomainObject(TicketCategory category) {
+
+		var imports = new HashSet<String>();
+
+		for (field : category.ticketFields) {
+			switch (field.field.fieldType) {
+				case DATE:
+					imports.add("java.util.Calendar")
+				case DATE_TIME:
+					imports.add("java.util.Calendar")
+				default: {
 				}
 			}
+		}
 
 		'''
 			package org.nordakademie.mwi.ticketSystem.domain;
-
+			
 			«FOR toImport : imports»
-			import «toImport.toString»;
+				import «toImport.toString»;
 			«ENDFOR»
+			«IF category.flow != null»
+				import org.nordakademie.mwi.ticketSystem.flows.«category.flow.name.toFirstUpper»;
+			«ENDIF»
 			import javax.persistence.Basic;
 			import javax.persistence.Entity;
 			
 			@Entity
 			public class «category.name.toFirstUpper» extends AbstractDomainObject {
+			
+				«IF category.flow != null»
+					«category.flow.name.toFirstUpper» currentFlowState;
+				«ENDIF»
 			
 				«FOR field : category.ticketFields»
 					@Basic(optional = «!field.mandatory»)
@@ -48,6 +56,16 @@ class DomainGenerator {
 			    	 	this.«field.field.name» = «field.field.name»;
 			    	}
 				«ENDFOR»
+			
+				«IF category.flow != null»
+					public «category.flow.name.toFirstUpper» getCurrentFlowState() {
+					  		return currentFlowState;
+					}
+					
+					public void setCurrentFlowState(«category.flow.name.toFirstUpper» currentFlowState) {
+					 	this.currentFlowState = currentFlowState;
+					}
+				«ENDIF»
 			
 				@Override
 				public boolean equals(Object obj) {
@@ -75,7 +93,7 @@ class DomainGenerator {
 		'''
 
 	}
-	
+
 	def static getJavaTypeForFieldType(FieldType type) {
 		switch (type) {
 			case DATE: "Calendar"

@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import org.nordakademie.mwi.tickets.tickets.Field;
 import org.nordakademie.mwi.tickets.tickets.Flow;
 import org.nordakademie.mwi.tickets.tickets.Role;
-import org.nordakademie.mwi.tickets.tickets.State;
+import org.nordakademie.mwi.tickets.tickets.Status;
 import org.nordakademie.mwi.tickets.tickets.TicketCategory;
 import org.nordakademie.mwi.tickets.tickets.TicketSystem;
 import org.nordakademie.mwi.tickets.tickets.TicketsPackage;
@@ -51,7 +51,7 @@ public class TicketSystemImpl extends MinimalEObjectImpl.Container implements Ti
    * @generated
    * @ordered
    */
-  protected EList<State> states;
+  protected EList<Status> states;
 
   /**
    * The cached value of the '{@link #getFlows() <em>Flows</em>}' containment reference list.
@@ -119,11 +119,11 @@ public class TicketSystemImpl extends MinimalEObjectImpl.Container implements Ti
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<State> getStates()
+  public EList<Status> getStates()
   {
     if (states == null)
     {
-      states = new EObjectContainmentEList<State>(State.class, this, TicketsPackage.TICKET_SYSTEM__STATES);
+      states = new EObjectContainmentEList<Status>(Status.class, this, TicketsPackage.TICKET_SYSTEM__STATES);
     }
     return states;
   }
@@ -245,7 +245,7 @@ public class TicketSystemImpl extends MinimalEObjectImpl.Container implements Ti
     {
       case TicketsPackage.TICKET_SYSTEM__STATES:
         getStates().clear();
-        getStates().addAll((Collection<? extends State>)newValue);
+        getStates().addAll((Collection<? extends Status>)newValue);
         return;
       case TicketsPackage.TICKET_SYSTEM__FLOWS:
         getFlows().clear();

@@ -9,24 +9,24 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.nordakademie.mwi.tickets.tickets.State;
+import org.nordakademie.mwi.tickets.tickets.Status;
 import org.nordakademie.mwi.tickets.tickets.TicketsPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>State</b></em>'.
+ * An implementation of the model object '<em><b>Status</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.nordakademie.mwi.tickets.tickets.impl.StateImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.nordakademie.mwi.tickets.tickets.impl.StateImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.nordakademie.mwi.tickets.tickets.impl.StatusImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.nordakademie.mwi.tickets.tickets.impl.StatusImpl#getDescription <em>Description</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class StateImpl extends MinimalEObjectImpl.Container implements State
+public class StatusImpl extends MinimalEObjectImpl.Container implements Status
 {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -73,7 +73,7 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State
    * <!-- end-user-doc -->
    * @generated
    */
-  protected StateImpl()
+  protected StatusImpl()
   {
     super();
   }
@@ -86,7 +86,7 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State
   @Override
   protected EClass eStaticClass()
   {
-    return TicketsPackage.Literals.STATE;
+    return TicketsPackage.Literals.STATUS;
   }
 
   /**
@@ -109,7 +109,7 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State
     String oldName = name;
     name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, TicketsPackage.STATE__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, TicketsPackage.STATUS__NAME, oldName, name));
   }
 
   /**
@@ -132,7 +132,7 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State
     String oldDescription = description;
     description = newDescription;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, TicketsPackage.STATE__DESCRIPTION, oldDescription, description));
+      eNotify(new ENotificationImpl(this, Notification.SET, TicketsPackage.STATUS__DESCRIPTION, oldDescription, description));
   }
 
   /**
@@ -145,9 +145,9 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State
   {
     switch (featureID)
     {
-      case TicketsPackage.STATE__NAME:
+      case TicketsPackage.STATUS__NAME:
         return getName();
-      case TicketsPackage.STATE__DESCRIPTION:
+      case TicketsPackage.STATUS__DESCRIPTION:
         return getDescription();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -163,10 +163,10 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State
   {
     switch (featureID)
     {
-      case TicketsPackage.STATE__NAME:
+      case TicketsPackage.STATUS__NAME:
         setName((String)newValue);
         return;
-      case TicketsPackage.STATE__DESCRIPTION:
+      case TicketsPackage.STATUS__DESCRIPTION:
         setDescription((String)newValue);
         return;
     }
@@ -183,10 +183,10 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State
   {
     switch (featureID)
     {
-      case TicketsPackage.STATE__NAME:
+      case TicketsPackage.STATUS__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case TicketsPackage.STATE__DESCRIPTION:
+      case TicketsPackage.STATUS__DESCRIPTION:
         setDescription(DESCRIPTION_EDEFAULT);
         return;
     }
@@ -203,9 +203,9 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State
   {
     switch (featureID)
     {
-      case TicketsPackage.STATE__NAME:
+      case TicketsPackage.STATUS__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case TicketsPackage.STATE__DESCRIPTION:
+      case TicketsPackage.STATUS__DESCRIPTION:
         return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
     }
     return super.eIsSet(featureID);
@@ -230,4 +230,4 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State
     return result.toString();
   }
 
-} //StateImpl
+} //StatusImpl

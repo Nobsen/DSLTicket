@@ -18,7 +18,7 @@ import org.nordakademie.mwi.tickets.tickets.Field;
 import org.nordakademie.mwi.tickets.tickets.Flow;
 import org.nordakademie.mwi.tickets.tickets.Role;
 import org.nordakademie.mwi.tickets.tickets.RolePermission;
-import org.nordakademie.mwi.tickets.tickets.State;
+import org.nordakademie.mwi.tickets.tickets.Status;
 import org.nordakademie.mwi.tickets.tickets.TicketCategory;
 import org.nordakademie.mwi.tickets.tickets.TicketField;
 import org.nordakademie.mwi.tickets.tickets.TicketSystem;
@@ -62,9 +62,9 @@ public class TicketsSemanticSequencer extends AbstractDelegatingSemanticSequence
 					return; 
 				}
 				else break;
-			case TicketsPackage.STATE:
-				if(context == grammarAccess.getStateRule()) {
-					sequence_State(context, (State) semanticObject); 
+			case TicketsPackage.STATUS:
+				if(context == grammarAccess.getStatusRule()) {
+					sequence_Status(context, (Status) semanticObject); 
 					return; 
 				}
 				else break;
@@ -110,7 +110,7 @@ public class TicketsSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Constraint:
-	 *     (name=QualifiedName states+=[State|QualifiedName] states+=[State|QualifiedName]*)
+	 *     (name=QualifiedName states+=[Status|QualifiedName]*)
 	 */
 	protected void sequence_Flow(EObject context, Flow semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -139,24 +139,24 @@ public class TicketsSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 * Constraint:
 	 *     (name=QualifiedName description=STRING)
 	 */
-	protected void sequence_State(EObject context, State semanticObject) {
+	protected void sequence_Status(EObject context, Status semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, TicketsPackage.Literals.STATE__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TicketsPackage.Literals.STATE__NAME));
-			if(transientValues.isValueTransient(semanticObject, TicketsPackage.Literals.STATE__DESCRIPTION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TicketsPackage.Literals.STATE__DESCRIPTION));
+			if(transientValues.isValueTransient(semanticObject, TicketsPackage.Literals.STATUS__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TicketsPackage.Literals.STATUS__NAME));
+			if(transientValues.isValueTransient(semanticObject, TicketsPackage.Literals.STATUS__DESCRIPTION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TicketsPackage.Literals.STATUS__DESCRIPTION));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getStateAccess().getNameQualifiedNameParserRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getStateAccess().getDescriptionSTRINGTerminalRuleCall_2_0(), semanticObject.getDescription());
+		feeder.accept(grammarAccess.getStatusAccess().getNameQualifiedNameParserRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getStatusAccess().getDescriptionSTRINGTerminalRuleCall_2_0(), semanticObject.getDescription());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (name=QualifiedName description=STRING flow=[Flow|QualifiedName] ticketFields+=TicketField*)
+	 *     (name=QualifiedName description=STRING flow=[Flow|QualifiedName]? ticketFields+=TicketField*)
 	 */
 	protected void sequence_TicketCategory(EObject context, TicketCategory semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -165,7 +165,7 @@ public class TicketsSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Constraint:
-	 *     (field=[Field|QualifiedName] mandatory?='mandatory'?)
+	 *     (field=[Field|QualifiedName] mandatory?='mandatory'? notOnList?='notOnList'?)
 	 */
 	protected void sequence_TicketField(EObject context, TicketField semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -174,7 +174,7 @@ public class TicketsSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Constraint:
-	 *     (states+=State | flows+=Flow | fields+=Field | categories+=TicketCategory | roles+=Role)*
+	 *     (states+=Status | flows+=Flow | fields+=Field | categories+=TicketCategory | roles+=Role)*
 	 */
 	protected void sequence_TicketSystem(EObject context, TicketSystem semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

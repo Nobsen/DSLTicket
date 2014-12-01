@@ -16,7 +16,7 @@ import org.nordakademie.mwi.tickets.tickets.Flow;
 import org.nordakademie.mwi.tickets.tickets.Permission;
 import org.nordakademie.mwi.tickets.tickets.Role;
 import org.nordakademie.mwi.tickets.tickets.RolePermission;
-import org.nordakademie.mwi.tickets.tickets.State;
+import org.nordakademie.mwi.tickets.tickets.Status;
 import org.nordakademie.mwi.tickets.tickets.TicketCategory;
 import org.nordakademie.mwi.tickets.tickets.TicketField;
 import org.nordakademie.mwi.tickets.tickets.TicketSystem;
@@ -43,7 +43,7 @@ public class TicketsPackageImpl extends EPackageImpl implements TicketsPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass stateEClass = null;
+  private EClass statusEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -236,9 +236,9 @@ public class TicketsPackageImpl extends EPackageImpl implements TicketsPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getState()
+  public EClass getStatus()
   {
-    return stateEClass;
+    return statusEClass;
   }
 
   /**
@@ -246,9 +246,9 @@ public class TicketsPackageImpl extends EPackageImpl implements TicketsPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getState_Name()
+  public EAttribute getStatus_Name()
   {
-    return (EAttribute)stateEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)statusEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -256,9 +256,9 @@ public class TicketsPackageImpl extends EPackageImpl implements TicketsPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getState_Description()
+  public EAttribute getStatus_Description()
   {
-    return (EAttribute)stateEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)statusEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -446,6 +446,16 @@ public class TicketsPackageImpl extends EPackageImpl implements TicketsPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getTicketField_NotOnList()
+  {
+    return (EAttribute)ticketFieldEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getRole()
   {
     return roleEClass;
@@ -568,9 +578,9 @@ public class TicketsPackageImpl extends EPackageImpl implements TicketsPackage
     createEReference(ticketSystemEClass, TICKET_SYSTEM__CATEGORIES);
     createEReference(ticketSystemEClass, TICKET_SYSTEM__ROLES);
 
-    stateEClass = createEClass(STATE);
-    createEAttribute(stateEClass, STATE__NAME);
-    createEAttribute(stateEClass, STATE__DESCRIPTION);
+    statusEClass = createEClass(STATUS);
+    createEAttribute(statusEClass, STATUS__NAME);
+    createEAttribute(statusEClass, STATUS__DESCRIPTION);
 
     flowEClass = createEClass(FLOW);
     createEAttribute(flowEClass, FLOW__NAME);
@@ -594,6 +604,7 @@ public class TicketsPackageImpl extends EPackageImpl implements TicketsPackage
     ticketFieldEClass = createEClass(TICKET_FIELD);
     createEReference(ticketFieldEClass, TICKET_FIELD__FIELD);
     createEAttribute(ticketFieldEClass, TICKET_FIELD__MANDATORY);
+    createEAttribute(ticketFieldEClass, TICKET_FIELD__NOT_ON_LIST);
 
     roleEClass = createEClass(ROLE);
     createEAttribute(roleEClass, ROLE__NAME);
@@ -641,19 +652,19 @@ public class TicketsPackageImpl extends EPackageImpl implements TicketsPackage
 
     // Initialize classes and features; add operations and parameters
     initEClass(ticketSystemEClass, TicketSystem.class, "TicketSystem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getTicketSystem_States(), this.getState(), null, "states", null, 0, -1, TicketSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTicketSystem_States(), this.getStatus(), null, "states", null, 0, -1, TicketSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getTicketSystem_Flows(), this.getFlow(), null, "flows", null, 0, -1, TicketSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getTicketSystem_Fields(), this.getField(), null, "fields", null, 0, -1, TicketSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getTicketSystem_Categories(), this.getTicketCategory(), null, "categories", null, 0, -1, TicketSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getTicketSystem_Roles(), this.getRole(), null, "roles", null, 0, -1, TicketSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(stateEClass, State.class, "State", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getState_Name(), ecorePackage.getEString(), "name", null, 0, 1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getState_Description(), ecorePackage.getEString(), "description", null, 0, 1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(statusEClass, Status.class, "Status", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getStatus_Name(), ecorePackage.getEString(), "name", null, 0, 1, Status.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getStatus_Description(), ecorePackage.getEString(), "description", null, 0, 1, Status.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(flowEClass, Flow.class, "Flow", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getFlow_Name(), ecorePackage.getEString(), "name", null, 0, 1, Flow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFlow_States(), this.getState(), null, "states", null, 0, -1, Flow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFlow_States(), this.getStatus(), null, "states", null, 0, -1, Flow.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(fieldEClass, Field.class, "Field", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getField_Name(), ecorePackage.getEString(), "name", null, 0, 1, Field.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -673,6 +684,7 @@ public class TicketsPackageImpl extends EPackageImpl implements TicketsPackage
     initEClass(ticketFieldEClass, TicketField.class, "TicketField", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getTicketField_Field(), this.getField(), null, "field", null, 0, 1, TicketField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getTicketField_Mandatory(), ecorePackage.getEBoolean(), "mandatory", null, 0, 1, TicketField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getTicketField_NotOnList(), ecorePackage.getEBoolean(), "notOnList", null, 0, 1, TicketField.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(roleEClass, Role.class, "Role", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getRole_Name(), ecorePackage.getEString(), "name", null, 0, 1, Role.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

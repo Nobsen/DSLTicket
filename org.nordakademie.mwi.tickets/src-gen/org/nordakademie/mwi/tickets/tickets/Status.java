@@ -6,22 +6,22 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>State</b></em>'.
+ * A representation of the model object '<em><b>Status</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.nordakademie.mwi.tickets.tickets.State#getName <em>Name</em>}</li>
- *   <li>{@link org.nordakademie.mwi.tickets.tickets.State#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.nordakademie.mwi.tickets.tickets.Status#getName <em>Name</em>}</li>
+ *   <li>{@link org.nordakademie.mwi.tickets.tickets.Status#getDescription <em>Description</em>}</li>
  * </ul>
  * </p>
  *
- * @see org.nordakademie.mwi.tickets.tickets.TicketsPackage#getState()
+ * @see org.nordakademie.mwi.tickets.tickets.TicketsPackage#getStatus()
  * @model
  * @generated
  */
-public interface State extends EObject
+public interface Status extends EObject
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
@@ -33,14 +33,14 @@ public interface State extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Name</em>' attribute.
    * @see #setName(String)
-   * @see org.nordakademie.mwi.tickets.tickets.TicketsPackage#getState_Name()
+   * @see org.nordakademie.mwi.tickets.tickets.TicketsPackage#getStatus_Name()
    * @model
    * @generated
    */
   String getName();
 
   /**
-   * Sets the value of the '{@link org.nordakademie.mwi.tickets.tickets.State#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link org.nordakademie.mwi.tickets.tickets.Status#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Name</em>' attribute.
@@ -59,14 +59,14 @@ public interface State extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Description</em>' attribute.
    * @see #setDescription(String)
-   * @see org.nordakademie.mwi.tickets.tickets.TicketsPackage#getState_Description()
+   * @see org.nordakademie.mwi.tickets.tickets.TicketsPackage#getStatus_Description()
    * @model
    * @generated
    */
   String getDescription();
 
   /**
-   * Sets the value of the '{@link org.nordakademie.mwi.tickets.tickets.State#getDescription <em>Description</em>}' attribute.
+   * Sets the value of the '{@link org.nordakademie.mwi.tickets.tickets.Status#getDescription <em>Description</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Description</em>' attribute.
@@ -75,4 +75,4 @@ public interface State extends EObject
    */
   void setDescription(String value);
 
-} // State
+} // Status

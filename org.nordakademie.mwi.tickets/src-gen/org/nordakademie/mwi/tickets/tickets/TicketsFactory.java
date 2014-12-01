@@ -32,13 +32,13 @@ public interface TicketsFactory extends EFactory
   TicketSystem createTicketSystem();
 
   /**
-   * Returns a new object of class '<em>State</em>'.
+   * Returns a new object of class '<em>Status</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>State</em>'.
+   * @return a new object of class '<em>Status</em>'.
    * @generated
    */
-  State createState();
+  Status createStatus();
 
   /**
    * Returns a new object of class '<em>Flow</em>'.

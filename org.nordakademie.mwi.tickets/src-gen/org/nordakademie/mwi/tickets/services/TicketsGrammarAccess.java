@@ -22,7 +22,7 @@ public class TicketsGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "TicketSystem");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Assignment cStatesAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
-		private final RuleCall cStatesStateParserRuleCall_0_0 = (RuleCall)cStatesAssignment_0.eContents().get(0);
+		private final RuleCall cStatesStatusParserRuleCall_0_0 = (RuleCall)cStatesAssignment_0.eContents().get(0);
 		private final Assignment cFlowsAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
 		private final RuleCall cFlowsFlowParserRuleCall_1_0 = (RuleCall)cFlowsAssignment_1.eContents().get(0);
 		private final Assignment cFieldsAssignment_2 = (Assignment)cAlternatives.eContents().get(2);
@@ -33,17 +33,17 @@ public class TicketsGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cRolesRoleParserRuleCall_4_0 = (RuleCall)cRolesAssignment_4.eContents().get(0);
 		
 		//TicketSystem:
-		//	(states+=State | flows+=Flow | fields+=Field | categories+=TicketCategory | roles+=Role)*;
+		//	(states+=Status | flows+=Flow | fields+=Field | categories+=TicketCategory | roles+=Role)*;
 		public ParserRule getRule() { return rule; }
 
-		//(states+=State | flows+=Flow | fields+=Field | categories+=TicketCategory | roles+=Role)*
+		//(states+=Status | flows+=Flow | fields+=Field | categories+=TicketCategory | roles+=Role)*
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//states+=State
+		//states+=Status
 		public Assignment getStatesAssignment_0() { return cStatesAssignment_0; }
 
-		//State
-		public RuleCall getStatesStateParserRuleCall_0_0() { return cStatesStateParserRuleCall_0_0; }
+		//Status
+		public RuleCall getStatesStatusParserRuleCall_0_0() { return cStatesStatusParserRuleCall_0_0; }
 
 		//flows+=Flow
 		public Assignment getFlowsAssignment_1() { return cFlowsAssignment_1; }
@@ -70,25 +70,25 @@ public class TicketsGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getRolesRoleParserRuleCall_4_0() { return cRolesRoleParserRuleCall_4_0; }
 	}
 
-	public class StateElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "State");
+	public class StatusElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Status");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cStateKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cStatusKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameQualifiedNameParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Assignment cDescriptionAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cDescriptionSTRINGTerminalRuleCall_2_0 = (RuleCall)cDescriptionAssignment_2.eContents().get(0);
 		private final Keyword cSemicolonKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
-		//State:
-		//	"state" name=QualifiedName description=STRING ";";
+		//Status:
+		//	"status" name=QualifiedName description=STRING ";";
 		public ParserRule getRule() { return rule; }
 
-		//"state" name=QualifiedName description=STRING ";"
+		//"status" name=QualifiedName description=STRING ";"
 		public Group getGroup() { return cGroup; }
 
-		//"state"
-		public Keyword getStateKeyword_0() { return cStateKeyword_0; }
+		//"status"
+		public Keyword getStatusKeyword_0() { return cStatusKeyword_0; }
 
 		//name=QualifiedName
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
@@ -113,22 +113,18 @@ public class TicketsGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameQualifiedNameParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cStatesAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final CrossReference cStatesStateCrossReference_3_0 = (CrossReference)cStatesAssignment_3.eContents().get(0);
-		private final RuleCall cStatesStateQualifiedNameParserRuleCall_3_0_1 = (RuleCall)cStatesStateCrossReference_3_0.eContents().get(1);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cCommaKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Assignment cStatesAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final CrossReference cStatesStateCrossReference_4_1_0 = (CrossReference)cStatesAssignment_4_1.eContents().get(0);
-		private final RuleCall cStatesStateQualifiedNameParserRuleCall_4_1_0_1 = (RuleCall)cStatesStateCrossReference_4_1_0.eContents().get(1);
-		private final Keyword cSemicolonKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Assignment cStatesAssignment_3_0 = (Assignment)cGroup_3.eContents().get(0);
+		private final CrossReference cStatesStatusCrossReference_3_0_0 = (CrossReference)cStatesAssignment_3_0.eContents().get(0);
+		private final RuleCall cStatesStatusQualifiedNameParserRuleCall_3_0_0_1 = (RuleCall)cStatesStatusCrossReference_3_0_0.eContents().get(1);
+		private final Keyword cSemicolonKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
+		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//Flow:
-		//	"flow" name=QualifiedName "{" states+=[State|QualifiedName] ("," states+=[State|QualifiedName])* ";" "}";
+		//	"flow" name=QualifiedName "{" (states+=[Status|QualifiedName] ";")* "}";
 		public ParserRule getRule() { return rule; }
 
-		//"flow" name=QualifiedName "{" states+=[State|QualifiedName] ("," states+=[State|QualifiedName])* ";" "}"
+		//"flow" name=QualifiedName "{" (states+=[Status|QualifiedName] ";")* "}"
 		public Group getGroup() { return cGroup; }
 
 		//"flow"
@@ -143,35 +139,23 @@ public class TicketsGrammarAccess extends AbstractGrammarElementFinder {
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 
-		//states+=[State|QualifiedName]
-		public Assignment getStatesAssignment_3() { return cStatesAssignment_3; }
+		//(states+=[Status|QualifiedName] ";")*
+		public Group getGroup_3() { return cGroup_3; }
 
-		//[State|QualifiedName]
-		public CrossReference getStatesStateCrossReference_3_0() { return cStatesStateCrossReference_3_0; }
+		//states+=[Status|QualifiedName]
+		public Assignment getStatesAssignment_3_0() { return cStatesAssignment_3_0; }
 
-		//QualifiedName
-		public RuleCall getStatesStateQualifiedNameParserRuleCall_3_0_1() { return cStatesStateQualifiedNameParserRuleCall_3_0_1; }
-
-		//("," states+=[State|QualifiedName])*
-		public Group getGroup_4() { return cGroup_4; }
-
-		//","
-		public Keyword getCommaKeyword_4_0() { return cCommaKeyword_4_0; }
-
-		//states+=[State|QualifiedName]
-		public Assignment getStatesAssignment_4_1() { return cStatesAssignment_4_1; }
-
-		//[State|QualifiedName]
-		public CrossReference getStatesStateCrossReference_4_1_0() { return cStatesStateCrossReference_4_1_0; }
+		//[Status|QualifiedName]
+		public CrossReference getStatesStatusCrossReference_3_0_0() { return cStatesStatusCrossReference_3_0_0; }
 
 		//QualifiedName
-		public RuleCall getStatesStateQualifiedNameParserRuleCall_4_1_0_1() { return cStatesStateQualifiedNameParserRuleCall_4_1_0_1; }
+		public RuleCall getStatesStatusQualifiedNameParserRuleCall_3_0_0_1() { return cStatesStatusQualifiedNameParserRuleCall_3_0_0_1; }
 
 		//";"
-		public Keyword getSemicolonKeyword_5() { return cSemicolonKeyword_5; }
+		public Keyword getSemicolonKeyword_3_1() { return cSemicolonKeyword_3_1; }
 
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
+		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
 	}
 
 	public class FieldElements extends AbstractParserRuleElementFinder {
@@ -275,24 +259,25 @@ public class TicketsGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cDescriptionAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cDescriptionSTRINGTerminalRuleCall_2_0 = (RuleCall)cDescriptionAssignment_2.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cFlowAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final CrossReference cFlowFlowCrossReference_4_0 = (CrossReference)cFlowAssignment_4.eContents().get(0);
-		private final RuleCall cFlowFlowQualifiedNameParserRuleCall_4_0_1 = (RuleCall)cFlowFlowCrossReference_4_0.eContents().get(1);
-		private final Keyword cSemicolonKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Keyword cFieldsKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
-		private final Assignment cTicketFieldsAssignment_7_0 = (Assignment)cGroup_7.eContents().get(0);
-		private final RuleCall cTicketFieldsTicketFieldParserRuleCall_7_0_0 = (RuleCall)cTicketFieldsAssignment_7_0.eContents().get(0);
-		private final Keyword cSemicolonKeyword_7_1 = (Keyword)cGroup_7.eContents().get(1);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Assignment cFlowAssignment_4_0 = (Assignment)cGroup_4.eContents().get(0);
+		private final CrossReference cFlowFlowCrossReference_4_0_0 = (CrossReference)cFlowAssignment_4_0.eContents().get(0);
+		private final RuleCall cFlowFlowQualifiedNameParserRuleCall_4_0_0_1 = (RuleCall)cFlowFlowCrossReference_4_0_0.eContents().get(1);
+		private final Keyword cSemicolonKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
+		private final Keyword cFieldsKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
+		private final Assignment cTicketFieldsAssignment_6_0 = (Assignment)cGroup_6.eContents().get(0);
+		private final RuleCall cTicketFieldsTicketFieldParserRuleCall_6_0_0 = (RuleCall)cTicketFieldsAssignment_6_0.eContents().get(0);
+		private final Keyword cSemicolonKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
+		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
-		private final Keyword cRightCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
 		
 		//TicketCategory:
-		//	"ticketCategory" name=QualifiedName description=STRING "{" flow=[Flow|QualifiedName] ";" "fields {"
+		//	"ticketCategory" name=QualifiedName description=STRING "{" (flow=[Flow|QualifiedName] ";")? "fields {"
 		//	(ticketFields+=TicketField ";")* "}" "}";
 		public ParserRule getRule() { return rule; }
 
-		//"ticketCategory" name=QualifiedName description=STRING "{" flow=[Flow|QualifiedName] ";" "fields {"
+		//"ticketCategory" name=QualifiedName description=STRING "{" (flow=[Flow|QualifiedName] ";")? "fields {"
 		//(ticketFields+=TicketField ";")* "}" "}"
 		public Group getGroup() { return cGroup; }
 
@@ -314,38 +299,41 @@ public class TicketsGrammarAccess extends AbstractGrammarElementFinder {
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 
+		//(flow=[Flow|QualifiedName] ";")?
+		public Group getGroup_4() { return cGroup_4; }
+
 		//flow=[Flow|QualifiedName]
-		public Assignment getFlowAssignment_4() { return cFlowAssignment_4; }
+		public Assignment getFlowAssignment_4_0() { return cFlowAssignment_4_0; }
 
 		//[Flow|QualifiedName]
-		public CrossReference getFlowFlowCrossReference_4_0() { return cFlowFlowCrossReference_4_0; }
+		public CrossReference getFlowFlowCrossReference_4_0_0() { return cFlowFlowCrossReference_4_0_0; }
 
 		//QualifiedName
-		public RuleCall getFlowFlowQualifiedNameParserRuleCall_4_0_1() { return cFlowFlowQualifiedNameParserRuleCall_4_0_1; }
+		public RuleCall getFlowFlowQualifiedNameParserRuleCall_4_0_0_1() { return cFlowFlowQualifiedNameParserRuleCall_4_0_0_1; }
 
 		//";"
-		public Keyword getSemicolonKeyword_5() { return cSemicolonKeyword_5; }
+		public Keyword getSemicolonKeyword_4_1() { return cSemicolonKeyword_4_1; }
 
 		//"fields {"
-		public Keyword getFieldsKeyword_6() { return cFieldsKeyword_6; }
+		public Keyword getFieldsKeyword_5() { return cFieldsKeyword_5; }
 
 		//(ticketFields+=TicketField ";")*
-		public Group getGroup_7() { return cGroup_7; }
+		public Group getGroup_6() { return cGroup_6; }
 
 		//ticketFields+=TicketField
-		public Assignment getTicketFieldsAssignment_7_0() { return cTicketFieldsAssignment_7_0; }
+		public Assignment getTicketFieldsAssignment_6_0() { return cTicketFieldsAssignment_6_0; }
 
 		//TicketField
-		public RuleCall getTicketFieldsTicketFieldParserRuleCall_7_0_0() { return cTicketFieldsTicketFieldParserRuleCall_7_0_0; }
+		public RuleCall getTicketFieldsTicketFieldParserRuleCall_6_0_0() { return cTicketFieldsTicketFieldParserRuleCall_6_0_0; }
 
 		//";"
-		public Keyword getSemicolonKeyword_7_1() { return cSemicolonKeyword_7_1; }
+		public Keyword getSemicolonKeyword_6_1() { return cSemicolonKeyword_6_1; }
+
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
 
 		//"}"
 		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
-
-		//"}"
-		public Keyword getRightCurlyBracketKeyword_9() { return cRightCurlyBracketKeyword_9; }
 	}
 
 	public class TicketFieldElements extends AbstractParserRuleElementFinder {
@@ -356,12 +344,14 @@ public class TicketsGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cFieldFieldQualifiedNameParserRuleCall_0_0_1 = (RuleCall)cFieldFieldCrossReference_0_0.eContents().get(1);
 		private final Assignment cMandatoryAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final Keyword cMandatoryMandatoryKeyword_1_0 = (Keyword)cMandatoryAssignment_1.eContents().get(0);
+		private final Assignment cNotOnListAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final Keyword cNotOnListNotOnListKeyword_2_0 = (Keyword)cNotOnListAssignment_2.eContents().get(0);
 		
 		//TicketField:
-		//	field=[Field|QualifiedName] mandatory?="mandatory"?;
+		//	field=[Field|QualifiedName] mandatory?="mandatory"? notOnList?="notOnList"?;
 		public ParserRule getRule() { return rule; }
 
-		//field=[Field|QualifiedName] mandatory?="mandatory"?
+		//field=[Field|QualifiedName] mandatory?="mandatory"? notOnList?="notOnList"?
 		public Group getGroup() { return cGroup; }
 
 		//field=[Field|QualifiedName]
@@ -378,6 +368,12 @@ public class TicketsGrammarAccess extends AbstractGrammarElementFinder {
 
 		//"mandatory"
 		public Keyword getMandatoryMandatoryKeyword_1_0() { return cMandatoryMandatoryKeyword_1_0; }
+
+		//notOnList?="notOnList"?
+		public Assignment getNotOnListAssignment_2() { return cNotOnListAssignment_2; }
+
+		//"notOnList"
+		public Keyword getNotOnListNotOnListKeyword_2_0() { return cNotOnListNotOnListKeyword_2_0; }
 	}
 
 	public class RoleElements extends AbstractParserRuleElementFinder {
@@ -573,8 +569,8 @@ public class TicketsGrammarAccess extends AbstractGrammarElementFinder {
 		private final EnumLiteralDeclaration cDecimalEnumLiteralDeclaration_5 = (EnumLiteralDeclaration)cAlternatives.eContents().get(5);
 		private final Keyword cDecimalDecimalKeyword_5_0 = (Keyword)cDecimalEnumLiteralDeclaration_5.eContents().get(0);
 		
-		//// TODO genaues Mapping auf Java-Klassen
-		//enum FieldType:
+		//// TODO user
+		// enum FieldType:
 		//	user | String | Date | dateTime | int | decimal;
 		public EnumRule getRule() { return rule; }
 
@@ -619,7 +615,7 @@ public class TicketsGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	private final TicketSystemElements pTicketSystem;
-	private final StateElements pState;
+	private final StatusElements pStatus;
 	private final FlowElements pFlow;
 	private final FieldElements pField;
 	private final EnumElements pEnum;
@@ -641,7 +637,7 @@ public class TicketsGrammarAccess extends AbstractGrammarElementFinder {
 		this.grammar = internalFindGrammar(grammarProvider);
 		this.gaTerminals = gaTerminals;
 		this.pTicketSystem = new TicketSystemElements();
-		this.pState = new StateElements();
+		this.pStatus = new StatusElements();
 		this.pFlow = new FlowElements();
 		this.pField = new FieldElements();
 		this.pEnum = new EnumElements();
@@ -682,7 +678,7 @@ public class TicketsGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//TicketSystem:
-	//	(states+=State | flows+=Flow | fields+=Field | categories+=TicketCategory | roles+=Role)*;
+	//	(states+=Status | flows+=Flow | fields+=Field | categories+=TicketCategory | roles+=Role)*;
 	public TicketSystemElements getTicketSystemAccess() {
 		return pTicketSystem;
 	}
@@ -691,18 +687,18 @@ public class TicketsGrammarAccess extends AbstractGrammarElementFinder {
 		return getTicketSystemAccess().getRule();
 	}
 
-	//State:
-	//	"state" name=QualifiedName description=STRING ";";
-	public StateElements getStateAccess() {
-		return pState;
+	//Status:
+	//	"status" name=QualifiedName description=STRING ";";
+	public StatusElements getStatusAccess() {
+		return pStatus;
 	}
 	
-	public ParserRule getStateRule() {
-		return getStateAccess().getRule();
+	public ParserRule getStatusRule() {
+		return getStatusAccess().getRule();
 	}
 
 	//Flow:
-	//	"flow" name=QualifiedName "{" states+=[State|QualifiedName] ("," states+=[State|QualifiedName])* ";" "}";
+	//	"flow" name=QualifiedName "{" (states+=[Status|QualifiedName] ";")* "}";
 	public FlowElements getFlowAccess() {
 		return pFlow;
 	}
@@ -732,7 +728,7 @@ public class TicketsGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//TicketCategory:
-	//	"ticketCategory" name=QualifiedName description=STRING "{" flow=[Flow|QualifiedName] ";" "fields {"
+	//	"ticketCategory" name=QualifiedName description=STRING "{" (flow=[Flow|QualifiedName] ";")? "fields {"
 	//	(ticketFields+=TicketField ";")* "}" "}";
 	public TicketCategoryElements getTicketCategoryAccess() {
 		return pTicketCategory;
@@ -743,7 +739,7 @@ public class TicketsGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//TicketField:
-	//	field=[Field|QualifiedName] mandatory?="mandatory"?;
+	//	field=[Field|QualifiedName] mandatory?="mandatory"? notOnList?="notOnList"?;
 	public TicketFieldElements getTicketFieldAccess() {
 		return pTicketField;
 	}
@@ -782,8 +778,8 @@ public class TicketsGrammarAccess extends AbstractGrammarElementFinder {
 		return getPermissionAccess().getRule();
 	}
 
-	//// TODO genaues Mapping auf Java-Klassen
-	//enum FieldType:
+	//// TODO user
+	// enum FieldType:
 	//	user | String | Date | dateTime | int | decimal;
 	public FieldTypeElements getFieldTypeAccess() {
 		return unknownRuleFieldType;

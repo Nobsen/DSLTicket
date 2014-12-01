@@ -30,7 +30,7 @@ public interface TicketSystem extends EObject
 {
   /**
    * Returns the value of the '<em><b>States</b></em>' containment reference list.
-   * The list contents are of type {@link org.nordakademie.mwi.tickets.tickets.State}.
+   * The list contents are of type {@link org.nordakademie.mwi.tickets.tickets.Status}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>States</em>' containment reference list isn't clear,
@@ -42,7 +42,7 @@ public interface TicketSystem extends EObject
    * @model containment="true"
    * @generated
    */
-  EList<State> getStates();
+  EList<Status> getStates();
 
   /**
    * Returns the value of the '<em><b>Flows</b></em>' containment reference list.

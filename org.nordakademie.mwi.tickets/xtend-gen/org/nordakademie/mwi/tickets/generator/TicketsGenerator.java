@@ -14,7 +14,9 @@ import org.eclipse.xtext.xbase.lib.StringExtensions;
 import org.nordakademie.mwi.tickets.TicketsOutputConfigurationProvider;
 import org.nordakademie.mwi.tickets.generator.DaoGenerator;
 import org.nordakademie.mwi.tickets.generator.DomainGenerator;
+import org.nordakademie.mwi.tickets.generator.FlowGenerator;
 import org.nordakademie.mwi.tickets.generator.JspGenerator;
+import org.nordakademie.mwi.tickets.tickets.Flow;
 import org.nordakademie.mwi.tickets.tickets.TicketCategory;
 import org.nordakademie.mwi.tickets.tickets.TicketSystem;
 
@@ -66,6 +68,18 @@ public class TicketsGenerator implements IGenerator {
         CharSequence _listJsp = JspGenerator.toListJsp(category);
         fsa.generateFile(_plus_8, TicketsOutputConfigurationProvider.JSP_OUTPUT, _listJsp);
       }
+    }
+    EList<EObject> _contents_1 = resource.getContents();
+    Iterable<TicketSystem> _filter_1 = Iterables.<TicketSystem>filter(_contents_1, TicketSystem.class);
+    TicketSystem _head_1 = IterableExtensions.<TicketSystem>head(_filter_1);
+    EList<Flow> flows = _head_1.getFlows();
+    for (final Flow flow : flows) {
+      String _name = flow.getName();
+      String _firstUpper = StringExtensions.toFirstUpper(_name);
+      String _plus = ("org/nordakademie/mwi/ticketSystem/flows/" + _firstUpper);
+      String _plus_1 = (_plus + ".java");
+      CharSequence _flowEnum = FlowGenerator.toFlowEnum(flow);
+      fsa.generateFile(_plus_1, _flowEnum);
     }
     CharSequence _navigation = JspGenerator.toNavigation(categories);
     fsa.generateFile("/navigation.jspf", TicketsOutputConfigurationProvider.JSP_OUTPUT, _navigation);

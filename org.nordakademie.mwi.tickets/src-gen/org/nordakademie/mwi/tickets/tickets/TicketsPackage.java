@@ -122,14 +122,14 @@ public interface TicketsPackage extends EPackage
   int TICKET_SYSTEM_FEATURE_COUNT = 5;
 
   /**
-   * The meta object id for the '{@link org.nordakademie.mwi.tickets.tickets.impl.StateImpl <em>State</em>}' class.
+   * The meta object id for the '{@link org.nordakademie.mwi.tickets.tickets.impl.StatusImpl <em>Status</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.nordakademie.mwi.tickets.tickets.impl.StateImpl
-   * @see org.nordakademie.mwi.tickets.tickets.impl.TicketsPackageImpl#getState()
+   * @see org.nordakademie.mwi.tickets.tickets.impl.StatusImpl
+   * @see org.nordakademie.mwi.tickets.tickets.impl.TicketsPackageImpl#getStatus()
    * @generated
    */
-  int STATE = 1;
+  int STATUS = 1;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -138,7 +138,7 @@ public interface TicketsPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATE__NAME = 0;
+  int STATUS__NAME = 0;
 
   /**
    * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -147,16 +147,16 @@ public interface TicketsPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATE__DESCRIPTION = 1;
+  int STATUS__DESCRIPTION = 1;
 
   /**
-   * The number of structural features of the '<em>State</em>' class.
+   * The number of structural features of the '<em>Status</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int STATE_FEATURE_COUNT = 2;
+  int STATUS_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link org.nordakademie.mwi.tickets.tickets.impl.FlowImpl <em>Flow</em>}' class.
@@ -362,13 +362,22 @@ public interface TicketsPackage extends EPackage
   int TICKET_FIELD__MANDATORY = 1;
 
   /**
+   * The feature id for the '<em><b>Not On List</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TICKET_FIELD__NOT_ON_LIST = 2;
+
+  /**
    * The number of structural features of the '<em>Ticket Field</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TICKET_FIELD_FEATURE_COUNT = 2;
+  int TICKET_FIELD_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link org.nordakademie.mwi.tickets.tickets.impl.RoleImpl <em>Role</em>}' class.
@@ -540,36 +549,36 @@ public interface TicketsPackage extends EPackage
   EReference getTicketSystem_Roles();
 
   /**
-   * Returns the meta object for class '{@link org.nordakademie.mwi.tickets.tickets.State <em>State</em>}'.
+   * Returns the meta object for class '{@link org.nordakademie.mwi.tickets.tickets.Status <em>Status</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>State</em>'.
-   * @see org.nordakademie.mwi.tickets.tickets.State
+   * @return the meta object for class '<em>Status</em>'.
+   * @see org.nordakademie.mwi.tickets.tickets.Status
    * @generated
    */
-  EClass getState();
+  EClass getStatus();
 
   /**
-   * Returns the meta object for the attribute '{@link org.nordakademie.mwi.tickets.tickets.State#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link org.nordakademie.mwi.tickets.tickets.Status#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.nordakademie.mwi.tickets.tickets.State#getName()
-   * @see #getState()
+   * @see org.nordakademie.mwi.tickets.tickets.Status#getName()
+   * @see #getStatus()
    * @generated
    */
-  EAttribute getState_Name();
+  EAttribute getStatus_Name();
 
   /**
-   * Returns the meta object for the attribute '{@link org.nordakademie.mwi.tickets.tickets.State#getDescription <em>Description</em>}'.
+   * Returns the meta object for the attribute '{@link org.nordakademie.mwi.tickets.tickets.Status#getDescription <em>Description</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Description</em>'.
-   * @see org.nordakademie.mwi.tickets.tickets.State#getDescription()
-   * @see #getState()
+   * @see org.nordakademie.mwi.tickets.tickets.Status#getDescription()
+   * @see #getStatus()
    * @generated
    */
-  EAttribute getState_Description();
+  EAttribute getStatus_Description();
 
   /**
    * Returns the meta object for class '{@link org.nordakademie.mwi.tickets.tickets.Flow <em>Flow</em>}'.
@@ -765,6 +774,17 @@ public interface TicketsPackage extends EPackage
   EAttribute getTicketField_Mandatory();
 
   /**
+   * Returns the meta object for the attribute '{@link org.nordakademie.mwi.tickets.tickets.TicketField#isNotOnList <em>Not On List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Not On List</em>'.
+   * @see org.nordakademie.mwi.tickets.tickets.TicketField#isNotOnList()
+   * @see #getTicketField()
+   * @generated
+   */
+  EAttribute getTicketField_NotOnList();
+
+  /**
    * Returns the meta object for class '{@link org.nordakademie.mwi.tickets.tickets.Role <em>Role</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -933,14 +953,14 @@ public interface TicketsPackage extends EPackage
     EReference TICKET_SYSTEM__ROLES = eINSTANCE.getTicketSystem_Roles();
 
     /**
-     * The meta object literal for the '{@link org.nordakademie.mwi.tickets.tickets.impl.StateImpl <em>State</em>}' class.
+     * The meta object literal for the '{@link org.nordakademie.mwi.tickets.tickets.impl.StatusImpl <em>Status</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.nordakademie.mwi.tickets.tickets.impl.StateImpl
-     * @see org.nordakademie.mwi.tickets.tickets.impl.TicketsPackageImpl#getState()
+     * @see org.nordakademie.mwi.tickets.tickets.impl.StatusImpl
+     * @see org.nordakademie.mwi.tickets.tickets.impl.TicketsPackageImpl#getStatus()
      * @generated
      */
-    EClass STATE = eINSTANCE.getState();
+    EClass STATUS = eINSTANCE.getStatus();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -948,7 +968,7 @@ public interface TicketsPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute STATE__NAME = eINSTANCE.getState_Name();
+    EAttribute STATUS__NAME = eINSTANCE.getStatus_Name();
 
     /**
      * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
@@ -956,7 +976,7 @@ public interface TicketsPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute STATE__DESCRIPTION = eINSTANCE.getState_Description();
+    EAttribute STATUS__DESCRIPTION = eINSTANCE.getStatus_Description();
 
     /**
      * The meta object literal for the '{@link org.nordakademie.mwi.tickets.tickets.impl.FlowImpl <em>Flow</em>}' class.
@@ -1111,6 +1131,14 @@ public interface TicketsPackage extends EPackage
      * @generated
      */
     EAttribute TICKET_FIELD__MANDATORY = eINSTANCE.getTicketField_Mandatory();
+
+    /**
+     * The meta object literal for the '<em><b>Not On List</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TICKET_FIELD__NOT_ON_LIST = eINSTANCE.getTicketField_NotOnList();
 
     /**
      * The meta object literal for the '{@link org.nordakademie.mwi.tickets.tickets.impl.RoleImpl <em>Role</em>}' class.
