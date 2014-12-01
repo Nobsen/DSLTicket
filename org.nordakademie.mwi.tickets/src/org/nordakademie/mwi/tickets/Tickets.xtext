@@ -21,7 +21,7 @@ Enum:
 
 TicketCategory:
 	'ticketCategory' name=QualifiedName description=STRING '{'
-		(flow=[Flow|QualifiedName] ';')?
+		('flow' flow=[Flow|QualifiedName] ';')?
 		'fields {'
 			(ticketFields+=TicketField ';')*
 		'}'
