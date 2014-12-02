@@ -535,7 +535,11 @@ ruleTicketCategory returns [EObject current=null]
     {
     	newLeafNode(otherlv_3, grammarAccess.getTicketCategoryAccess().getLeftCurlyBracketKeyword_3());
     }
-((
+(	otherlv_4='flow' 
+    {
+    	newLeafNode(otherlv_4, grammarAccess.getTicketCategoryAccess().getFlowKeyword_4_0());
+    }
+(
 (
 		{
 			if ($current==null) {
@@ -543,50 +547,50 @@ ruleTicketCategory returns [EObject current=null]
 	        }
         }
 		{ 
-	        newCompositeNode(grammarAccess.getTicketCategoryAccess().getFlowFlowCrossReference_4_0_0()); 
+	        newCompositeNode(grammarAccess.getTicketCategoryAccess().getFlowFlowCrossReference_4_1_0()); 
 	    }
 		ruleQualifiedName		{ 
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)	otherlv_5=';' 
+)	otherlv_6=';' 
     {
-    	newLeafNode(otherlv_5, grammarAccess.getTicketCategoryAccess().getSemicolonKeyword_4_1());
+    	newLeafNode(otherlv_6, grammarAccess.getTicketCategoryAccess().getSemicolonKeyword_4_2());
     }
-)?	otherlv_6='fields {' 
+)?	otherlv_7='fields {' 
     {
-    	newLeafNode(otherlv_6, grammarAccess.getTicketCategoryAccess().getFieldsKeyword_5());
+    	newLeafNode(otherlv_7, grammarAccess.getTicketCategoryAccess().getFieldsKeyword_5());
     }
 ((
 (
 		{ 
 	        newCompositeNode(grammarAccess.getTicketCategoryAccess().getTicketFieldsTicketFieldParserRuleCall_6_0_0()); 
 	    }
-		lv_ticketFields_7_0=ruleTicketField		{
+		lv_ticketFields_8_0=ruleTicketField		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getTicketCategoryRule());
 	        }
        		add(
        			$current, 
        			"ticketFields",
-        		lv_ticketFields_7_0, 
+        		lv_ticketFields_8_0, 
         		"TicketField");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)	otherlv_8=';' 
+)	otherlv_9=';' 
     {
-    	newLeafNode(otherlv_8, grammarAccess.getTicketCategoryAccess().getSemicolonKeyword_6_1());
+    	newLeafNode(otherlv_9, grammarAccess.getTicketCategoryAccess().getSemicolonKeyword_6_1());
     }
-)*	otherlv_9='}' 
+)*	otherlv_10='}' 
     {
-    	newLeafNode(otherlv_9, grammarAccess.getTicketCategoryAccess().getRightCurlyBracketKeyword_7());
+    	newLeafNode(otherlv_10, grammarAccess.getTicketCategoryAccess().getRightCurlyBracketKeyword_7());
     }
-	otherlv_10='}' 
+	otherlv_11='}' 
     {
-    	newLeafNode(otherlv_10, grammarAccess.getTicketCategoryAccess().getRightCurlyBracketKeyword_8());
+    	newLeafNode(otherlv_11, grammarAccess.getTicketCategoryAccess().getRightCurlyBracketKeyword_8());
     }
 )
 ;

@@ -61,7 +61,7 @@ public class DomainGenerator {
           _builder.newLineIfNotEmpty();
         }
       }
-      _builder.append("import javax.persistence.Basic;");
+      _builder.append("import org.hibernate.validator.constraints.NotBlank;");
       _builder.newLine();
       _builder.append("import javax.persistence.Entity;");
       _builder.newLine();
@@ -92,13 +92,14 @@ public class DomainGenerator {
       {
         EList<TicketField> _ticketFields_1 = category.getTicketFields();
         for(final TicketField field_1 : _ticketFields_1) {
-          _builder.append("\t");
-          _builder.append("@Basic(optional = ");
-          boolean _isMandatory = field_1.isMandatory();
-          boolean _not = (!_isMandatory);
-          _builder.append(_not, "\t");
-          _builder.append(")");
-          _builder.newLineIfNotEmpty();
+          {
+            boolean _isMandatory = field_1.isMandatory();
+            if (_isMandatory) {
+              _builder.append("\t");
+              _builder.append("@NotBlank");
+              _builder.newLine();
+            }
+          }
           _builder.append("\t");
           _builder.append("private ");
           Field _field_1 = field_1.getField();

@@ -34,6 +34,10 @@ class TicketsGenerator implements IGenerator {
 			fsa.generateFile('org/nordakademie/mwi/ticketSystem/daoimpl/' + category.name.toFirstUpper + 'DaoImpl.java',
 				DaoGenerator.toDaoImpl(category))
 
+			// controller
+			fsa.generateFile('org/nordakademie/mwi/ticketSystem/controller/' + category.name.toFirstUpper + 'Controller.java',
+				ControllerGenerator.toController(category))
+
 			// jsps
 			fsa.generateFile(category.name.toLowerCase + '/create.jsp', TicketsOutputConfigurationProvider.JSP_OUTPUT,
 				JspGenerator.toCreateJsp(category))

@@ -260,10 +260,11 @@ public class TicketsGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cDescriptionSTRINGTerminalRuleCall_2_0 = (RuleCall)cDescriptionAssignment_2.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Assignment cFlowAssignment_4_0 = (Assignment)cGroup_4.eContents().get(0);
-		private final CrossReference cFlowFlowCrossReference_4_0_0 = (CrossReference)cFlowAssignment_4_0.eContents().get(0);
-		private final RuleCall cFlowFlowQualifiedNameParserRuleCall_4_0_0_1 = (RuleCall)cFlowFlowCrossReference_4_0_0.eContents().get(1);
-		private final Keyword cSemicolonKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
+		private final Keyword cFlowKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cFlowAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final CrossReference cFlowFlowCrossReference_4_1_0 = (CrossReference)cFlowAssignment_4_1.eContents().get(0);
+		private final RuleCall cFlowFlowQualifiedNameParserRuleCall_4_1_0_1 = (RuleCall)cFlowFlowCrossReference_4_1_0.eContents().get(1);
+		private final Keyword cSemicolonKeyword_4_2 = (Keyword)cGroup_4.eContents().get(2);
 		private final Keyword cFieldsKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
 		private final Assignment cTicketFieldsAssignment_6_0 = (Assignment)cGroup_6.eContents().get(0);
@@ -273,11 +274,11 @@ public class TicketsGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
 		//TicketCategory:
-		//	"ticketCategory" name=QualifiedName description=STRING "{" (flow=[Flow|QualifiedName] ";")? "fields {"
+		//	"ticketCategory" name=QualifiedName description=STRING "{" ("flow" flow=[Flow|QualifiedName] ";")? "fields {"
 		//	(ticketFields+=TicketField ";")* "}" "}";
 		public ParserRule getRule() { return rule; }
 
-		//"ticketCategory" name=QualifiedName description=STRING "{" (flow=[Flow|QualifiedName] ";")? "fields {"
+		//"ticketCategory" name=QualifiedName description=STRING "{" ("flow" flow=[Flow|QualifiedName] ";")? "fields {"
 		//(ticketFields+=TicketField ";")* "}" "}"
 		public Group getGroup() { return cGroup; }
 
@@ -299,20 +300,23 @@ public class TicketsGrammarAccess extends AbstractGrammarElementFinder {
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
 
-		//(flow=[Flow|QualifiedName] ";")?
+		//("flow" flow=[Flow|QualifiedName] ";")?
 		public Group getGroup_4() { return cGroup_4; }
 
+		//"flow"
+		public Keyword getFlowKeyword_4_0() { return cFlowKeyword_4_0; }
+
 		//flow=[Flow|QualifiedName]
-		public Assignment getFlowAssignment_4_0() { return cFlowAssignment_4_0; }
+		public Assignment getFlowAssignment_4_1() { return cFlowAssignment_4_1; }
 
 		//[Flow|QualifiedName]
-		public CrossReference getFlowFlowCrossReference_4_0_0() { return cFlowFlowCrossReference_4_0_0; }
+		public CrossReference getFlowFlowCrossReference_4_1_0() { return cFlowFlowCrossReference_4_1_0; }
 
 		//QualifiedName
-		public RuleCall getFlowFlowQualifiedNameParserRuleCall_4_0_0_1() { return cFlowFlowQualifiedNameParserRuleCall_4_0_0_1; }
+		public RuleCall getFlowFlowQualifiedNameParserRuleCall_4_1_0_1() { return cFlowFlowQualifiedNameParserRuleCall_4_1_0_1; }
 
 		//";"
-		public Keyword getSemicolonKeyword_4_1() { return cSemicolonKeyword_4_1; }
+		public Keyword getSemicolonKeyword_4_2() { return cSemicolonKeyword_4_2; }
 
 		//"fields {"
 		public Keyword getFieldsKeyword_5() { return cFieldsKeyword_5; }
@@ -570,7 +574,7 @@ public class TicketsGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cDecimalDecimalKeyword_5_0 = (Keyword)cDecimalEnumLiteralDeclaration_5.eContents().get(0);
 		
 		//// TODO user
-		// enum FieldType:
+		//enum FieldType:
 		//	user | String | Date | dateTime | int | decimal;
 		public EnumRule getRule() { return rule; }
 
@@ -728,7 +732,7 @@ public class TicketsGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//TicketCategory:
-	//	"ticketCategory" name=QualifiedName description=STRING "{" (flow=[Flow|QualifiedName] ";")? "fields {"
+	//	"ticketCategory" name=QualifiedName description=STRING "{" ("flow" flow=[Flow|QualifiedName] ";")? "fields {"
 	//	(ticketFields+=TicketField ";")* "}" "}";
 	public TicketCategoryElements getTicketCategoryAccess() {
 		return pTicketCategory;
@@ -779,7 +783,7 @@ public class TicketsGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//// TODO user
-	// enum FieldType:
+	//enum FieldType:
 	//	user | String | Date | dateTime | int | decimal;
 	public FieldTypeElements getFieldTypeAccess() {
 		return unknownRuleFieldType;

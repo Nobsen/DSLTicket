@@ -16,8 +16,9 @@ class JspGenerator {
 				<h1>«category.description» create</h1>
 				
 				<c:url var="url" value="/«category.name.toLowerCase»/create" /> 
-				<form:form action="${url}" commandName="«category.name.toLowerCase»" class="form-horizontal" role="form">
+				<form:form action="${url}" commandName="«category.name.toFirstLower»" class="form-horizontal" role="form">
 				   «FOR field : category.ticketFields»
+				   	<form:errors path="«field.field.name»" class="col-sm-offset-2" element="div"></form:errors>
 				   	<div class="form-group">
 				   	    <label for="title" class="control-label col-sm-2">«field.field.label»:</label>
 				   	    <div class="col-sm-6">
@@ -26,12 +27,12 @@ class JspGenerator {
 				   	</div>
 				   «ENDFOR»
 				   «IF category.flow != null»
-				    	<div class="form-group"> 
-				    		<label for="title" class="control-label col-sm-2">Aktueller Status:</label>
-				    		   <div class="col-sm-6">
-				    		 	<form:select class="form-control" path="currentFlowState" items="${states}" itemLabel="label" />
-				    		 </div
-				    	</div>
+				   	<div class="form-group"> 
+				   		<label for="title" class="control-label col-sm-2">Aktueller Status:</label>
+				   		   <div class="col-sm-6">
+				   		 	<form:select class="form-control" path="currentFlowState" items="${states}" itemLabel="label" />
+				   		 </div
+				   	</div>
 				   «ENDIF»
 				   <div class="form-group"> 
 				       <div class="col-sm-offset-2 col-sm-10">
@@ -63,12 +64,12 @@ class JspGenerator {
 				   	</div>
 				   «ENDFOR»
 				   «IF category.flow != null»
-				    	<div class="form-group"> 
-				    		<label for="title" class="control-label col-sm-2">Aktueller Status:</label>
-				    		   <div class="col-sm-6">
-				    		 	<form:select class="form-control" path="currentFlowState" items="${states}" itemLabel="label" disabled="true"/>
-				    		 </div
-				    	</div>
+				   	<div class="form-group"> 
+				   		<label for="title" class="control-label col-sm-2">Aktueller Status:</label>
+				   		<div class="col-sm-6">
+				   			<span class="form-control" disabled="true">${«category.name».currentFlowState.label}</span>
+				   		</div>
+				   	</div>
 				   «ENDIF»
 				   <div class="form-group"> 
 				       <div class="col-sm-offset-2 col-sm-10">
@@ -117,7 +118,7 @@ class JspGenerator {
 				        </c:url>
 						<td>${«category.name.toLowerCase».id}</td>
 						«IF category.flow != null»
-							<td>${«category.name.toLowerCase».currentFlowState}</td>
+							<td>${«category.name.toLowerCase».currentFlowState.label}</td>
 						«ENDIF»
 						«FOR field : category.ticketFields»
 							«IF !field.notOnList»

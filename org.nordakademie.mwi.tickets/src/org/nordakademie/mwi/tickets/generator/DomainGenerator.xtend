@@ -30,7 +30,7 @@ class DomainGenerator {
 			«IF category.flow != null»
 				import org.nordakademie.mwi.ticketSystem.flows.«category.flow.name.toFirstUpper»;
 			«ENDIF»
-			import javax.persistence.Basic;
+			import org.hibernate.validator.constraints.NotBlank;
 			import javax.persistence.Entity;
 			
 			@Entity
@@ -41,7 +41,9 @@ class DomainGenerator {
 				«ENDIF»
 			
 				«FOR field : category.ticketFields»
-					@Basic(optional = «!field.mandatory»)
+					«IF field.mandatory»
+					@NotBlank
+					«ENDIF»
 					private «field.field.fieldType.javaTypeForFieldType» «field.field.name»;
 				«ENDFOR»
 			

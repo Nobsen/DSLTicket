@@ -74,7 +74,7 @@ public class TicketsParser extends AbstractContentAssistParser {
 					put(grammarAccess.getEnumAccess().getOptionAssignment_1_1(), "rule__Enum__OptionAssignment_1_1");
 					put(grammarAccess.getTicketCategoryAccess().getNameAssignment_1(), "rule__TicketCategory__NameAssignment_1");
 					put(grammarAccess.getTicketCategoryAccess().getDescriptionAssignment_2(), "rule__TicketCategory__DescriptionAssignment_2");
-					put(grammarAccess.getTicketCategoryAccess().getFlowAssignment_4_0(), "rule__TicketCategory__FlowAssignment_4_0");
+					put(grammarAccess.getTicketCategoryAccess().getFlowAssignment_4_1(), "rule__TicketCategory__FlowAssignment_4_1");
 					put(grammarAccess.getTicketCategoryAccess().getTicketFieldsAssignment_6_0(), "rule__TicketCategory__TicketFieldsAssignment_6_0");
 					put(grammarAccess.getTicketFieldAccess().getFieldAssignment_0(), "rule__TicketField__FieldAssignment_0");
 					put(grammarAccess.getTicketFieldAccess().getMandatoryAssignment_1(), "rule__TicketField__MandatoryAssignment_1");
