@@ -334,6 +334,9 @@ public class DomainGenerator {
         case INT:
           _switchResult = "Integer";
           break;
+        case BOOLEAN:
+          _switchResult = "Boolean";
+          break;
         default:
           _switchResult = "String";
           break;

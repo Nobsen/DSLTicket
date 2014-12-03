@@ -20,6 +20,7 @@
       <genEnumLiterals ecoreEnumLiteral="Tickets.ecore#//FieldType/dateTime"/>
       <genEnumLiterals ecoreEnumLiteral="Tickets.ecore#//FieldType/int"/>
       <genEnumLiterals ecoreEnumLiteral="Tickets.ecore#//FieldType/decimal"/>
+      <genEnumLiterals ecoreEnumLiteral="Tickets.ecore#//FieldType/boolean"/>
     </genEnums>
     <genClasses ecoreClass="Tickets.ecore#//TicketSystem">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Tickets.ecore#//TicketSystem/states"/>

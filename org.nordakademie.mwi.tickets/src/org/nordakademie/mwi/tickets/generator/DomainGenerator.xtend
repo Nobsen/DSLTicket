@@ -102,6 +102,7 @@ class DomainGenerator {
 			case DATE_TIME: "Calendar"
 			case DECIMAL: "Double"
 			case INT: "Integer"
+			case BOOLEAN: "Boolean"
 			default: "String"
 		}
 	}

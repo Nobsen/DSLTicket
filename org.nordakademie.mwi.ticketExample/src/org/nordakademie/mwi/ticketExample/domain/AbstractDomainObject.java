@@ -28,6 +28,7 @@ public abstract class AbstractDomainObject implements DomainObject {
     @Basic(optional = false)
     private Calendar created;
 
+    // TODO ggf raus nehmen
     /**
      * Version-Information (used for locking).
      */

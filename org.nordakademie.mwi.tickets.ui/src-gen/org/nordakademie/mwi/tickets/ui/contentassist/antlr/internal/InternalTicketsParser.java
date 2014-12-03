@@ -22,39 +22,40 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalTicketsParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'create'", "'read'", "'modify'", "'delete'", "'user'", "'String'", "'Date'", "'dateTime'", "'int'", "'decimal'", "'status'", "';'", "'flow'", "'{'", "'}'", "'field'", "','", "'ticketCategory'", "'fields {'", "'role'", "'.'", "'mandatory'", "'notOnList'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'create'", "'read'", "'modify'", "'delete'", "'user'", "'String'", "'Date'", "'dateTime'", "'int'", "'decimal'", "'boolean'", "'status'", "';'", "'flow'", "'{'", "'}'", "'field'", "','", "'ticketCategory'", "'fields {'", "'role'", "'.'", "'mandatory'", "'notOnList'"
     };
-    public static final int RULE_ID=4;
-    public static final int T__29=29;
-    public static final int T__28=28;
-    public static final int T__27=27;
-    public static final int T__26=26;
-    public static final int T__25=25;
-    public static final int T__24=24;
-    public static final int T__23=23;
-    public static final int T__22=22;
-    public static final int RULE_ANY_OTHER=10;
-    public static final int T__21=21;
-    public static final int T__20=20;
-    public static final int RULE_SL_COMMENT=8;
-    public static final int EOF=-1;
-    public static final int RULE_ML_COMMENT=7;
-    public static final int T__30=30;
-    public static final int T__19=19;
-    public static final int T__31=31;
     public static final int RULE_STRING=5;
-    public static final int T__32=32;
-    public static final int T__33=33;
-    public static final int T__16=16;
+    public static final int RULE_SL_COMMENT=8;
+    public static final int T__19=19;
     public static final int T__15=15;
-    public static final int T__18=18;
+    public static final int T__16=16;
     public static final int T__17=17;
-    public static final int T__12=12;
+    public static final int T__18=18;
     public static final int T__11=11;
-    public static final int T__14=14;
+    public static final int T__33=33;
+    public static final int T__12=12;
+    public static final int T__34=34;
     public static final int T__13=13;
-    public static final int RULE_INT=6;
+    public static final int T__14=14;
+    public static final int EOF=-1;
+    public static final int T__30=30;
+    public static final int T__31=31;
+    public static final int T__32=32;
+    public static final int RULE_ID=4;
     public static final int RULE_WS=9;
+    public static final int RULE_ANY_OTHER=10;
+    public static final int T__26=26;
+    public static final int T__27=27;
+    public static final int T__28=28;
+    public static final int RULE_INT=6;
+    public static final int T__29=29;
+    public static final int T__22=22;
+    public static final int RULE_ML_COMMENT=7;
+    public static final int T__23=23;
+    public static final int T__24=24;
+    public static final int T__25=25;
+    public static final int T__20=20;
+    public static final int T__21=21;
 
     // delegates
     // delegators
@@ -143,7 +144,7 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
                 int alt1=2;
                 int LA1_0 = input.LA(1);
 
-                if ( (LA1_0==21||LA1_0==23||LA1_0==26||LA1_0==28||LA1_0==30) ) {
+                if ( (LA1_0==22||LA1_0==24||LA1_0==27||LA1_0==29||LA1_0==31) ) {
                     alt1=1;
                 }
 
@@ -985,27 +986,27 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
             // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:382:1: ( ( ( rule__TicketSystem__StatesAssignment_0 ) ) | ( ( rule__TicketSystem__FlowsAssignment_1 ) ) | ( ( rule__TicketSystem__FieldsAssignment_2 ) ) | ( ( rule__TicketSystem__CategoriesAssignment_3 ) ) | ( ( rule__TicketSystem__RolesAssignment_4 ) ) )
             int alt2=5;
             switch ( input.LA(1) ) {
-            case 21:
+            case 22:
                 {
                 alt2=1;
                 }
                 break;
-            case 23:
+            case 24:
                 {
                 alt2=2;
                 }
                 break;
-            case 26:
+            case 27:
                 {
                 alt2=3;
                 }
                 break;
-            case 28:
+            case 29:
                 {
                 alt2=4;
                 }
                 break;
-            case 30:
+            case 31:
                 {
                 alt2=5;
                 }
@@ -1171,7 +1172,7 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
             int alt3=2;
             int LA3_0 = input.LA(1);
 
-            if ( ((LA3_0>=15 && LA3_0<=20)) ) {
+            if ( ((LA3_0>=15 && LA3_0<=21)) ) {
                 alt3=1;
             }
             else if ( (LA3_0==RULE_STRING) ) {
@@ -1391,14 +1392,14 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FieldType__Alternatives"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:478:1: rule__FieldType__Alternatives : ( ( ( 'user' ) ) | ( ( 'String' ) ) | ( ( 'Date' ) ) | ( ( 'dateTime' ) ) | ( ( 'int' ) ) | ( ( 'decimal' ) ) );
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:478:1: rule__FieldType__Alternatives : ( ( ( 'user' ) ) | ( ( 'String' ) ) | ( ( 'Date' ) ) | ( ( 'dateTime' ) ) | ( ( 'int' ) ) | ( ( 'decimal' ) ) | ( ( 'boolean' ) ) );
     public final void rule__FieldType__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:482:1: ( ( ( 'user' ) ) | ( ( 'String' ) ) | ( ( 'Date' ) ) | ( ( 'dateTime' ) ) | ( ( 'int' ) ) | ( ( 'decimal' ) ) )
-            int alt5=6;
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:482:1: ( ( ( 'user' ) ) | ( ( 'String' ) ) | ( ( 'Date' ) ) | ( ( 'dateTime' ) ) | ( ( 'int' ) ) | ( ( 'decimal' ) ) | ( ( 'boolean' ) ) )
+            int alt5=7;
             switch ( input.LA(1) ) {
             case 15:
                 {
@@ -1428,6 +1429,11 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
             case 20:
                 {
                 alt5=6;
+                }
+                break;
+            case 21:
+                {
+                alt5=7;
                 }
                 break;
             default:
@@ -1564,6 +1570,27 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
                     }
                     break;
+                case 7 :
+                    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:525:6: ( ( 'boolean' ) )
+                    {
+                    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:525:6: ( ( 'boolean' ) )
+                    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:526:1: ( 'boolean' )
+                    {
+                     before(grammarAccess.getFieldTypeAccess().getBooleanEnumLiteralDeclaration_6()); 
+                    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:527:1: ( 'boolean' )
+                    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:527:3: 'boolean'
+                    {
+                    match(input,21,FOLLOW_21_in_rule__FieldType__Alternatives1125); 
+
+                    }
+
+                     after(grammarAccess.getFieldTypeAccess().getBooleanEnumLiteralDeclaration_6()); 
+
+                    }
+
+
+                    }
+                    break;
 
             }
         }
@@ -1582,21 +1609,21 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Status__Group__0"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:532:1: rule__Status__Group__0 : rule__Status__Group__0__Impl rule__Status__Group__1 ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:539:1: rule__Status__Group__0 : rule__Status__Group__0__Impl rule__Status__Group__1 ;
     public final void rule__Status__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:536:1: ( rule__Status__Group__0__Impl rule__Status__Group__1 )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:537:2: rule__Status__Group__0__Impl rule__Status__Group__1
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:543:1: ( rule__Status__Group__0__Impl rule__Status__Group__1 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:544:2: rule__Status__Group__0__Impl rule__Status__Group__1
             {
-            pushFollow(FOLLOW_rule__Status__Group__0__Impl_in_rule__Status__Group__01137);
+            pushFollow(FOLLOW_rule__Status__Group__0__Impl_in_rule__Status__Group__01158);
             rule__Status__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Status__Group__1_in_rule__Status__Group__01140);
+            pushFollow(FOLLOW_rule__Status__Group__1_in_rule__Status__Group__01161);
             rule__Status__Group__1();
 
             state._fsp--;
@@ -1620,20 +1647,20 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Status__Group__0__Impl"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:544:1: rule__Status__Group__0__Impl : ( 'status' ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:551:1: rule__Status__Group__0__Impl : ( 'status' ) ;
     public final void rule__Status__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:548:1: ( ( 'status' ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:549:1: ( 'status' )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:555:1: ( ( 'status' ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:556:1: ( 'status' )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:549:1: ( 'status' )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:550:1: 'status'
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:556:1: ( 'status' )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:557:1: 'status'
             {
              before(grammarAccess.getStatusAccess().getStatusKeyword_0()); 
-            match(input,21,FOLLOW_21_in_rule__Status__Group__0__Impl1168); 
+            match(input,22,FOLLOW_22_in_rule__Status__Group__0__Impl1189); 
              after(grammarAccess.getStatusAccess().getStatusKeyword_0()); 
 
             }
@@ -1657,21 +1684,21 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Status__Group__1"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:563:1: rule__Status__Group__1 : rule__Status__Group__1__Impl rule__Status__Group__2 ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:570:1: rule__Status__Group__1 : rule__Status__Group__1__Impl rule__Status__Group__2 ;
     public final void rule__Status__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:567:1: ( rule__Status__Group__1__Impl rule__Status__Group__2 )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:568:2: rule__Status__Group__1__Impl rule__Status__Group__2
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:574:1: ( rule__Status__Group__1__Impl rule__Status__Group__2 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:575:2: rule__Status__Group__1__Impl rule__Status__Group__2
             {
-            pushFollow(FOLLOW_rule__Status__Group__1__Impl_in_rule__Status__Group__11199);
+            pushFollow(FOLLOW_rule__Status__Group__1__Impl_in_rule__Status__Group__11220);
             rule__Status__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Status__Group__2_in_rule__Status__Group__11202);
+            pushFollow(FOLLOW_rule__Status__Group__2_in_rule__Status__Group__11223);
             rule__Status__Group__2();
 
             state._fsp--;
@@ -1695,23 +1722,23 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Status__Group__1__Impl"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:575:1: rule__Status__Group__1__Impl : ( ( rule__Status__NameAssignment_1 ) ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:582:1: rule__Status__Group__1__Impl : ( ( rule__Status__NameAssignment_1 ) ) ;
     public final void rule__Status__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:579:1: ( ( ( rule__Status__NameAssignment_1 ) ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:580:1: ( ( rule__Status__NameAssignment_1 ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:586:1: ( ( ( rule__Status__NameAssignment_1 ) ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:587:1: ( ( rule__Status__NameAssignment_1 ) )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:580:1: ( ( rule__Status__NameAssignment_1 ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:581:1: ( rule__Status__NameAssignment_1 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:587:1: ( ( rule__Status__NameAssignment_1 ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:588:1: ( rule__Status__NameAssignment_1 )
             {
              before(grammarAccess.getStatusAccess().getNameAssignment_1()); 
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:582:1: ( rule__Status__NameAssignment_1 )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:582:2: rule__Status__NameAssignment_1
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:589:1: ( rule__Status__NameAssignment_1 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:589:2: rule__Status__NameAssignment_1
             {
-            pushFollow(FOLLOW_rule__Status__NameAssignment_1_in_rule__Status__Group__1__Impl1229);
+            pushFollow(FOLLOW_rule__Status__NameAssignment_1_in_rule__Status__Group__1__Impl1250);
             rule__Status__NameAssignment_1();
 
             state._fsp--;
@@ -1742,21 +1769,21 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Status__Group__2"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:592:1: rule__Status__Group__2 : rule__Status__Group__2__Impl rule__Status__Group__3 ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:599:1: rule__Status__Group__2 : rule__Status__Group__2__Impl rule__Status__Group__3 ;
     public final void rule__Status__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:596:1: ( rule__Status__Group__2__Impl rule__Status__Group__3 )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:597:2: rule__Status__Group__2__Impl rule__Status__Group__3
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:603:1: ( rule__Status__Group__2__Impl rule__Status__Group__3 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:604:2: rule__Status__Group__2__Impl rule__Status__Group__3
             {
-            pushFollow(FOLLOW_rule__Status__Group__2__Impl_in_rule__Status__Group__21259);
+            pushFollow(FOLLOW_rule__Status__Group__2__Impl_in_rule__Status__Group__21280);
             rule__Status__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Status__Group__3_in_rule__Status__Group__21262);
+            pushFollow(FOLLOW_rule__Status__Group__3_in_rule__Status__Group__21283);
             rule__Status__Group__3();
 
             state._fsp--;
@@ -1780,23 +1807,23 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Status__Group__2__Impl"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:604:1: rule__Status__Group__2__Impl : ( ( rule__Status__DescriptionAssignment_2 ) ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:611:1: rule__Status__Group__2__Impl : ( ( rule__Status__DescriptionAssignment_2 ) ) ;
     public final void rule__Status__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:608:1: ( ( ( rule__Status__DescriptionAssignment_2 ) ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:609:1: ( ( rule__Status__DescriptionAssignment_2 ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:615:1: ( ( ( rule__Status__DescriptionAssignment_2 ) ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:616:1: ( ( rule__Status__DescriptionAssignment_2 ) )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:609:1: ( ( rule__Status__DescriptionAssignment_2 ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:610:1: ( rule__Status__DescriptionAssignment_2 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:616:1: ( ( rule__Status__DescriptionAssignment_2 ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:617:1: ( rule__Status__DescriptionAssignment_2 )
             {
              before(grammarAccess.getStatusAccess().getDescriptionAssignment_2()); 
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:611:1: ( rule__Status__DescriptionAssignment_2 )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:611:2: rule__Status__DescriptionAssignment_2
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:618:1: ( rule__Status__DescriptionAssignment_2 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:618:2: rule__Status__DescriptionAssignment_2
             {
-            pushFollow(FOLLOW_rule__Status__DescriptionAssignment_2_in_rule__Status__Group__2__Impl1289);
+            pushFollow(FOLLOW_rule__Status__DescriptionAssignment_2_in_rule__Status__Group__2__Impl1310);
             rule__Status__DescriptionAssignment_2();
 
             state._fsp--;
@@ -1827,16 +1854,16 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Status__Group__3"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:621:1: rule__Status__Group__3 : rule__Status__Group__3__Impl ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:628:1: rule__Status__Group__3 : rule__Status__Group__3__Impl ;
     public final void rule__Status__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:625:1: ( rule__Status__Group__3__Impl )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:626:2: rule__Status__Group__3__Impl
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:632:1: ( rule__Status__Group__3__Impl )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:633:2: rule__Status__Group__3__Impl
             {
-            pushFollow(FOLLOW_rule__Status__Group__3__Impl_in_rule__Status__Group__31319);
+            pushFollow(FOLLOW_rule__Status__Group__3__Impl_in_rule__Status__Group__31340);
             rule__Status__Group__3__Impl();
 
             state._fsp--;
@@ -1860,20 +1887,20 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Status__Group__3__Impl"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:632:1: rule__Status__Group__3__Impl : ( ';' ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:639:1: rule__Status__Group__3__Impl : ( ';' ) ;
     public final void rule__Status__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:636:1: ( ( ';' ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:637:1: ( ';' )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:643:1: ( ( ';' ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:644:1: ( ';' )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:637:1: ( ';' )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:638:1: ';'
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:644:1: ( ';' )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:645:1: ';'
             {
              before(grammarAccess.getStatusAccess().getSemicolonKeyword_3()); 
-            match(input,22,FOLLOW_22_in_rule__Status__Group__3__Impl1347); 
+            match(input,23,FOLLOW_23_in_rule__Status__Group__3__Impl1368); 
              after(grammarAccess.getStatusAccess().getSemicolonKeyword_3()); 
 
             }
@@ -1897,21 +1924,21 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Flow__Group__0"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:659:1: rule__Flow__Group__0 : rule__Flow__Group__0__Impl rule__Flow__Group__1 ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:666:1: rule__Flow__Group__0 : rule__Flow__Group__0__Impl rule__Flow__Group__1 ;
     public final void rule__Flow__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:663:1: ( rule__Flow__Group__0__Impl rule__Flow__Group__1 )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:664:2: rule__Flow__Group__0__Impl rule__Flow__Group__1
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:670:1: ( rule__Flow__Group__0__Impl rule__Flow__Group__1 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:671:2: rule__Flow__Group__0__Impl rule__Flow__Group__1
             {
-            pushFollow(FOLLOW_rule__Flow__Group__0__Impl_in_rule__Flow__Group__01386);
+            pushFollow(FOLLOW_rule__Flow__Group__0__Impl_in_rule__Flow__Group__01407);
             rule__Flow__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Flow__Group__1_in_rule__Flow__Group__01389);
+            pushFollow(FOLLOW_rule__Flow__Group__1_in_rule__Flow__Group__01410);
             rule__Flow__Group__1();
 
             state._fsp--;
@@ -1935,20 +1962,20 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Flow__Group__0__Impl"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:671:1: rule__Flow__Group__0__Impl : ( 'flow' ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:678:1: rule__Flow__Group__0__Impl : ( 'flow' ) ;
     public final void rule__Flow__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:675:1: ( ( 'flow' ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:676:1: ( 'flow' )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:682:1: ( ( 'flow' ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:683:1: ( 'flow' )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:676:1: ( 'flow' )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:677:1: 'flow'
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:683:1: ( 'flow' )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:684:1: 'flow'
             {
              before(grammarAccess.getFlowAccess().getFlowKeyword_0()); 
-            match(input,23,FOLLOW_23_in_rule__Flow__Group__0__Impl1417); 
+            match(input,24,FOLLOW_24_in_rule__Flow__Group__0__Impl1438); 
              after(grammarAccess.getFlowAccess().getFlowKeyword_0()); 
 
             }
@@ -1972,21 +1999,21 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Flow__Group__1"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:690:1: rule__Flow__Group__1 : rule__Flow__Group__1__Impl rule__Flow__Group__2 ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:697:1: rule__Flow__Group__1 : rule__Flow__Group__1__Impl rule__Flow__Group__2 ;
     public final void rule__Flow__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:694:1: ( rule__Flow__Group__1__Impl rule__Flow__Group__2 )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:695:2: rule__Flow__Group__1__Impl rule__Flow__Group__2
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:701:1: ( rule__Flow__Group__1__Impl rule__Flow__Group__2 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:702:2: rule__Flow__Group__1__Impl rule__Flow__Group__2
             {
-            pushFollow(FOLLOW_rule__Flow__Group__1__Impl_in_rule__Flow__Group__11448);
+            pushFollow(FOLLOW_rule__Flow__Group__1__Impl_in_rule__Flow__Group__11469);
             rule__Flow__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Flow__Group__2_in_rule__Flow__Group__11451);
+            pushFollow(FOLLOW_rule__Flow__Group__2_in_rule__Flow__Group__11472);
             rule__Flow__Group__2();
 
             state._fsp--;
@@ -2010,23 +2037,23 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Flow__Group__1__Impl"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:702:1: rule__Flow__Group__1__Impl : ( ( rule__Flow__NameAssignment_1 ) ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:709:1: rule__Flow__Group__1__Impl : ( ( rule__Flow__NameAssignment_1 ) ) ;
     public final void rule__Flow__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:706:1: ( ( ( rule__Flow__NameAssignment_1 ) ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:707:1: ( ( rule__Flow__NameAssignment_1 ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:713:1: ( ( ( rule__Flow__NameAssignment_1 ) ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:714:1: ( ( rule__Flow__NameAssignment_1 ) )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:707:1: ( ( rule__Flow__NameAssignment_1 ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:708:1: ( rule__Flow__NameAssignment_1 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:714:1: ( ( rule__Flow__NameAssignment_1 ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:715:1: ( rule__Flow__NameAssignment_1 )
             {
              before(grammarAccess.getFlowAccess().getNameAssignment_1()); 
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:709:1: ( rule__Flow__NameAssignment_1 )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:709:2: rule__Flow__NameAssignment_1
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:716:1: ( rule__Flow__NameAssignment_1 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:716:2: rule__Flow__NameAssignment_1
             {
-            pushFollow(FOLLOW_rule__Flow__NameAssignment_1_in_rule__Flow__Group__1__Impl1478);
+            pushFollow(FOLLOW_rule__Flow__NameAssignment_1_in_rule__Flow__Group__1__Impl1499);
             rule__Flow__NameAssignment_1();
 
             state._fsp--;
@@ -2057,21 +2084,21 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Flow__Group__2"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:719:1: rule__Flow__Group__2 : rule__Flow__Group__2__Impl rule__Flow__Group__3 ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:726:1: rule__Flow__Group__2 : rule__Flow__Group__2__Impl rule__Flow__Group__3 ;
     public final void rule__Flow__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:723:1: ( rule__Flow__Group__2__Impl rule__Flow__Group__3 )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:724:2: rule__Flow__Group__2__Impl rule__Flow__Group__3
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:730:1: ( rule__Flow__Group__2__Impl rule__Flow__Group__3 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:731:2: rule__Flow__Group__2__Impl rule__Flow__Group__3
             {
-            pushFollow(FOLLOW_rule__Flow__Group__2__Impl_in_rule__Flow__Group__21508);
+            pushFollow(FOLLOW_rule__Flow__Group__2__Impl_in_rule__Flow__Group__21529);
             rule__Flow__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Flow__Group__3_in_rule__Flow__Group__21511);
+            pushFollow(FOLLOW_rule__Flow__Group__3_in_rule__Flow__Group__21532);
             rule__Flow__Group__3();
 
             state._fsp--;
@@ -2095,20 +2122,20 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Flow__Group__2__Impl"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:731:1: rule__Flow__Group__2__Impl : ( '{' ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:738:1: rule__Flow__Group__2__Impl : ( '{' ) ;
     public final void rule__Flow__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:735:1: ( ( '{' ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:736:1: ( '{' )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:742:1: ( ( '{' ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:743:1: ( '{' )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:736:1: ( '{' )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:737:1: '{'
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:743:1: ( '{' )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:744:1: '{'
             {
              before(grammarAccess.getFlowAccess().getLeftCurlyBracketKeyword_2()); 
-            match(input,24,FOLLOW_24_in_rule__Flow__Group__2__Impl1539); 
+            match(input,25,FOLLOW_25_in_rule__Flow__Group__2__Impl1560); 
              after(grammarAccess.getFlowAccess().getLeftCurlyBracketKeyword_2()); 
 
             }
@@ -2132,21 +2159,21 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Flow__Group__3"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:750:1: rule__Flow__Group__3 : rule__Flow__Group__3__Impl rule__Flow__Group__4 ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:757:1: rule__Flow__Group__3 : rule__Flow__Group__3__Impl rule__Flow__Group__4 ;
     public final void rule__Flow__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:754:1: ( rule__Flow__Group__3__Impl rule__Flow__Group__4 )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:755:2: rule__Flow__Group__3__Impl rule__Flow__Group__4
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:761:1: ( rule__Flow__Group__3__Impl rule__Flow__Group__4 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:762:2: rule__Flow__Group__3__Impl rule__Flow__Group__4
             {
-            pushFollow(FOLLOW_rule__Flow__Group__3__Impl_in_rule__Flow__Group__31570);
+            pushFollow(FOLLOW_rule__Flow__Group__3__Impl_in_rule__Flow__Group__31591);
             rule__Flow__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Flow__Group__4_in_rule__Flow__Group__31573);
+            pushFollow(FOLLOW_rule__Flow__Group__4_in_rule__Flow__Group__31594);
             rule__Flow__Group__4();
 
             state._fsp--;
@@ -2170,20 +2197,20 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Flow__Group__3__Impl"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:762:1: rule__Flow__Group__3__Impl : ( ( rule__Flow__Group_3__0 )* ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:769:1: rule__Flow__Group__3__Impl : ( ( rule__Flow__Group_3__0 )* ) ;
     public final void rule__Flow__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:766:1: ( ( ( rule__Flow__Group_3__0 )* ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:767:1: ( ( rule__Flow__Group_3__0 )* )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:773:1: ( ( ( rule__Flow__Group_3__0 )* ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:774:1: ( ( rule__Flow__Group_3__0 )* )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:767:1: ( ( rule__Flow__Group_3__0 )* )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:768:1: ( rule__Flow__Group_3__0 )*
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:774:1: ( ( rule__Flow__Group_3__0 )* )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:775:1: ( rule__Flow__Group_3__0 )*
             {
              before(grammarAccess.getFlowAccess().getGroup_3()); 
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:769:1: ( rule__Flow__Group_3__0 )*
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:776:1: ( rule__Flow__Group_3__0 )*
             loop6:
             do {
                 int alt6=2;
@@ -2196,9 +2223,9 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
                 switch (alt6) {
             	case 1 :
-            	    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:769:2: rule__Flow__Group_3__0
+            	    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:776:2: rule__Flow__Group_3__0
             	    {
-            	    pushFollow(FOLLOW_rule__Flow__Group_3__0_in_rule__Flow__Group__3__Impl1600);
+            	    pushFollow(FOLLOW_rule__Flow__Group_3__0_in_rule__Flow__Group__3__Impl1621);
             	    rule__Flow__Group_3__0();
 
             	    state._fsp--;
@@ -2235,16 +2262,16 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Flow__Group__4"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:779:1: rule__Flow__Group__4 : rule__Flow__Group__4__Impl ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:786:1: rule__Flow__Group__4 : rule__Flow__Group__4__Impl ;
     public final void rule__Flow__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:783:1: ( rule__Flow__Group__4__Impl )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:784:2: rule__Flow__Group__4__Impl
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:790:1: ( rule__Flow__Group__4__Impl )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:791:2: rule__Flow__Group__4__Impl
             {
-            pushFollow(FOLLOW_rule__Flow__Group__4__Impl_in_rule__Flow__Group__41631);
+            pushFollow(FOLLOW_rule__Flow__Group__4__Impl_in_rule__Flow__Group__41652);
             rule__Flow__Group__4__Impl();
 
             state._fsp--;
@@ -2268,20 +2295,20 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Flow__Group__4__Impl"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:790:1: rule__Flow__Group__4__Impl : ( '}' ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:797:1: rule__Flow__Group__4__Impl : ( '}' ) ;
     public final void rule__Flow__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:794:1: ( ( '}' ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:795:1: ( '}' )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:801:1: ( ( '}' ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:802:1: ( '}' )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:795:1: ( '}' )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:796:1: '}'
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:802:1: ( '}' )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:803:1: '}'
             {
              before(grammarAccess.getFlowAccess().getRightCurlyBracketKeyword_4()); 
-            match(input,25,FOLLOW_25_in_rule__Flow__Group__4__Impl1659); 
+            match(input,26,FOLLOW_26_in_rule__Flow__Group__4__Impl1680); 
              after(grammarAccess.getFlowAccess().getRightCurlyBracketKeyword_4()); 
 
             }
@@ -2305,21 +2332,21 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Flow__Group_3__0"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:819:1: rule__Flow__Group_3__0 : rule__Flow__Group_3__0__Impl rule__Flow__Group_3__1 ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:826:1: rule__Flow__Group_3__0 : rule__Flow__Group_3__0__Impl rule__Flow__Group_3__1 ;
     public final void rule__Flow__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:823:1: ( rule__Flow__Group_3__0__Impl rule__Flow__Group_3__1 )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:824:2: rule__Flow__Group_3__0__Impl rule__Flow__Group_3__1
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:830:1: ( rule__Flow__Group_3__0__Impl rule__Flow__Group_3__1 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:831:2: rule__Flow__Group_3__0__Impl rule__Flow__Group_3__1
             {
-            pushFollow(FOLLOW_rule__Flow__Group_3__0__Impl_in_rule__Flow__Group_3__01700);
+            pushFollow(FOLLOW_rule__Flow__Group_3__0__Impl_in_rule__Flow__Group_3__01721);
             rule__Flow__Group_3__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Flow__Group_3__1_in_rule__Flow__Group_3__01703);
+            pushFollow(FOLLOW_rule__Flow__Group_3__1_in_rule__Flow__Group_3__01724);
             rule__Flow__Group_3__1();
 
             state._fsp--;
@@ -2343,23 +2370,23 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Flow__Group_3__0__Impl"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:831:1: rule__Flow__Group_3__0__Impl : ( ( rule__Flow__StatesAssignment_3_0 ) ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:838:1: rule__Flow__Group_3__0__Impl : ( ( rule__Flow__StatesAssignment_3_0 ) ) ;
     public final void rule__Flow__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:835:1: ( ( ( rule__Flow__StatesAssignment_3_0 ) ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:836:1: ( ( rule__Flow__StatesAssignment_3_0 ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:842:1: ( ( ( rule__Flow__StatesAssignment_3_0 ) ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:843:1: ( ( rule__Flow__StatesAssignment_3_0 ) )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:836:1: ( ( rule__Flow__StatesAssignment_3_0 ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:837:1: ( rule__Flow__StatesAssignment_3_0 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:843:1: ( ( rule__Flow__StatesAssignment_3_0 ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:844:1: ( rule__Flow__StatesAssignment_3_0 )
             {
              before(grammarAccess.getFlowAccess().getStatesAssignment_3_0()); 
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:838:1: ( rule__Flow__StatesAssignment_3_0 )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:838:2: rule__Flow__StatesAssignment_3_0
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:845:1: ( rule__Flow__StatesAssignment_3_0 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:845:2: rule__Flow__StatesAssignment_3_0
             {
-            pushFollow(FOLLOW_rule__Flow__StatesAssignment_3_0_in_rule__Flow__Group_3__0__Impl1730);
+            pushFollow(FOLLOW_rule__Flow__StatesAssignment_3_0_in_rule__Flow__Group_3__0__Impl1751);
             rule__Flow__StatesAssignment_3_0();
 
             state._fsp--;
@@ -2390,16 +2417,16 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Flow__Group_3__1"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:848:1: rule__Flow__Group_3__1 : rule__Flow__Group_3__1__Impl ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:855:1: rule__Flow__Group_3__1 : rule__Flow__Group_3__1__Impl ;
     public final void rule__Flow__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:852:1: ( rule__Flow__Group_3__1__Impl )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:853:2: rule__Flow__Group_3__1__Impl
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:859:1: ( rule__Flow__Group_3__1__Impl )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:860:2: rule__Flow__Group_3__1__Impl
             {
-            pushFollow(FOLLOW_rule__Flow__Group_3__1__Impl_in_rule__Flow__Group_3__11760);
+            pushFollow(FOLLOW_rule__Flow__Group_3__1__Impl_in_rule__Flow__Group_3__11781);
             rule__Flow__Group_3__1__Impl();
 
             state._fsp--;
@@ -2423,20 +2450,20 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Flow__Group_3__1__Impl"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:859:1: rule__Flow__Group_3__1__Impl : ( ';' ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:866:1: rule__Flow__Group_3__1__Impl : ( ';' ) ;
     public final void rule__Flow__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:863:1: ( ( ';' ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:864:1: ( ';' )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:870:1: ( ( ';' ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:871:1: ( ';' )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:864:1: ( ';' )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:865:1: ';'
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:871:1: ( ';' )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:872:1: ';'
             {
              before(grammarAccess.getFlowAccess().getSemicolonKeyword_3_1()); 
-            match(input,22,FOLLOW_22_in_rule__Flow__Group_3__1__Impl1788); 
+            match(input,23,FOLLOW_23_in_rule__Flow__Group_3__1__Impl1809); 
              after(grammarAccess.getFlowAccess().getSemicolonKeyword_3_1()); 
 
             }
@@ -2460,21 +2487,21 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__Group__0"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:882:1: rule__Field__Group__0 : rule__Field__Group__0__Impl rule__Field__Group__1 ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:889:1: rule__Field__Group__0 : rule__Field__Group__0__Impl rule__Field__Group__1 ;
     public final void rule__Field__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:886:1: ( rule__Field__Group__0__Impl rule__Field__Group__1 )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:887:2: rule__Field__Group__0__Impl rule__Field__Group__1
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:893:1: ( rule__Field__Group__0__Impl rule__Field__Group__1 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:894:2: rule__Field__Group__0__Impl rule__Field__Group__1
             {
-            pushFollow(FOLLOW_rule__Field__Group__0__Impl_in_rule__Field__Group__01823);
+            pushFollow(FOLLOW_rule__Field__Group__0__Impl_in_rule__Field__Group__01844);
             rule__Field__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Field__Group__1_in_rule__Field__Group__01826);
+            pushFollow(FOLLOW_rule__Field__Group__1_in_rule__Field__Group__01847);
             rule__Field__Group__1();
 
             state._fsp--;
@@ -2498,20 +2525,20 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__Group__0__Impl"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:894:1: rule__Field__Group__0__Impl : ( 'field' ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:901:1: rule__Field__Group__0__Impl : ( 'field' ) ;
     public final void rule__Field__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:898:1: ( ( 'field' ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:899:1: ( 'field' )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:905:1: ( ( 'field' ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:906:1: ( 'field' )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:899:1: ( 'field' )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:900:1: 'field'
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:906:1: ( 'field' )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:907:1: 'field'
             {
              before(grammarAccess.getFieldAccess().getFieldKeyword_0()); 
-            match(input,26,FOLLOW_26_in_rule__Field__Group__0__Impl1854); 
+            match(input,27,FOLLOW_27_in_rule__Field__Group__0__Impl1875); 
              after(grammarAccess.getFieldAccess().getFieldKeyword_0()); 
 
             }
@@ -2535,21 +2562,21 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__Group__1"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:913:1: rule__Field__Group__1 : rule__Field__Group__1__Impl rule__Field__Group__2 ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:920:1: rule__Field__Group__1 : rule__Field__Group__1__Impl rule__Field__Group__2 ;
     public final void rule__Field__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:917:1: ( rule__Field__Group__1__Impl rule__Field__Group__2 )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:918:2: rule__Field__Group__1__Impl rule__Field__Group__2
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:924:1: ( rule__Field__Group__1__Impl rule__Field__Group__2 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:925:2: rule__Field__Group__1__Impl rule__Field__Group__2
             {
-            pushFollow(FOLLOW_rule__Field__Group__1__Impl_in_rule__Field__Group__11885);
+            pushFollow(FOLLOW_rule__Field__Group__1__Impl_in_rule__Field__Group__11906);
             rule__Field__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Field__Group__2_in_rule__Field__Group__11888);
+            pushFollow(FOLLOW_rule__Field__Group__2_in_rule__Field__Group__11909);
             rule__Field__Group__2();
 
             state._fsp--;
@@ -2573,23 +2600,23 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__Group__1__Impl"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:925:1: rule__Field__Group__1__Impl : ( ( rule__Field__NameAssignment_1 ) ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:932:1: rule__Field__Group__1__Impl : ( ( rule__Field__NameAssignment_1 ) ) ;
     public final void rule__Field__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:929:1: ( ( ( rule__Field__NameAssignment_1 ) ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:930:1: ( ( rule__Field__NameAssignment_1 ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:936:1: ( ( ( rule__Field__NameAssignment_1 ) ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:937:1: ( ( rule__Field__NameAssignment_1 ) )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:930:1: ( ( rule__Field__NameAssignment_1 ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:931:1: ( rule__Field__NameAssignment_1 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:937:1: ( ( rule__Field__NameAssignment_1 ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:938:1: ( rule__Field__NameAssignment_1 )
             {
              before(grammarAccess.getFieldAccess().getNameAssignment_1()); 
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:932:1: ( rule__Field__NameAssignment_1 )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:932:2: rule__Field__NameAssignment_1
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:939:1: ( rule__Field__NameAssignment_1 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:939:2: rule__Field__NameAssignment_1
             {
-            pushFollow(FOLLOW_rule__Field__NameAssignment_1_in_rule__Field__Group__1__Impl1915);
+            pushFollow(FOLLOW_rule__Field__NameAssignment_1_in_rule__Field__Group__1__Impl1936);
             rule__Field__NameAssignment_1();
 
             state._fsp--;
@@ -2620,21 +2647,21 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__Group__2"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:942:1: rule__Field__Group__2 : rule__Field__Group__2__Impl rule__Field__Group__3 ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:949:1: rule__Field__Group__2 : rule__Field__Group__2__Impl rule__Field__Group__3 ;
     public final void rule__Field__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:946:1: ( rule__Field__Group__2__Impl rule__Field__Group__3 )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:947:2: rule__Field__Group__2__Impl rule__Field__Group__3
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:953:1: ( rule__Field__Group__2__Impl rule__Field__Group__3 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:954:2: rule__Field__Group__2__Impl rule__Field__Group__3
             {
-            pushFollow(FOLLOW_rule__Field__Group__2__Impl_in_rule__Field__Group__21945);
+            pushFollow(FOLLOW_rule__Field__Group__2__Impl_in_rule__Field__Group__21966);
             rule__Field__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Field__Group__3_in_rule__Field__Group__21948);
+            pushFollow(FOLLOW_rule__Field__Group__3_in_rule__Field__Group__21969);
             rule__Field__Group__3();
 
             state._fsp--;
@@ -2658,23 +2685,23 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__Group__2__Impl"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:954:1: rule__Field__Group__2__Impl : ( ( rule__Field__LabelAssignment_2 ) ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:961:1: rule__Field__Group__2__Impl : ( ( rule__Field__LabelAssignment_2 ) ) ;
     public final void rule__Field__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:958:1: ( ( ( rule__Field__LabelAssignment_2 ) ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:959:1: ( ( rule__Field__LabelAssignment_2 ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:965:1: ( ( ( rule__Field__LabelAssignment_2 ) ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:966:1: ( ( rule__Field__LabelAssignment_2 ) )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:959:1: ( ( rule__Field__LabelAssignment_2 ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:960:1: ( rule__Field__LabelAssignment_2 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:966:1: ( ( rule__Field__LabelAssignment_2 ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:967:1: ( rule__Field__LabelAssignment_2 )
             {
              before(grammarAccess.getFieldAccess().getLabelAssignment_2()); 
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:961:1: ( rule__Field__LabelAssignment_2 )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:961:2: rule__Field__LabelAssignment_2
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:968:1: ( rule__Field__LabelAssignment_2 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:968:2: rule__Field__LabelAssignment_2
             {
-            pushFollow(FOLLOW_rule__Field__LabelAssignment_2_in_rule__Field__Group__2__Impl1975);
+            pushFollow(FOLLOW_rule__Field__LabelAssignment_2_in_rule__Field__Group__2__Impl1996);
             rule__Field__LabelAssignment_2();
 
             state._fsp--;
@@ -2705,21 +2732,21 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__Group__3"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:971:1: rule__Field__Group__3 : rule__Field__Group__3__Impl rule__Field__Group__4 ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:978:1: rule__Field__Group__3 : rule__Field__Group__3__Impl rule__Field__Group__4 ;
     public final void rule__Field__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:975:1: ( rule__Field__Group__3__Impl rule__Field__Group__4 )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:976:2: rule__Field__Group__3__Impl rule__Field__Group__4
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:982:1: ( rule__Field__Group__3__Impl rule__Field__Group__4 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:983:2: rule__Field__Group__3__Impl rule__Field__Group__4
             {
-            pushFollow(FOLLOW_rule__Field__Group__3__Impl_in_rule__Field__Group__32005);
+            pushFollow(FOLLOW_rule__Field__Group__3__Impl_in_rule__Field__Group__32026);
             rule__Field__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Field__Group__4_in_rule__Field__Group__32008);
+            pushFollow(FOLLOW_rule__Field__Group__4_in_rule__Field__Group__32029);
             rule__Field__Group__4();
 
             state._fsp--;
@@ -2743,23 +2770,23 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__Group__3__Impl"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:983:1: rule__Field__Group__3__Impl : ( ( rule__Field__Alternatives_3 ) ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:990:1: rule__Field__Group__3__Impl : ( ( rule__Field__Alternatives_3 ) ) ;
     public final void rule__Field__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:987:1: ( ( ( rule__Field__Alternatives_3 ) ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:988:1: ( ( rule__Field__Alternatives_3 ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:994:1: ( ( ( rule__Field__Alternatives_3 ) ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:995:1: ( ( rule__Field__Alternatives_3 ) )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:988:1: ( ( rule__Field__Alternatives_3 ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:989:1: ( rule__Field__Alternatives_3 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:995:1: ( ( rule__Field__Alternatives_3 ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:996:1: ( rule__Field__Alternatives_3 )
             {
              before(grammarAccess.getFieldAccess().getAlternatives_3()); 
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:990:1: ( rule__Field__Alternatives_3 )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:990:2: rule__Field__Alternatives_3
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:997:1: ( rule__Field__Alternatives_3 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:997:2: rule__Field__Alternatives_3
             {
-            pushFollow(FOLLOW_rule__Field__Alternatives_3_in_rule__Field__Group__3__Impl2035);
+            pushFollow(FOLLOW_rule__Field__Alternatives_3_in_rule__Field__Group__3__Impl2056);
             rule__Field__Alternatives_3();
 
             state._fsp--;
@@ -2790,16 +2817,16 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__Group__4"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1000:1: rule__Field__Group__4 : rule__Field__Group__4__Impl ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1007:1: rule__Field__Group__4 : rule__Field__Group__4__Impl ;
     public final void rule__Field__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1004:1: ( rule__Field__Group__4__Impl )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1005:2: rule__Field__Group__4__Impl
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1011:1: ( rule__Field__Group__4__Impl )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1012:2: rule__Field__Group__4__Impl
             {
-            pushFollow(FOLLOW_rule__Field__Group__4__Impl_in_rule__Field__Group__42065);
+            pushFollow(FOLLOW_rule__Field__Group__4__Impl_in_rule__Field__Group__42086);
             rule__Field__Group__4__Impl();
 
             state._fsp--;
@@ -2823,20 +2850,20 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__Group__4__Impl"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1011:1: rule__Field__Group__4__Impl : ( ';' ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1018:1: rule__Field__Group__4__Impl : ( ';' ) ;
     public final void rule__Field__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1015:1: ( ( ';' ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1016:1: ( ';' )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1022:1: ( ( ';' ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1023:1: ( ';' )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1016:1: ( ';' )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1017:1: ';'
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1023:1: ( ';' )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1024:1: ';'
             {
              before(grammarAccess.getFieldAccess().getSemicolonKeyword_4()); 
-            match(input,22,FOLLOW_22_in_rule__Field__Group__4__Impl2093); 
+            match(input,23,FOLLOW_23_in_rule__Field__Group__4__Impl2114); 
              after(grammarAccess.getFieldAccess().getSemicolonKeyword_4()); 
 
             }
@@ -2860,21 +2887,21 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Enum__Group__0"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1040:1: rule__Enum__Group__0 : rule__Enum__Group__0__Impl rule__Enum__Group__1 ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1047:1: rule__Enum__Group__0 : rule__Enum__Group__0__Impl rule__Enum__Group__1 ;
     public final void rule__Enum__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1044:1: ( rule__Enum__Group__0__Impl rule__Enum__Group__1 )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1045:2: rule__Enum__Group__0__Impl rule__Enum__Group__1
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1051:1: ( rule__Enum__Group__0__Impl rule__Enum__Group__1 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1052:2: rule__Enum__Group__0__Impl rule__Enum__Group__1
             {
-            pushFollow(FOLLOW_rule__Enum__Group__0__Impl_in_rule__Enum__Group__02134);
+            pushFollow(FOLLOW_rule__Enum__Group__0__Impl_in_rule__Enum__Group__02155);
             rule__Enum__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Enum__Group__1_in_rule__Enum__Group__02137);
+            pushFollow(FOLLOW_rule__Enum__Group__1_in_rule__Enum__Group__02158);
             rule__Enum__Group__1();
 
             state._fsp--;
@@ -2898,23 +2925,23 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Enum__Group__0__Impl"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1052:1: rule__Enum__Group__0__Impl : ( ( rule__Enum__OptionAssignment_0 ) ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1059:1: rule__Enum__Group__0__Impl : ( ( rule__Enum__OptionAssignment_0 ) ) ;
     public final void rule__Enum__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1056:1: ( ( ( rule__Enum__OptionAssignment_0 ) ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1057:1: ( ( rule__Enum__OptionAssignment_0 ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1063:1: ( ( ( rule__Enum__OptionAssignment_0 ) ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1064:1: ( ( rule__Enum__OptionAssignment_0 ) )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1057:1: ( ( rule__Enum__OptionAssignment_0 ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1058:1: ( rule__Enum__OptionAssignment_0 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1064:1: ( ( rule__Enum__OptionAssignment_0 ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1065:1: ( rule__Enum__OptionAssignment_0 )
             {
              before(grammarAccess.getEnumAccess().getOptionAssignment_0()); 
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1059:1: ( rule__Enum__OptionAssignment_0 )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1059:2: rule__Enum__OptionAssignment_0
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1066:1: ( rule__Enum__OptionAssignment_0 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1066:2: rule__Enum__OptionAssignment_0
             {
-            pushFollow(FOLLOW_rule__Enum__OptionAssignment_0_in_rule__Enum__Group__0__Impl2164);
+            pushFollow(FOLLOW_rule__Enum__OptionAssignment_0_in_rule__Enum__Group__0__Impl2185);
             rule__Enum__OptionAssignment_0();
 
             state._fsp--;
@@ -2945,16 +2972,16 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Enum__Group__1"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1069:1: rule__Enum__Group__1 : rule__Enum__Group__1__Impl ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1076:1: rule__Enum__Group__1 : rule__Enum__Group__1__Impl ;
     public final void rule__Enum__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1073:1: ( rule__Enum__Group__1__Impl )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1074:2: rule__Enum__Group__1__Impl
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1080:1: ( rule__Enum__Group__1__Impl )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1081:2: rule__Enum__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__Enum__Group__1__Impl_in_rule__Enum__Group__12194);
+            pushFollow(FOLLOW_rule__Enum__Group__1__Impl_in_rule__Enum__Group__12215);
             rule__Enum__Group__1__Impl();
 
             state._fsp--;
@@ -2978,35 +3005,35 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Enum__Group__1__Impl"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1080:1: rule__Enum__Group__1__Impl : ( ( rule__Enum__Group_1__0 )* ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1087:1: rule__Enum__Group__1__Impl : ( ( rule__Enum__Group_1__0 )* ) ;
     public final void rule__Enum__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1084:1: ( ( ( rule__Enum__Group_1__0 )* ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1085:1: ( ( rule__Enum__Group_1__0 )* )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1091:1: ( ( ( rule__Enum__Group_1__0 )* ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1092:1: ( ( rule__Enum__Group_1__0 )* )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1085:1: ( ( rule__Enum__Group_1__0 )* )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1086:1: ( rule__Enum__Group_1__0 )*
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1092:1: ( ( rule__Enum__Group_1__0 )* )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1093:1: ( rule__Enum__Group_1__0 )*
             {
              before(grammarAccess.getEnumAccess().getGroup_1()); 
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1087:1: ( rule__Enum__Group_1__0 )*
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1094:1: ( rule__Enum__Group_1__0 )*
             loop7:
             do {
                 int alt7=2;
                 int LA7_0 = input.LA(1);
 
-                if ( (LA7_0==27) ) {
+                if ( (LA7_0==28) ) {
                     alt7=1;
                 }
 
 
                 switch (alt7) {
             	case 1 :
-            	    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1087:2: rule__Enum__Group_1__0
+            	    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1094:2: rule__Enum__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_rule__Enum__Group_1__0_in_rule__Enum__Group__1__Impl2221);
+            	    pushFollow(FOLLOW_rule__Enum__Group_1__0_in_rule__Enum__Group__1__Impl2242);
             	    rule__Enum__Group_1__0();
 
             	    state._fsp--;
@@ -3043,21 +3070,21 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Enum__Group_1__0"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1101:1: rule__Enum__Group_1__0 : rule__Enum__Group_1__0__Impl rule__Enum__Group_1__1 ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1108:1: rule__Enum__Group_1__0 : rule__Enum__Group_1__0__Impl rule__Enum__Group_1__1 ;
     public final void rule__Enum__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1105:1: ( rule__Enum__Group_1__0__Impl rule__Enum__Group_1__1 )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1106:2: rule__Enum__Group_1__0__Impl rule__Enum__Group_1__1
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1112:1: ( rule__Enum__Group_1__0__Impl rule__Enum__Group_1__1 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1113:2: rule__Enum__Group_1__0__Impl rule__Enum__Group_1__1
             {
-            pushFollow(FOLLOW_rule__Enum__Group_1__0__Impl_in_rule__Enum__Group_1__02256);
+            pushFollow(FOLLOW_rule__Enum__Group_1__0__Impl_in_rule__Enum__Group_1__02277);
             rule__Enum__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Enum__Group_1__1_in_rule__Enum__Group_1__02259);
+            pushFollow(FOLLOW_rule__Enum__Group_1__1_in_rule__Enum__Group_1__02280);
             rule__Enum__Group_1__1();
 
             state._fsp--;
@@ -3081,20 +3108,20 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Enum__Group_1__0__Impl"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1113:1: rule__Enum__Group_1__0__Impl : ( ',' ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1120:1: rule__Enum__Group_1__0__Impl : ( ',' ) ;
     public final void rule__Enum__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1117:1: ( ( ',' ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1118:1: ( ',' )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1124:1: ( ( ',' ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1125:1: ( ',' )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1118:1: ( ',' )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1119:1: ','
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1125:1: ( ',' )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1126:1: ','
             {
              before(grammarAccess.getEnumAccess().getCommaKeyword_1_0()); 
-            match(input,27,FOLLOW_27_in_rule__Enum__Group_1__0__Impl2287); 
+            match(input,28,FOLLOW_28_in_rule__Enum__Group_1__0__Impl2308); 
              after(grammarAccess.getEnumAccess().getCommaKeyword_1_0()); 
 
             }
@@ -3118,16 +3145,16 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Enum__Group_1__1"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1132:1: rule__Enum__Group_1__1 : rule__Enum__Group_1__1__Impl ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1139:1: rule__Enum__Group_1__1 : rule__Enum__Group_1__1__Impl ;
     public final void rule__Enum__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1136:1: ( rule__Enum__Group_1__1__Impl )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1137:2: rule__Enum__Group_1__1__Impl
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1143:1: ( rule__Enum__Group_1__1__Impl )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1144:2: rule__Enum__Group_1__1__Impl
             {
-            pushFollow(FOLLOW_rule__Enum__Group_1__1__Impl_in_rule__Enum__Group_1__12318);
+            pushFollow(FOLLOW_rule__Enum__Group_1__1__Impl_in_rule__Enum__Group_1__12339);
             rule__Enum__Group_1__1__Impl();
 
             state._fsp--;
@@ -3151,23 +3178,23 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Enum__Group_1__1__Impl"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1143:1: rule__Enum__Group_1__1__Impl : ( ( rule__Enum__OptionAssignment_1_1 ) ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1150:1: rule__Enum__Group_1__1__Impl : ( ( rule__Enum__OptionAssignment_1_1 ) ) ;
     public final void rule__Enum__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1147:1: ( ( ( rule__Enum__OptionAssignment_1_1 ) ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1148:1: ( ( rule__Enum__OptionAssignment_1_1 ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1154:1: ( ( ( rule__Enum__OptionAssignment_1_1 ) ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1155:1: ( ( rule__Enum__OptionAssignment_1_1 ) )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1148:1: ( ( rule__Enum__OptionAssignment_1_1 ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1149:1: ( rule__Enum__OptionAssignment_1_1 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1155:1: ( ( rule__Enum__OptionAssignment_1_1 ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1156:1: ( rule__Enum__OptionAssignment_1_1 )
             {
              before(grammarAccess.getEnumAccess().getOptionAssignment_1_1()); 
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1150:1: ( rule__Enum__OptionAssignment_1_1 )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1150:2: rule__Enum__OptionAssignment_1_1
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1157:1: ( rule__Enum__OptionAssignment_1_1 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1157:2: rule__Enum__OptionAssignment_1_1
             {
-            pushFollow(FOLLOW_rule__Enum__OptionAssignment_1_1_in_rule__Enum__Group_1__1__Impl2345);
+            pushFollow(FOLLOW_rule__Enum__OptionAssignment_1_1_in_rule__Enum__Group_1__1__Impl2366);
             rule__Enum__OptionAssignment_1_1();
 
             state._fsp--;
@@ -3198,21 +3225,21 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TicketCategory__Group__0"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1164:1: rule__TicketCategory__Group__0 : rule__TicketCategory__Group__0__Impl rule__TicketCategory__Group__1 ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1171:1: rule__TicketCategory__Group__0 : rule__TicketCategory__Group__0__Impl rule__TicketCategory__Group__1 ;
     public final void rule__TicketCategory__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1168:1: ( rule__TicketCategory__Group__0__Impl rule__TicketCategory__Group__1 )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1169:2: rule__TicketCategory__Group__0__Impl rule__TicketCategory__Group__1
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1175:1: ( rule__TicketCategory__Group__0__Impl rule__TicketCategory__Group__1 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1176:2: rule__TicketCategory__Group__0__Impl rule__TicketCategory__Group__1
             {
-            pushFollow(FOLLOW_rule__TicketCategory__Group__0__Impl_in_rule__TicketCategory__Group__02379);
+            pushFollow(FOLLOW_rule__TicketCategory__Group__0__Impl_in_rule__TicketCategory__Group__02400);
             rule__TicketCategory__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__TicketCategory__Group__1_in_rule__TicketCategory__Group__02382);
+            pushFollow(FOLLOW_rule__TicketCategory__Group__1_in_rule__TicketCategory__Group__02403);
             rule__TicketCategory__Group__1();
 
             state._fsp--;
@@ -3236,20 +3263,20 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TicketCategory__Group__0__Impl"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1176:1: rule__TicketCategory__Group__0__Impl : ( 'ticketCategory' ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1183:1: rule__TicketCategory__Group__0__Impl : ( 'ticketCategory' ) ;
     public final void rule__TicketCategory__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1180:1: ( ( 'ticketCategory' ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1181:1: ( 'ticketCategory' )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1187:1: ( ( 'ticketCategory' ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1188:1: ( 'ticketCategory' )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1181:1: ( 'ticketCategory' )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1182:1: 'ticketCategory'
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1188:1: ( 'ticketCategory' )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1189:1: 'ticketCategory'
             {
              before(grammarAccess.getTicketCategoryAccess().getTicketCategoryKeyword_0()); 
-            match(input,28,FOLLOW_28_in_rule__TicketCategory__Group__0__Impl2410); 
+            match(input,29,FOLLOW_29_in_rule__TicketCategory__Group__0__Impl2431); 
              after(grammarAccess.getTicketCategoryAccess().getTicketCategoryKeyword_0()); 
 
             }
@@ -3273,21 +3300,21 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TicketCategory__Group__1"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1195:1: rule__TicketCategory__Group__1 : rule__TicketCategory__Group__1__Impl rule__TicketCategory__Group__2 ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1202:1: rule__TicketCategory__Group__1 : rule__TicketCategory__Group__1__Impl rule__TicketCategory__Group__2 ;
     public final void rule__TicketCategory__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1199:1: ( rule__TicketCategory__Group__1__Impl rule__TicketCategory__Group__2 )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1200:2: rule__TicketCategory__Group__1__Impl rule__TicketCategory__Group__2
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1206:1: ( rule__TicketCategory__Group__1__Impl rule__TicketCategory__Group__2 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1207:2: rule__TicketCategory__Group__1__Impl rule__TicketCategory__Group__2
             {
-            pushFollow(FOLLOW_rule__TicketCategory__Group__1__Impl_in_rule__TicketCategory__Group__12441);
+            pushFollow(FOLLOW_rule__TicketCategory__Group__1__Impl_in_rule__TicketCategory__Group__12462);
             rule__TicketCategory__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__TicketCategory__Group__2_in_rule__TicketCategory__Group__12444);
+            pushFollow(FOLLOW_rule__TicketCategory__Group__2_in_rule__TicketCategory__Group__12465);
             rule__TicketCategory__Group__2();
 
             state._fsp--;
@@ -3311,23 +3338,23 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TicketCategory__Group__1__Impl"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1207:1: rule__TicketCategory__Group__1__Impl : ( ( rule__TicketCategory__NameAssignment_1 ) ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1214:1: rule__TicketCategory__Group__1__Impl : ( ( rule__TicketCategory__NameAssignment_1 ) ) ;
     public final void rule__TicketCategory__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1211:1: ( ( ( rule__TicketCategory__NameAssignment_1 ) ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1212:1: ( ( rule__TicketCategory__NameAssignment_1 ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1218:1: ( ( ( rule__TicketCategory__NameAssignment_1 ) ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1219:1: ( ( rule__TicketCategory__NameAssignment_1 ) )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1212:1: ( ( rule__TicketCategory__NameAssignment_1 ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1213:1: ( rule__TicketCategory__NameAssignment_1 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1219:1: ( ( rule__TicketCategory__NameAssignment_1 ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1220:1: ( rule__TicketCategory__NameAssignment_1 )
             {
              before(grammarAccess.getTicketCategoryAccess().getNameAssignment_1()); 
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1214:1: ( rule__TicketCategory__NameAssignment_1 )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1214:2: rule__TicketCategory__NameAssignment_1
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1221:1: ( rule__TicketCategory__NameAssignment_1 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1221:2: rule__TicketCategory__NameAssignment_1
             {
-            pushFollow(FOLLOW_rule__TicketCategory__NameAssignment_1_in_rule__TicketCategory__Group__1__Impl2471);
+            pushFollow(FOLLOW_rule__TicketCategory__NameAssignment_1_in_rule__TicketCategory__Group__1__Impl2492);
             rule__TicketCategory__NameAssignment_1();
 
             state._fsp--;
@@ -3358,21 +3385,21 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TicketCategory__Group__2"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1224:1: rule__TicketCategory__Group__2 : rule__TicketCategory__Group__2__Impl rule__TicketCategory__Group__3 ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1231:1: rule__TicketCategory__Group__2 : rule__TicketCategory__Group__2__Impl rule__TicketCategory__Group__3 ;
     public final void rule__TicketCategory__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1228:1: ( rule__TicketCategory__Group__2__Impl rule__TicketCategory__Group__3 )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1229:2: rule__TicketCategory__Group__2__Impl rule__TicketCategory__Group__3
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1235:1: ( rule__TicketCategory__Group__2__Impl rule__TicketCategory__Group__3 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1236:2: rule__TicketCategory__Group__2__Impl rule__TicketCategory__Group__3
             {
-            pushFollow(FOLLOW_rule__TicketCategory__Group__2__Impl_in_rule__TicketCategory__Group__22501);
+            pushFollow(FOLLOW_rule__TicketCategory__Group__2__Impl_in_rule__TicketCategory__Group__22522);
             rule__TicketCategory__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__TicketCategory__Group__3_in_rule__TicketCategory__Group__22504);
+            pushFollow(FOLLOW_rule__TicketCategory__Group__3_in_rule__TicketCategory__Group__22525);
             rule__TicketCategory__Group__3();
 
             state._fsp--;
@@ -3396,23 +3423,23 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TicketCategory__Group__2__Impl"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1236:1: rule__TicketCategory__Group__2__Impl : ( ( rule__TicketCategory__DescriptionAssignment_2 ) ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1243:1: rule__TicketCategory__Group__2__Impl : ( ( rule__TicketCategory__DescriptionAssignment_2 ) ) ;
     public final void rule__TicketCategory__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1240:1: ( ( ( rule__TicketCategory__DescriptionAssignment_2 ) ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1241:1: ( ( rule__TicketCategory__DescriptionAssignment_2 ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1247:1: ( ( ( rule__TicketCategory__DescriptionAssignment_2 ) ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1248:1: ( ( rule__TicketCategory__DescriptionAssignment_2 ) )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1241:1: ( ( rule__TicketCategory__DescriptionAssignment_2 ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1242:1: ( rule__TicketCategory__DescriptionAssignment_2 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1248:1: ( ( rule__TicketCategory__DescriptionAssignment_2 ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1249:1: ( rule__TicketCategory__DescriptionAssignment_2 )
             {
              before(grammarAccess.getTicketCategoryAccess().getDescriptionAssignment_2()); 
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1243:1: ( rule__TicketCategory__DescriptionAssignment_2 )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1243:2: rule__TicketCategory__DescriptionAssignment_2
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1250:1: ( rule__TicketCategory__DescriptionAssignment_2 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1250:2: rule__TicketCategory__DescriptionAssignment_2
             {
-            pushFollow(FOLLOW_rule__TicketCategory__DescriptionAssignment_2_in_rule__TicketCategory__Group__2__Impl2531);
+            pushFollow(FOLLOW_rule__TicketCategory__DescriptionAssignment_2_in_rule__TicketCategory__Group__2__Impl2552);
             rule__TicketCategory__DescriptionAssignment_2();
 
             state._fsp--;
@@ -3443,21 +3470,21 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TicketCategory__Group__3"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1253:1: rule__TicketCategory__Group__3 : rule__TicketCategory__Group__3__Impl rule__TicketCategory__Group__4 ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1260:1: rule__TicketCategory__Group__3 : rule__TicketCategory__Group__3__Impl rule__TicketCategory__Group__4 ;
     public final void rule__TicketCategory__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1257:1: ( rule__TicketCategory__Group__3__Impl rule__TicketCategory__Group__4 )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1258:2: rule__TicketCategory__Group__3__Impl rule__TicketCategory__Group__4
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1264:1: ( rule__TicketCategory__Group__3__Impl rule__TicketCategory__Group__4 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1265:2: rule__TicketCategory__Group__3__Impl rule__TicketCategory__Group__4
             {
-            pushFollow(FOLLOW_rule__TicketCategory__Group__3__Impl_in_rule__TicketCategory__Group__32561);
+            pushFollow(FOLLOW_rule__TicketCategory__Group__3__Impl_in_rule__TicketCategory__Group__32582);
             rule__TicketCategory__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__TicketCategory__Group__4_in_rule__TicketCategory__Group__32564);
+            pushFollow(FOLLOW_rule__TicketCategory__Group__4_in_rule__TicketCategory__Group__32585);
             rule__TicketCategory__Group__4();
 
             state._fsp--;
@@ -3481,20 +3508,20 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TicketCategory__Group__3__Impl"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1265:1: rule__TicketCategory__Group__3__Impl : ( '{' ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1272:1: rule__TicketCategory__Group__3__Impl : ( '{' ) ;
     public final void rule__TicketCategory__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1269:1: ( ( '{' ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1270:1: ( '{' )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1276:1: ( ( '{' ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1277:1: ( '{' )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1270:1: ( '{' )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1271:1: '{'
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1277:1: ( '{' )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1278:1: '{'
             {
              before(grammarAccess.getTicketCategoryAccess().getLeftCurlyBracketKeyword_3()); 
-            match(input,24,FOLLOW_24_in_rule__TicketCategory__Group__3__Impl2592); 
+            match(input,25,FOLLOW_25_in_rule__TicketCategory__Group__3__Impl2613); 
              after(grammarAccess.getTicketCategoryAccess().getLeftCurlyBracketKeyword_3()); 
 
             }
@@ -3518,21 +3545,21 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TicketCategory__Group__4"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1284:1: rule__TicketCategory__Group__4 : rule__TicketCategory__Group__4__Impl rule__TicketCategory__Group__5 ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1291:1: rule__TicketCategory__Group__4 : rule__TicketCategory__Group__4__Impl rule__TicketCategory__Group__5 ;
     public final void rule__TicketCategory__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1288:1: ( rule__TicketCategory__Group__4__Impl rule__TicketCategory__Group__5 )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1289:2: rule__TicketCategory__Group__4__Impl rule__TicketCategory__Group__5
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1295:1: ( rule__TicketCategory__Group__4__Impl rule__TicketCategory__Group__5 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1296:2: rule__TicketCategory__Group__4__Impl rule__TicketCategory__Group__5
             {
-            pushFollow(FOLLOW_rule__TicketCategory__Group__4__Impl_in_rule__TicketCategory__Group__42623);
+            pushFollow(FOLLOW_rule__TicketCategory__Group__4__Impl_in_rule__TicketCategory__Group__42644);
             rule__TicketCategory__Group__4__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__TicketCategory__Group__5_in_rule__TicketCategory__Group__42626);
+            pushFollow(FOLLOW_rule__TicketCategory__Group__5_in_rule__TicketCategory__Group__42647);
             rule__TicketCategory__Group__5();
 
             state._fsp--;
@@ -3556,31 +3583,31 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TicketCategory__Group__4__Impl"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1296:1: rule__TicketCategory__Group__4__Impl : ( ( rule__TicketCategory__Group_4__0 )? ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1303:1: rule__TicketCategory__Group__4__Impl : ( ( rule__TicketCategory__Group_4__0 )? ) ;
     public final void rule__TicketCategory__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1300:1: ( ( ( rule__TicketCategory__Group_4__0 )? ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1301:1: ( ( rule__TicketCategory__Group_4__0 )? )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1307:1: ( ( ( rule__TicketCategory__Group_4__0 )? ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1308:1: ( ( rule__TicketCategory__Group_4__0 )? )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1301:1: ( ( rule__TicketCategory__Group_4__0 )? )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1302:1: ( rule__TicketCategory__Group_4__0 )?
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1308:1: ( ( rule__TicketCategory__Group_4__0 )? )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1309:1: ( rule__TicketCategory__Group_4__0 )?
             {
              before(grammarAccess.getTicketCategoryAccess().getGroup_4()); 
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1303:1: ( rule__TicketCategory__Group_4__0 )?
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1310:1: ( rule__TicketCategory__Group_4__0 )?
             int alt8=2;
             int LA8_0 = input.LA(1);
 
-            if ( (LA8_0==23) ) {
+            if ( (LA8_0==24) ) {
                 alt8=1;
             }
             switch (alt8) {
                 case 1 :
-                    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1303:2: rule__TicketCategory__Group_4__0
+                    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1310:2: rule__TicketCategory__Group_4__0
                     {
-                    pushFollow(FOLLOW_rule__TicketCategory__Group_4__0_in_rule__TicketCategory__Group__4__Impl2653);
+                    pushFollow(FOLLOW_rule__TicketCategory__Group_4__0_in_rule__TicketCategory__Group__4__Impl2674);
                     rule__TicketCategory__Group_4__0();
 
                     state._fsp--;
@@ -3614,21 +3641,21 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TicketCategory__Group__5"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1313:1: rule__TicketCategory__Group__5 : rule__TicketCategory__Group__5__Impl rule__TicketCategory__Group__6 ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1320:1: rule__TicketCategory__Group__5 : rule__TicketCategory__Group__5__Impl rule__TicketCategory__Group__6 ;
     public final void rule__TicketCategory__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1317:1: ( rule__TicketCategory__Group__5__Impl rule__TicketCategory__Group__6 )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1318:2: rule__TicketCategory__Group__5__Impl rule__TicketCategory__Group__6
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1324:1: ( rule__TicketCategory__Group__5__Impl rule__TicketCategory__Group__6 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1325:2: rule__TicketCategory__Group__5__Impl rule__TicketCategory__Group__6
             {
-            pushFollow(FOLLOW_rule__TicketCategory__Group__5__Impl_in_rule__TicketCategory__Group__52684);
+            pushFollow(FOLLOW_rule__TicketCategory__Group__5__Impl_in_rule__TicketCategory__Group__52705);
             rule__TicketCategory__Group__5__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__TicketCategory__Group__6_in_rule__TicketCategory__Group__52687);
+            pushFollow(FOLLOW_rule__TicketCategory__Group__6_in_rule__TicketCategory__Group__52708);
             rule__TicketCategory__Group__6();
 
             state._fsp--;
@@ -3652,20 +3679,20 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TicketCategory__Group__5__Impl"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1325:1: rule__TicketCategory__Group__5__Impl : ( 'fields {' ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1332:1: rule__TicketCategory__Group__5__Impl : ( 'fields {' ) ;
     public final void rule__TicketCategory__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1329:1: ( ( 'fields {' ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1330:1: ( 'fields {' )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1336:1: ( ( 'fields {' ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1337:1: ( 'fields {' )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1330:1: ( 'fields {' )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1331:1: 'fields {'
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1337:1: ( 'fields {' )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1338:1: 'fields {'
             {
              before(grammarAccess.getTicketCategoryAccess().getFieldsKeyword_5()); 
-            match(input,29,FOLLOW_29_in_rule__TicketCategory__Group__5__Impl2715); 
+            match(input,30,FOLLOW_30_in_rule__TicketCategory__Group__5__Impl2736); 
              after(grammarAccess.getTicketCategoryAccess().getFieldsKeyword_5()); 
 
             }
@@ -3689,21 +3716,21 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TicketCategory__Group__6"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1344:1: rule__TicketCategory__Group__6 : rule__TicketCategory__Group__6__Impl rule__TicketCategory__Group__7 ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1351:1: rule__TicketCategory__Group__6 : rule__TicketCategory__Group__6__Impl rule__TicketCategory__Group__7 ;
     public final void rule__TicketCategory__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1348:1: ( rule__TicketCategory__Group__6__Impl rule__TicketCategory__Group__7 )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1349:2: rule__TicketCategory__Group__6__Impl rule__TicketCategory__Group__7
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1355:1: ( rule__TicketCategory__Group__6__Impl rule__TicketCategory__Group__7 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1356:2: rule__TicketCategory__Group__6__Impl rule__TicketCategory__Group__7
             {
-            pushFollow(FOLLOW_rule__TicketCategory__Group__6__Impl_in_rule__TicketCategory__Group__62746);
+            pushFollow(FOLLOW_rule__TicketCategory__Group__6__Impl_in_rule__TicketCategory__Group__62767);
             rule__TicketCategory__Group__6__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__TicketCategory__Group__7_in_rule__TicketCategory__Group__62749);
+            pushFollow(FOLLOW_rule__TicketCategory__Group__7_in_rule__TicketCategory__Group__62770);
             rule__TicketCategory__Group__7();
 
             state._fsp--;
@@ -3727,20 +3754,20 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TicketCategory__Group__6__Impl"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1356:1: rule__TicketCategory__Group__6__Impl : ( ( rule__TicketCategory__Group_6__0 )* ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1363:1: rule__TicketCategory__Group__6__Impl : ( ( rule__TicketCategory__Group_6__0 )* ) ;
     public final void rule__TicketCategory__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1360:1: ( ( ( rule__TicketCategory__Group_6__0 )* ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1361:1: ( ( rule__TicketCategory__Group_6__0 )* )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1367:1: ( ( ( rule__TicketCategory__Group_6__0 )* ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1368:1: ( ( rule__TicketCategory__Group_6__0 )* )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1361:1: ( ( rule__TicketCategory__Group_6__0 )* )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1362:1: ( rule__TicketCategory__Group_6__0 )*
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1368:1: ( ( rule__TicketCategory__Group_6__0 )* )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1369:1: ( rule__TicketCategory__Group_6__0 )*
             {
              before(grammarAccess.getTicketCategoryAccess().getGroup_6()); 
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1363:1: ( rule__TicketCategory__Group_6__0 )*
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1370:1: ( rule__TicketCategory__Group_6__0 )*
             loop9:
             do {
                 int alt9=2;
@@ -3753,9 +3780,9 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
                 switch (alt9) {
             	case 1 :
-            	    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1363:2: rule__TicketCategory__Group_6__0
+            	    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1370:2: rule__TicketCategory__Group_6__0
             	    {
-            	    pushFollow(FOLLOW_rule__TicketCategory__Group_6__0_in_rule__TicketCategory__Group__6__Impl2776);
+            	    pushFollow(FOLLOW_rule__TicketCategory__Group_6__0_in_rule__TicketCategory__Group__6__Impl2797);
             	    rule__TicketCategory__Group_6__0();
 
             	    state._fsp--;
@@ -3792,21 +3819,21 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TicketCategory__Group__7"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1373:1: rule__TicketCategory__Group__7 : rule__TicketCategory__Group__7__Impl rule__TicketCategory__Group__8 ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1380:1: rule__TicketCategory__Group__7 : rule__TicketCategory__Group__7__Impl rule__TicketCategory__Group__8 ;
     public final void rule__TicketCategory__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1377:1: ( rule__TicketCategory__Group__7__Impl rule__TicketCategory__Group__8 )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1378:2: rule__TicketCategory__Group__7__Impl rule__TicketCategory__Group__8
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1384:1: ( rule__TicketCategory__Group__7__Impl rule__TicketCategory__Group__8 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1385:2: rule__TicketCategory__Group__7__Impl rule__TicketCategory__Group__8
             {
-            pushFollow(FOLLOW_rule__TicketCategory__Group__7__Impl_in_rule__TicketCategory__Group__72807);
+            pushFollow(FOLLOW_rule__TicketCategory__Group__7__Impl_in_rule__TicketCategory__Group__72828);
             rule__TicketCategory__Group__7__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__TicketCategory__Group__8_in_rule__TicketCategory__Group__72810);
+            pushFollow(FOLLOW_rule__TicketCategory__Group__8_in_rule__TicketCategory__Group__72831);
             rule__TicketCategory__Group__8();
 
             state._fsp--;
@@ -3830,20 +3857,20 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TicketCategory__Group__7__Impl"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1385:1: rule__TicketCategory__Group__7__Impl : ( '}' ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1392:1: rule__TicketCategory__Group__7__Impl : ( '}' ) ;
     public final void rule__TicketCategory__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1389:1: ( ( '}' ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1390:1: ( '}' )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1396:1: ( ( '}' ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1397:1: ( '}' )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1390:1: ( '}' )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1391:1: '}'
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1397:1: ( '}' )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1398:1: '}'
             {
              before(grammarAccess.getTicketCategoryAccess().getRightCurlyBracketKeyword_7()); 
-            match(input,25,FOLLOW_25_in_rule__TicketCategory__Group__7__Impl2838); 
+            match(input,26,FOLLOW_26_in_rule__TicketCategory__Group__7__Impl2859); 
              after(grammarAccess.getTicketCategoryAccess().getRightCurlyBracketKeyword_7()); 
 
             }
@@ -3867,16 +3894,16 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TicketCategory__Group__8"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1404:1: rule__TicketCategory__Group__8 : rule__TicketCategory__Group__8__Impl ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1411:1: rule__TicketCategory__Group__8 : rule__TicketCategory__Group__8__Impl ;
     public final void rule__TicketCategory__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1408:1: ( rule__TicketCategory__Group__8__Impl )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1409:2: rule__TicketCategory__Group__8__Impl
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1415:1: ( rule__TicketCategory__Group__8__Impl )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1416:2: rule__TicketCategory__Group__8__Impl
             {
-            pushFollow(FOLLOW_rule__TicketCategory__Group__8__Impl_in_rule__TicketCategory__Group__82869);
+            pushFollow(FOLLOW_rule__TicketCategory__Group__8__Impl_in_rule__TicketCategory__Group__82890);
             rule__TicketCategory__Group__8__Impl();
 
             state._fsp--;
@@ -3900,20 +3927,20 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TicketCategory__Group__8__Impl"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1415:1: rule__TicketCategory__Group__8__Impl : ( '}' ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1422:1: rule__TicketCategory__Group__8__Impl : ( '}' ) ;
     public final void rule__TicketCategory__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1419:1: ( ( '}' ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1420:1: ( '}' )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1426:1: ( ( '}' ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1427:1: ( '}' )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1420:1: ( '}' )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1421:1: '}'
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1427:1: ( '}' )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1428:1: '}'
             {
              before(grammarAccess.getTicketCategoryAccess().getRightCurlyBracketKeyword_8()); 
-            match(input,25,FOLLOW_25_in_rule__TicketCategory__Group__8__Impl2897); 
+            match(input,26,FOLLOW_26_in_rule__TicketCategory__Group__8__Impl2918); 
              after(grammarAccess.getTicketCategoryAccess().getRightCurlyBracketKeyword_8()); 
 
             }
@@ -3937,21 +3964,21 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TicketCategory__Group_4__0"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1452:1: rule__TicketCategory__Group_4__0 : rule__TicketCategory__Group_4__0__Impl rule__TicketCategory__Group_4__1 ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1459:1: rule__TicketCategory__Group_4__0 : rule__TicketCategory__Group_4__0__Impl rule__TicketCategory__Group_4__1 ;
     public final void rule__TicketCategory__Group_4__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1456:1: ( rule__TicketCategory__Group_4__0__Impl rule__TicketCategory__Group_4__1 )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1457:2: rule__TicketCategory__Group_4__0__Impl rule__TicketCategory__Group_4__1
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1463:1: ( rule__TicketCategory__Group_4__0__Impl rule__TicketCategory__Group_4__1 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1464:2: rule__TicketCategory__Group_4__0__Impl rule__TicketCategory__Group_4__1
             {
-            pushFollow(FOLLOW_rule__TicketCategory__Group_4__0__Impl_in_rule__TicketCategory__Group_4__02946);
+            pushFollow(FOLLOW_rule__TicketCategory__Group_4__0__Impl_in_rule__TicketCategory__Group_4__02967);
             rule__TicketCategory__Group_4__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__TicketCategory__Group_4__1_in_rule__TicketCategory__Group_4__02949);
+            pushFollow(FOLLOW_rule__TicketCategory__Group_4__1_in_rule__TicketCategory__Group_4__02970);
             rule__TicketCategory__Group_4__1();
 
             state._fsp--;
@@ -3975,20 +4002,20 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TicketCategory__Group_4__0__Impl"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1464:1: rule__TicketCategory__Group_4__0__Impl : ( 'flow' ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1471:1: rule__TicketCategory__Group_4__0__Impl : ( 'flow' ) ;
     public final void rule__TicketCategory__Group_4__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1468:1: ( ( 'flow' ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1469:1: ( 'flow' )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1475:1: ( ( 'flow' ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1476:1: ( 'flow' )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1469:1: ( 'flow' )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1470:1: 'flow'
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1476:1: ( 'flow' )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1477:1: 'flow'
             {
              before(grammarAccess.getTicketCategoryAccess().getFlowKeyword_4_0()); 
-            match(input,23,FOLLOW_23_in_rule__TicketCategory__Group_4__0__Impl2977); 
+            match(input,24,FOLLOW_24_in_rule__TicketCategory__Group_4__0__Impl2998); 
              after(grammarAccess.getTicketCategoryAccess().getFlowKeyword_4_0()); 
 
             }
@@ -4012,21 +4039,21 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TicketCategory__Group_4__1"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1483:1: rule__TicketCategory__Group_4__1 : rule__TicketCategory__Group_4__1__Impl rule__TicketCategory__Group_4__2 ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1490:1: rule__TicketCategory__Group_4__1 : rule__TicketCategory__Group_4__1__Impl rule__TicketCategory__Group_4__2 ;
     public final void rule__TicketCategory__Group_4__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1487:1: ( rule__TicketCategory__Group_4__1__Impl rule__TicketCategory__Group_4__2 )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1488:2: rule__TicketCategory__Group_4__1__Impl rule__TicketCategory__Group_4__2
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1494:1: ( rule__TicketCategory__Group_4__1__Impl rule__TicketCategory__Group_4__2 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1495:2: rule__TicketCategory__Group_4__1__Impl rule__TicketCategory__Group_4__2
             {
-            pushFollow(FOLLOW_rule__TicketCategory__Group_4__1__Impl_in_rule__TicketCategory__Group_4__13008);
+            pushFollow(FOLLOW_rule__TicketCategory__Group_4__1__Impl_in_rule__TicketCategory__Group_4__13029);
             rule__TicketCategory__Group_4__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__TicketCategory__Group_4__2_in_rule__TicketCategory__Group_4__13011);
+            pushFollow(FOLLOW_rule__TicketCategory__Group_4__2_in_rule__TicketCategory__Group_4__13032);
             rule__TicketCategory__Group_4__2();
 
             state._fsp--;
@@ -4050,23 +4077,23 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TicketCategory__Group_4__1__Impl"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1495:1: rule__TicketCategory__Group_4__1__Impl : ( ( rule__TicketCategory__FlowAssignment_4_1 ) ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1502:1: rule__TicketCategory__Group_4__1__Impl : ( ( rule__TicketCategory__FlowAssignment_4_1 ) ) ;
     public final void rule__TicketCategory__Group_4__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1499:1: ( ( ( rule__TicketCategory__FlowAssignment_4_1 ) ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1500:1: ( ( rule__TicketCategory__FlowAssignment_4_1 ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1506:1: ( ( ( rule__TicketCategory__FlowAssignment_4_1 ) ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1507:1: ( ( rule__TicketCategory__FlowAssignment_4_1 ) )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1500:1: ( ( rule__TicketCategory__FlowAssignment_4_1 ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1501:1: ( rule__TicketCategory__FlowAssignment_4_1 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1507:1: ( ( rule__TicketCategory__FlowAssignment_4_1 ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1508:1: ( rule__TicketCategory__FlowAssignment_4_1 )
             {
              before(grammarAccess.getTicketCategoryAccess().getFlowAssignment_4_1()); 
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1502:1: ( rule__TicketCategory__FlowAssignment_4_1 )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1502:2: rule__TicketCategory__FlowAssignment_4_1
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1509:1: ( rule__TicketCategory__FlowAssignment_4_1 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1509:2: rule__TicketCategory__FlowAssignment_4_1
             {
-            pushFollow(FOLLOW_rule__TicketCategory__FlowAssignment_4_1_in_rule__TicketCategory__Group_4__1__Impl3038);
+            pushFollow(FOLLOW_rule__TicketCategory__FlowAssignment_4_1_in_rule__TicketCategory__Group_4__1__Impl3059);
             rule__TicketCategory__FlowAssignment_4_1();
 
             state._fsp--;
@@ -4097,16 +4124,16 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TicketCategory__Group_4__2"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1512:1: rule__TicketCategory__Group_4__2 : rule__TicketCategory__Group_4__2__Impl ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1519:1: rule__TicketCategory__Group_4__2 : rule__TicketCategory__Group_4__2__Impl ;
     public final void rule__TicketCategory__Group_4__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1516:1: ( rule__TicketCategory__Group_4__2__Impl )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1517:2: rule__TicketCategory__Group_4__2__Impl
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1523:1: ( rule__TicketCategory__Group_4__2__Impl )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1524:2: rule__TicketCategory__Group_4__2__Impl
             {
-            pushFollow(FOLLOW_rule__TicketCategory__Group_4__2__Impl_in_rule__TicketCategory__Group_4__23068);
+            pushFollow(FOLLOW_rule__TicketCategory__Group_4__2__Impl_in_rule__TicketCategory__Group_4__23089);
             rule__TicketCategory__Group_4__2__Impl();
 
             state._fsp--;
@@ -4130,20 +4157,20 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TicketCategory__Group_4__2__Impl"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1523:1: rule__TicketCategory__Group_4__2__Impl : ( ';' ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1530:1: rule__TicketCategory__Group_4__2__Impl : ( ';' ) ;
     public final void rule__TicketCategory__Group_4__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1527:1: ( ( ';' ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1528:1: ( ';' )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1534:1: ( ( ';' ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1535:1: ( ';' )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1528:1: ( ';' )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1529:1: ';'
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1535:1: ( ';' )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1536:1: ';'
             {
              before(grammarAccess.getTicketCategoryAccess().getSemicolonKeyword_4_2()); 
-            match(input,22,FOLLOW_22_in_rule__TicketCategory__Group_4__2__Impl3096); 
+            match(input,23,FOLLOW_23_in_rule__TicketCategory__Group_4__2__Impl3117); 
              after(grammarAccess.getTicketCategoryAccess().getSemicolonKeyword_4_2()); 
 
             }
@@ -4167,21 +4194,21 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TicketCategory__Group_6__0"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1548:1: rule__TicketCategory__Group_6__0 : rule__TicketCategory__Group_6__0__Impl rule__TicketCategory__Group_6__1 ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1555:1: rule__TicketCategory__Group_6__0 : rule__TicketCategory__Group_6__0__Impl rule__TicketCategory__Group_6__1 ;
     public final void rule__TicketCategory__Group_6__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1552:1: ( rule__TicketCategory__Group_6__0__Impl rule__TicketCategory__Group_6__1 )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1553:2: rule__TicketCategory__Group_6__0__Impl rule__TicketCategory__Group_6__1
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1559:1: ( rule__TicketCategory__Group_6__0__Impl rule__TicketCategory__Group_6__1 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1560:2: rule__TicketCategory__Group_6__0__Impl rule__TicketCategory__Group_6__1
             {
-            pushFollow(FOLLOW_rule__TicketCategory__Group_6__0__Impl_in_rule__TicketCategory__Group_6__03133);
+            pushFollow(FOLLOW_rule__TicketCategory__Group_6__0__Impl_in_rule__TicketCategory__Group_6__03154);
             rule__TicketCategory__Group_6__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__TicketCategory__Group_6__1_in_rule__TicketCategory__Group_6__03136);
+            pushFollow(FOLLOW_rule__TicketCategory__Group_6__1_in_rule__TicketCategory__Group_6__03157);
             rule__TicketCategory__Group_6__1();
 
             state._fsp--;
@@ -4205,23 +4232,23 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TicketCategory__Group_6__0__Impl"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1560:1: rule__TicketCategory__Group_6__0__Impl : ( ( rule__TicketCategory__TicketFieldsAssignment_6_0 ) ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1567:1: rule__TicketCategory__Group_6__0__Impl : ( ( rule__TicketCategory__TicketFieldsAssignment_6_0 ) ) ;
     public final void rule__TicketCategory__Group_6__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1564:1: ( ( ( rule__TicketCategory__TicketFieldsAssignment_6_0 ) ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1565:1: ( ( rule__TicketCategory__TicketFieldsAssignment_6_0 ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1571:1: ( ( ( rule__TicketCategory__TicketFieldsAssignment_6_0 ) ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1572:1: ( ( rule__TicketCategory__TicketFieldsAssignment_6_0 ) )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1565:1: ( ( rule__TicketCategory__TicketFieldsAssignment_6_0 ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1566:1: ( rule__TicketCategory__TicketFieldsAssignment_6_0 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1572:1: ( ( rule__TicketCategory__TicketFieldsAssignment_6_0 ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1573:1: ( rule__TicketCategory__TicketFieldsAssignment_6_0 )
             {
              before(grammarAccess.getTicketCategoryAccess().getTicketFieldsAssignment_6_0()); 
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1567:1: ( rule__TicketCategory__TicketFieldsAssignment_6_0 )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1567:2: rule__TicketCategory__TicketFieldsAssignment_6_0
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1574:1: ( rule__TicketCategory__TicketFieldsAssignment_6_0 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1574:2: rule__TicketCategory__TicketFieldsAssignment_6_0
             {
-            pushFollow(FOLLOW_rule__TicketCategory__TicketFieldsAssignment_6_0_in_rule__TicketCategory__Group_6__0__Impl3163);
+            pushFollow(FOLLOW_rule__TicketCategory__TicketFieldsAssignment_6_0_in_rule__TicketCategory__Group_6__0__Impl3184);
             rule__TicketCategory__TicketFieldsAssignment_6_0();
 
             state._fsp--;
@@ -4252,16 +4279,16 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TicketCategory__Group_6__1"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1577:1: rule__TicketCategory__Group_6__1 : rule__TicketCategory__Group_6__1__Impl ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1584:1: rule__TicketCategory__Group_6__1 : rule__TicketCategory__Group_6__1__Impl ;
     public final void rule__TicketCategory__Group_6__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1581:1: ( rule__TicketCategory__Group_6__1__Impl )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1582:2: rule__TicketCategory__Group_6__1__Impl
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1588:1: ( rule__TicketCategory__Group_6__1__Impl )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1589:2: rule__TicketCategory__Group_6__1__Impl
             {
-            pushFollow(FOLLOW_rule__TicketCategory__Group_6__1__Impl_in_rule__TicketCategory__Group_6__13193);
+            pushFollow(FOLLOW_rule__TicketCategory__Group_6__1__Impl_in_rule__TicketCategory__Group_6__13214);
             rule__TicketCategory__Group_6__1__Impl();
 
             state._fsp--;
@@ -4285,20 +4312,20 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TicketCategory__Group_6__1__Impl"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1588:1: rule__TicketCategory__Group_6__1__Impl : ( ';' ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1595:1: rule__TicketCategory__Group_6__1__Impl : ( ';' ) ;
     public final void rule__TicketCategory__Group_6__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1592:1: ( ( ';' ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1593:1: ( ';' )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1599:1: ( ( ';' ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1600:1: ( ';' )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1593:1: ( ';' )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1594:1: ';'
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1600:1: ( ';' )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1601:1: ';'
             {
              before(grammarAccess.getTicketCategoryAccess().getSemicolonKeyword_6_1()); 
-            match(input,22,FOLLOW_22_in_rule__TicketCategory__Group_6__1__Impl3221); 
+            match(input,23,FOLLOW_23_in_rule__TicketCategory__Group_6__1__Impl3242); 
              after(grammarAccess.getTicketCategoryAccess().getSemicolonKeyword_6_1()); 
 
             }
@@ -4322,21 +4349,21 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TicketField__Group__0"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1611:1: rule__TicketField__Group__0 : rule__TicketField__Group__0__Impl rule__TicketField__Group__1 ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1618:1: rule__TicketField__Group__0 : rule__TicketField__Group__0__Impl rule__TicketField__Group__1 ;
     public final void rule__TicketField__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1615:1: ( rule__TicketField__Group__0__Impl rule__TicketField__Group__1 )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1616:2: rule__TicketField__Group__0__Impl rule__TicketField__Group__1
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1622:1: ( rule__TicketField__Group__0__Impl rule__TicketField__Group__1 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1623:2: rule__TicketField__Group__0__Impl rule__TicketField__Group__1
             {
-            pushFollow(FOLLOW_rule__TicketField__Group__0__Impl_in_rule__TicketField__Group__03256);
+            pushFollow(FOLLOW_rule__TicketField__Group__0__Impl_in_rule__TicketField__Group__03277);
             rule__TicketField__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__TicketField__Group__1_in_rule__TicketField__Group__03259);
+            pushFollow(FOLLOW_rule__TicketField__Group__1_in_rule__TicketField__Group__03280);
             rule__TicketField__Group__1();
 
             state._fsp--;
@@ -4360,23 +4387,23 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TicketField__Group__0__Impl"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1623:1: rule__TicketField__Group__0__Impl : ( ( rule__TicketField__FieldAssignment_0 ) ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1630:1: rule__TicketField__Group__0__Impl : ( ( rule__TicketField__FieldAssignment_0 ) ) ;
     public final void rule__TicketField__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1627:1: ( ( ( rule__TicketField__FieldAssignment_0 ) ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1628:1: ( ( rule__TicketField__FieldAssignment_0 ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1634:1: ( ( ( rule__TicketField__FieldAssignment_0 ) ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1635:1: ( ( rule__TicketField__FieldAssignment_0 ) )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1628:1: ( ( rule__TicketField__FieldAssignment_0 ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1629:1: ( rule__TicketField__FieldAssignment_0 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1635:1: ( ( rule__TicketField__FieldAssignment_0 ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1636:1: ( rule__TicketField__FieldAssignment_0 )
             {
              before(grammarAccess.getTicketFieldAccess().getFieldAssignment_0()); 
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1630:1: ( rule__TicketField__FieldAssignment_0 )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1630:2: rule__TicketField__FieldAssignment_0
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1637:1: ( rule__TicketField__FieldAssignment_0 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1637:2: rule__TicketField__FieldAssignment_0
             {
-            pushFollow(FOLLOW_rule__TicketField__FieldAssignment_0_in_rule__TicketField__Group__0__Impl3286);
+            pushFollow(FOLLOW_rule__TicketField__FieldAssignment_0_in_rule__TicketField__Group__0__Impl3307);
             rule__TicketField__FieldAssignment_0();
 
             state._fsp--;
@@ -4407,21 +4434,21 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TicketField__Group__1"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1640:1: rule__TicketField__Group__1 : rule__TicketField__Group__1__Impl rule__TicketField__Group__2 ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1647:1: rule__TicketField__Group__1 : rule__TicketField__Group__1__Impl rule__TicketField__Group__2 ;
     public final void rule__TicketField__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1644:1: ( rule__TicketField__Group__1__Impl rule__TicketField__Group__2 )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1645:2: rule__TicketField__Group__1__Impl rule__TicketField__Group__2
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1651:1: ( rule__TicketField__Group__1__Impl rule__TicketField__Group__2 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1652:2: rule__TicketField__Group__1__Impl rule__TicketField__Group__2
             {
-            pushFollow(FOLLOW_rule__TicketField__Group__1__Impl_in_rule__TicketField__Group__13316);
+            pushFollow(FOLLOW_rule__TicketField__Group__1__Impl_in_rule__TicketField__Group__13337);
             rule__TicketField__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__TicketField__Group__2_in_rule__TicketField__Group__13319);
+            pushFollow(FOLLOW_rule__TicketField__Group__2_in_rule__TicketField__Group__13340);
             rule__TicketField__Group__2();
 
             state._fsp--;
@@ -4445,31 +4472,31 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TicketField__Group__1__Impl"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1652:1: rule__TicketField__Group__1__Impl : ( ( rule__TicketField__MandatoryAssignment_1 )? ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1659:1: rule__TicketField__Group__1__Impl : ( ( rule__TicketField__MandatoryAssignment_1 )? ) ;
     public final void rule__TicketField__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1656:1: ( ( ( rule__TicketField__MandatoryAssignment_1 )? ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1657:1: ( ( rule__TicketField__MandatoryAssignment_1 )? )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1663:1: ( ( ( rule__TicketField__MandatoryAssignment_1 )? ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1664:1: ( ( rule__TicketField__MandatoryAssignment_1 )? )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1657:1: ( ( rule__TicketField__MandatoryAssignment_1 )? )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1658:1: ( rule__TicketField__MandatoryAssignment_1 )?
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1664:1: ( ( rule__TicketField__MandatoryAssignment_1 )? )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1665:1: ( rule__TicketField__MandatoryAssignment_1 )?
             {
              before(grammarAccess.getTicketFieldAccess().getMandatoryAssignment_1()); 
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1659:1: ( rule__TicketField__MandatoryAssignment_1 )?
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1666:1: ( rule__TicketField__MandatoryAssignment_1 )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
-            if ( (LA10_0==32) ) {
+            if ( (LA10_0==33) ) {
                 alt10=1;
             }
             switch (alt10) {
                 case 1 :
-                    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1659:2: rule__TicketField__MandatoryAssignment_1
+                    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1666:2: rule__TicketField__MandatoryAssignment_1
                     {
-                    pushFollow(FOLLOW_rule__TicketField__MandatoryAssignment_1_in_rule__TicketField__Group__1__Impl3346);
+                    pushFollow(FOLLOW_rule__TicketField__MandatoryAssignment_1_in_rule__TicketField__Group__1__Impl3367);
                     rule__TicketField__MandatoryAssignment_1();
 
                     state._fsp--;
@@ -4503,16 +4530,16 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TicketField__Group__2"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1669:1: rule__TicketField__Group__2 : rule__TicketField__Group__2__Impl ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1676:1: rule__TicketField__Group__2 : rule__TicketField__Group__2__Impl ;
     public final void rule__TicketField__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1673:1: ( rule__TicketField__Group__2__Impl )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1674:2: rule__TicketField__Group__2__Impl
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1680:1: ( rule__TicketField__Group__2__Impl )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1681:2: rule__TicketField__Group__2__Impl
             {
-            pushFollow(FOLLOW_rule__TicketField__Group__2__Impl_in_rule__TicketField__Group__23377);
+            pushFollow(FOLLOW_rule__TicketField__Group__2__Impl_in_rule__TicketField__Group__23398);
             rule__TicketField__Group__2__Impl();
 
             state._fsp--;
@@ -4536,31 +4563,31 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TicketField__Group__2__Impl"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1680:1: rule__TicketField__Group__2__Impl : ( ( rule__TicketField__NotOnListAssignment_2 )? ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1687:1: rule__TicketField__Group__2__Impl : ( ( rule__TicketField__NotOnListAssignment_2 )? ) ;
     public final void rule__TicketField__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1684:1: ( ( ( rule__TicketField__NotOnListAssignment_2 )? ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1685:1: ( ( rule__TicketField__NotOnListAssignment_2 )? )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1691:1: ( ( ( rule__TicketField__NotOnListAssignment_2 )? ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1692:1: ( ( rule__TicketField__NotOnListAssignment_2 )? )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1685:1: ( ( rule__TicketField__NotOnListAssignment_2 )? )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1686:1: ( rule__TicketField__NotOnListAssignment_2 )?
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1692:1: ( ( rule__TicketField__NotOnListAssignment_2 )? )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1693:1: ( rule__TicketField__NotOnListAssignment_2 )?
             {
              before(grammarAccess.getTicketFieldAccess().getNotOnListAssignment_2()); 
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1687:1: ( rule__TicketField__NotOnListAssignment_2 )?
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1694:1: ( rule__TicketField__NotOnListAssignment_2 )?
             int alt11=2;
             int LA11_0 = input.LA(1);
 
-            if ( (LA11_0==33) ) {
+            if ( (LA11_0==34) ) {
                 alt11=1;
             }
             switch (alt11) {
                 case 1 :
-                    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1687:2: rule__TicketField__NotOnListAssignment_2
+                    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1694:2: rule__TicketField__NotOnListAssignment_2
                     {
-                    pushFollow(FOLLOW_rule__TicketField__NotOnListAssignment_2_in_rule__TicketField__Group__2__Impl3404);
+                    pushFollow(FOLLOW_rule__TicketField__NotOnListAssignment_2_in_rule__TicketField__Group__2__Impl3425);
                     rule__TicketField__NotOnListAssignment_2();
 
                     state._fsp--;
@@ -4594,21 +4621,21 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Role__Group__0"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1703:1: rule__Role__Group__0 : rule__Role__Group__0__Impl rule__Role__Group__1 ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1710:1: rule__Role__Group__0 : rule__Role__Group__0__Impl rule__Role__Group__1 ;
     public final void rule__Role__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1707:1: ( rule__Role__Group__0__Impl rule__Role__Group__1 )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1708:2: rule__Role__Group__0__Impl rule__Role__Group__1
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1714:1: ( rule__Role__Group__0__Impl rule__Role__Group__1 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1715:2: rule__Role__Group__0__Impl rule__Role__Group__1
             {
-            pushFollow(FOLLOW_rule__Role__Group__0__Impl_in_rule__Role__Group__03441);
+            pushFollow(FOLLOW_rule__Role__Group__0__Impl_in_rule__Role__Group__03462);
             rule__Role__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Role__Group__1_in_rule__Role__Group__03444);
+            pushFollow(FOLLOW_rule__Role__Group__1_in_rule__Role__Group__03465);
             rule__Role__Group__1();
 
             state._fsp--;
@@ -4632,20 +4659,20 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Role__Group__0__Impl"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1715:1: rule__Role__Group__0__Impl : ( 'role' ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1722:1: rule__Role__Group__0__Impl : ( 'role' ) ;
     public final void rule__Role__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1719:1: ( ( 'role' ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1720:1: ( 'role' )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1726:1: ( ( 'role' ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1727:1: ( 'role' )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1720:1: ( 'role' )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1721:1: 'role'
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1727:1: ( 'role' )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1728:1: 'role'
             {
              before(grammarAccess.getRoleAccess().getRoleKeyword_0()); 
-            match(input,30,FOLLOW_30_in_rule__Role__Group__0__Impl3472); 
+            match(input,31,FOLLOW_31_in_rule__Role__Group__0__Impl3493); 
              after(grammarAccess.getRoleAccess().getRoleKeyword_0()); 
 
             }
@@ -4669,21 +4696,21 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Role__Group__1"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1734:1: rule__Role__Group__1 : rule__Role__Group__1__Impl rule__Role__Group__2 ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1741:1: rule__Role__Group__1 : rule__Role__Group__1__Impl rule__Role__Group__2 ;
     public final void rule__Role__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1738:1: ( rule__Role__Group__1__Impl rule__Role__Group__2 )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1739:2: rule__Role__Group__1__Impl rule__Role__Group__2
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1745:1: ( rule__Role__Group__1__Impl rule__Role__Group__2 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1746:2: rule__Role__Group__1__Impl rule__Role__Group__2
             {
-            pushFollow(FOLLOW_rule__Role__Group__1__Impl_in_rule__Role__Group__13503);
+            pushFollow(FOLLOW_rule__Role__Group__1__Impl_in_rule__Role__Group__13524);
             rule__Role__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Role__Group__2_in_rule__Role__Group__13506);
+            pushFollow(FOLLOW_rule__Role__Group__2_in_rule__Role__Group__13527);
             rule__Role__Group__2();
 
             state._fsp--;
@@ -4707,23 +4734,23 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Role__Group__1__Impl"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1746:1: rule__Role__Group__1__Impl : ( ( rule__Role__NameAssignment_1 ) ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1753:1: rule__Role__Group__1__Impl : ( ( rule__Role__NameAssignment_1 ) ) ;
     public final void rule__Role__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1750:1: ( ( ( rule__Role__NameAssignment_1 ) ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1751:1: ( ( rule__Role__NameAssignment_1 ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1757:1: ( ( ( rule__Role__NameAssignment_1 ) ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1758:1: ( ( rule__Role__NameAssignment_1 ) )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1751:1: ( ( rule__Role__NameAssignment_1 ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1752:1: ( rule__Role__NameAssignment_1 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1758:1: ( ( rule__Role__NameAssignment_1 ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1759:1: ( rule__Role__NameAssignment_1 )
             {
              before(grammarAccess.getRoleAccess().getNameAssignment_1()); 
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1753:1: ( rule__Role__NameAssignment_1 )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1753:2: rule__Role__NameAssignment_1
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1760:1: ( rule__Role__NameAssignment_1 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1760:2: rule__Role__NameAssignment_1
             {
-            pushFollow(FOLLOW_rule__Role__NameAssignment_1_in_rule__Role__Group__1__Impl3533);
+            pushFollow(FOLLOW_rule__Role__NameAssignment_1_in_rule__Role__Group__1__Impl3554);
             rule__Role__NameAssignment_1();
 
             state._fsp--;
@@ -4754,21 +4781,21 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Role__Group__2"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1763:1: rule__Role__Group__2 : rule__Role__Group__2__Impl rule__Role__Group__3 ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1770:1: rule__Role__Group__2 : rule__Role__Group__2__Impl rule__Role__Group__3 ;
     public final void rule__Role__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1767:1: ( rule__Role__Group__2__Impl rule__Role__Group__3 )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1768:2: rule__Role__Group__2__Impl rule__Role__Group__3
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1774:1: ( rule__Role__Group__2__Impl rule__Role__Group__3 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1775:2: rule__Role__Group__2__Impl rule__Role__Group__3
             {
-            pushFollow(FOLLOW_rule__Role__Group__2__Impl_in_rule__Role__Group__23563);
+            pushFollow(FOLLOW_rule__Role__Group__2__Impl_in_rule__Role__Group__23584);
             rule__Role__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Role__Group__3_in_rule__Role__Group__23566);
+            pushFollow(FOLLOW_rule__Role__Group__3_in_rule__Role__Group__23587);
             rule__Role__Group__3();
 
             state._fsp--;
@@ -4792,23 +4819,23 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Role__Group__2__Impl"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1775:1: rule__Role__Group__2__Impl : ( ( rule__Role__DescriptionAssignment_2 ) ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1782:1: rule__Role__Group__2__Impl : ( ( rule__Role__DescriptionAssignment_2 ) ) ;
     public final void rule__Role__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1779:1: ( ( ( rule__Role__DescriptionAssignment_2 ) ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1780:1: ( ( rule__Role__DescriptionAssignment_2 ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1786:1: ( ( ( rule__Role__DescriptionAssignment_2 ) ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1787:1: ( ( rule__Role__DescriptionAssignment_2 ) )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1780:1: ( ( rule__Role__DescriptionAssignment_2 ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1781:1: ( rule__Role__DescriptionAssignment_2 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1787:1: ( ( rule__Role__DescriptionAssignment_2 ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1788:1: ( rule__Role__DescriptionAssignment_2 )
             {
              before(grammarAccess.getRoleAccess().getDescriptionAssignment_2()); 
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1782:1: ( rule__Role__DescriptionAssignment_2 )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1782:2: rule__Role__DescriptionAssignment_2
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1789:1: ( rule__Role__DescriptionAssignment_2 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1789:2: rule__Role__DescriptionAssignment_2
             {
-            pushFollow(FOLLOW_rule__Role__DescriptionAssignment_2_in_rule__Role__Group__2__Impl3593);
+            pushFollow(FOLLOW_rule__Role__DescriptionAssignment_2_in_rule__Role__Group__2__Impl3614);
             rule__Role__DescriptionAssignment_2();
 
             state._fsp--;
@@ -4839,21 +4866,21 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Role__Group__3"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1792:1: rule__Role__Group__3 : rule__Role__Group__3__Impl rule__Role__Group__4 ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1799:1: rule__Role__Group__3 : rule__Role__Group__3__Impl rule__Role__Group__4 ;
     public final void rule__Role__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1796:1: ( rule__Role__Group__3__Impl rule__Role__Group__4 )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1797:2: rule__Role__Group__3__Impl rule__Role__Group__4
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1803:1: ( rule__Role__Group__3__Impl rule__Role__Group__4 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1804:2: rule__Role__Group__3__Impl rule__Role__Group__4
             {
-            pushFollow(FOLLOW_rule__Role__Group__3__Impl_in_rule__Role__Group__33623);
+            pushFollow(FOLLOW_rule__Role__Group__3__Impl_in_rule__Role__Group__33644);
             rule__Role__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Role__Group__4_in_rule__Role__Group__33626);
+            pushFollow(FOLLOW_rule__Role__Group__4_in_rule__Role__Group__33647);
             rule__Role__Group__4();
 
             state._fsp--;
@@ -4877,20 +4904,20 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Role__Group__3__Impl"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1804:1: rule__Role__Group__3__Impl : ( '{' ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1811:1: rule__Role__Group__3__Impl : ( '{' ) ;
     public final void rule__Role__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1808:1: ( ( '{' ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1809:1: ( '{' )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1815:1: ( ( '{' ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1816:1: ( '{' )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1809:1: ( '{' )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1810:1: '{'
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1816:1: ( '{' )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1817:1: '{'
             {
              before(grammarAccess.getRoleAccess().getLeftCurlyBracketKeyword_3()); 
-            match(input,24,FOLLOW_24_in_rule__Role__Group__3__Impl3654); 
+            match(input,25,FOLLOW_25_in_rule__Role__Group__3__Impl3675); 
              after(grammarAccess.getRoleAccess().getLeftCurlyBracketKeyword_3()); 
 
             }
@@ -4914,21 +4941,21 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Role__Group__4"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1823:1: rule__Role__Group__4 : rule__Role__Group__4__Impl rule__Role__Group__5 ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1830:1: rule__Role__Group__4 : rule__Role__Group__4__Impl rule__Role__Group__5 ;
     public final void rule__Role__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1827:1: ( rule__Role__Group__4__Impl rule__Role__Group__5 )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1828:2: rule__Role__Group__4__Impl rule__Role__Group__5
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1834:1: ( rule__Role__Group__4__Impl rule__Role__Group__5 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1835:2: rule__Role__Group__4__Impl rule__Role__Group__5
             {
-            pushFollow(FOLLOW_rule__Role__Group__4__Impl_in_rule__Role__Group__43685);
+            pushFollow(FOLLOW_rule__Role__Group__4__Impl_in_rule__Role__Group__43706);
             rule__Role__Group__4__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Role__Group__5_in_rule__Role__Group__43688);
+            pushFollow(FOLLOW_rule__Role__Group__5_in_rule__Role__Group__43709);
             rule__Role__Group__5();
 
             state._fsp--;
@@ -4952,20 +4979,20 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Role__Group__4__Impl"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1835:1: rule__Role__Group__4__Impl : ( ( rule__Role__Group_4__0 )* ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1842:1: rule__Role__Group__4__Impl : ( ( rule__Role__Group_4__0 )* ) ;
     public final void rule__Role__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1839:1: ( ( ( rule__Role__Group_4__0 )* ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1840:1: ( ( rule__Role__Group_4__0 )* )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1846:1: ( ( ( rule__Role__Group_4__0 )* ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1847:1: ( ( rule__Role__Group_4__0 )* )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1840:1: ( ( rule__Role__Group_4__0 )* )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1841:1: ( rule__Role__Group_4__0 )*
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1847:1: ( ( rule__Role__Group_4__0 )* )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1848:1: ( rule__Role__Group_4__0 )*
             {
              before(grammarAccess.getRoleAccess().getGroup_4()); 
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1842:1: ( rule__Role__Group_4__0 )*
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1849:1: ( rule__Role__Group_4__0 )*
             loop12:
             do {
                 int alt12=2;
@@ -4978,9 +5005,9 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
                 switch (alt12) {
             	case 1 :
-            	    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1842:2: rule__Role__Group_4__0
+            	    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1849:2: rule__Role__Group_4__0
             	    {
-            	    pushFollow(FOLLOW_rule__Role__Group_4__0_in_rule__Role__Group__4__Impl3715);
+            	    pushFollow(FOLLOW_rule__Role__Group_4__0_in_rule__Role__Group__4__Impl3736);
             	    rule__Role__Group_4__0();
 
             	    state._fsp--;
@@ -5017,16 +5044,16 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Role__Group__5"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1852:1: rule__Role__Group__5 : rule__Role__Group__5__Impl ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1859:1: rule__Role__Group__5 : rule__Role__Group__5__Impl ;
     public final void rule__Role__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1856:1: ( rule__Role__Group__5__Impl )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1857:2: rule__Role__Group__5__Impl
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1863:1: ( rule__Role__Group__5__Impl )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1864:2: rule__Role__Group__5__Impl
             {
-            pushFollow(FOLLOW_rule__Role__Group__5__Impl_in_rule__Role__Group__53746);
+            pushFollow(FOLLOW_rule__Role__Group__5__Impl_in_rule__Role__Group__53767);
             rule__Role__Group__5__Impl();
 
             state._fsp--;
@@ -5050,20 +5077,20 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Role__Group__5__Impl"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1863:1: rule__Role__Group__5__Impl : ( '}' ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1870:1: rule__Role__Group__5__Impl : ( '}' ) ;
     public final void rule__Role__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1867:1: ( ( '}' ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1868:1: ( '}' )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1874:1: ( ( '}' ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1875:1: ( '}' )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1868:1: ( '}' )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1869:1: '}'
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1875:1: ( '}' )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1876:1: '}'
             {
              before(grammarAccess.getRoleAccess().getRightCurlyBracketKeyword_5()); 
-            match(input,25,FOLLOW_25_in_rule__Role__Group__5__Impl3774); 
+            match(input,26,FOLLOW_26_in_rule__Role__Group__5__Impl3795); 
              after(grammarAccess.getRoleAccess().getRightCurlyBracketKeyword_5()); 
 
             }
@@ -5087,21 +5114,21 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Role__Group_4__0"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1894:1: rule__Role__Group_4__0 : rule__Role__Group_4__0__Impl rule__Role__Group_4__1 ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1901:1: rule__Role__Group_4__0 : rule__Role__Group_4__0__Impl rule__Role__Group_4__1 ;
     public final void rule__Role__Group_4__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1898:1: ( rule__Role__Group_4__0__Impl rule__Role__Group_4__1 )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1899:2: rule__Role__Group_4__0__Impl rule__Role__Group_4__1
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1905:1: ( rule__Role__Group_4__0__Impl rule__Role__Group_4__1 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1906:2: rule__Role__Group_4__0__Impl rule__Role__Group_4__1
             {
-            pushFollow(FOLLOW_rule__Role__Group_4__0__Impl_in_rule__Role__Group_4__03817);
+            pushFollow(FOLLOW_rule__Role__Group_4__0__Impl_in_rule__Role__Group_4__03838);
             rule__Role__Group_4__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Role__Group_4__1_in_rule__Role__Group_4__03820);
+            pushFollow(FOLLOW_rule__Role__Group_4__1_in_rule__Role__Group_4__03841);
             rule__Role__Group_4__1();
 
             state._fsp--;
@@ -5125,23 +5152,23 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Role__Group_4__0__Impl"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1906:1: rule__Role__Group_4__0__Impl : ( ( rule__Role__RolepermissionsAssignment_4_0 ) ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1913:1: rule__Role__Group_4__0__Impl : ( ( rule__Role__RolepermissionsAssignment_4_0 ) ) ;
     public final void rule__Role__Group_4__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1910:1: ( ( ( rule__Role__RolepermissionsAssignment_4_0 ) ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1911:1: ( ( rule__Role__RolepermissionsAssignment_4_0 ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1917:1: ( ( ( rule__Role__RolepermissionsAssignment_4_0 ) ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1918:1: ( ( rule__Role__RolepermissionsAssignment_4_0 ) )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1911:1: ( ( rule__Role__RolepermissionsAssignment_4_0 ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1912:1: ( rule__Role__RolepermissionsAssignment_4_0 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1918:1: ( ( rule__Role__RolepermissionsAssignment_4_0 ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1919:1: ( rule__Role__RolepermissionsAssignment_4_0 )
             {
              before(grammarAccess.getRoleAccess().getRolepermissionsAssignment_4_0()); 
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1913:1: ( rule__Role__RolepermissionsAssignment_4_0 )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1913:2: rule__Role__RolepermissionsAssignment_4_0
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1920:1: ( rule__Role__RolepermissionsAssignment_4_0 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1920:2: rule__Role__RolepermissionsAssignment_4_0
             {
-            pushFollow(FOLLOW_rule__Role__RolepermissionsAssignment_4_0_in_rule__Role__Group_4__0__Impl3847);
+            pushFollow(FOLLOW_rule__Role__RolepermissionsAssignment_4_0_in_rule__Role__Group_4__0__Impl3868);
             rule__Role__RolepermissionsAssignment_4_0();
 
             state._fsp--;
@@ -5172,16 +5199,16 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Role__Group_4__1"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1923:1: rule__Role__Group_4__1 : rule__Role__Group_4__1__Impl ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1930:1: rule__Role__Group_4__1 : rule__Role__Group_4__1__Impl ;
     public final void rule__Role__Group_4__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1927:1: ( rule__Role__Group_4__1__Impl )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1928:2: rule__Role__Group_4__1__Impl
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1934:1: ( rule__Role__Group_4__1__Impl )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1935:2: rule__Role__Group_4__1__Impl
             {
-            pushFollow(FOLLOW_rule__Role__Group_4__1__Impl_in_rule__Role__Group_4__13877);
+            pushFollow(FOLLOW_rule__Role__Group_4__1__Impl_in_rule__Role__Group_4__13898);
             rule__Role__Group_4__1__Impl();
 
             state._fsp--;
@@ -5205,20 +5232,20 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Role__Group_4__1__Impl"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1934:1: rule__Role__Group_4__1__Impl : ( ';' ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1941:1: rule__Role__Group_4__1__Impl : ( ';' ) ;
     public final void rule__Role__Group_4__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1938:1: ( ( ';' ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1939:1: ( ';' )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1945:1: ( ( ';' ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1946:1: ( ';' )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1939:1: ( ';' )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1940:1: ';'
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1946:1: ( ';' )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1947:1: ';'
             {
              before(grammarAccess.getRoleAccess().getSemicolonKeyword_4_1()); 
-            match(input,22,FOLLOW_22_in_rule__Role__Group_4__1__Impl3905); 
+            match(input,23,FOLLOW_23_in_rule__Role__Group_4__1__Impl3926); 
              after(grammarAccess.getRoleAccess().getSemicolonKeyword_4_1()); 
 
             }
@@ -5242,21 +5269,21 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RolePermission__Group__0"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1957:1: rule__RolePermission__Group__0 : rule__RolePermission__Group__0__Impl rule__RolePermission__Group__1 ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1964:1: rule__RolePermission__Group__0 : rule__RolePermission__Group__0__Impl rule__RolePermission__Group__1 ;
     public final void rule__RolePermission__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1961:1: ( rule__RolePermission__Group__0__Impl rule__RolePermission__Group__1 )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1962:2: rule__RolePermission__Group__0__Impl rule__RolePermission__Group__1
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1968:1: ( rule__RolePermission__Group__0__Impl rule__RolePermission__Group__1 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1969:2: rule__RolePermission__Group__0__Impl rule__RolePermission__Group__1
             {
-            pushFollow(FOLLOW_rule__RolePermission__Group__0__Impl_in_rule__RolePermission__Group__03940);
+            pushFollow(FOLLOW_rule__RolePermission__Group__0__Impl_in_rule__RolePermission__Group__03961);
             rule__RolePermission__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__RolePermission__Group__1_in_rule__RolePermission__Group__03943);
+            pushFollow(FOLLOW_rule__RolePermission__Group__1_in_rule__RolePermission__Group__03964);
             rule__RolePermission__Group__1();
 
             state._fsp--;
@@ -5280,23 +5307,23 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RolePermission__Group__0__Impl"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1969:1: rule__RolePermission__Group__0__Impl : ( ( rule__RolePermission__FieldAssignment_0 ) ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1976:1: rule__RolePermission__Group__0__Impl : ( ( rule__RolePermission__FieldAssignment_0 ) ) ;
     public final void rule__RolePermission__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1973:1: ( ( ( rule__RolePermission__FieldAssignment_0 ) ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1974:1: ( ( rule__RolePermission__FieldAssignment_0 ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1980:1: ( ( ( rule__RolePermission__FieldAssignment_0 ) ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1981:1: ( ( rule__RolePermission__FieldAssignment_0 ) )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1974:1: ( ( rule__RolePermission__FieldAssignment_0 ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1975:1: ( rule__RolePermission__FieldAssignment_0 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1981:1: ( ( rule__RolePermission__FieldAssignment_0 ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1982:1: ( rule__RolePermission__FieldAssignment_0 )
             {
              before(grammarAccess.getRolePermissionAccess().getFieldAssignment_0()); 
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1976:1: ( rule__RolePermission__FieldAssignment_0 )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1976:2: rule__RolePermission__FieldAssignment_0
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1983:1: ( rule__RolePermission__FieldAssignment_0 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1983:2: rule__RolePermission__FieldAssignment_0
             {
-            pushFollow(FOLLOW_rule__RolePermission__FieldAssignment_0_in_rule__RolePermission__Group__0__Impl3970);
+            pushFollow(FOLLOW_rule__RolePermission__FieldAssignment_0_in_rule__RolePermission__Group__0__Impl3991);
             rule__RolePermission__FieldAssignment_0();
 
             state._fsp--;
@@ -5327,21 +5354,21 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RolePermission__Group__1"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1986:1: rule__RolePermission__Group__1 : rule__RolePermission__Group__1__Impl rule__RolePermission__Group__2 ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1993:1: rule__RolePermission__Group__1 : rule__RolePermission__Group__1__Impl rule__RolePermission__Group__2 ;
     public final void rule__RolePermission__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1990:1: ( rule__RolePermission__Group__1__Impl rule__RolePermission__Group__2 )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1991:2: rule__RolePermission__Group__1__Impl rule__RolePermission__Group__2
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1997:1: ( rule__RolePermission__Group__1__Impl rule__RolePermission__Group__2 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1998:2: rule__RolePermission__Group__1__Impl rule__RolePermission__Group__2
             {
-            pushFollow(FOLLOW_rule__RolePermission__Group__1__Impl_in_rule__RolePermission__Group__14000);
+            pushFollow(FOLLOW_rule__RolePermission__Group__1__Impl_in_rule__RolePermission__Group__14021);
             rule__RolePermission__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__RolePermission__Group__2_in_rule__RolePermission__Group__14003);
+            pushFollow(FOLLOW_rule__RolePermission__Group__2_in_rule__RolePermission__Group__14024);
             rule__RolePermission__Group__2();
 
             state._fsp--;
@@ -5365,23 +5392,23 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RolePermission__Group__1__Impl"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:1998:1: rule__RolePermission__Group__1__Impl : ( ( rule__RolePermission__PermissionsAssignment_1 ) ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2005:1: rule__RolePermission__Group__1__Impl : ( ( rule__RolePermission__PermissionsAssignment_1 ) ) ;
     public final void rule__RolePermission__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2002:1: ( ( ( rule__RolePermission__PermissionsAssignment_1 ) ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2003:1: ( ( rule__RolePermission__PermissionsAssignment_1 ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2009:1: ( ( ( rule__RolePermission__PermissionsAssignment_1 ) ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2010:1: ( ( rule__RolePermission__PermissionsAssignment_1 ) )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2003:1: ( ( rule__RolePermission__PermissionsAssignment_1 ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2004:1: ( rule__RolePermission__PermissionsAssignment_1 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2010:1: ( ( rule__RolePermission__PermissionsAssignment_1 ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2011:1: ( rule__RolePermission__PermissionsAssignment_1 )
             {
              before(grammarAccess.getRolePermissionAccess().getPermissionsAssignment_1()); 
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2005:1: ( rule__RolePermission__PermissionsAssignment_1 )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2005:2: rule__RolePermission__PermissionsAssignment_1
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2012:1: ( rule__RolePermission__PermissionsAssignment_1 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2012:2: rule__RolePermission__PermissionsAssignment_1
             {
-            pushFollow(FOLLOW_rule__RolePermission__PermissionsAssignment_1_in_rule__RolePermission__Group__1__Impl4030);
+            pushFollow(FOLLOW_rule__RolePermission__PermissionsAssignment_1_in_rule__RolePermission__Group__1__Impl4051);
             rule__RolePermission__PermissionsAssignment_1();
 
             state._fsp--;
@@ -5412,16 +5439,16 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RolePermission__Group__2"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2015:1: rule__RolePermission__Group__2 : rule__RolePermission__Group__2__Impl ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2022:1: rule__RolePermission__Group__2 : rule__RolePermission__Group__2__Impl ;
     public final void rule__RolePermission__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2019:1: ( rule__RolePermission__Group__2__Impl )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2020:2: rule__RolePermission__Group__2__Impl
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2026:1: ( rule__RolePermission__Group__2__Impl )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2027:2: rule__RolePermission__Group__2__Impl
             {
-            pushFollow(FOLLOW_rule__RolePermission__Group__2__Impl_in_rule__RolePermission__Group__24060);
+            pushFollow(FOLLOW_rule__RolePermission__Group__2__Impl_in_rule__RolePermission__Group__24081);
             rule__RolePermission__Group__2__Impl();
 
             state._fsp--;
@@ -5445,35 +5472,35 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RolePermission__Group__2__Impl"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2026:1: rule__RolePermission__Group__2__Impl : ( ( rule__RolePermission__Group_2__0 )* ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2033:1: rule__RolePermission__Group__2__Impl : ( ( rule__RolePermission__Group_2__0 )* ) ;
     public final void rule__RolePermission__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2030:1: ( ( ( rule__RolePermission__Group_2__0 )* ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2031:1: ( ( rule__RolePermission__Group_2__0 )* )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2037:1: ( ( ( rule__RolePermission__Group_2__0 )* ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2038:1: ( ( rule__RolePermission__Group_2__0 )* )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2031:1: ( ( rule__RolePermission__Group_2__0 )* )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2032:1: ( rule__RolePermission__Group_2__0 )*
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2038:1: ( ( rule__RolePermission__Group_2__0 )* )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2039:1: ( rule__RolePermission__Group_2__0 )*
             {
              before(grammarAccess.getRolePermissionAccess().getGroup_2()); 
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2033:1: ( rule__RolePermission__Group_2__0 )*
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2040:1: ( rule__RolePermission__Group_2__0 )*
             loop13:
             do {
                 int alt13=2;
                 int LA13_0 = input.LA(1);
 
-                if ( (LA13_0==27) ) {
+                if ( (LA13_0==28) ) {
                     alt13=1;
                 }
 
 
                 switch (alt13) {
             	case 1 :
-            	    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2033:2: rule__RolePermission__Group_2__0
+            	    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2040:2: rule__RolePermission__Group_2__0
             	    {
-            	    pushFollow(FOLLOW_rule__RolePermission__Group_2__0_in_rule__RolePermission__Group__2__Impl4087);
+            	    pushFollow(FOLLOW_rule__RolePermission__Group_2__0_in_rule__RolePermission__Group__2__Impl4108);
             	    rule__RolePermission__Group_2__0();
 
             	    state._fsp--;
@@ -5510,21 +5537,21 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RolePermission__Group_2__0"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2049:1: rule__RolePermission__Group_2__0 : rule__RolePermission__Group_2__0__Impl rule__RolePermission__Group_2__1 ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2056:1: rule__RolePermission__Group_2__0 : rule__RolePermission__Group_2__0__Impl rule__RolePermission__Group_2__1 ;
     public final void rule__RolePermission__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2053:1: ( rule__RolePermission__Group_2__0__Impl rule__RolePermission__Group_2__1 )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2054:2: rule__RolePermission__Group_2__0__Impl rule__RolePermission__Group_2__1
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2060:1: ( rule__RolePermission__Group_2__0__Impl rule__RolePermission__Group_2__1 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2061:2: rule__RolePermission__Group_2__0__Impl rule__RolePermission__Group_2__1
             {
-            pushFollow(FOLLOW_rule__RolePermission__Group_2__0__Impl_in_rule__RolePermission__Group_2__04124);
+            pushFollow(FOLLOW_rule__RolePermission__Group_2__0__Impl_in_rule__RolePermission__Group_2__04145);
             rule__RolePermission__Group_2__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__RolePermission__Group_2__1_in_rule__RolePermission__Group_2__04127);
+            pushFollow(FOLLOW_rule__RolePermission__Group_2__1_in_rule__RolePermission__Group_2__04148);
             rule__RolePermission__Group_2__1();
 
             state._fsp--;
@@ -5548,20 +5575,20 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RolePermission__Group_2__0__Impl"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2061:1: rule__RolePermission__Group_2__0__Impl : ( ',' ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2068:1: rule__RolePermission__Group_2__0__Impl : ( ',' ) ;
     public final void rule__RolePermission__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2065:1: ( ( ',' ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2066:1: ( ',' )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2072:1: ( ( ',' ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2073:1: ( ',' )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2066:1: ( ',' )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2067:1: ','
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2073:1: ( ',' )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2074:1: ','
             {
              before(grammarAccess.getRolePermissionAccess().getCommaKeyword_2_0()); 
-            match(input,27,FOLLOW_27_in_rule__RolePermission__Group_2__0__Impl4155); 
+            match(input,28,FOLLOW_28_in_rule__RolePermission__Group_2__0__Impl4176); 
              after(grammarAccess.getRolePermissionAccess().getCommaKeyword_2_0()); 
 
             }
@@ -5585,16 +5612,16 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RolePermission__Group_2__1"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2080:1: rule__RolePermission__Group_2__1 : rule__RolePermission__Group_2__1__Impl ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2087:1: rule__RolePermission__Group_2__1 : rule__RolePermission__Group_2__1__Impl ;
     public final void rule__RolePermission__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2084:1: ( rule__RolePermission__Group_2__1__Impl )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2085:2: rule__RolePermission__Group_2__1__Impl
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2091:1: ( rule__RolePermission__Group_2__1__Impl )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2092:2: rule__RolePermission__Group_2__1__Impl
             {
-            pushFollow(FOLLOW_rule__RolePermission__Group_2__1__Impl_in_rule__RolePermission__Group_2__14186);
+            pushFollow(FOLLOW_rule__RolePermission__Group_2__1__Impl_in_rule__RolePermission__Group_2__14207);
             rule__RolePermission__Group_2__1__Impl();
 
             state._fsp--;
@@ -5618,23 +5645,23 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RolePermission__Group_2__1__Impl"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2091:1: rule__RolePermission__Group_2__1__Impl : ( ( rule__RolePermission__PermissionsAssignment_2_1 ) ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2098:1: rule__RolePermission__Group_2__1__Impl : ( ( rule__RolePermission__PermissionsAssignment_2_1 ) ) ;
     public final void rule__RolePermission__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2095:1: ( ( ( rule__RolePermission__PermissionsAssignment_2_1 ) ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2096:1: ( ( rule__RolePermission__PermissionsAssignment_2_1 ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2102:1: ( ( ( rule__RolePermission__PermissionsAssignment_2_1 ) ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2103:1: ( ( rule__RolePermission__PermissionsAssignment_2_1 ) )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2096:1: ( ( rule__RolePermission__PermissionsAssignment_2_1 ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2097:1: ( rule__RolePermission__PermissionsAssignment_2_1 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2103:1: ( ( rule__RolePermission__PermissionsAssignment_2_1 ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2104:1: ( rule__RolePermission__PermissionsAssignment_2_1 )
             {
              before(grammarAccess.getRolePermissionAccess().getPermissionsAssignment_2_1()); 
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2098:1: ( rule__RolePermission__PermissionsAssignment_2_1 )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2098:2: rule__RolePermission__PermissionsAssignment_2_1
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2105:1: ( rule__RolePermission__PermissionsAssignment_2_1 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2105:2: rule__RolePermission__PermissionsAssignment_2_1
             {
-            pushFollow(FOLLOW_rule__RolePermission__PermissionsAssignment_2_1_in_rule__RolePermission__Group_2__1__Impl4213);
+            pushFollow(FOLLOW_rule__RolePermission__PermissionsAssignment_2_1_in_rule__RolePermission__Group_2__1__Impl4234);
             rule__RolePermission__PermissionsAssignment_2_1();
 
             state._fsp--;
@@ -5665,21 +5692,21 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QualifiedName__Group__0"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2112:1: rule__QualifiedName__Group__0 : rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1 ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2119:1: rule__QualifiedName__Group__0 : rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1 ;
     public final void rule__QualifiedName__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2116:1: ( rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1 )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2117:2: rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2123:1: ( rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2124:2: rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1
             {
-            pushFollow(FOLLOW_rule__QualifiedName__Group__0__Impl_in_rule__QualifiedName__Group__04247);
+            pushFollow(FOLLOW_rule__QualifiedName__Group__0__Impl_in_rule__QualifiedName__Group__04268);
             rule__QualifiedName__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__QualifiedName__Group__1_in_rule__QualifiedName__Group__04250);
+            pushFollow(FOLLOW_rule__QualifiedName__Group__1_in_rule__QualifiedName__Group__04271);
             rule__QualifiedName__Group__1();
 
             state._fsp--;
@@ -5703,20 +5730,20 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QualifiedName__Group__0__Impl"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2124:1: rule__QualifiedName__Group__0__Impl : ( RULE_ID ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2131:1: rule__QualifiedName__Group__0__Impl : ( RULE_ID ) ;
     public final void rule__QualifiedName__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2128:1: ( ( RULE_ID ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2129:1: ( RULE_ID )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2135:1: ( ( RULE_ID ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2136:1: ( RULE_ID )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2129:1: ( RULE_ID )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2130:1: RULE_ID
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2136:1: ( RULE_ID )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2137:1: RULE_ID
             {
              before(grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__QualifiedName__Group__0__Impl4277); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__QualifiedName__Group__0__Impl4298); 
              after(grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_0()); 
 
             }
@@ -5740,16 +5767,16 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QualifiedName__Group__1"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2141:1: rule__QualifiedName__Group__1 : rule__QualifiedName__Group__1__Impl ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2148:1: rule__QualifiedName__Group__1 : rule__QualifiedName__Group__1__Impl ;
     public final void rule__QualifiedName__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2145:1: ( rule__QualifiedName__Group__1__Impl )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2146:2: rule__QualifiedName__Group__1__Impl
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2152:1: ( rule__QualifiedName__Group__1__Impl )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2153:2: rule__QualifiedName__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__QualifiedName__Group__1__Impl_in_rule__QualifiedName__Group__14306);
+            pushFollow(FOLLOW_rule__QualifiedName__Group__1__Impl_in_rule__QualifiedName__Group__14327);
             rule__QualifiedName__Group__1__Impl();
 
             state._fsp--;
@@ -5773,35 +5800,35 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QualifiedName__Group__1__Impl"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2152:1: rule__QualifiedName__Group__1__Impl : ( ( rule__QualifiedName__Group_1__0 )* ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2159:1: rule__QualifiedName__Group__1__Impl : ( ( rule__QualifiedName__Group_1__0 )* ) ;
     public final void rule__QualifiedName__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2156:1: ( ( ( rule__QualifiedName__Group_1__0 )* ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2157:1: ( ( rule__QualifiedName__Group_1__0 )* )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2163:1: ( ( ( rule__QualifiedName__Group_1__0 )* ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2164:1: ( ( rule__QualifiedName__Group_1__0 )* )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2157:1: ( ( rule__QualifiedName__Group_1__0 )* )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2158:1: ( rule__QualifiedName__Group_1__0 )*
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2164:1: ( ( rule__QualifiedName__Group_1__0 )* )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2165:1: ( rule__QualifiedName__Group_1__0 )*
             {
              before(grammarAccess.getQualifiedNameAccess().getGroup_1()); 
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2159:1: ( rule__QualifiedName__Group_1__0 )*
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2166:1: ( rule__QualifiedName__Group_1__0 )*
             loop14:
             do {
                 int alt14=2;
                 int LA14_0 = input.LA(1);
 
-                if ( (LA14_0==31) ) {
+                if ( (LA14_0==32) ) {
                     alt14=1;
                 }
 
 
                 switch (alt14) {
             	case 1 :
-            	    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2159:2: rule__QualifiedName__Group_1__0
+            	    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2166:2: rule__QualifiedName__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_rule__QualifiedName__Group_1__0_in_rule__QualifiedName__Group__1__Impl4333);
+            	    pushFollow(FOLLOW_rule__QualifiedName__Group_1__0_in_rule__QualifiedName__Group__1__Impl4354);
             	    rule__QualifiedName__Group_1__0();
 
             	    state._fsp--;
@@ -5838,21 +5865,21 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QualifiedName__Group_1__0"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2173:1: rule__QualifiedName__Group_1__0 : rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1 ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2180:1: rule__QualifiedName__Group_1__0 : rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1 ;
     public final void rule__QualifiedName__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2177:1: ( rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1 )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2178:2: rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2184:1: ( rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1 )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2185:2: rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1
             {
-            pushFollow(FOLLOW_rule__QualifiedName__Group_1__0__Impl_in_rule__QualifiedName__Group_1__04368);
+            pushFollow(FOLLOW_rule__QualifiedName__Group_1__0__Impl_in_rule__QualifiedName__Group_1__04389);
             rule__QualifiedName__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__QualifiedName__Group_1__1_in_rule__QualifiedName__Group_1__04371);
+            pushFollow(FOLLOW_rule__QualifiedName__Group_1__1_in_rule__QualifiedName__Group_1__04392);
             rule__QualifiedName__Group_1__1();
 
             state._fsp--;
@@ -5876,20 +5903,20 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QualifiedName__Group_1__0__Impl"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2185:1: rule__QualifiedName__Group_1__0__Impl : ( '.' ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2192:1: rule__QualifiedName__Group_1__0__Impl : ( '.' ) ;
     public final void rule__QualifiedName__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2189:1: ( ( '.' ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2190:1: ( '.' )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2196:1: ( ( '.' ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2197:1: ( '.' )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2190:1: ( '.' )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2191:1: '.'
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2197:1: ( '.' )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2198:1: '.'
             {
              before(grammarAccess.getQualifiedNameAccess().getFullStopKeyword_1_0()); 
-            match(input,31,FOLLOW_31_in_rule__QualifiedName__Group_1__0__Impl4399); 
+            match(input,32,FOLLOW_32_in_rule__QualifiedName__Group_1__0__Impl4420); 
              after(grammarAccess.getQualifiedNameAccess().getFullStopKeyword_1_0()); 
 
             }
@@ -5913,16 +5940,16 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QualifiedName__Group_1__1"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2204:1: rule__QualifiedName__Group_1__1 : rule__QualifiedName__Group_1__1__Impl ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2211:1: rule__QualifiedName__Group_1__1 : rule__QualifiedName__Group_1__1__Impl ;
     public final void rule__QualifiedName__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2208:1: ( rule__QualifiedName__Group_1__1__Impl )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2209:2: rule__QualifiedName__Group_1__1__Impl
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2215:1: ( rule__QualifiedName__Group_1__1__Impl )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2216:2: rule__QualifiedName__Group_1__1__Impl
             {
-            pushFollow(FOLLOW_rule__QualifiedName__Group_1__1__Impl_in_rule__QualifiedName__Group_1__14430);
+            pushFollow(FOLLOW_rule__QualifiedName__Group_1__1__Impl_in_rule__QualifiedName__Group_1__14451);
             rule__QualifiedName__Group_1__1__Impl();
 
             state._fsp--;
@@ -5946,20 +5973,20 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QualifiedName__Group_1__1__Impl"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2215:1: rule__QualifiedName__Group_1__1__Impl : ( RULE_ID ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2222:1: rule__QualifiedName__Group_1__1__Impl : ( RULE_ID ) ;
     public final void rule__QualifiedName__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2219:1: ( ( RULE_ID ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2220:1: ( RULE_ID )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2226:1: ( ( RULE_ID ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2227:1: ( RULE_ID )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2220:1: ( RULE_ID )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2221:1: RULE_ID
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2227:1: ( RULE_ID )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2228:1: RULE_ID
             {
              before(grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_1_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__QualifiedName__Group_1__1__Impl4457); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__QualifiedName__Group_1__1__Impl4478); 
              after(grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_1_1()); 
 
             }
@@ -5983,20 +6010,20 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TicketSystem__StatesAssignment_0"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2237:1: rule__TicketSystem__StatesAssignment_0 : ( ruleStatus ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2244:1: rule__TicketSystem__StatesAssignment_0 : ( ruleStatus ) ;
     public final void rule__TicketSystem__StatesAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2241:1: ( ( ruleStatus ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2242:1: ( ruleStatus )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2248:1: ( ( ruleStatus ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2249:1: ( ruleStatus )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2242:1: ( ruleStatus )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2243:1: ruleStatus
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2249:1: ( ruleStatus )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2250:1: ruleStatus
             {
              before(grammarAccess.getTicketSystemAccess().getStatesStatusParserRuleCall_0_0()); 
-            pushFollow(FOLLOW_ruleStatus_in_rule__TicketSystem__StatesAssignment_04495);
+            pushFollow(FOLLOW_ruleStatus_in_rule__TicketSystem__StatesAssignment_04516);
             ruleStatus();
 
             state._fsp--;
@@ -6024,20 +6051,20 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TicketSystem__FlowsAssignment_1"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2252:1: rule__TicketSystem__FlowsAssignment_1 : ( ruleFlow ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2259:1: rule__TicketSystem__FlowsAssignment_1 : ( ruleFlow ) ;
     public final void rule__TicketSystem__FlowsAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2256:1: ( ( ruleFlow ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2257:1: ( ruleFlow )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2263:1: ( ( ruleFlow ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2264:1: ( ruleFlow )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2257:1: ( ruleFlow )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2258:1: ruleFlow
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2264:1: ( ruleFlow )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2265:1: ruleFlow
             {
              before(grammarAccess.getTicketSystemAccess().getFlowsFlowParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_ruleFlow_in_rule__TicketSystem__FlowsAssignment_14526);
+            pushFollow(FOLLOW_ruleFlow_in_rule__TicketSystem__FlowsAssignment_14547);
             ruleFlow();
 
             state._fsp--;
@@ -6065,20 +6092,20 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TicketSystem__FieldsAssignment_2"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2267:1: rule__TicketSystem__FieldsAssignment_2 : ( ruleField ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2274:1: rule__TicketSystem__FieldsAssignment_2 : ( ruleField ) ;
     public final void rule__TicketSystem__FieldsAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2271:1: ( ( ruleField ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2272:1: ( ruleField )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2278:1: ( ( ruleField ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2279:1: ( ruleField )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2272:1: ( ruleField )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2273:1: ruleField
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2279:1: ( ruleField )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2280:1: ruleField
             {
              before(grammarAccess.getTicketSystemAccess().getFieldsFieldParserRuleCall_2_0()); 
-            pushFollow(FOLLOW_ruleField_in_rule__TicketSystem__FieldsAssignment_24557);
+            pushFollow(FOLLOW_ruleField_in_rule__TicketSystem__FieldsAssignment_24578);
             ruleField();
 
             state._fsp--;
@@ -6106,20 +6133,20 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TicketSystem__CategoriesAssignment_3"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2282:1: rule__TicketSystem__CategoriesAssignment_3 : ( ruleTicketCategory ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2289:1: rule__TicketSystem__CategoriesAssignment_3 : ( ruleTicketCategory ) ;
     public final void rule__TicketSystem__CategoriesAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2286:1: ( ( ruleTicketCategory ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2287:1: ( ruleTicketCategory )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2293:1: ( ( ruleTicketCategory ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2294:1: ( ruleTicketCategory )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2287:1: ( ruleTicketCategory )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2288:1: ruleTicketCategory
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2294:1: ( ruleTicketCategory )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2295:1: ruleTicketCategory
             {
              before(grammarAccess.getTicketSystemAccess().getCategoriesTicketCategoryParserRuleCall_3_0()); 
-            pushFollow(FOLLOW_ruleTicketCategory_in_rule__TicketSystem__CategoriesAssignment_34588);
+            pushFollow(FOLLOW_ruleTicketCategory_in_rule__TicketSystem__CategoriesAssignment_34609);
             ruleTicketCategory();
 
             state._fsp--;
@@ -6147,20 +6174,20 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TicketSystem__RolesAssignment_4"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2297:1: rule__TicketSystem__RolesAssignment_4 : ( ruleRole ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2304:1: rule__TicketSystem__RolesAssignment_4 : ( ruleRole ) ;
     public final void rule__TicketSystem__RolesAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2301:1: ( ( ruleRole ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2302:1: ( ruleRole )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2308:1: ( ( ruleRole ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2309:1: ( ruleRole )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2302:1: ( ruleRole )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2303:1: ruleRole
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2309:1: ( ruleRole )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2310:1: ruleRole
             {
              before(grammarAccess.getTicketSystemAccess().getRolesRoleParserRuleCall_4_0()); 
-            pushFollow(FOLLOW_ruleRole_in_rule__TicketSystem__RolesAssignment_44619);
+            pushFollow(FOLLOW_ruleRole_in_rule__TicketSystem__RolesAssignment_44640);
             ruleRole();
 
             state._fsp--;
@@ -6188,20 +6215,20 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Status__NameAssignment_1"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2312:1: rule__Status__NameAssignment_1 : ( ruleQualifiedName ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2319:1: rule__Status__NameAssignment_1 : ( ruleQualifiedName ) ;
     public final void rule__Status__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2316:1: ( ( ruleQualifiedName ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2317:1: ( ruleQualifiedName )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2323:1: ( ( ruleQualifiedName ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2324:1: ( ruleQualifiedName )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2317:1: ( ruleQualifiedName )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2318:1: ruleQualifiedName
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2324:1: ( ruleQualifiedName )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2325:1: ruleQualifiedName
             {
              before(grammarAccess.getStatusAccess().getNameQualifiedNameParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_ruleQualifiedName_in_rule__Status__NameAssignment_14650);
+            pushFollow(FOLLOW_ruleQualifiedName_in_rule__Status__NameAssignment_14671);
             ruleQualifiedName();
 
             state._fsp--;
@@ -6229,20 +6256,20 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Status__DescriptionAssignment_2"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2327:1: rule__Status__DescriptionAssignment_2 : ( RULE_STRING ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2334:1: rule__Status__DescriptionAssignment_2 : ( RULE_STRING ) ;
     public final void rule__Status__DescriptionAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2331:1: ( ( RULE_STRING ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2332:1: ( RULE_STRING )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2338:1: ( ( RULE_STRING ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2339:1: ( RULE_STRING )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2332:1: ( RULE_STRING )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2333:1: RULE_STRING
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2339:1: ( RULE_STRING )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2340:1: RULE_STRING
             {
              before(grammarAccess.getStatusAccess().getDescriptionSTRINGTerminalRuleCall_2_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Status__DescriptionAssignment_24681); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Status__DescriptionAssignment_24702); 
              after(grammarAccess.getStatusAccess().getDescriptionSTRINGTerminalRuleCall_2_0()); 
 
             }
@@ -6266,20 +6293,20 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Flow__NameAssignment_1"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2342:1: rule__Flow__NameAssignment_1 : ( ruleQualifiedName ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2349:1: rule__Flow__NameAssignment_1 : ( ruleQualifiedName ) ;
     public final void rule__Flow__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2346:1: ( ( ruleQualifiedName ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2347:1: ( ruleQualifiedName )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2353:1: ( ( ruleQualifiedName ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2354:1: ( ruleQualifiedName )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2347:1: ( ruleQualifiedName )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2348:1: ruleQualifiedName
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2354:1: ( ruleQualifiedName )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2355:1: ruleQualifiedName
             {
              before(grammarAccess.getFlowAccess().getNameQualifiedNameParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_ruleQualifiedName_in_rule__Flow__NameAssignment_14712);
+            pushFollow(FOLLOW_ruleQualifiedName_in_rule__Flow__NameAssignment_14733);
             ruleQualifiedName();
 
             state._fsp--;
@@ -6307,24 +6334,24 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Flow__StatesAssignment_3_0"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2357:1: rule__Flow__StatesAssignment_3_0 : ( ( ruleQualifiedName ) ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2364:1: rule__Flow__StatesAssignment_3_0 : ( ( ruleQualifiedName ) ) ;
     public final void rule__Flow__StatesAssignment_3_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2361:1: ( ( ( ruleQualifiedName ) ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2362:1: ( ( ruleQualifiedName ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2368:1: ( ( ( ruleQualifiedName ) ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2369:1: ( ( ruleQualifiedName ) )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2362:1: ( ( ruleQualifiedName ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2363:1: ( ruleQualifiedName )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2369:1: ( ( ruleQualifiedName ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2370:1: ( ruleQualifiedName )
             {
              before(grammarAccess.getFlowAccess().getStatesStatusCrossReference_3_0_0()); 
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2364:1: ( ruleQualifiedName )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2365:1: ruleQualifiedName
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2371:1: ( ruleQualifiedName )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2372:1: ruleQualifiedName
             {
              before(grammarAccess.getFlowAccess().getStatesStatusQualifiedNameParserRuleCall_3_0_0_1()); 
-            pushFollow(FOLLOW_ruleQualifiedName_in_rule__Flow__StatesAssignment_3_04747);
+            pushFollow(FOLLOW_ruleQualifiedName_in_rule__Flow__StatesAssignment_3_04768);
             ruleQualifiedName();
 
             state._fsp--;
@@ -6356,20 +6383,20 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__NameAssignment_1"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2376:1: rule__Field__NameAssignment_1 : ( ruleQualifiedName ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2383:1: rule__Field__NameAssignment_1 : ( ruleQualifiedName ) ;
     public final void rule__Field__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2380:1: ( ( ruleQualifiedName ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2381:1: ( ruleQualifiedName )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2387:1: ( ( ruleQualifiedName ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2388:1: ( ruleQualifiedName )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2381:1: ( ruleQualifiedName )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2382:1: ruleQualifiedName
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2388:1: ( ruleQualifiedName )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2389:1: ruleQualifiedName
             {
              before(grammarAccess.getFieldAccess().getNameQualifiedNameParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_ruleQualifiedName_in_rule__Field__NameAssignment_14782);
+            pushFollow(FOLLOW_ruleQualifiedName_in_rule__Field__NameAssignment_14803);
             ruleQualifiedName();
 
             state._fsp--;
@@ -6397,20 +6424,20 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__LabelAssignment_2"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2391:1: rule__Field__LabelAssignment_2 : ( RULE_STRING ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2398:1: rule__Field__LabelAssignment_2 : ( RULE_STRING ) ;
     public final void rule__Field__LabelAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2395:1: ( ( RULE_STRING ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2396:1: ( RULE_STRING )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2402:1: ( ( RULE_STRING ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2403:1: ( RULE_STRING )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2396:1: ( RULE_STRING )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2397:1: RULE_STRING
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2403:1: ( RULE_STRING )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2404:1: RULE_STRING
             {
              before(grammarAccess.getFieldAccess().getLabelSTRINGTerminalRuleCall_2_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Field__LabelAssignment_24813); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Field__LabelAssignment_24834); 
              after(grammarAccess.getFieldAccess().getLabelSTRINGTerminalRuleCall_2_0()); 
 
             }
@@ -6434,20 +6461,20 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__FieldTypeAssignment_3_0"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2406:1: rule__Field__FieldTypeAssignment_3_0 : ( ruleFieldType ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2413:1: rule__Field__FieldTypeAssignment_3_0 : ( ruleFieldType ) ;
     public final void rule__Field__FieldTypeAssignment_3_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2410:1: ( ( ruleFieldType ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2411:1: ( ruleFieldType )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2417:1: ( ( ruleFieldType ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2418:1: ( ruleFieldType )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2411:1: ( ruleFieldType )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2412:1: ruleFieldType
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2418:1: ( ruleFieldType )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2419:1: ruleFieldType
             {
              before(grammarAccess.getFieldAccess().getFieldTypeFieldTypeEnumRuleCall_3_0_0()); 
-            pushFollow(FOLLOW_ruleFieldType_in_rule__Field__FieldTypeAssignment_3_04844);
+            pushFollow(FOLLOW_ruleFieldType_in_rule__Field__FieldTypeAssignment_3_04865);
             ruleFieldType();
 
             state._fsp--;
@@ -6475,20 +6502,20 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Field__FieldEnumAssignment_3_1"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2421:1: rule__Field__FieldEnumAssignment_3_1 : ( ruleEnum ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2428:1: rule__Field__FieldEnumAssignment_3_1 : ( ruleEnum ) ;
     public final void rule__Field__FieldEnumAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2425:1: ( ( ruleEnum ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2426:1: ( ruleEnum )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2432:1: ( ( ruleEnum ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2433:1: ( ruleEnum )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2426:1: ( ruleEnum )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2427:1: ruleEnum
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2433:1: ( ruleEnum )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2434:1: ruleEnum
             {
              before(grammarAccess.getFieldAccess().getFieldEnumEnumParserRuleCall_3_1_0()); 
-            pushFollow(FOLLOW_ruleEnum_in_rule__Field__FieldEnumAssignment_3_14875);
+            pushFollow(FOLLOW_ruleEnum_in_rule__Field__FieldEnumAssignment_3_14896);
             ruleEnum();
 
             state._fsp--;
@@ -6516,20 +6543,20 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Enum__OptionAssignment_0"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2436:1: rule__Enum__OptionAssignment_0 : ( RULE_STRING ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2443:1: rule__Enum__OptionAssignment_0 : ( RULE_STRING ) ;
     public final void rule__Enum__OptionAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2440:1: ( ( RULE_STRING ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2441:1: ( RULE_STRING )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2447:1: ( ( RULE_STRING ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2448:1: ( RULE_STRING )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2441:1: ( RULE_STRING )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2442:1: RULE_STRING
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2448:1: ( RULE_STRING )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2449:1: RULE_STRING
             {
              before(grammarAccess.getEnumAccess().getOptionSTRINGTerminalRuleCall_0_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Enum__OptionAssignment_04906); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Enum__OptionAssignment_04927); 
              after(grammarAccess.getEnumAccess().getOptionSTRINGTerminalRuleCall_0_0()); 
 
             }
@@ -6553,20 +6580,20 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Enum__OptionAssignment_1_1"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2451:1: rule__Enum__OptionAssignment_1_1 : ( RULE_STRING ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2458:1: rule__Enum__OptionAssignment_1_1 : ( RULE_STRING ) ;
     public final void rule__Enum__OptionAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2455:1: ( ( RULE_STRING ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2456:1: ( RULE_STRING )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2462:1: ( ( RULE_STRING ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2463:1: ( RULE_STRING )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2456:1: ( RULE_STRING )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2457:1: RULE_STRING
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2463:1: ( RULE_STRING )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2464:1: RULE_STRING
             {
              before(grammarAccess.getEnumAccess().getOptionSTRINGTerminalRuleCall_1_1_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Enum__OptionAssignment_1_14937); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Enum__OptionAssignment_1_14958); 
              after(grammarAccess.getEnumAccess().getOptionSTRINGTerminalRuleCall_1_1_0()); 
 
             }
@@ -6590,20 +6617,20 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TicketCategory__NameAssignment_1"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2466:1: rule__TicketCategory__NameAssignment_1 : ( ruleQualifiedName ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2473:1: rule__TicketCategory__NameAssignment_1 : ( ruleQualifiedName ) ;
     public final void rule__TicketCategory__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2470:1: ( ( ruleQualifiedName ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2471:1: ( ruleQualifiedName )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2477:1: ( ( ruleQualifiedName ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2478:1: ( ruleQualifiedName )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2471:1: ( ruleQualifiedName )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2472:1: ruleQualifiedName
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2478:1: ( ruleQualifiedName )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2479:1: ruleQualifiedName
             {
              before(grammarAccess.getTicketCategoryAccess().getNameQualifiedNameParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_ruleQualifiedName_in_rule__TicketCategory__NameAssignment_14968);
+            pushFollow(FOLLOW_ruleQualifiedName_in_rule__TicketCategory__NameAssignment_14989);
             ruleQualifiedName();
 
             state._fsp--;
@@ -6631,20 +6658,20 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TicketCategory__DescriptionAssignment_2"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2481:1: rule__TicketCategory__DescriptionAssignment_2 : ( RULE_STRING ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2488:1: rule__TicketCategory__DescriptionAssignment_2 : ( RULE_STRING ) ;
     public final void rule__TicketCategory__DescriptionAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2485:1: ( ( RULE_STRING ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2486:1: ( RULE_STRING )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2492:1: ( ( RULE_STRING ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2493:1: ( RULE_STRING )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2486:1: ( RULE_STRING )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2487:1: RULE_STRING
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2493:1: ( RULE_STRING )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2494:1: RULE_STRING
             {
              before(grammarAccess.getTicketCategoryAccess().getDescriptionSTRINGTerminalRuleCall_2_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__TicketCategory__DescriptionAssignment_24999); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__TicketCategory__DescriptionAssignment_25020); 
              after(grammarAccess.getTicketCategoryAccess().getDescriptionSTRINGTerminalRuleCall_2_0()); 
 
             }
@@ -6668,24 +6695,24 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TicketCategory__FlowAssignment_4_1"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2496:1: rule__TicketCategory__FlowAssignment_4_1 : ( ( ruleQualifiedName ) ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2503:1: rule__TicketCategory__FlowAssignment_4_1 : ( ( ruleQualifiedName ) ) ;
     public final void rule__TicketCategory__FlowAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2500:1: ( ( ( ruleQualifiedName ) ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2501:1: ( ( ruleQualifiedName ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2507:1: ( ( ( ruleQualifiedName ) ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2508:1: ( ( ruleQualifiedName ) )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2501:1: ( ( ruleQualifiedName ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2502:1: ( ruleQualifiedName )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2508:1: ( ( ruleQualifiedName ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2509:1: ( ruleQualifiedName )
             {
              before(grammarAccess.getTicketCategoryAccess().getFlowFlowCrossReference_4_1_0()); 
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2503:1: ( ruleQualifiedName )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2504:1: ruleQualifiedName
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2510:1: ( ruleQualifiedName )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2511:1: ruleQualifiedName
             {
              before(grammarAccess.getTicketCategoryAccess().getFlowFlowQualifiedNameParserRuleCall_4_1_0_1()); 
-            pushFollow(FOLLOW_ruleQualifiedName_in_rule__TicketCategory__FlowAssignment_4_15034);
+            pushFollow(FOLLOW_ruleQualifiedName_in_rule__TicketCategory__FlowAssignment_4_15055);
             ruleQualifiedName();
 
             state._fsp--;
@@ -6717,20 +6744,20 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TicketCategory__TicketFieldsAssignment_6_0"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2515:1: rule__TicketCategory__TicketFieldsAssignment_6_0 : ( ruleTicketField ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2522:1: rule__TicketCategory__TicketFieldsAssignment_6_0 : ( ruleTicketField ) ;
     public final void rule__TicketCategory__TicketFieldsAssignment_6_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2519:1: ( ( ruleTicketField ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2520:1: ( ruleTicketField )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2526:1: ( ( ruleTicketField ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2527:1: ( ruleTicketField )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2520:1: ( ruleTicketField )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2521:1: ruleTicketField
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2527:1: ( ruleTicketField )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2528:1: ruleTicketField
             {
              before(grammarAccess.getTicketCategoryAccess().getTicketFieldsTicketFieldParserRuleCall_6_0_0()); 
-            pushFollow(FOLLOW_ruleTicketField_in_rule__TicketCategory__TicketFieldsAssignment_6_05069);
+            pushFollow(FOLLOW_ruleTicketField_in_rule__TicketCategory__TicketFieldsAssignment_6_05090);
             ruleTicketField();
 
             state._fsp--;
@@ -6758,24 +6785,24 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TicketField__FieldAssignment_0"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2530:1: rule__TicketField__FieldAssignment_0 : ( ( ruleQualifiedName ) ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2537:1: rule__TicketField__FieldAssignment_0 : ( ( ruleQualifiedName ) ) ;
     public final void rule__TicketField__FieldAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2534:1: ( ( ( ruleQualifiedName ) ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2535:1: ( ( ruleQualifiedName ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2541:1: ( ( ( ruleQualifiedName ) ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2542:1: ( ( ruleQualifiedName ) )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2535:1: ( ( ruleQualifiedName ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2536:1: ( ruleQualifiedName )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2542:1: ( ( ruleQualifiedName ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2543:1: ( ruleQualifiedName )
             {
              before(grammarAccess.getTicketFieldAccess().getFieldFieldCrossReference_0_0()); 
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2537:1: ( ruleQualifiedName )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2538:1: ruleQualifiedName
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2544:1: ( ruleQualifiedName )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2545:1: ruleQualifiedName
             {
              before(grammarAccess.getTicketFieldAccess().getFieldFieldQualifiedNameParserRuleCall_0_0_1()); 
-            pushFollow(FOLLOW_ruleQualifiedName_in_rule__TicketField__FieldAssignment_05104);
+            pushFollow(FOLLOW_ruleQualifiedName_in_rule__TicketField__FieldAssignment_05125);
             ruleQualifiedName();
 
             state._fsp--;
@@ -6807,24 +6834,24 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TicketField__MandatoryAssignment_1"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2549:1: rule__TicketField__MandatoryAssignment_1 : ( ( 'mandatory' ) ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2556:1: rule__TicketField__MandatoryAssignment_1 : ( ( 'mandatory' ) ) ;
     public final void rule__TicketField__MandatoryAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2553:1: ( ( ( 'mandatory' ) ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2554:1: ( ( 'mandatory' ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2560:1: ( ( ( 'mandatory' ) ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2561:1: ( ( 'mandatory' ) )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2554:1: ( ( 'mandatory' ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2555:1: ( 'mandatory' )
-            {
-             before(grammarAccess.getTicketFieldAccess().getMandatoryMandatoryKeyword_1_0()); 
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2556:1: ( 'mandatory' )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2557:1: 'mandatory'
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2561:1: ( ( 'mandatory' ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2562:1: ( 'mandatory' )
             {
              before(grammarAccess.getTicketFieldAccess().getMandatoryMandatoryKeyword_1_0()); 
-            match(input,32,FOLLOW_32_in_rule__TicketField__MandatoryAssignment_15144); 
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2563:1: ( 'mandatory' )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2564:1: 'mandatory'
+            {
+             before(grammarAccess.getTicketFieldAccess().getMandatoryMandatoryKeyword_1_0()); 
+            match(input,33,FOLLOW_33_in_rule__TicketField__MandatoryAssignment_15165); 
              after(grammarAccess.getTicketFieldAccess().getMandatoryMandatoryKeyword_1_0()); 
 
             }
@@ -6852,24 +6879,24 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TicketField__NotOnListAssignment_2"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2572:1: rule__TicketField__NotOnListAssignment_2 : ( ( 'notOnList' ) ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2579:1: rule__TicketField__NotOnListAssignment_2 : ( ( 'notOnList' ) ) ;
     public final void rule__TicketField__NotOnListAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2576:1: ( ( ( 'notOnList' ) ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2577:1: ( ( 'notOnList' ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2583:1: ( ( ( 'notOnList' ) ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2584:1: ( ( 'notOnList' ) )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2577:1: ( ( 'notOnList' ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2578:1: ( 'notOnList' )
-            {
-             before(grammarAccess.getTicketFieldAccess().getNotOnListNotOnListKeyword_2_0()); 
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2579:1: ( 'notOnList' )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2580:1: 'notOnList'
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2584:1: ( ( 'notOnList' ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2585:1: ( 'notOnList' )
             {
              before(grammarAccess.getTicketFieldAccess().getNotOnListNotOnListKeyword_2_0()); 
-            match(input,33,FOLLOW_33_in_rule__TicketField__NotOnListAssignment_25188); 
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2586:1: ( 'notOnList' )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2587:1: 'notOnList'
+            {
+             before(grammarAccess.getTicketFieldAccess().getNotOnListNotOnListKeyword_2_0()); 
+            match(input,34,FOLLOW_34_in_rule__TicketField__NotOnListAssignment_25209); 
              after(grammarAccess.getTicketFieldAccess().getNotOnListNotOnListKeyword_2_0()); 
 
             }
@@ -6897,20 +6924,20 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Role__NameAssignment_1"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2595:1: rule__Role__NameAssignment_1 : ( ruleQualifiedName ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2602:1: rule__Role__NameAssignment_1 : ( ruleQualifiedName ) ;
     public final void rule__Role__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2599:1: ( ( ruleQualifiedName ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2600:1: ( ruleQualifiedName )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2606:1: ( ( ruleQualifiedName ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2607:1: ( ruleQualifiedName )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2600:1: ( ruleQualifiedName )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2601:1: ruleQualifiedName
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2607:1: ( ruleQualifiedName )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2608:1: ruleQualifiedName
             {
              before(grammarAccess.getRoleAccess().getNameQualifiedNameParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_ruleQualifiedName_in_rule__Role__NameAssignment_15227);
+            pushFollow(FOLLOW_ruleQualifiedName_in_rule__Role__NameAssignment_15248);
             ruleQualifiedName();
 
             state._fsp--;
@@ -6938,20 +6965,20 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Role__DescriptionAssignment_2"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2610:1: rule__Role__DescriptionAssignment_2 : ( RULE_STRING ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2617:1: rule__Role__DescriptionAssignment_2 : ( RULE_STRING ) ;
     public final void rule__Role__DescriptionAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2614:1: ( ( RULE_STRING ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2615:1: ( RULE_STRING )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2621:1: ( ( RULE_STRING ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2622:1: ( RULE_STRING )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2615:1: ( RULE_STRING )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2616:1: RULE_STRING
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2622:1: ( RULE_STRING )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2623:1: RULE_STRING
             {
              before(grammarAccess.getRoleAccess().getDescriptionSTRINGTerminalRuleCall_2_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Role__DescriptionAssignment_25258); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Role__DescriptionAssignment_25279); 
              after(grammarAccess.getRoleAccess().getDescriptionSTRINGTerminalRuleCall_2_0()); 
 
             }
@@ -6975,20 +7002,20 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Role__RolepermissionsAssignment_4_0"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2625:1: rule__Role__RolepermissionsAssignment_4_0 : ( ruleRolePermission ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2632:1: rule__Role__RolepermissionsAssignment_4_0 : ( ruleRolePermission ) ;
     public final void rule__Role__RolepermissionsAssignment_4_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2629:1: ( ( ruleRolePermission ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2630:1: ( ruleRolePermission )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2636:1: ( ( ruleRolePermission ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2637:1: ( ruleRolePermission )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2630:1: ( ruleRolePermission )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2631:1: ruleRolePermission
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2637:1: ( ruleRolePermission )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2638:1: ruleRolePermission
             {
              before(grammarAccess.getRoleAccess().getRolepermissionsRolePermissionParserRuleCall_4_0_0()); 
-            pushFollow(FOLLOW_ruleRolePermission_in_rule__Role__RolepermissionsAssignment_4_05289);
+            pushFollow(FOLLOW_ruleRolePermission_in_rule__Role__RolepermissionsAssignment_4_05310);
             ruleRolePermission();
 
             state._fsp--;
@@ -7016,24 +7043,24 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RolePermission__FieldAssignment_0"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2640:1: rule__RolePermission__FieldAssignment_0 : ( ( ruleQualifiedName ) ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2647:1: rule__RolePermission__FieldAssignment_0 : ( ( ruleQualifiedName ) ) ;
     public final void rule__RolePermission__FieldAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2644:1: ( ( ( ruleQualifiedName ) ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2645:1: ( ( ruleQualifiedName ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2651:1: ( ( ( ruleQualifiedName ) ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2652:1: ( ( ruleQualifiedName ) )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2645:1: ( ( ruleQualifiedName ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2646:1: ( ruleQualifiedName )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2652:1: ( ( ruleQualifiedName ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2653:1: ( ruleQualifiedName )
             {
              before(grammarAccess.getRolePermissionAccess().getFieldFieldCrossReference_0_0()); 
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2647:1: ( ruleQualifiedName )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2648:1: ruleQualifiedName
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2654:1: ( ruleQualifiedName )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2655:1: ruleQualifiedName
             {
              before(grammarAccess.getRolePermissionAccess().getFieldFieldQualifiedNameParserRuleCall_0_0_1()); 
-            pushFollow(FOLLOW_ruleQualifiedName_in_rule__RolePermission__FieldAssignment_05324);
+            pushFollow(FOLLOW_ruleQualifiedName_in_rule__RolePermission__FieldAssignment_05345);
             ruleQualifiedName();
 
             state._fsp--;
@@ -7065,20 +7092,20 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RolePermission__PermissionsAssignment_1"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2659:1: rule__RolePermission__PermissionsAssignment_1 : ( rulePermission ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2666:1: rule__RolePermission__PermissionsAssignment_1 : ( rulePermission ) ;
     public final void rule__RolePermission__PermissionsAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2663:1: ( ( rulePermission ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2664:1: ( rulePermission )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2670:1: ( ( rulePermission ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2671:1: ( rulePermission )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2664:1: ( rulePermission )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2665:1: rulePermission
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2671:1: ( rulePermission )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2672:1: rulePermission
             {
              before(grammarAccess.getRolePermissionAccess().getPermissionsPermissionEnumRuleCall_1_0()); 
-            pushFollow(FOLLOW_rulePermission_in_rule__RolePermission__PermissionsAssignment_15359);
+            pushFollow(FOLLOW_rulePermission_in_rule__RolePermission__PermissionsAssignment_15380);
             rulePermission();
 
             state._fsp--;
@@ -7106,20 +7133,20 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__RolePermission__PermissionsAssignment_2_1"
-    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2674:1: rule__RolePermission__PermissionsAssignment_2_1 : ( rulePermission ) ;
+    // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2681:1: rule__RolePermission__PermissionsAssignment_2_1 : ( rulePermission ) ;
     public final void rule__RolePermission__PermissionsAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2678:1: ( ( rulePermission ) )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2679:1: ( rulePermission )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2685:1: ( ( rulePermission ) )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2686:1: ( rulePermission )
             {
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2679:1: ( rulePermission )
-            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2680:1: rulePermission
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2686:1: ( rulePermission )
+            // ../org.nordakademie.mwi.tickets.ui/src-gen/org/nordakademie/mwi/tickets/ui/contentassist/antlr/internal/InternalTickets.g:2687:1: rulePermission
             {
              before(grammarAccess.getRolePermissionAccess().getPermissionsPermissionEnumRuleCall_2_1_0()); 
-            pushFollow(FOLLOW_rulePermission_in_rule__RolePermission__PermissionsAssignment_2_15390);
+            pushFollow(FOLLOW_rulePermission_in_rule__RolePermission__PermissionsAssignment_2_15411);
             rulePermission();
 
             state._fsp--;
@@ -7152,7 +7179,7 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
 
     public static final BitSet FOLLOW_ruleTicketSystem_in_entryRuleTicketSystem61 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleTicketSystem68 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TicketSystem__Alternatives_in_ruleTicketSystem94 = new BitSet(new long[]{0x0000000054A00002L});
+    public static final BitSet FOLLOW_rule__TicketSystem__Alternatives_in_ruleTicketSystem94 = new BitSet(new long[]{0x00000000A9400002L});
     public static final BitSet FOLLOW_ruleStatus_in_entryRuleStatus122 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleStatus129 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Status__Group__0_in_ruleStatus155 = new BitSet(new long[]{0x0000000000000002L});
@@ -7199,179 +7226,180 @@ public class InternalTicketsParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_18_in_rule__FieldType__Alternatives1062 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_19_in_rule__FieldType__Alternatives1083 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_20_in_rule__FieldType__Alternatives1104 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Status__Group__0__Impl_in_rule__Status__Group__01137 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__Status__Group__1_in_rule__Status__Group__01140 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_21_in_rule__Status__Group__0__Impl1168 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Status__Group__1__Impl_in_rule__Status__Group__11199 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__Status__Group__2_in_rule__Status__Group__11202 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Status__NameAssignment_1_in_rule__Status__Group__1__Impl1229 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Status__Group__2__Impl_in_rule__Status__Group__21259 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_rule__Status__Group__3_in_rule__Status__Group__21262 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Status__DescriptionAssignment_2_in_rule__Status__Group__2__Impl1289 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Status__Group__3__Impl_in_rule__Status__Group__31319 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_22_in_rule__Status__Group__3__Impl1347 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Flow__Group__0__Impl_in_rule__Flow__Group__01386 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__Flow__Group__1_in_rule__Flow__Group__01389 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_23_in_rule__Flow__Group__0__Impl1417 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Flow__Group__1__Impl_in_rule__Flow__Group__11448 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_rule__Flow__Group__2_in_rule__Flow__Group__11451 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Flow__NameAssignment_1_in_rule__Flow__Group__1__Impl1478 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Flow__Group__2__Impl_in_rule__Flow__Group__21508 = new BitSet(new long[]{0x0000000002000010L});
-    public static final BitSet FOLLOW_rule__Flow__Group__3_in_rule__Flow__Group__21511 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_24_in_rule__Flow__Group__2__Impl1539 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Flow__Group__3__Impl_in_rule__Flow__Group__31570 = new BitSet(new long[]{0x0000000002000010L});
-    public static final BitSet FOLLOW_rule__Flow__Group__4_in_rule__Flow__Group__31573 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Flow__Group_3__0_in_rule__Flow__Group__3__Impl1600 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_rule__Flow__Group__4__Impl_in_rule__Flow__Group__41631 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_rule__Flow__Group__4__Impl1659 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Flow__Group_3__0__Impl_in_rule__Flow__Group_3__01700 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_rule__Flow__Group_3__1_in_rule__Flow__Group_3__01703 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Flow__StatesAssignment_3_0_in_rule__Flow__Group_3__0__Impl1730 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Flow__Group_3__1__Impl_in_rule__Flow__Group_3__11760 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_22_in_rule__Flow__Group_3__1__Impl1788 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Field__Group__0__Impl_in_rule__Field__Group__01823 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__Field__Group__1_in_rule__Field__Group__01826 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_26_in_rule__Field__Group__0__Impl1854 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Field__Group__1__Impl_in_rule__Field__Group__11885 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__Field__Group__2_in_rule__Field__Group__11888 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Field__NameAssignment_1_in_rule__Field__Group__1__Impl1915 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Field__Group__2__Impl_in_rule__Field__Group__21945 = new BitSet(new long[]{0x00000000001F8020L});
-    public static final BitSet FOLLOW_rule__Field__Group__3_in_rule__Field__Group__21948 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Field__LabelAssignment_2_in_rule__Field__Group__2__Impl1975 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Field__Group__3__Impl_in_rule__Field__Group__32005 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_rule__Field__Group__4_in_rule__Field__Group__32008 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Field__Alternatives_3_in_rule__Field__Group__3__Impl2035 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Field__Group__4__Impl_in_rule__Field__Group__42065 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_22_in_rule__Field__Group__4__Impl2093 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Enum__Group__0__Impl_in_rule__Enum__Group__02134 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_rule__Enum__Group__1_in_rule__Enum__Group__02137 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Enum__OptionAssignment_0_in_rule__Enum__Group__0__Impl2164 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Enum__Group__1__Impl_in_rule__Enum__Group__12194 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Enum__Group_1__0_in_rule__Enum__Group__1__Impl2221 = new BitSet(new long[]{0x0000000008000002L});
-    public static final BitSet FOLLOW_rule__Enum__Group_1__0__Impl_in_rule__Enum__Group_1__02256 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__Enum__Group_1__1_in_rule__Enum__Group_1__02259 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_27_in_rule__Enum__Group_1__0__Impl2287 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Enum__Group_1__1__Impl_in_rule__Enum__Group_1__12318 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Enum__OptionAssignment_1_1_in_rule__Enum__Group_1__1__Impl2345 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TicketCategory__Group__0__Impl_in_rule__TicketCategory__Group__02379 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__TicketCategory__Group__1_in_rule__TicketCategory__Group__02382 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_28_in_rule__TicketCategory__Group__0__Impl2410 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TicketCategory__Group__1__Impl_in_rule__TicketCategory__Group__12441 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__TicketCategory__Group__2_in_rule__TicketCategory__Group__12444 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TicketCategory__NameAssignment_1_in_rule__TicketCategory__Group__1__Impl2471 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TicketCategory__Group__2__Impl_in_rule__TicketCategory__Group__22501 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_rule__TicketCategory__Group__3_in_rule__TicketCategory__Group__22504 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TicketCategory__DescriptionAssignment_2_in_rule__TicketCategory__Group__2__Impl2531 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TicketCategory__Group__3__Impl_in_rule__TicketCategory__Group__32561 = new BitSet(new long[]{0x0000000020800000L});
-    public static final BitSet FOLLOW_rule__TicketCategory__Group__4_in_rule__TicketCategory__Group__32564 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_24_in_rule__TicketCategory__Group__3__Impl2592 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TicketCategory__Group__4__Impl_in_rule__TicketCategory__Group__42623 = new BitSet(new long[]{0x0000000020800000L});
-    public static final BitSet FOLLOW_rule__TicketCategory__Group__5_in_rule__TicketCategory__Group__42626 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TicketCategory__Group_4__0_in_rule__TicketCategory__Group__4__Impl2653 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TicketCategory__Group__5__Impl_in_rule__TicketCategory__Group__52684 = new BitSet(new long[]{0x0000000002000010L});
-    public static final BitSet FOLLOW_rule__TicketCategory__Group__6_in_rule__TicketCategory__Group__52687 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_29_in_rule__TicketCategory__Group__5__Impl2715 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TicketCategory__Group__6__Impl_in_rule__TicketCategory__Group__62746 = new BitSet(new long[]{0x0000000002000010L});
-    public static final BitSet FOLLOW_rule__TicketCategory__Group__7_in_rule__TicketCategory__Group__62749 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TicketCategory__Group_6__0_in_rule__TicketCategory__Group__6__Impl2776 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_rule__TicketCategory__Group__7__Impl_in_rule__TicketCategory__Group__72807 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_rule__TicketCategory__Group__8_in_rule__TicketCategory__Group__72810 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_rule__TicketCategory__Group__7__Impl2838 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TicketCategory__Group__8__Impl_in_rule__TicketCategory__Group__82869 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_rule__TicketCategory__Group__8__Impl2897 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TicketCategory__Group_4__0__Impl_in_rule__TicketCategory__Group_4__02946 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__TicketCategory__Group_4__1_in_rule__TicketCategory__Group_4__02949 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_23_in_rule__TicketCategory__Group_4__0__Impl2977 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TicketCategory__Group_4__1__Impl_in_rule__TicketCategory__Group_4__13008 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_rule__TicketCategory__Group_4__2_in_rule__TicketCategory__Group_4__13011 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TicketCategory__FlowAssignment_4_1_in_rule__TicketCategory__Group_4__1__Impl3038 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TicketCategory__Group_4__2__Impl_in_rule__TicketCategory__Group_4__23068 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_22_in_rule__TicketCategory__Group_4__2__Impl3096 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TicketCategory__Group_6__0__Impl_in_rule__TicketCategory__Group_6__03133 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_rule__TicketCategory__Group_6__1_in_rule__TicketCategory__Group_6__03136 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TicketCategory__TicketFieldsAssignment_6_0_in_rule__TicketCategory__Group_6__0__Impl3163 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TicketCategory__Group_6__1__Impl_in_rule__TicketCategory__Group_6__13193 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_22_in_rule__TicketCategory__Group_6__1__Impl3221 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TicketField__Group__0__Impl_in_rule__TicketField__Group__03256 = new BitSet(new long[]{0x0000000300000000L});
-    public static final BitSet FOLLOW_rule__TicketField__Group__1_in_rule__TicketField__Group__03259 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TicketField__FieldAssignment_0_in_rule__TicketField__Group__0__Impl3286 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TicketField__Group__1__Impl_in_rule__TicketField__Group__13316 = new BitSet(new long[]{0x0000000300000000L});
-    public static final BitSet FOLLOW_rule__TicketField__Group__2_in_rule__TicketField__Group__13319 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TicketField__MandatoryAssignment_1_in_rule__TicketField__Group__1__Impl3346 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TicketField__Group__2__Impl_in_rule__TicketField__Group__23377 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TicketField__NotOnListAssignment_2_in_rule__TicketField__Group__2__Impl3404 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Role__Group__0__Impl_in_rule__Role__Group__03441 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__Role__Group__1_in_rule__Role__Group__03444 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_30_in_rule__Role__Group__0__Impl3472 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Role__Group__1__Impl_in_rule__Role__Group__13503 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__Role__Group__2_in_rule__Role__Group__13506 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Role__NameAssignment_1_in_rule__Role__Group__1__Impl3533 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Role__Group__2__Impl_in_rule__Role__Group__23563 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_rule__Role__Group__3_in_rule__Role__Group__23566 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Role__DescriptionAssignment_2_in_rule__Role__Group__2__Impl3593 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Role__Group__3__Impl_in_rule__Role__Group__33623 = new BitSet(new long[]{0x0000000002000010L});
-    public static final BitSet FOLLOW_rule__Role__Group__4_in_rule__Role__Group__33626 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_24_in_rule__Role__Group__3__Impl3654 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Role__Group__4__Impl_in_rule__Role__Group__43685 = new BitSet(new long[]{0x0000000002000010L});
-    public static final BitSet FOLLOW_rule__Role__Group__5_in_rule__Role__Group__43688 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Role__Group_4__0_in_rule__Role__Group__4__Impl3715 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_rule__Role__Group__5__Impl_in_rule__Role__Group__53746 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_rule__Role__Group__5__Impl3774 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Role__Group_4__0__Impl_in_rule__Role__Group_4__03817 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_rule__Role__Group_4__1_in_rule__Role__Group_4__03820 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Role__RolepermissionsAssignment_4_0_in_rule__Role__Group_4__0__Impl3847 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Role__Group_4__1__Impl_in_rule__Role__Group_4__13877 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_22_in_rule__Role__Group_4__1__Impl3905 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__RolePermission__Group__0__Impl_in_rule__RolePermission__Group__03940 = new BitSet(new long[]{0x0000000000007800L});
-    public static final BitSet FOLLOW_rule__RolePermission__Group__1_in_rule__RolePermission__Group__03943 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__RolePermission__FieldAssignment_0_in_rule__RolePermission__Group__0__Impl3970 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__RolePermission__Group__1__Impl_in_rule__RolePermission__Group__14000 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_rule__RolePermission__Group__2_in_rule__RolePermission__Group__14003 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__RolePermission__PermissionsAssignment_1_in_rule__RolePermission__Group__1__Impl4030 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__RolePermission__Group__2__Impl_in_rule__RolePermission__Group__24060 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__RolePermission__Group_2__0_in_rule__RolePermission__Group__2__Impl4087 = new BitSet(new long[]{0x0000000008000002L});
-    public static final BitSet FOLLOW_rule__RolePermission__Group_2__0__Impl_in_rule__RolePermission__Group_2__04124 = new BitSet(new long[]{0x0000000000007800L});
-    public static final BitSet FOLLOW_rule__RolePermission__Group_2__1_in_rule__RolePermission__Group_2__04127 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_27_in_rule__RolePermission__Group_2__0__Impl4155 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__RolePermission__Group_2__1__Impl_in_rule__RolePermission__Group_2__14186 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__RolePermission__PermissionsAssignment_2_1_in_rule__RolePermission__Group_2__1__Impl4213 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__QualifiedName__Group__0__Impl_in_rule__QualifiedName__Group__04247 = new BitSet(new long[]{0x0000000080000000L});
-    public static final BitSet FOLLOW_rule__QualifiedName__Group__1_in_rule__QualifiedName__Group__04250 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__QualifiedName__Group__0__Impl4277 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__QualifiedName__Group__1__Impl_in_rule__QualifiedName__Group__14306 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__QualifiedName__Group_1__0_in_rule__QualifiedName__Group__1__Impl4333 = new BitSet(new long[]{0x0000000080000002L});
-    public static final BitSet FOLLOW_rule__QualifiedName__Group_1__0__Impl_in_rule__QualifiedName__Group_1__04368 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__QualifiedName__Group_1__1_in_rule__QualifiedName__Group_1__04371 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_31_in_rule__QualifiedName__Group_1__0__Impl4399 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__QualifiedName__Group_1__1__Impl_in_rule__QualifiedName__Group_1__14430 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__QualifiedName__Group_1__1__Impl4457 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStatus_in_rule__TicketSystem__StatesAssignment_04495 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFlow_in_rule__TicketSystem__FlowsAssignment_14526 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleField_in_rule__TicketSystem__FieldsAssignment_24557 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTicketCategory_in_rule__TicketSystem__CategoriesAssignment_34588 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRole_in_rule__TicketSystem__RolesAssignment_44619 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__Status__NameAssignment_14650 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__Status__DescriptionAssignment_24681 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__Flow__NameAssignment_14712 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__Flow__StatesAssignment_3_04747 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__Field__NameAssignment_14782 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__Field__LabelAssignment_24813 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFieldType_in_rule__Field__FieldTypeAssignment_3_04844 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEnum_in_rule__Field__FieldEnumAssignment_3_14875 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__Enum__OptionAssignment_04906 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__Enum__OptionAssignment_1_14937 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__TicketCategory__NameAssignment_14968 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__TicketCategory__DescriptionAssignment_24999 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__TicketCategory__FlowAssignment_4_15034 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTicketField_in_rule__TicketCategory__TicketFieldsAssignment_6_05069 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__TicketField__FieldAssignment_05104 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_32_in_rule__TicketField__MandatoryAssignment_15144 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_33_in_rule__TicketField__NotOnListAssignment_25188 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__Role__NameAssignment_15227 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__Role__DescriptionAssignment_25258 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRolePermission_in_rule__Role__RolepermissionsAssignment_4_05289 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__RolePermission__FieldAssignment_05324 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePermission_in_rule__RolePermission__PermissionsAssignment_15359 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePermission_in_rule__RolePermission__PermissionsAssignment_2_15390 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_21_in_rule__FieldType__Alternatives1125 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Status__Group__0__Impl_in_rule__Status__Group__01158 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__Status__Group__1_in_rule__Status__Group__01161 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_22_in_rule__Status__Group__0__Impl1189 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Status__Group__1__Impl_in_rule__Status__Group__11220 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__Status__Group__2_in_rule__Status__Group__11223 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Status__NameAssignment_1_in_rule__Status__Group__1__Impl1250 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Status__Group__2__Impl_in_rule__Status__Group__21280 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_rule__Status__Group__3_in_rule__Status__Group__21283 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Status__DescriptionAssignment_2_in_rule__Status__Group__2__Impl1310 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Status__Group__3__Impl_in_rule__Status__Group__31340 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_23_in_rule__Status__Group__3__Impl1368 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Flow__Group__0__Impl_in_rule__Flow__Group__01407 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__Flow__Group__1_in_rule__Flow__Group__01410 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_24_in_rule__Flow__Group__0__Impl1438 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Flow__Group__1__Impl_in_rule__Flow__Group__11469 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_rule__Flow__Group__2_in_rule__Flow__Group__11472 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Flow__NameAssignment_1_in_rule__Flow__Group__1__Impl1499 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Flow__Group__2__Impl_in_rule__Flow__Group__21529 = new BitSet(new long[]{0x0000000004000010L});
+    public static final BitSet FOLLOW_rule__Flow__Group__3_in_rule__Flow__Group__21532 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_25_in_rule__Flow__Group__2__Impl1560 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Flow__Group__3__Impl_in_rule__Flow__Group__31591 = new BitSet(new long[]{0x0000000004000010L});
+    public static final BitSet FOLLOW_rule__Flow__Group__4_in_rule__Flow__Group__31594 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Flow__Group_3__0_in_rule__Flow__Group__3__Impl1621 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_rule__Flow__Group__4__Impl_in_rule__Flow__Group__41652 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_26_in_rule__Flow__Group__4__Impl1680 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Flow__Group_3__0__Impl_in_rule__Flow__Group_3__01721 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_rule__Flow__Group_3__1_in_rule__Flow__Group_3__01724 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Flow__StatesAssignment_3_0_in_rule__Flow__Group_3__0__Impl1751 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Flow__Group_3__1__Impl_in_rule__Flow__Group_3__11781 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_23_in_rule__Flow__Group_3__1__Impl1809 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Field__Group__0__Impl_in_rule__Field__Group__01844 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__Field__Group__1_in_rule__Field__Group__01847 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_27_in_rule__Field__Group__0__Impl1875 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Field__Group__1__Impl_in_rule__Field__Group__11906 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__Field__Group__2_in_rule__Field__Group__11909 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Field__NameAssignment_1_in_rule__Field__Group__1__Impl1936 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Field__Group__2__Impl_in_rule__Field__Group__21966 = new BitSet(new long[]{0x00000000003F8020L});
+    public static final BitSet FOLLOW_rule__Field__Group__3_in_rule__Field__Group__21969 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Field__LabelAssignment_2_in_rule__Field__Group__2__Impl1996 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Field__Group__3__Impl_in_rule__Field__Group__32026 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_rule__Field__Group__4_in_rule__Field__Group__32029 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Field__Alternatives_3_in_rule__Field__Group__3__Impl2056 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Field__Group__4__Impl_in_rule__Field__Group__42086 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_23_in_rule__Field__Group__4__Impl2114 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Enum__Group__0__Impl_in_rule__Enum__Group__02155 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_rule__Enum__Group__1_in_rule__Enum__Group__02158 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Enum__OptionAssignment_0_in_rule__Enum__Group__0__Impl2185 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Enum__Group__1__Impl_in_rule__Enum__Group__12215 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Enum__Group_1__0_in_rule__Enum__Group__1__Impl2242 = new BitSet(new long[]{0x0000000010000002L});
+    public static final BitSet FOLLOW_rule__Enum__Group_1__0__Impl_in_rule__Enum__Group_1__02277 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__Enum__Group_1__1_in_rule__Enum__Group_1__02280 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_28_in_rule__Enum__Group_1__0__Impl2308 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Enum__Group_1__1__Impl_in_rule__Enum__Group_1__12339 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Enum__OptionAssignment_1_1_in_rule__Enum__Group_1__1__Impl2366 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TicketCategory__Group__0__Impl_in_rule__TicketCategory__Group__02400 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__TicketCategory__Group__1_in_rule__TicketCategory__Group__02403 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_29_in_rule__TicketCategory__Group__0__Impl2431 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TicketCategory__Group__1__Impl_in_rule__TicketCategory__Group__12462 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__TicketCategory__Group__2_in_rule__TicketCategory__Group__12465 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TicketCategory__NameAssignment_1_in_rule__TicketCategory__Group__1__Impl2492 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TicketCategory__Group__2__Impl_in_rule__TicketCategory__Group__22522 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_rule__TicketCategory__Group__3_in_rule__TicketCategory__Group__22525 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TicketCategory__DescriptionAssignment_2_in_rule__TicketCategory__Group__2__Impl2552 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TicketCategory__Group__3__Impl_in_rule__TicketCategory__Group__32582 = new BitSet(new long[]{0x0000000041000000L});
+    public static final BitSet FOLLOW_rule__TicketCategory__Group__4_in_rule__TicketCategory__Group__32585 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_25_in_rule__TicketCategory__Group__3__Impl2613 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TicketCategory__Group__4__Impl_in_rule__TicketCategory__Group__42644 = new BitSet(new long[]{0x0000000041000000L});
+    public static final BitSet FOLLOW_rule__TicketCategory__Group__5_in_rule__TicketCategory__Group__42647 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TicketCategory__Group_4__0_in_rule__TicketCategory__Group__4__Impl2674 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TicketCategory__Group__5__Impl_in_rule__TicketCategory__Group__52705 = new BitSet(new long[]{0x0000000004000010L});
+    public static final BitSet FOLLOW_rule__TicketCategory__Group__6_in_rule__TicketCategory__Group__52708 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_30_in_rule__TicketCategory__Group__5__Impl2736 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TicketCategory__Group__6__Impl_in_rule__TicketCategory__Group__62767 = new BitSet(new long[]{0x0000000004000010L});
+    public static final BitSet FOLLOW_rule__TicketCategory__Group__7_in_rule__TicketCategory__Group__62770 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TicketCategory__Group_6__0_in_rule__TicketCategory__Group__6__Impl2797 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_rule__TicketCategory__Group__7__Impl_in_rule__TicketCategory__Group__72828 = new BitSet(new long[]{0x0000000004000000L});
+    public static final BitSet FOLLOW_rule__TicketCategory__Group__8_in_rule__TicketCategory__Group__72831 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_26_in_rule__TicketCategory__Group__7__Impl2859 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TicketCategory__Group__8__Impl_in_rule__TicketCategory__Group__82890 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_26_in_rule__TicketCategory__Group__8__Impl2918 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TicketCategory__Group_4__0__Impl_in_rule__TicketCategory__Group_4__02967 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__TicketCategory__Group_4__1_in_rule__TicketCategory__Group_4__02970 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_24_in_rule__TicketCategory__Group_4__0__Impl2998 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TicketCategory__Group_4__1__Impl_in_rule__TicketCategory__Group_4__13029 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_rule__TicketCategory__Group_4__2_in_rule__TicketCategory__Group_4__13032 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TicketCategory__FlowAssignment_4_1_in_rule__TicketCategory__Group_4__1__Impl3059 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TicketCategory__Group_4__2__Impl_in_rule__TicketCategory__Group_4__23089 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_23_in_rule__TicketCategory__Group_4__2__Impl3117 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TicketCategory__Group_6__0__Impl_in_rule__TicketCategory__Group_6__03154 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_rule__TicketCategory__Group_6__1_in_rule__TicketCategory__Group_6__03157 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TicketCategory__TicketFieldsAssignment_6_0_in_rule__TicketCategory__Group_6__0__Impl3184 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TicketCategory__Group_6__1__Impl_in_rule__TicketCategory__Group_6__13214 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_23_in_rule__TicketCategory__Group_6__1__Impl3242 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TicketField__Group__0__Impl_in_rule__TicketField__Group__03277 = new BitSet(new long[]{0x0000000600000000L});
+    public static final BitSet FOLLOW_rule__TicketField__Group__1_in_rule__TicketField__Group__03280 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TicketField__FieldAssignment_0_in_rule__TicketField__Group__0__Impl3307 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TicketField__Group__1__Impl_in_rule__TicketField__Group__13337 = new BitSet(new long[]{0x0000000600000000L});
+    public static final BitSet FOLLOW_rule__TicketField__Group__2_in_rule__TicketField__Group__13340 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TicketField__MandatoryAssignment_1_in_rule__TicketField__Group__1__Impl3367 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TicketField__Group__2__Impl_in_rule__TicketField__Group__23398 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TicketField__NotOnListAssignment_2_in_rule__TicketField__Group__2__Impl3425 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Role__Group__0__Impl_in_rule__Role__Group__03462 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__Role__Group__1_in_rule__Role__Group__03465 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_31_in_rule__Role__Group__0__Impl3493 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Role__Group__1__Impl_in_rule__Role__Group__13524 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__Role__Group__2_in_rule__Role__Group__13527 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Role__NameAssignment_1_in_rule__Role__Group__1__Impl3554 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Role__Group__2__Impl_in_rule__Role__Group__23584 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_rule__Role__Group__3_in_rule__Role__Group__23587 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Role__DescriptionAssignment_2_in_rule__Role__Group__2__Impl3614 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Role__Group__3__Impl_in_rule__Role__Group__33644 = new BitSet(new long[]{0x0000000004000010L});
+    public static final BitSet FOLLOW_rule__Role__Group__4_in_rule__Role__Group__33647 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_25_in_rule__Role__Group__3__Impl3675 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Role__Group__4__Impl_in_rule__Role__Group__43706 = new BitSet(new long[]{0x0000000004000010L});
+    public static final BitSet FOLLOW_rule__Role__Group__5_in_rule__Role__Group__43709 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Role__Group_4__0_in_rule__Role__Group__4__Impl3736 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_rule__Role__Group__5__Impl_in_rule__Role__Group__53767 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_26_in_rule__Role__Group__5__Impl3795 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Role__Group_4__0__Impl_in_rule__Role__Group_4__03838 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_rule__Role__Group_4__1_in_rule__Role__Group_4__03841 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Role__RolepermissionsAssignment_4_0_in_rule__Role__Group_4__0__Impl3868 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Role__Group_4__1__Impl_in_rule__Role__Group_4__13898 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_23_in_rule__Role__Group_4__1__Impl3926 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__RolePermission__Group__0__Impl_in_rule__RolePermission__Group__03961 = new BitSet(new long[]{0x0000000000007800L});
+    public static final BitSet FOLLOW_rule__RolePermission__Group__1_in_rule__RolePermission__Group__03964 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__RolePermission__FieldAssignment_0_in_rule__RolePermission__Group__0__Impl3991 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__RolePermission__Group__1__Impl_in_rule__RolePermission__Group__14021 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_rule__RolePermission__Group__2_in_rule__RolePermission__Group__14024 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__RolePermission__PermissionsAssignment_1_in_rule__RolePermission__Group__1__Impl4051 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__RolePermission__Group__2__Impl_in_rule__RolePermission__Group__24081 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__RolePermission__Group_2__0_in_rule__RolePermission__Group__2__Impl4108 = new BitSet(new long[]{0x0000000010000002L});
+    public static final BitSet FOLLOW_rule__RolePermission__Group_2__0__Impl_in_rule__RolePermission__Group_2__04145 = new BitSet(new long[]{0x0000000000007800L});
+    public static final BitSet FOLLOW_rule__RolePermission__Group_2__1_in_rule__RolePermission__Group_2__04148 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_28_in_rule__RolePermission__Group_2__0__Impl4176 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__RolePermission__Group_2__1__Impl_in_rule__RolePermission__Group_2__14207 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__RolePermission__PermissionsAssignment_2_1_in_rule__RolePermission__Group_2__1__Impl4234 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__QualifiedName__Group__0__Impl_in_rule__QualifiedName__Group__04268 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_rule__QualifiedName__Group__1_in_rule__QualifiedName__Group__04271 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__QualifiedName__Group__0__Impl4298 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__QualifiedName__Group__1__Impl_in_rule__QualifiedName__Group__14327 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__QualifiedName__Group_1__0_in_rule__QualifiedName__Group__1__Impl4354 = new BitSet(new long[]{0x0000000100000002L});
+    public static final BitSet FOLLOW_rule__QualifiedName__Group_1__0__Impl_in_rule__QualifiedName__Group_1__04389 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__QualifiedName__Group_1__1_in_rule__QualifiedName__Group_1__04392 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_32_in_rule__QualifiedName__Group_1__0__Impl4420 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__QualifiedName__Group_1__1__Impl_in_rule__QualifiedName__Group_1__14451 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__QualifiedName__Group_1__1__Impl4478 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStatus_in_rule__TicketSystem__StatesAssignment_04516 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFlow_in_rule__TicketSystem__FlowsAssignment_14547 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleField_in_rule__TicketSystem__FieldsAssignment_24578 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTicketCategory_in_rule__TicketSystem__CategoriesAssignment_34609 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRole_in_rule__TicketSystem__RolesAssignment_44640 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__Status__NameAssignment_14671 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__Status__DescriptionAssignment_24702 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__Flow__NameAssignment_14733 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__Flow__StatesAssignment_3_04768 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__Field__NameAssignment_14803 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__Field__LabelAssignment_24834 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFieldType_in_rule__Field__FieldTypeAssignment_3_04865 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEnum_in_rule__Field__FieldEnumAssignment_3_14896 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__Enum__OptionAssignment_04927 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__Enum__OptionAssignment_1_14958 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__TicketCategory__NameAssignment_14989 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__TicketCategory__DescriptionAssignment_25020 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__TicketCategory__FlowAssignment_4_15055 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTicketField_in_rule__TicketCategory__TicketFieldsAssignment_6_05090 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__TicketField__FieldAssignment_05125 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_33_in_rule__TicketField__MandatoryAssignment_15165 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_34_in_rule__TicketField__NotOnListAssignment_25209 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__Role__NameAssignment_15248 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__Role__DescriptionAssignment_25279 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRolePermission_in_rule__Role__RolepermissionsAssignment_4_05310 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_rule__RolePermission__FieldAssignment_05345 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePermission_in_rule__RolePermission__PermissionsAssignment_15380 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePermission_in_rule__RolePermission__PermissionsAssignment_2_15411 = new BitSet(new long[]{0x0000000000000002L});
 
 }

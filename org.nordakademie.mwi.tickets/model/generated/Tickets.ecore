@@ -70,5 +70,6 @@
     <eLiterals name="dateTime" value="3" literal="dateTime"/>
     <eLiterals name="int" value="4" literal="int"/>
     <eLiterals name="decimal" value="5" literal="decimal"/>
+    <eLiterals name="boolean" value="6" literal="boolean"/>
   </eClassifiers>
 </ecore:EPackage>

@@ -572,13 +572,15 @@ public class TicketsGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cIntIntKeyword_4_0 = (Keyword)cIntEnumLiteralDeclaration_4.eContents().get(0);
 		private final EnumLiteralDeclaration cDecimalEnumLiteralDeclaration_5 = (EnumLiteralDeclaration)cAlternatives.eContents().get(5);
 		private final Keyword cDecimalDecimalKeyword_5_0 = (Keyword)cDecimalEnumLiteralDeclaration_5.eContents().get(0);
+		private final EnumLiteralDeclaration cBooleanEnumLiteralDeclaration_6 = (EnumLiteralDeclaration)cAlternatives.eContents().get(6);
+		private final Keyword cBooleanBooleanKeyword_6_0 = (Keyword)cBooleanEnumLiteralDeclaration_6.eContents().get(0);
 		
 		//// TODO user
-		//enum FieldType:
-		//	user | String | Date | dateTime | int | decimal;
+		// enum FieldType:
+		//	user | String | Date | dateTime | int | decimal | boolean;
 		public EnumRule getRule() { return rule; }
 
-		//user | String | Date | dateTime | int | decimal
+		//user | String | Date | dateTime | int | decimal | boolean
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//user
@@ -616,6 +618,12 @@ public class TicketsGrammarAccess extends AbstractGrammarElementFinder {
 
 		//"decimal"
 		public Keyword getDecimalDecimalKeyword_5_0() { return cDecimalDecimalKeyword_5_0; }
+
+		//boolean
+		public EnumLiteralDeclaration getBooleanEnumLiteralDeclaration_6() { return cBooleanEnumLiteralDeclaration_6; }
+
+		//"boolean"
+		public Keyword getBooleanBooleanKeyword_6_0() { return cBooleanBooleanKeyword_6_0; }
 	}
 	
 	private final TicketSystemElements pTicketSystem;
@@ -783,8 +791,8 @@ public class TicketsGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//// TODO user
-	//enum FieldType:
-	//	user | String | Date | dateTime | int | decimal;
+	// enum FieldType:
+	//	user | String | Date | dateTime | int | decimal | boolean;
 	public FieldTypeElements getFieldTypeAccess() {
 		return unknownRuleFieldType;
 	}

@@ -22,39 +22,40 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalTicketsParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'status'", "';'", "'flow'", "'{'", "'}'", "'field'", "','", "'ticketCategory'", "'fields {'", "'mandatory'", "'notOnList'", "'role'", "'.'", "'create'", "'read'", "'modify'", "'delete'", "'user'", "'String'", "'Date'", "'dateTime'", "'int'", "'decimal'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'status'", "';'", "'flow'", "'{'", "'}'", "'field'", "','", "'ticketCategory'", "'fields {'", "'mandatory'", "'notOnList'", "'role'", "'.'", "'create'", "'read'", "'modify'", "'delete'", "'user'", "'String'", "'Date'", "'dateTime'", "'int'", "'decimal'", "'boolean'"
     };
-    public static final int RULE_ID=5;
-    public static final int T__29=29;
-    public static final int T__28=28;
-    public static final int T__27=27;
-    public static final int T__26=26;
-    public static final int T__25=25;
-    public static final int T__24=24;
-    public static final int T__23=23;
-    public static final int T__22=22;
-    public static final int RULE_ANY_OTHER=10;
-    public static final int T__21=21;
-    public static final int T__20=20;
-    public static final int RULE_SL_COMMENT=8;
-    public static final int EOF=-1;
-    public static final int RULE_ML_COMMENT=7;
-    public static final int T__30=30;
-    public static final int T__19=19;
-    public static final int T__31=31;
     public static final int RULE_STRING=4;
-    public static final int T__32=32;
-    public static final int T__33=33;
-    public static final int T__16=16;
+    public static final int RULE_SL_COMMENT=8;
+    public static final int T__19=19;
     public static final int T__15=15;
-    public static final int T__18=18;
+    public static final int T__16=16;
     public static final int T__17=17;
-    public static final int T__12=12;
+    public static final int T__18=18;
     public static final int T__11=11;
-    public static final int T__14=14;
+    public static final int T__33=33;
+    public static final int T__12=12;
+    public static final int T__34=34;
     public static final int T__13=13;
-    public static final int RULE_INT=6;
+    public static final int T__14=14;
+    public static final int EOF=-1;
+    public static final int T__30=30;
+    public static final int T__31=31;
+    public static final int T__32=32;
+    public static final int RULE_ID=5;
     public static final int RULE_WS=9;
+    public static final int RULE_ANY_OTHER=10;
+    public static final int T__26=26;
+    public static final int T__27=27;
+    public static final int T__28=28;
+    public static final int RULE_INT=6;
+    public static final int T__29=29;
+    public static final int T__22=22;
+    public static final int RULE_ML_COMMENT=7;
+    public static final int T__23=23;
+    public static final int T__24=24;
+    public static final int T__25=25;
+    public static final int T__20=20;
+    public static final int T__21=21;
 
     // delegates
     // delegators
@@ -836,7 +837,7 @@ public class InternalTicketsParser extends AbstractInternalAntlrParser {
             int alt3=2;
             int LA3_0 = input.LA(1);
 
-            if ( ((LA3_0>=28 && LA3_0<=33)) ) {
+            if ( ((LA3_0>=28 && LA3_0<=34)) ) {
                 alt3=1;
             }
             else if ( (LA3_0==RULE_STRING) ) {
@@ -2198,7 +2199,7 @@ public class InternalTicketsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFieldType"
-    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:908:1: ruleFieldType returns [Enumerator current=null] : ( (enumLiteral_0= 'user' ) | (enumLiteral_1= 'String' ) | (enumLiteral_2= 'Date' ) | (enumLiteral_3= 'dateTime' ) | (enumLiteral_4= 'int' ) | (enumLiteral_5= 'decimal' ) ) ;
+    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:908:1: ruleFieldType returns [Enumerator current=null] : ( (enumLiteral_0= 'user' ) | (enumLiteral_1= 'String' ) | (enumLiteral_2= 'Date' ) | (enumLiteral_3= 'dateTime' ) | (enumLiteral_4= 'int' ) | (enumLiteral_5= 'decimal' ) | (enumLiteral_6= 'boolean' ) ) ;
     public final Enumerator ruleFieldType() throws RecognitionException {
         Enumerator current = null;
 
@@ -2208,14 +2209,15 @@ public class InternalTicketsParser extends AbstractInternalAntlrParser {
         Token enumLiteral_3=null;
         Token enumLiteral_4=null;
         Token enumLiteral_5=null;
+        Token enumLiteral_6=null;
 
          enterRule(); 
         try {
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:910:28: ( ( (enumLiteral_0= 'user' ) | (enumLiteral_1= 'String' ) | (enumLiteral_2= 'Date' ) | (enumLiteral_3= 'dateTime' ) | (enumLiteral_4= 'int' ) | (enumLiteral_5= 'decimal' ) ) )
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:911:1: ( (enumLiteral_0= 'user' ) | (enumLiteral_1= 'String' ) | (enumLiteral_2= 'Date' ) | (enumLiteral_3= 'dateTime' ) | (enumLiteral_4= 'int' ) | (enumLiteral_5= 'decimal' ) )
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:910:28: ( ( (enumLiteral_0= 'user' ) | (enumLiteral_1= 'String' ) | (enumLiteral_2= 'Date' ) | (enumLiteral_3= 'dateTime' ) | (enumLiteral_4= 'int' ) | (enumLiteral_5= 'decimal' ) | (enumLiteral_6= 'boolean' ) ) )
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:911:1: ( (enumLiteral_0= 'user' ) | (enumLiteral_1= 'String' ) | (enumLiteral_2= 'Date' ) | (enumLiteral_3= 'dateTime' ) | (enumLiteral_4= 'int' ) | (enumLiteral_5= 'decimal' ) | (enumLiteral_6= 'boolean' ) )
             {
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:911:1: ( (enumLiteral_0= 'user' ) | (enumLiteral_1= 'String' ) | (enumLiteral_2= 'Date' ) | (enumLiteral_3= 'dateTime' ) | (enumLiteral_4= 'int' ) | (enumLiteral_5= 'decimal' ) )
-            int alt13=6;
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:911:1: ( (enumLiteral_0= 'user' ) | (enumLiteral_1= 'String' ) | (enumLiteral_2= 'Date' ) | (enumLiteral_3= 'dateTime' ) | (enumLiteral_4= 'int' ) | (enumLiteral_5= 'decimal' ) | (enumLiteral_6= 'boolean' ) )
+            int alt13=7;
             switch ( input.LA(1) ) {
             case 28:
                 {
@@ -2245,6 +2247,11 @@ public class InternalTicketsParser extends AbstractInternalAntlrParser {
             case 33:
                 {
                 alt13=6;
+                }
+                break;
+            case 34:
+                {
+                alt13=7;
                 }
                 break;
             default:
@@ -2357,6 +2364,23 @@ public class InternalTicketsParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
+                case 7 :
+                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:947:6: (enumLiteral_6= 'boolean' )
+                    {
+                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:947:6: (enumLiteral_6= 'boolean' )
+                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:947:8: enumLiteral_6= 'boolean'
+                    {
+                    enumLiteral_6=(Token)match(input,34,FOLLOW_34_in_ruleFieldType1998); 
+
+                            current = grammarAccess.getFieldTypeAccess().getBooleanEnumLiteralDeclaration_6().getEnumLiteral().getInstance();
+                            newLeafNode(enumLiteral_6, grammarAccess.getFieldTypeAccess().getBooleanEnumLiteralDeclaration_6()); 
+                        
+
+                    }
+
+
+                    }
+                    break;
 
             }
 
@@ -2406,7 +2430,7 @@ public class InternalTicketsParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_EOF_in_entryRuleField590 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_16_in_ruleField627 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_ruleQualifiedName_in_ruleField648 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleField665 = new BitSet(new long[]{0x00000003F0000010L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleField665 = new BitSet(new long[]{0x00000007F0000010L});
     public static final BitSet FOLLOW_ruleFieldType_in_ruleField692 = new BitSet(new long[]{0x0000000000001000L});
     public static final BitSet FOLLOW_ruleEnum_in_ruleField719 = new BitSet(new long[]{0x0000000000001000L});
     public static final BitSet FOLLOW_12_in_ruleField732 = new BitSet(new long[]{0x0000000000000002L});
@@ -2464,5 +2488,6 @@ public class InternalTicketsParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_31_in_ruleFieldType1947 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_32_in_ruleFieldType1964 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_33_in_ruleFieldType1981 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_34_in_ruleFieldType1998 = new BitSet(new long[]{0x0000000000000002L});
 
 }

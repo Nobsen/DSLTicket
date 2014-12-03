@@ -29,6 +29,10 @@ import org.nordakademie.mwi.tickets.validation.AbstractTicketsValidator;
  */
 @SuppressWarnings("all")
 public class TicketsValidator extends AbstractTicketsValidator {
+  public final static String INVALID_LABEL = "invalidLabel";
+  
+  public final static String INVALID_DESCRIPTION = "invalidDescription";
+  
   public final static String INVALID_NAME = "invalidName";
   
   public final static String INVALID_FIELD = "invalidField";
@@ -41,7 +45,7 @@ public class TicketsValidator extends AbstractTicketsValidator {
   private IQualifiedNameProvider qualifiedNameProvider;
   
   @Check
-  public void checkFieldNameNotEmpty(final Field field) {
+  public void checkFieldLabelNotEmpty(final Field field) {
     boolean _or = false;
     String _label = field.getLabel();
     boolean _equals = Objects.equal(_label, null);
@@ -54,12 +58,29 @@ public class TicketsValidator extends AbstractTicketsValidator {
       _or = _isEmpty;
     }
     if (_or) {
-      this.error("Label must not be empty", TicketsPackage.Literals.FIELD__LABEL, TicketsValidator.INVALID_NAME);
+      this.error("Label must not be empty", TicketsPackage.Literals.FIELD__LABEL, TicketsValidator.INVALID_LABEL);
     }
   }
   
   @Check
-  public void checkStateNameNotEmpty(final Status status) {
+  public void checkFieldNameAllowed(final Field field) {
+    final HashSet<String> names = new HashSet<String>();
+    names.add("ID");
+    names.add("CURRENTFLOWSTATE");
+    names.add("CREATED");
+    String _name = field.getName();
+    String _upperCase = _name.toUpperCase();
+    boolean _contains = names.contains(_upperCase);
+    if (_contains) {
+      String _name_1 = field.getName();
+      String _plus = ("The field name " + _name_1);
+      String _plus_1 = (_plus + " is potected. The field will be created by the system");
+      this.error(_plus_1, TicketsPackage.Literals.FIELD__NAME, TicketsValidator.INVALID_NAME);
+    }
+  }
+  
+  @Check
+  public void checkStateDescriptionNotEmpty(final Status status) {
     boolean _or = false;
     String _description = status.getDescription();
     boolean _equals = Objects.equal(_description, null);
@@ -72,12 +93,12 @@ public class TicketsValidator extends AbstractTicketsValidator {
       _or = _isEmpty;
     }
     if (_or) {
-      this.error("Description must not be empty", TicketsPackage.Literals.STATUS__DESCRIPTION, TicketsValidator.INVALID_NAME);
+      this.error("Description must not be empty", TicketsPackage.Literals.STATUS__DESCRIPTION, TicketsValidator.INVALID_DESCRIPTION);
     }
   }
   
   @Check
-  public void checkTicketCategoryNameNotEmpty(final TicketCategory ticketCategory) {
+  public void checkTicketCategoryDescriptionNotEmpty(final TicketCategory ticketCategory) {
     boolean _or = false;
     String _description = ticketCategory.getDescription();
     boolean _equals = Objects.equal(_description, null);
@@ -90,12 +111,12 @@ public class TicketsValidator extends AbstractTicketsValidator {
       _or = _isEmpty;
     }
     if (_or) {
-      this.error("Description must not be empty", TicketsPackage.Literals.TICKET_CATEGORY__DESCRIPTION, TicketsValidator.INVALID_NAME);
+      this.error("Description must not be empty", TicketsPackage.Literals.TICKET_CATEGORY__DESCRIPTION, TicketsValidator.INVALID_DESCRIPTION);
     }
   }
   
   @Check
-  public void checkRoleNameNotEmpty(final Role role) {
+  public void checkRoleDescriptionNotEmpty(final Role role) {
     boolean _or = false;
     String _description = role.getDescription();
     boolean _equals = Objects.equal(_description, null);
@@ -108,7 +129,7 @@ public class TicketsValidator extends AbstractTicketsValidator {
       _or = _isEmpty;
     }
     if (_or) {
-      this.error("Description must not be empty", TicketsPackage.Literals.ROLE__DESCRIPTION, TicketsValidator.INVALID_NAME);
+      this.error("Description must not be empty", TicketsPackage.Literals.ROLE__DESCRIPTION, TicketsValidator.INVALID_DESCRIPTION);
     }
   }
   

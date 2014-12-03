@@ -43,7 +43,7 @@ enum Permission:
 
 // TODO user
 enum FieldType:
-	user | String | Date | dateTime | int | decimal;
+	user | String | Date | dateTime | int | decimal | boolean;
 
 QualifiedName:
 	ID ('.' ID)*;

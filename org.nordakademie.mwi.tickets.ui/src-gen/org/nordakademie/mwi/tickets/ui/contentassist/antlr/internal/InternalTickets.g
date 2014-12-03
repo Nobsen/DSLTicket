@@ -522,6 +522,13 @@ rule__FieldType__Alternatives
 { after(grammarAccess.getFieldTypeAccess().getDecimalEnumLiteralDeclaration_5()); }
 )
 
+    |(
+{ before(grammarAccess.getFieldTypeAccess().getBooleanEnumLiteralDeclaration_6()); }
+(	'boolean' 
+)
+{ after(grammarAccess.getFieldTypeAccess().getBooleanEnumLiteralDeclaration_6()); }
+)
+
 ;
 finally {
 	restoreStackSize(stackSize);

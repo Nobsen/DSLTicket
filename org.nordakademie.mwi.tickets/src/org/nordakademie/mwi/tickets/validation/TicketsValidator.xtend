@@ -14,7 +14,6 @@ import org.nordakademie.mwi.tickets.tickets.TicketCategory
 import org.nordakademie.mwi.tickets.tickets.Role
 import java.util.HashSet
 import org.nordakademie.mwi.tickets.tickets.RolePermission
-import org.nordakademie.mwi.tickets.tickets.TicketField
 
 /**
  * Custom validation rules. 
@@ -23,6 +22,8 @@ import org.nordakademie.mwi.tickets.tickets.TicketField
  */
 class TicketsValidator extends AbstractTicketsValidator {
 
+	public static val INVALID_LABEL = 'invalidLabel';
+	public static val INVALID_DESCRIPTION = 'invalidDescription';
 	public static val INVALID_NAME = 'invalidName';
 	public static val INVALID_FIELD = 'invalidField';
 	public static val INVALID_NO_OF_STATUS = 'invalidNoOfStatus';
@@ -32,30 +33,41 @@ class TicketsValidator extends AbstractTicketsValidator {
 	IQualifiedNameProvider qualifiedNameProvider
 
 	@Check
-	def checkFieldNameNotEmpty(Field field) {
+	def checkFieldLabelNotEmpty(Field field) {
 		if (field.label == null || field.label.trim.empty) {
-			error('Label must not be empty', TicketsPackage.Literals.FIELD__LABEL, INVALID_NAME)
+			error('Label must not be empty', TicketsPackage.Literals.FIELD__LABEL, INVALID_LABEL)
+		}
+	}
+	
+	@Check
+	def checkFieldNameAllowed(Field field) {
+		val names = new HashSet<String>();
+		names.add('ID');
+		names.add('CURRENTFLOWSTATE');
+		names.add('CREATED');
+		if (names.contains(field.name.toUpperCase)) {
+			error('The field name ' + field.name + ' is potected. The field will be created by the system', TicketsPackage.Literals.FIELD__NAME, INVALID_NAME)
 		}
 	}
 
 	@Check
-	def checkStateNameNotEmpty(Status status) {
+	def checkStateDescriptionNotEmpty(Status status) {
 		if (status.description == null || status.description.trim.empty) {
-			error('Description must not be empty', TicketsPackage.Literals.STATUS__DESCRIPTION, INVALID_NAME)
+			error('Description must not be empty', TicketsPackage.Literals.STATUS__DESCRIPTION, INVALID_DESCRIPTION)
 		}
 	}
 
 	@Check
-	def checkTicketCategoryNameNotEmpty(TicketCategory ticketCategory) {
+	def checkTicketCategoryDescriptionNotEmpty(TicketCategory ticketCategory) {
 		if (ticketCategory.description == null || ticketCategory.description.trim.empty) {
-			error('Description must not be empty', TicketsPackage.Literals.TICKET_CATEGORY__DESCRIPTION, INVALID_NAME)
+			error('Description must not be empty', TicketsPackage.Literals.TICKET_CATEGORY__DESCRIPTION, INVALID_DESCRIPTION)
 		}
 	}
 
 	@Check
-	def checkRoleNameNotEmpty(Role role) {
+	def checkRoleDescriptionNotEmpty(Role role) {
 		if (role.description == null || role.description.trim.empty) {
-			error('Description must not be empty', TicketsPackage.Literals.ROLE__DESCRIPTION, INVALID_NAME)
+			error('Description must not be empty', TicketsPackage.Literals.ROLE__DESCRIPTION, INVALID_DESCRIPTION)
 		}
 	}
 

@@ -77,7 +77,17 @@ public enum FieldType implements Enumerator
    * @generated
    * @ordered
    */
-  DECIMAL(5, "decimal", "decimal");
+  DECIMAL(5, "decimal", "decimal"),
+
+  /**
+   * The '<em><b>Boolean</b></em>' literal object.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #BOOLEAN_VALUE
+   * @generated
+   * @ordered
+   */
+  BOOLEAN(6, "boolean", "boolean");
 
   /**
    * The '<em><b>User</b></em>' literal value.
@@ -170,6 +180,21 @@ public enum FieldType implements Enumerator
   public static final int DECIMAL_VALUE = 5;
 
   /**
+   * The '<em><b>Boolean</b></em>' literal value.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of '<em><b>Boolean</b></em>' literal object isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @see #BOOLEAN
+   * @model name="boolean"
+   * @generated
+   * @ordered
+   */
+  public static final int BOOLEAN_VALUE = 6;
+
+  /**
    * An array of all the '<em><b>Field Type</b></em>' enumerators.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -184,6 +209,7 @@ public enum FieldType implements Enumerator
       DATE_TIME,
       INT,
       DECIMAL,
+      BOOLEAN,
     };
 
   /**
@@ -248,6 +274,7 @@ public enum FieldType implements Enumerator
       case DATE_TIME_VALUE: return DATE_TIME;
       case INT_VALUE: return INT;
       case DECIMAL_VALUE: return DECIMAL;
+      case BOOLEAN_VALUE: return BOOLEAN;
     }
     return null;
   }

@@ -709,6 +709,7 @@ public class TicketsPackageImpl extends EPackageImpl implements TicketsPackage
     addEEnumLiteral(fieldTypeEEnum, FieldType.DATE_TIME);
     addEEnumLiteral(fieldTypeEEnum, FieldType.INT);
     addEEnumLiteral(fieldTypeEEnum, FieldType.DECIMAL);
+    addEEnumLiteral(fieldTypeEEnum, FieldType.BOOLEAN);
 
     // Create resource
     createResource(eNS_URI);

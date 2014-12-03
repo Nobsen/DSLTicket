@@ -943,6 +943,12 @@ ruleFieldType returns [Enumerator current=null]
         $current = grammarAccess.getFieldTypeAccess().getDecimalEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
         newLeafNode(enumLiteral_5, grammarAccess.getFieldTypeAccess().getDecimalEnumLiteralDeclaration_5()); 
     }
+)
+    |(	enumLiteral_6='boolean' 
+	{
+        $current = grammarAccess.getFieldTypeAccess().getBooleanEnumLiteralDeclaration_6().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_6, grammarAccess.getFieldTypeAccess().getBooleanEnumLiteralDeclaration_6()); 
+    }
 ));
 
 

@@ -3,6 +3,7 @@
 ';'=12
 'Date'=30
 'String'=29
+'boolean'=34
 'create'=24
 'dateTime'=31
 'decimal'=33
@@ -51,3 +52,4 @@ T__30=30
 T__31=31
 T__32=32
 T__33=33
+T__34=34

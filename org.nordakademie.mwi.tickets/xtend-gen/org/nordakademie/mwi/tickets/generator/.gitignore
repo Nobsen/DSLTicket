@@ -6,3 +6,5 @@
 /.DaoGenerator.java._trace
 /DaoGenerator.java
 /.FlowGenerator.java._trace
+/.ControllerGenerator.java._trace
+/ControllerGenerator.java
