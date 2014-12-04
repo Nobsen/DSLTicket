@@ -59,7 +59,7 @@ class JspGenerator {
 				   	<div class="form-group">
 				   	    <label for="title" class="control-label col-sm-2">«field.field.label»:</label>
 				   	    <div class="col-sm-6">
-				   	        <span class="form-control" disabled="true">${«category.name».«field.field.name»}</span>
+				   	        <span class="form-control" disabled="true">${«category.name.toFirstLower».«field.field.name»}</span>
 				   	    </div>
 				   	</div>
 				   «ENDFOR»
@@ -67,7 +67,7 @@ class JspGenerator {
 				   	<div class="form-group"> 
 				   		<label for="title" class="control-label col-sm-2">Aktueller Status:</label>
 				   		<div class="col-sm-6">
-				   			<span class="form-control" disabled="true">${«category.name».currentFlowState.label}</span>
+				   			<span class="form-control" disabled="true">${«category.name.toFirstLower».currentFlowState.label}</span>
 				   		</div>
 				   	</div>
 				   «ENDIF»
@@ -75,14 +75,32 @@ class JspGenerator {
 				       <div class="col-sm-offset-2 col-sm-10">
 				           <button type="submit" class="btn btn-default">Edit</button>
 				       </div>
-				       <c:url var="deleteUrl" value="/«category.name»/delete">
-				           <c:param name="id" value="${«category.name».id}" />
+				       <c:url var="deleteUrl" value="/«category.name.toLowerCase»/delete">
+				           <c:param name="id" value="${«category.name.toFirstLower».id}" />
 				       </c:url>
 				       <form:form action="${deleteUrl}" class="col-sm-offset-2 col-sm-10">
 				           <button type="submit" class="btn btn-default">Delete</button>
 				       </form:form>
+				       «IF category.flow != null»
+				       	<c:if test="${!«category.name.toFirstLower».currentFlowState.isFirst()}" >
+				       		 <c:url var="prevStateUrl" value="/«category.name.toLowerCase»/prevState" >
+				       		     <c:param name="id" value="${«category.name.toFirstLower».id}" />
+				       		 </c:url>
+				       		 <form:form action="${prevStateUrl}" class="col-sm-offset-2 col-sm-10">
+				       		     <button type="submit" class="btn btn-default">Prev State</button>
+				       		 </form:form>
+				       	</c:if>
+				       	<c:if test="${!«category.name.toFirstLower».currentFlowState.isLast()}" >
+				       	 <c:url var="nextStateUrl" value="/«category.name.toLowerCase»/nextState" >
+				       	     <c:param name="id" value="${«category.name.toFirstLower».id}" />
+				       	 </c:url>
+				       	 <form:form action="${nextStateUrl}" class="col-sm-offset-2 col-sm-10">
+				       	     <button type="submit" class="btn btn-default">Next State</button>
+				       	</form:form>
+				       	</c:if>
+				       «ENDIF»
 				    </div>
-				   </div>
+				  </div>
 			</div>
 		'''
 	}
@@ -111,12 +129,12 @@ class JspGenerator {
 							<th />
 						</tr>
 					</thead>
-				<c:forEach var="«category.name.toLowerCase»" items="${«category.name.toLowerCase»s}" varStatus="status">
+				<c:forEach var="«category.name.toFirstLower»" items="${«category.name.toFirstLower»s}" varStatus="status">
 				    <tr>
 				        <c:url var="showUrl" value="/«category.name.toLowerCase»/show">
-				            <c:param name="id" value="${«category.name.toLowerCase».id}" />
+				            <c:param name="id" value="${«category.name.toFirstLower».id}" />
 				        </c:url>
-						<td>${«category.name.toLowerCase».id}</td>
+						<td>${«category.name.toFirstLower».id}</td>
 						«IF category.flow != null»
 							<td>${«category.name.toLowerCase».currentFlowState.label}</td>
 						«ENDIF»
@@ -164,8 +182,8 @@ class JspGenerator {
 			     <div class="collapse navbar-collapse" id="myNavbar">
 			         <ul class="nav navbar-nav">
 			      «FOR category : categories»
-			      	<c:url var="«category.name.toLowerCase»Url" value="/«category.name.toLowerCase»/list" />
-			      	    <li><a href='<c:out value="${«category.name.toLowerCase»Url}"/>'>«category.description»</a></li>
+			      	<c:url var="«category.name.toFirstLower»Url" value="/«category.name.toLowerCase»/list" />
+			      	    <li><a href='<c:out value="${«category.name.toFirstLower»Url}"/>'>«category.description»</a></li>
 			      «ENDFOR»	
 			      </ul>
 			     </div>

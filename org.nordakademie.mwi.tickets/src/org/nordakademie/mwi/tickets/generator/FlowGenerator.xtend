@@ -24,6 +24,14 @@ class FlowGenerator {
 				public String getLabel() {
 					return this.label;
 				}
+				
+				public boolean isFirst() {
+					return this.ordinal() == 0;
+				}
+				
+				public boolean isLast() {
+					return this.ordinal() == values().length - 1;
+				}
 			}
 			'''
 	}

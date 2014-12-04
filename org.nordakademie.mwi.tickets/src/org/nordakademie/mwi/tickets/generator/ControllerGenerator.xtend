@@ -79,6 +79,26 @@ class ControllerGenerator {
 					
 					return "redirect:list";
 				}
+				
+				«IF category.flow != null»
+					@RequestMapping(value = "/«category.name.toLowerCase»/nextState", method = RequestMethod.POST)
+					public String nextState(«category.name.toFirstUpper» «category.name.toFirstLower», Model model) {
+						«category.name.toFirstLower» = «category.name.toFirstLower»Dao.findById(«category.name.toFirstLower».getId());
+						«category.name.toFirstLower».setCurrentFlowState(«category.flow.name.toFirstUpper».values()[«category.name.toFirstLower».getCurrentFlowState().ordinal() + 1]);
+						
+						model.addAttribute("id", «category.name.toFirstLower».getId());
+						return "redirect:show";
+					}
+						
+					@RequestMapping(value = "/«category.name.toLowerCase»/prevState", method = RequestMethod.POST)
+					public String prevState(«category.name.toFirstUpper» «category.name.toFirstLower», Model model) {
+						«category.name.toFirstLower» = «category.name.toFirstLower»Dao.findById(«category.name.toFirstLower».getId());
+						«category.name.toFirstLower».setCurrentFlowState(«category.flow.name.toFirstUpper».values()[«category.name.toFirstLower».getCurrentFlowState().ordinal() - 1]);
+						
+						model.addAttribute("id", «category.name.toFirstLower».getId());
+						return "redirect:show";
+					}
+				«ENDIF»
 			}
 		'''
 	}

@@ -12,38 +12,38 @@ import java.util.ArrayList;
 
 @SuppressWarnings("all")
 public class InternalTicketsLexer extends Lexer {
-    public static final int RULE_STRING=4;
-    public static final int RULE_SL_COMMENT=8;
-    public static final int T__19=19;
-    public static final int T__15=15;
-    public static final int T__16=16;
-    public static final int T__17=17;
-    public static final int T__18=18;
-    public static final int T__11=11;
-    public static final int T__33=33;
-    public static final int T__12=12;
-    public static final int T__34=34;
-    public static final int T__13=13;
-    public static final int T__14=14;
+    public static final int RULE_ID=5;
+    public static final int T__29=29;
+    public static final int T__28=28;
+    public static final int T__27=27;
+    public static final int T__26=26;
+    public static final int T__25=25;
+    public static final int T__24=24;
+    public static final int T__23=23;
+    public static final int T__22=22;
+    public static final int RULE_ANY_OTHER=10;
+    public static final int T__21=21;
+    public static final int T__20=20;
     public static final int EOF=-1;
+    public static final int RULE_SL_COMMENT=8;
+    public static final int RULE_ML_COMMENT=7;
+    public static final int T__19=19;
     public static final int T__30=30;
     public static final int T__31=31;
     public static final int T__32=32;
-    public static final int RULE_ID=5;
-    public static final int RULE_WS=9;
-    public static final int RULE_ANY_OTHER=10;
-    public static final int T__26=26;
-    public static final int T__27=27;
-    public static final int T__28=28;
+    public static final int RULE_STRING=4;
+    public static final int T__16=16;
+    public static final int T__33=33;
+    public static final int T__15=15;
+    public static final int T__34=34;
+    public static final int T__18=18;
+    public static final int T__17=17;
+    public static final int T__12=12;
+    public static final int T__11=11;
+    public static final int T__14=14;
+    public static final int T__13=13;
     public static final int RULE_INT=6;
-    public static final int T__29=29;
-    public static final int T__22=22;
-    public static final int RULE_ML_COMMENT=7;
-    public static final int T__23=23;
-    public static final int T__24=24;
-    public static final int T__25=25;
-    public static final int T__20=20;
-    public static final int T__21=21;
+    public static final int RULE_WS=9;
 
     // delegates
     // delegators
@@ -1331,7 +1331,7 @@ public class InternalTicketsLexer extends Lexer {
         "\1\1\1\11\2\uffff\1\20\1\uffff\1\16\1\21\2\uffff\1\23\4\uffff\1"+
         "\27\1\uffff\1\30\3\uffff\1\25\1\uffff\1\12\1\13\4\uffff\1\10";
     static final String DFA12_specialS =
-        "\1\1\25\uffff\1\2\1\0\177\uffff}>";
+        "\1\1\25\uffff\1\0\1\2\177\uffff}>";
     static final String[] DFA12_transitionS = {
             "\11\32\2\31\2\32\1\31\22\32\1\31\1\32\1\26\4\32\1\27\4\32\1"+
             "\6\1\32\1\13\1\30\12\25\1\32\1\2\5\32\3\24\1\20\16\24\1\17\7"+
@@ -1527,10 +1527,10 @@ public class InternalTicketsLexer extends Lexer {
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA12_23 = input.LA(1);
+                        int LA12_22 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA12_23>='\u0000' && LA12_23<='\uFFFF')) ) {s = 51;}
+                        if ( ((LA12_22>='\u0000' && LA12_22<='\uFFFF')) ) {s = 51;}
 
                         else s = 26;
 
@@ -1595,10 +1595,10 @@ public class InternalTicketsLexer extends Lexer {
                         if ( s>=0 ) return s;
                         break;
                     case 2 : 
-                        int LA12_22 = input.LA(1);
+                        int LA12_23 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA12_22>='\u0000' && LA12_22<='\uFFFF')) ) {s = 51;}
+                        if ( ((LA12_23>='\u0000' && LA12_23<='\uFFFF')) ) {s = 51;}
 
                         else s = 26;
 

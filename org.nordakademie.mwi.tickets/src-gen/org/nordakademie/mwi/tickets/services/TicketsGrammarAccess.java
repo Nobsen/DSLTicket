@@ -576,7 +576,7 @@ public class TicketsGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cBooleanBooleanKeyword_6_0 = (Keyword)cBooleanEnumLiteralDeclaration_6.eContents().get(0);
 		
 		//// TODO user
-		// enum FieldType:
+		//enum FieldType:
 		//	user | String | Date | dateTime | int | decimal | boolean;
 		public EnumRule getRule() { return rule; }
 
@@ -791,7 +791,7 @@ public class TicketsGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//// TODO user
-	// enum FieldType:
+	//enum FieldType:
 	//	user | String | Date | dateTime | int | decimal | boolean;
 	public FieldTypeElements getFieldTypeAccess() {
 		return unknownRuleFieldType;
