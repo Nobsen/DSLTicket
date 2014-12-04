@@ -1,9 +1,9 @@
-package org.nordakademie.mwi.ticketExample.dao;
+package org.nordakademie.mwi.ticketSystem.dao;
 
 import java.io.Serializable;
 import java.util.List;
 
-import org.nordakademie.mwi.ticketExample.domain.DomainObject;
+import org.nordakademie.mwi.ticketSystem.domain.DomainObject;
 import org.springframework.orm.ObjectRetrievalFailureException;
 
 /**

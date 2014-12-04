@@ -1,4 +1,4 @@
-package org.nordakademie.mwi.ticketExample.dao;
+package org.nordakademie.mwi.ticketSystem.dao;
 
 import java.io.Serializable;
 

@@ -1,4 +1,4 @@
-package org.nordakademie.mwi.ticketExample.domain;
+package org.nordakademie.mwi.ticketSystem.domain;
 
 import javax.persistence.Basic;
 import javax.persistence.Entity;

@@ -81,7 +81,7 @@
 
 		<property name="packagesToScan">
 			<list>
-			    <value>org.nordakademie.mwi.ticketExample</value>
+			    <value>org.nordakademie.mwi.ticketSystem</value>
 			</list>
 		</property>
 	</bean>
@@ -96,7 +96,7 @@
 	<tx:annotation-driven />
 	
 	<!-- Automatically detect beans -->
-	<context:component-scan base-package="org.nordakademie.mwi.ticketExample" />
+	<context:component-scan base-package="org.nordakademie.mwi.ticketSystem" />
 
 	<mvc:annotation-driven />
 </beans>

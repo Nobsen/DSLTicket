@@ -1,9 +1,9 @@
-package org.nordakademie.mwi.ticketExample.controller;
+package org.nordakademie.mwi.ticketSystem.controller;
 
 import java.util.Collection;
 
-import org.nordakademie.mwi.ticketExample.dao.BugDao;
-import org.nordakademie.mwi.ticketExample.domain.Bug;
+import org.nordakademie.mwi.ticketSystem.dao.BugDao;
+import org.nordakademie.mwi.ticketSystem.domain.Bug;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;

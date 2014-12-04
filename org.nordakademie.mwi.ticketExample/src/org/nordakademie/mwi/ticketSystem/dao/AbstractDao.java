@@ -1,4 +1,4 @@
-package org.nordakademie.mwi.ticketExample.dao;
+package org.nordakademie.mwi.ticketSystem.dao;
 
 import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
@@ -15,7 +15,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Criterion;
 import org.hibernate.criterion.Order;
-import org.nordakademie.mwi.ticketExample.domain.DomainObject;
+import org.nordakademie.mwi.ticketSystem.domain.DomainObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 

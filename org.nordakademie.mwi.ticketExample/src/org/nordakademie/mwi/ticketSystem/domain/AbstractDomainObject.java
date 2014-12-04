@@ -1,4 +1,4 @@
-package org.nordakademie.mwi.ticketExample.domain;
+package org.nordakademie.mwi.ticketSystem.domain;
 
 import java.util.Calendar;
 import java.util.Date;
