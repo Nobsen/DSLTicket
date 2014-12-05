@@ -62,18 +62,23 @@ public class TicketsGenerator implements IGenerator {
         String _name_4 = category.getName();
         String _lowerCase = _name_4.toLowerCase();
         String _plus_8 = (_lowerCase + "/create.jsp");
-        CharSequence _createJsp = JspGenerator.toCreateJsp(category);
+        CharSequence _createJsp = JspGenerator.toCreateJsp(category, true);
         fsa.generateFile(_plus_8, TicketsOutputConfigurationProvider.JSP_OUTPUT, _createJsp);
         String _name_5 = category.getName();
         String _lowerCase_1 = _name_5.toLowerCase();
-        String _plus_9 = (_lowerCase_1 + "/show.jsp");
-        CharSequence _showJsp = JspGenerator.toShowJsp(category);
-        fsa.generateFile(_plus_9, TicketsOutputConfigurationProvider.JSP_OUTPUT, _showJsp);
+        String _plus_9 = (_lowerCase_1 + "/edit.jsp");
+        CharSequence _createJsp_1 = JspGenerator.toCreateJsp(category, false);
+        fsa.generateFile(_plus_9, TicketsOutputConfigurationProvider.JSP_OUTPUT, _createJsp_1);
         String _name_6 = category.getName();
         String _lowerCase_2 = _name_6.toLowerCase();
-        String _plus_10 = (_lowerCase_2 + "/list.jsp");
+        String _plus_10 = (_lowerCase_2 + "/show.jsp");
+        CharSequence _showJsp = JspGenerator.toShowJsp(category);
+        fsa.generateFile(_plus_10, TicketsOutputConfigurationProvider.JSP_OUTPUT, _showJsp);
+        String _name_7 = category.getName();
+        String _lowerCase_3 = _name_7.toLowerCase();
+        String _plus_11 = (_lowerCase_3 + "/list.jsp");
         CharSequence _listJsp = JspGenerator.toListJsp(category);
-        fsa.generateFile(_plus_10, TicketsOutputConfigurationProvider.JSP_OUTPUT, _listJsp);
+        fsa.generateFile(_plus_11, TicketsOutputConfigurationProvider.JSP_OUTPUT, _listJsp);
       }
     }
     EList<EObject> _contents_1 = resource.getContents();

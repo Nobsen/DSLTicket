@@ -80,6 +80,30 @@ class ControllerGenerator {
 					return "redirect:list";
 				}
 				
+				@RequestMapping(value = "/«category.name.toLowerCase»/edit", method = RequestMethod.GET)
+				public String edit(«category.name.toFirstUpper» «category.name.toFirstLower», Model model) {
+					«IF category.flow != null»
+						model.addAttribute("states", «category.flow.name.toFirstUpper».values());
+					«ENDIF»
+					return "«category.name.toLowerCase»/edit";
+				}
+				
+				@RequestMapping(value = "/«category.name.toLowerCase»/edit", method = RequestMethod.POST)
+				public String edit(@Valid «category.name.toFirstUpper» «category.name.toFirstLower», BindingResult bindingResult, Model model) {
+					if (bindingResult.hasErrors()) {
+						model.addAttribute("states", TestFlow.values());
+						return "/«category.name.toLowerCase»/edit";
+					}
+					«category.name.toFirstUpper» orig =  «category.name.toFirstLower»Dao.findById(«category.name.toFirstLower».getId());
+					«FOR field : category.ticketFields»
+						orig.set«field.field.name.toFirstUpper»(«category.name.toFirstLower».get«field.field.name.toFirstUpper»());
+					«ENDFOR»
+					«IF category.flow != null»
+						orig.setCurrentFlowState(«category.name.toFirstLower».getCurrentFlowState());
+					«ENDIF»				
+					model.addAttribute("id",  «category.name.toFirstLower».getId());
+					return "redirect:show";
+				}
 				«IF category.flow != null»
 					@RequestMapping(value = "/«category.name.toLowerCase»/nextState", method = RequestMethod.POST)
 					public String nextState(«category.name.toFirstUpper» «category.name.toFirstLower», Model model) {

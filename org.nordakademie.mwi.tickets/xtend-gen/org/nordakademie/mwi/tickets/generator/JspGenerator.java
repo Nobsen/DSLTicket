@@ -6,13 +6,14 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.xbase.lib.StringExtensions;
 import org.nordakademie.mwi.tickets.tickets.Field;
+import org.nordakademie.mwi.tickets.tickets.FieldType;
 import org.nordakademie.mwi.tickets.tickets.Flow;
 import org.nordakademie.mwi.tickets.tickets.TicketCategory;
 import org.nordakademie.mwi.tickets.tickets.TicketField;
 
 @SuppressWarnings("all")
 public class JspGenerator {
-  public static CharSequence toCreateJsp(final TicketCategory category) {
+  public static CharSequence toCreateJsp(final TicketCategory category, final boolean isCreate) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<%@ taglib prefix=\"c\" uri=\"http://java.sun.com/jsp/jstl/core\"%>");
     _builder.newLine();
@@ -23,13 +24,36 @@ public class JspGenerator {
     _builder.newLine();
     _builder.append("<%@include file=\"../navigation.jspf\"%>");
     _builder.newLine();
+    _builder.newLine();
+    _builder.append("<script>");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("$(function() {");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("$( \"#datepicker\" ).datepicker({ dateFormat: \'dd.mm.yy\' });");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("});");
+    _builder.newLine();
+    _builder.append("</script>");
+    _builder.newLine();
+    _builder.newLine();
     _builder.append("<div class=\"container\">");
     _builder.newLine();
     _builder.append("\t");
     _builder.append("<h1>");
     String _description = category.getDescription();
     _builder.append(_description, "\t");
-    _builder.append(" create</h1>");
+    _builder.append(" ");
+    {
+      if (isCreate) {
+        _builder.append("anlegen");
+      } else {
+        _builder.append("bearbeiten");
+      }
+    }
+    _builder.append("</h1>");
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
     _builder.newLine();
@@ -38,7 +62,15 @@ public class JspGenerator {
     String _name = category.getName();
     String _lowerCase = _name.toLowerCase();
     _builder.append(_lowerCase, "\t");
-    _builder.append("/create\" /> ");
+    _builder.append("/");
+    {
+      if (isCreate) {
+        _builder.append("create");
+      } else {
+        _builder.append("edit");
+      }
+    }
+    _builder.append("\" /> ");
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
     _builder.append("<form:form action=\"${url}\" commandName=\"");
@@ -47,6 +79,9 @@ public class JspGenerator {
     _builder.append(_firstLower, "\t");
     _builder.append("\" class=\"form-horizontal\" role=\"form\">");
     _builder.newLineIfNotEmpty();
+    _builder.append("\t    ");
+    _builder.append("<form:hidden path=\"id\"/>");
+    _builder.newLine();
     {
       EList<TicketField> _ticketFields = category.getTicketFields();
       for(final TicketField field : _ticketFields) {
@@ -72,14 +107,30 @@ public class JspGenerator {
         _builder.append("    ");
         _builder.append("<div class=\"col-sm-6\">");
         _builder.newLine();
-        _builder.append("\t   ");
-        _builder.append("        ");
-        _builder.append("<form:input class=\"form-control\" path=\"");
-        Field _field_2 = field.getField();
-        String _name_3 = _field_2.getName();
-        _builder.append(_name_3, "\t           ");
-        _builder.append("\" />");
-        _builder.newLineIfNotEmpty();
+        {
+          Field _field_2 = field.getField();
+          FieldType _fieldType = _field_2.getFieldType();
+          boolean _equals = Objects.equal(_fieldType, FieldType.DATE);
+          if (_equals) {
+            _builder.append("\t   ");
+            _builder.append("    \t");
+            _builder.append("<form:input class=\"form-control\" id=\"datepicker\" path=\"");
+            Field _field_3 = field.getField();
+            String _name_3 = _field_3.getName();
+            _builder.append(_name_3, "\t       \t");
+            _builder.append("\" />");
+            _builder.newLineIfNotEmpty();
+          } else {
+            _builder.append("\t   ");
+            _builder.append("    \t");
+            _builder.append("<form:input class=\"form-control\" path=\"");
+            Field _field_4 = field.getField();
+            String _name_4 = _field_4.getName();
+            _builder.append(_name_4, "\t       \t");
+            _builder.append("\" />");
+            _builder.newLineIfNotEmpty();
+          }
+        }
         _builder.append("\t   ");
         _builder.append("    ");
         _builder.append("</div>");
@@ -124,7 +175,7 @@ public class JspGenerator {
     _builder.append("<div class=\"col-sm-offset-2 col-sm-10\">");
     _builder.newLine();
     _builder.append("\t           ");
-    _builder.append("<button type=\"submit\" class=\"btn btn-default\">Submit</button>");
+    _builder.append("<button type=\"submit\" class=\"btn btn-default\">Speichern</button>");
     _builder.newLine();
     _builder.append("\t       ");
     _builder.append("</div>");
@@ -182,18 +233,38 @@ public class JspGenerator {
         _builder.append("    ");
         _builder.append("<div class=\"col-sm-6\">");
         _builder.newLine();
-        _builder.append("\t   ");
-        _builder.append("        ");
-        _builder.append("<span class=\"form-control\" disabled=\"true\">${");
-        String _name = category.getName();
-        String _firstLower = StringExtensions.toFirstLower(_name);
-        _builder.append(_firstLower, "\t           ");
-        _builder.append(".");
-        Field _field_1 = field.getField();
-        String _name_1 = _field_1.getName();
-        _builder.append(_name_1, "\t           ");
-        _builder.append("}</span>");
-        _builder.newLineIfNotEmpty();
+        {
+          Field _field_1 = field.getField();
+          FieldType _fieldType = _field_1.getFieldType();
+          boolean _equals = Objects.equal(_fieldType, FieldType.DATE);
+          if (_equals) {
+            _builder.append("\t   ");
+            _builder.append("    \t");
+            _builder.append("<span class=\"form-control\" disabled=\"true\"><fmt:formatDate pattern=\"dd.MM.yyyy\" value=\"${");
+            String _name = category.getName();
+            String _firstLower = StringExtensions.toFirstLower(_name);
+            _builder.append(_firstLower, "\t       \t");
+            _builder.append(".");
+            Field _field_2 = field.getField();
+            String _name_1 = _field_2.getName();
+            _builder.append(_name_1, "\t       \t");
+            _builder.append(".time}\"/></span>");
+            _builder.newLineIfNotEmpty();
+          } else {
+            _builder.append("\t   ");
+            _builder.append("    \t");
+            _builder.append("<span class=\"form-control\" disabled=\"true\">${");
+            String _name_2 = category.getName();
+            String _firstLower_1 = StringExtensions.toFirstLower(_name_2);
+            _builder.append(_firstLower_1, "\t       \t");
+            _builder.append(".");
+            Field _field_3 = field.getField();
+            String _name_3 = _field_3.getName();
+            _builder.append(_name_3, "\t       \t");
+            _builder.append("}</span>");
+            _builder.newLineIfNotEmpty();
+          }
+        }
         _builder.append("\t   ");
         _builder.append("    ");
         _builder.append("</div>");
@@ -221,9 +292,9 @@ public class JspGenerator {
         _builder.append("\t   ");
         _builder.append("\t\t");
         _builder.append("<span class=\"form-control\" disabled=\"true\">${");
-        String _name_2 = category.getName();
-        String _firstLower_1 = StringExtensions.toFirstLower(_name_2);
-        _builder.append(_firstLower_1, "\t   \t\t");
+        String _name_4 = category.getName();
+        String _firstLower_2 = StringExtensions.toFirstLower(_name_4);
+        _builder.append(_firstLower_2, "\t   \t\t");
         _builder.append(".currentFlowState.label}</span>");
         _builder.newLineIfNotEmpty();
         _builder.append("\t   ");
@@ -239,26 +310,43 @@ public class JspGenerator {
     _builder.append("<div class=\"form-group\"> ");
     _builder.newLine();
     _builder.append("\t       ");
-    _builder.append("<div class=\"col-sm-offset-2 col-sm-10\">");
-    _builder.newLine();
-    _builder.append("\t           ");
-    _builder.append("<button type=\"submit\" class=\"btn btn-default\">Edit</button>");
+    _builder.append("<c:url var=\"editUrl\" value=\"/");
+    String _name_5 = category.getName();
+    String _lowerCase = _name_5.toLowerCase();
+    _builder.append(_lowerCase, "\t       ");
+    _builder.append("/edit\">");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t\t       ");
+    _builder.append("<c:param name=\"id\" value=\"${");
+    String _name_6 = category.getName();
+    String _firstLower_3 = StringExtensions.toFirstLower(_name_6);
+    _builder.append(_firstLower_3, "\t\t       ");
+    _builder.append(".id}\" />");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t\t   ");
+    _builder.append("</c:url>");
     _builder.newLine();
     _builder.append("\t       ");
+    _builder.append("<div class=\"col-sm-offset-2 col-sm-10\">");
+    _builder.newLine();
+    _builder.append("\t\t       ");
+    _builder.append("<a class=\"btn btn-default\" href=\'<c:out value=\"${editUrl}\"/>\'>Bearbeiten</a>");
+    _builder.newLine();
+    _builder.append("\t\t   ");
     _builder.append("</div>");
     _builder.newLine();
     _builder.append("\t       ");
     _builder.append("<c:url var=\"deleteUrl\" value=\"/");
-    String _name_3 = category.getName();
-    String _lowerCase = _name_3.toLowerCase();
-    _builder.append(_lowerCase, "\t       ");
+    String _name_7 = category.getName();
+    String _lowerCase_1 = _name_7.toLowerCase();
+    _builder.append(_lowerCase_1, "\t       ");
     _builder.append("/delete\">");
     _builder.newLineIfNotEmpty();
     _builder.append("\t           ");
     _builder.append("<c:param name=\"id\" value=\"${");
-    String _name_4 = category.getName();
-    String _firstLower_2 = StringExtensions.toFirstLower(_name_4);
-    _builder.append(_firstLower_2, "\t           ");
+    String _name_8 = category.getName();
+    String _firstLower_4 = StringExtensions.toFirstLower(_name_8);
+    _builder.append(_firstLower_4, "\t           ");
     _builder.append(".id}\" />");
     _builder.newLineIfNotEmpty();
     _builder.append("\t       ");
@@ -279,25 +367,25 @@ public class JspGenerator {
       if (_notEquals_1) {
         _builder.append("\t       ");
         _builder.append("<c:if test=\"${!");
-        String _name_5 = category.getName();
-        String _firstLower_3 = StringExtensions.toFirstLower(_name_5);
-        _builder.append(_firstLower_3, "\t       ");
+        String _name_9 = category.getName();
+        String _firstLower_5 = StringExtensions.toFirstLower(_name_9);
+        _builder.append(_firstLower_5, "\t       ");
         _builder.append(".currentFlowState.isFirst()}\" >");
         _builder.newLineIfNotEmpty();
         _builder.append("\t       ");
         _builder.append("\t ");
         _builder.append("<c:url var=\"prevStateUrl\" value=\"/");
-        String _name_6 = category.getName();
-        String _lowerCase_1 = _name_6.toLowerCase();
-        _builder.append(_lowerCase_1, "\t       \t ");
+        String _name_10 = category.getName();
+        String _lowerCase_2 = _name_10.toLowerCase();
+        _builder.append(_lowerCase_2, "\t       \t ");
         _builder.append("/prevState\" >");
         _builder.newLineIfNotEmpty();
         _builder.append("\t       ");
         _builder.append("\t     ");
         _builder.append("<c:param name=\"id\" value=\"${");
-        String _name_7 = category.getName();
-        String _firstLower_4 = StringExtensions.toFirstLower(_name_7);
-        _builder.append(_firstLower_4, "\t       \t     ");
+        String _name_11 = category.getName();
+        String _firstLower_6 = StringExtensions.toFirstLower(_name_11);
+        _builder.append(_firstLower_6, "\t       \t     ");
         _builder.append(".id}\" />");
         _builder.newLineIfNotEmpty();
         _builder.append("\t       ");
@@ -321,25 +409,25 @@ public class JspGenerator {
         _builder.newLine();
         _builder.append("\t       ");
         _builder.append("<c:if test=\"${!");
-        String _name_8 = category.getName();
-        String _firstLower_5 = StringExtensions.toFirstLower(_name_8);
-        _builder.append(_firstLower_5, "\t       ");
+        String _name_12 = category.getName();
+        String _firstLower_7 = StringExtensions.toFirstLower(_name_12);
+        _builder.append(_firstLower_7, "\t       ");
         _builder.append(".currentFlowState.isLast()}\" >");
         _builder.newLineIfNotEmpty();
         _builder.append("\t       ");
         _builder.append(" ");
         _builder.append("<c:url var=\"nextStateUrl\" value=\"/");
-        String _name_9 = category.getName();
-        String _lowerCase_2 = _name_9.toLowerCase();
-        _builder.append(_lowerCase_2, "\t        ");
+        String _name_13 = category.getName();
+        String _lowerCase_3 = _name_13.toLowerCase();
+        _builder.append(_lowerCase_3, "\t        ");
         _builder.append("/nextState\" >");
         _builder.newLineIfNotEmpty();
         _builder.append("\t       ");
         _builder.append("     ");
         _builder.append("<c:param name=\"id\" value=\"${");
-        String _name_10 = category.getName();
-        String _firstLower_6 = StringExtensions.toFirstLower(_name_10);
-        _builder.append(_firstLower_6, "\t            ");
+        String _name_14 = category.getName();
+        String _firstLower_8 = StringExtensions.toFirstLower(_name_14);
+        _builder.append(_firstLower_8, "\t            ");
         _builder.append(".id}\" />");
         _builder.newLineIfNotEmpty();
         _builder.append("\t       ");
@@ -498,17 +586,36 @@ public class JspGenerator {
           boolean _isNotOnList_1 = field_1.isNotOnList();
           boolean _not_1 = (!_isNotOnList_1);
           if (_not_1) {
-            _builder.append("\t\t\t");
-            _builder.append("<td>${");
-            String _name_6 = category.getName();
-            String _lowerCase_2 = _name_6.toLowerCase();
-            _builder.append(_lowerCase_2, "\t\t\t");
-            _builder.append(".");
-            Field _field_1 = field_1.getField();
-            String _name_7 = _field_1.getName();
-            _builder.append(_name_7, "\t\t\t");
-            _builder.append("}</td>");
-            _builder.newLineIfNotEmpty();
+            {
+              Field _field_1 = field_1.getField();
+              FieldType _fieldType = _field_1.getFieldType();
+              boolean _equals = Objects.equal(_fieldType, FieldType.DATE);
+              if (_equals) {
+                _builder.append("\t\t\t");
+                _builder.append("<td><fmt:formatDate pattern=\"dd.MM.yyyy\" value=\"${");
+                String _name_6 = category.getName();
+                String _firstLower_4 = StringExtensions.toFirstLower(_name_6);
+                _builder.append(_firstLower_4, "\t\t\t");
+                _builder.append(".");
+                Field _field_2 = field_1.getField();
+                String _name_7 = _field_2.getName();
+                _builder.append(_name_7, "\t\t\t");
+                _builder.append(".time}\"/></td>");
+                _builder.newLineIfNotEmpty();
+              } else {
+                _builder.append("\t\t\t");
+                _builder.append("<td>${");
+                String _name_8 = category.getName();
+                String _lowerCase_2 = _name_8.toLowerCase();
+                _builder.append(_lowerCase_2, "\t\t\t");
+                _builder.append(".");
+                Field _field_3 = field_1.getField();
+                String _name_9 = _field_3.getName();
+                _builder.append(_name_9, "\t\t\t");
+                _builder.append("}</td>");
+                _builder.newLineIfNotEmpty();
+              }
+            }
           }
         }
       }
@@ -535,8 +642,8 @@ public class JspGenerator {
     _builder.newLine();
     _builder.append("\t");
     _builder.append("<c:url var=\"createUrl\" value=\"/");
-    String _name_8 = category.getName();
-    String _lowerCase_3 = _name_8.toLowerCase();
+    String _name_10 = category.getName();
+    String _lowerCase_3 = _name_10.toLowerCase();
     _builder.append(_lowerCase_3, "\t");
     _builder.append("/create\" />");
     _builder.newLineIfNotEmpty();
@@ -560,6 +667,10 @@ public class JspGenerator {
     _builder.newLine();
     _builder.newLine();
     _builder.append("<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js\"></script>");
+    _builder.newLine();
+    _builder.append("<script src=\"https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js\"></script>");
+    _builder.newLine();
+    _builder.append("<link rel=\"stylesheet\" href=\"//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css\">");
     _builder.newLine();
     _builder.append("<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css\">");
     _builder.newLine();

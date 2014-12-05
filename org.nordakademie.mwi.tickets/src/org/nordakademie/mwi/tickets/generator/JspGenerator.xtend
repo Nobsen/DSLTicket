@@ -2,27 +2,40 @@ package org.nordakademie.mwi.tickets.generator
 
 import org.nordakademie.mwi.tickets.tickets.TicketCategory
 import java.util.Collection
+import org.nordakademie.mwi.tickets.tickets.FieldType
 
 class JspGenerator {
 
-	def static toCreateJsp(TicketCategory category) {
+	def static toCreateJsp(TicketCategory category, boolean isCreate) {
 		'''
 			<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 			<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 			<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 			
 			<%@include file="../navigation.jspf"%>
+			
+			<script>
+				$(function() {
+					$( "#datepicker" ).datepicker({ dateFormat: 'dd.mm.yy' });
+				});
+			</script>
+			
 			<div class="container">
-				<h1>«category.description» create</h1>
+				<h1>«category.description» «IF isCreate»anlegen«ELSE»bearbeiten«ENDIF»</h1>
 				
-				<c:url var="url" value="/«category.name.toLowerCase»/create" /> 
+				<c:url var="url" value="/«category.name.toLowerCase»/«IF isCreate»create«ELSE»edit«ENDIF»" /> 
 				<form:form action="${url}" commandName="«category.name.toFirstLower»" class="form-horizontal" role="form">
+				    <form:hidden path="id"/>
 				   «FOR field : category.ticketFields»
 				   	<form:errors path="«field.field.name»" class="col-sm-offset-2" element="div"></form:errors>
 				   	<div class="form-group">
 				   	    <label for="title" class="control-label col-sm-2">«field.field.label»:</label>
 				   	    <div class="col-sm-6">
-				   	        <form:input class="form-control" path="«field.field.name»" />
+				   	    	«IF field.field.fieldType == FieldType.DATE»
+				   	    	<form:input class="form-control" id="datepicker" path="«field.field.name»" />
+				   	    	«ELSE»
+				   	    	<form:input class="form-control" path="«field.field.name»" />
+				   	        «ENDIF»
 				   	    </div>
 				   	</div>
 				   «ENDFOR»
@@ -36,7 +49,7 @@ class JspGenerator {
 				   «ENDIF»
 				   <div class="form-group"> 
 				       <div class="col-sm-offset-2 col-sm-10">
-				           <button type="submit" class="btn btn-default">Submit</button>
+				           <button type="submit" class="btn btn-default">Speichern</button>
 				       </div>
 				    </div>
 				   </form:form>
@@ -59,7 +72,11 @@ class JspGenerator {
 				   	<div class="form-group">
 				   	    <label for="title" class="control-label col-sm-2">«field.field.label»:</label>
 				   	    <div class="col-sm-6">
-				   	        <span class="form-control" disabled="true">${«category.name.toFirstLower».«field.field.name»}</span>
+				   	    	«IF field.field.fieldType == FieldType.DATE»
+				   	    		<span class="form-control" disabled="true"><fmt:formatDate pattern="dd.MM.yyyy" value="${«category.name.toFirstLower».«field.field.name».time}"/></span>
+				   	        «ELSE»
+				   	    		<span class="form-control" disabled="true">${«category.name.toFirstLower».«field.field.name»}</span>
+				   	        «ENDIF»
 				   	    </div>
 				   	</div>
 				   «ENDFOR»
@@ -72,9 +89,12 @@ class JspGenerator {
 				   	</div>
 				   «ENDIF»
 				   <div class="form-group"> 
+				       <c:url var="editUrl" value="/«category.name.toLowerCase»/edit">
+					       <c:param name="id" value="${«category.name.toFirstLower».id}" />
+					   </c:url>
 				       <div class="col-sm-offset-2 col-sm-10">
-				           <button type="submit" class="btn btn-default">Edit</button>
-				       </div>
+					       <a class="btn btn-default" href='<c:out value="${editUrl}"/>'>Bearbeiten</a>
+					   </div>
 				       <c:url var="deleteUrl" value="/«category.name.toLowerCase»/delete">
 				           <c:param name="id" value="${«category.name.toFirstLower».id}" />
 				       </c:url>
@@ -140,7 +160,11 @@ class JspGenerator {
 						«ENDIF»
 						«FOR field : category.ticketFields»
 							«IF !field.notOnList»
-								<td>${«category.name.toLowerCase».«field.field.name»}</td>
+								«IF field.field.fieldType == FieldType.DATE»
+									<td><fmt:formatDate pattern="dd.MM.yyyy" value="${«category.name.toFirstLower».«field.field.name».time}"/></td>
+								«ELSE»
+									<td>${«category.name.toLowerCase».«field.field.name»}</td>
+								«ENDIF»
 							«ENDIF»
 						«ENDFOR»
 						<td>
@@ -163,6 +187,8 @@ class JspGenerator {
 			<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 			
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+			<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+			<link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
 			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
 			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>

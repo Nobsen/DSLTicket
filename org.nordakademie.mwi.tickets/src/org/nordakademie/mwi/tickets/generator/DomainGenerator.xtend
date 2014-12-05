@@ -12,10 +12,14 @@ class DomainGenerator {
 
 		for (field : category.ticketFields) {
 			switch (field.field.fieldType) {
-				case DATE:
+				case DATE: {
 					imports.add("java.util.Calendar")
-				case DATE_TIME:
+					imports.add("org.springframework.format.annotation.DateTimeFormat")
+					}
+				case DATE_TIME: {
 					imports.add("java.util.Calendar")
+					imports.add("org.springframework.format.annotation.DateTimeFormat")
+					}
 				default: {
 				}
 			}
@@ -43,6 +47,9 @@ class DomainGenerator {
 				«FOR field : category.ticketFields»
 					«IF field.mandatory»
 					@NotBlank
+					«ENDIF»
+					«IF field.field.fieldType == FieldType.DATE»
+					@DateTimeFormat(pattern = "dd.MM.yyyy")
 					«ENDIF»
 					private «field.field.fieldType.javaTypeForFieldType» «field.field.name»;
 				«ENDFOR»
