@@ -1,8 +1,9 @@
 package org.nordakademie.mwi.tickets.generator
 
 import java.util.HashSet
-import org.nordakademie.mwi.tickets.tickets.TicketCategory
+import org.nordakademie.mwi.tickets.tickets.Field
 import org.nordakademie.mwi.tickets.tickets.FieldType
+import org.nordakademie.mwi.tickets.tickets.TicketCategory
 
 class DomainGenerator {
 
@@ -35,6 +36,7 @@ class DomainGenerator {
 				import org.nordakademie.mwi.ticketSystem.flows.«category.flow.name.toFirstUpper»;
 			«ENDIF»
 			import org.hibernate.validator.constraints.NotBlank;
+			import javax.validation.constraints.NotNull;
 			import javax.persistence.Entity;
 			
 			@Entity
@@ -45,24 +47,29 @@ class DomainGenerator {
 				«ENDIF»
 			
 				«FOR field : category.ticketFields»
-					«IF field.mandatory»
-					@NotBlank
+					
+					«IF field.field.fieldType == FieldType.DATE || field.field.fieldType == FieldType.DATE_TIME»
+						«IF field.mandatory»
+							@NotNull
+						«ENDIF»
+						@DateTimeFormat(pattern = "dd.MM.yyyy")
+					«ELSE»
+						«IF field.mandatory»
+							@NotBlank
+						«ENDIF»
 					«ENDIF»
-					«IF field.field.fieldType == FieldType.DATE»
-					@DateTimeFormat(pattern = "dd.MM.yyyy")
-					«ENDIF»
-					private «field.field.fieldType.javaTypeForFieldType» «field.field.name»;
+					private «field.field.javaTypeForField» «field.field.name.toFirstLower»;
 				«ENDFOR»
 			
 			    public «category.name.toFirstUpper» () {}
 			    
 			    «FOR field : category.ticketFields»
-			    	public «field.field.fieldType.javaTypeForFieldType» get«field.field.name.toFirstUpper»() {
-			    		return «field.field.name»;
+			    	public «field.field.javaTypeForField» get«field.field.name.toFirstUpper»() {
+			    		return «field.field.name.toFirstLower»;
 			    	}
 			    	
-			    	public void set«field.field.name.toFirstUpper»(«field.field.fieldType.javaTypeForFieldType» «field.field.name») {
-			    	 	this.«field.field.name» = «field.field.name»;
+			    	public void set«field.field.name.toFirstUpper»(«field.field.javaTypeForField» «field.field.name.toFirstLower») {
+			    	 	this.«field.field.name.toFirstLower» = «field.field.name.toFirstLower»;
 			    	}
 				«ENDFOR»
 			
@@ -87,10 +94,10 @@ class DomainGenerator {
 						
 					«category.name.toFirstUpper» other = («category.name.toFirstUpper») obj;
 					«FOR field : category.ticketFields»
-						if («field.field.name» == null) {
-						if (other.«field.field.name» != null)
+						if («field.field.name.toFirstLower» == null) {
+						if (other.«field.field.name.toFirstLower» != null)
 							return false;
-						} else if (!«field.field.name».equals(other.«field.field.name»))
+						} else if (!«field.field.name.toFirstLower».equals(other.«field.field.name.toFirstLower»))
 							return false;
 					«ENDFOR»
 					
@@ -103,14 +110,19 @@ class DomainGenerator {
 
 	}
 
-	def static getJavaTypeForFieldType(FieldType type) {
-		switch (type) {
-			case DATE: "Calendar"
-			case DATE_TIME: "Calendar"
-			case DECIMAL: "Double"
-			case INT: "Integer"
-			case BOOLEAN: "Boolean"
-			default: "String"
-		}
+	def static getJavaTypeForField(Field field) {
+		if (field.fieldEnum != null) {
+			// enum
+			field.name.toFirstUpper + "Enum"
+		} else {
+			switch (field.fieldType) {
+				case DATE: "Calendar"
+				case DATE_TIME: "Calendar"
+				case DECIMAL: "Double"
+				case INT: "Integer"
+				case BOOLEAN: "Boolean"
+				default: "String"
+			}
+		}	
 	}
 }

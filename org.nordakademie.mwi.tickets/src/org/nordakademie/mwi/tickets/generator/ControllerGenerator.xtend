@@ -25,6 +25,8 @@ class ControllerGenerator {
 			«IF category.flow != null»
 				import org.nordakademie.mwi.ticketSystem.flows.«category.flow.name.toFirstUpper»;
 			«ENDIF»
+			«getEnumImports(category)»
+			
 			
 			@Controller
 			@Transactional
@@ -42,18 +44,14 @@ class ControllerGenerator {
 				@RequestMapping(value = "/«category.name.toLowerCase»/create", method = RequestMethod.GET)
 				public String create(Model model) {
 					
-					«IF category.flow != null»
-						model.addAttribute("states", «category.flow.name.toFirstUpper».values());
-					«ENDIF»
+					«getEnumValuesToInject(category)»
 					return "«category.name.toLowerCase»/create";
 				}
 			
 				@RequestMapping(value = "/«category.name.toLowerCase»/create", method = RequestMethod.POST)
 				public String create(@Valid «category.name.toFirstUpper» «category.name.toFirstLower», BindingResult bindingResult, Model model) {
 					if (bindingResult.hasErrors()) {
-						«IF category.flow != null»
-							model.addAttribute("states", «category.flow.name.toFirstUpper».values());
-						«ENDIF»
+						«getEnumValuesToInject(category)»
 						return "/«category.name.toLowerCase»/create";
 					}
 					«category.name.toFirstLower»Dao.makePersistent(«category.name.toFirstLower»);
@@ -82,16 +80,14 @@ class ControllerGenerator {
 				
 				@RequestMapping(value = "/«category.name.toLowerCase»/edit", method = RequestMethod.GET)
 				public String edit(«category.name.toFirstUpper» «category.name.toFirstLower», Model model) {
-					«IF category.flow != null»
-						model.addAttribute("states", «category.flow.name.toFirstUpper».values());
-					«ENDIF»
+					«getEnumValuesToInject(category)»
 					return "«category.name.toLowerCase»/edit";
 				}
 				
 				@RequestMapping(value = "/«category.name.toLowerCase»/edit", method = RequestMethod.POST)
 				public String edit(@Valid «category.name.toFirstUpper» «category.name.toFirstLower», BindingResult bindingResult, Model model) {
 					if (bindingResult.hasErrors()) {
-						model.addAttribute("states", TestFlow.values());
+						«getEnumValuesToInject(category)»
 						return "/«category.name.toLowerCase»/edit";
 					}
 					«category.name.toFirstUpper» orig =  «category.name.toFirstLower»Dao.findById(«category.name.toFirstLower».getId());
@@ -127,4 +123,26 @@ class ControllerGenerator {
 		'''
 	}
 
+	def static getEnumValuesToInject(TicketCategory category) {
+		'''
+		«IF category.flow != null»
+			model.addAttribute("states", «category.flow.name.toFirstUpper».values());
+		«ENDIF»
+		«FOR field : category.ticketFields»
+			«IF field.field.fieldEnum != null»
+				model.addAttribute("«field.field.name.toFirstLower»EnumValues", «field.field.name.toFirstUpper»Enum.values());
+			«ENDIF»
+		«ENDFOR»
+		'''
+	}
+
+	def static getEnumImports(TicketCategory category) {
+		'''
+		«FOR field : category.ticketFields»
+			«IF field.field.fieldEnum != null»
+				import org.nordakademie.mwi.ticketSystem.domain.«field.field.name.toFirstUpper»Enum;
+			«ENDIF»
+		«ENDFOR»
+		'''
+	}
 }

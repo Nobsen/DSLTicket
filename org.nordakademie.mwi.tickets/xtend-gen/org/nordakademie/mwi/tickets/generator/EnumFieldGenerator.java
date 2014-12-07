@@ -1,0 +1,66 @@
+package org.nordakademie.mwi.tickets.generator;
+
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.xtend2.lib.StringConcatenation;
+import org.eclipse.xtext.xbase.lib.StringExtensions;
+import org.nordakademie.mwi.tickets.tickets.Field;
+
+@SuppressWarnings("all")
+public class EnumFieldGenerator {
+  public static CharSequence toEnum(final Field field) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("package org.nordakademie.mwi.ticketSystem.domain;");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("public enum ");
+    String _name = field.getName();
+    String _firstUpper = StringExtensions.toFirstUpper(_name);
+    _builder.append(_firstUpper, "");
+    _builder.append("Enum {");
+    _builder.newLineIfNotEmpty();
+    _builder.newLine();
+    {
+      org.nordakademie.mwi.tickets.tickets.Enum _fieldEnum = field.getFieldEnum();
+      EList<String> _option = _fieldEnum.getOption();
+      boolean _hasElements = false;
+      for(final String option : _option) {
+        if (!_hasElements) {
+          _hasElements = true;
+        } else {
+          _builder.appendImmediate(",", "\t");
+        }
+        _builder.append("\t");
+        _builder.append(option, "\t");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    _builder.append("\t");
+    _builder.append(";");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("public boolean isFirst() {");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("return this.ordinal() == 0;");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("public boolean isLast() {");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("return this.ordinal() == values().length - 1;");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("}");
+    _builder.newLine();
+    return _builder;
+  }
+}

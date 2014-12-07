@@ -3,6 +3,7 @@
  */
 package org.nordakademie.mwi.tickets.generator;
 
+import com.google.common.base.Objects;
 import com.google.common.collect.Iterables;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
@@ -15,8 +16,10 @@ import org.nordakademie.mwi.tickets.TicketsOutputConfigurationProvider;
 import org.nordakademie.mwi.tickets.generator.ControllerGenerator;
 import org.nordakademie.mwi.tickets.generator.DaoGenerator;
 import org.nordakademie.mwi.tickets.generator.DomainGenerator;
+import org.nordakademie.mwi.tickets.generator.EnumFieldGenerator;
 import org.nordakademie.mwi.tickets.generator.FlowGenerator;
 import org.nordakademie.mwi.tickets.generator.JspGenerator;
+import org.nordakademie.mwi.tickets.tickets.Field;
 import org.nordakademie.mwi.tickets.tickets.Flow;
 import org.nordakademie.mwi.tickets.tickets.TicketCategory;
 import org.nordakademie.mwi.tickets.tickets.TicketSystem;
@@ -92,6 +95,22 @@ public class TicketsGenerator implements IGenerator {
       String _plus_1 = (_plus + ".java");
       CharSequence _flowEnum = FlowGenerator.toFlowEnum(flow);
       fsa.generateFile(_plus_1, _flowEnum);
+    }
+    EList<EObject> _contents_2 = resource.getContents();
+    Iterable<TicketSystem> _filter_2 = Iterables.<TicketSystem>filter(_contents_2, TicketSystem.class);
+    TicketSystem _head_2 = IterableExtensions.<TicketSystem>head(_filter_2);
+    EList<Field> fields = _head_2.getFields();
+    for (final Field field : fields) {
+      org.nordakademie.mwi.tickets.tickets.Enum _fieldEnum = field.getFieldEnum();
+      boolean _notEquals = (!Objects.equal(_fieldEnum, null));
+      if (_notEquals) {
+        String _name_1 = field.getName();
+        String _firstUpper_1 = StringExtensions.toFirstUpper(_name_1);
+        String _plus_2 = ("org/nordakademie/mwi/ticketSystem/domain/" + _firstUpper_1);
+        String _plus_3 = (_plus_2 + "Enum.java");
+        CharSequence _enum = EnumFieldGenerator.toEnum(field);
+        fsa.generateFile(_plus_3, _enum);
+      }
     }
     CharSequence _navigation = JspGenerator.toNavigation(categories);
     fsa.generateFile("/navigation.jspf", TicketsOutputConfigurationProvider.JSP_OUTPUT, _navigation);

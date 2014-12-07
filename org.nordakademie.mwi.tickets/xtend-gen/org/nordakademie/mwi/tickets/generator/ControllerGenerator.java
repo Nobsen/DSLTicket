@@ -64,6 +64,10 @@ public class ControllerGenerator {
         _builder.newLineIfNotEmpty();
       }
     }
+    CharSequence _enumImports = ControllerGenerator.getEnumImports(category);
+    _builder.append(_enumImports, "");
+    _builder.newLineIfNotEmpty();
+    _builder.newLine();
     _builder.newLine();
     _builder.append("@Controller");
     _builder.newLine();
@@ -137,24 +141,14 @@ public class ControllerGenerator {
     _builder.newLine();
     _builder.append("\t\t");
     _builder.newLine();
-    {
-      Flow _flow_2 = category.getFlow();
-      boolean _notEquals_1 = (!Objects.equal(_flow_2, null));
-      if (_notEquals_1) {
-        _builder.append("\t\t");
-        _builder.append("model.addAttribute(\"states\", ");
-        Flow _flow_3 = category.getFlow();
-        String _name_12 = _flow_3.getName();
-        String _firstUpper_8 = StringExtensions.toFirstUpper(_name_12);
-        _builder.append(_firstUpper_8, "\t\t");
-        _builder.append(".values());");
-        _builder.newLineIfNotEmpty();
-      }
-    }
+    _builder.append("\t\t");
+    CharSequence _enumValuesToInject = ControllerGenerator.getEnumValuesToInject(category);
+    _builder.append(_enumValuesToInject, "\t\t");
+    _builder.newLineIfNotEmpty();
     _builder.append("\t\t");
     _builder.append("return \"");
-    String _name_13 = category.getName();
-    String _lowerCase_1 = _name_13.toLowerCase();
+    String _name_12 = category.getName();
+    String _lowerCase_1 = _name_12.toLowerCase();
     _builder.append(_lowerCase_1, "\t\t");
     _builder.append("/create\";");
     _builder.newLineIfNotEmpty();
@@ -164,43 +158,33 @@ public class ControllerGenerator {
     _builder.newLine();
     _builder.append("\t");
     _builder.append("@RequestMapping(value = \"/");
-    String _name_14 = category.getName();
-    String _lowerCase_2 = _name_14.toLowerCase();
+    String _name_13 = category.getName();
+    String _lowerCase_2 = _name_13.toLowerCase();
     _builder.append(_lowerCase_2, "\t");
     _builder.append("/create\", method = RequestMethod.POST)");
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
     _builder.append("public String create(@Valid ");
-    String _name_15 = category.getName();
-    String _firstUpper_9 = StringExtensions.toFirstUpper(_name_15);
-    _builder.append(_firstUpper_9, "\t");
+    String _name_14 = category.getName();
+    String _firstUpper_8 = StringExtensions.toFirstUpper(_name_14);
+    _builder.append(_firstUpper_8, "\t");
     _builder.append(" ");
-    String _name_16 = category.getName();
-    String _firstLower_3 = StringExtensions.toFirstLower(_name_16);
+    String _name_15 = category.getName();
+    String _firstLower_3 = StringExtensions.toFirstLower(_name_15);
     _builder.append(_firstLower_3, "\t");
     _builder.append(", BindingResult bindingResult, Model model) {");
     _builder.newLineIfNotEmpty();
     _builder.append("\t\t");
     _builder.append("if (bindingResult.hasErrors()) {");
     _builder.newLine();
-    {
-      Flow _flow_4 = category.getFlow();
-      boolean _notEquals_2 = (!Objects.equal(_flow_4, null));
-      if (_notEquals_2) {
-        _builder.append("\t\t\t");
-        _builder.append("model.addAttribute(\"states\", ");
-        Flow _flow_5 = category.getFlow();
-        String _name_17 = _flow_5.getName();
-        String _firstUpper_10 = StringExtensions.toFirstUpper(_name_17);
-        _builder.append(_firstUpper_10, "\t\t\t");
-        _builder.append(".values());");
-        _builder.newLineIfNotEmpty();
-      }
-    }
+    _builder.append("\t\t\t");
+    CharSequence _enumValuesToInject_1 = ControllerGenerator.getEnumValuesToInject(category);
+    _builder.append(_enumValuesToInject_1, "\t\t\t");
+    _builder.newLineIfNotEmpty();
     _builder.append("\t\t\t");
     _builder.append("return \"/");
-    String _name_18 = category.getName();
-    String _lowerCase_3 = _name_18.toLowerCase();
+    String _name_16 = category.getName();
+    String _lowerCase_3 = _name_16.toLowerCase();
     _builder.append(_lowerCase_3, "\t\t\t");
     _builder.append("/create\";");
     _builder.newLineIfNotEmpty();
@@ -208,12 +192,12 @@ public class ControllerGenerator {
     _builder.append("}");
     _builder.newLine();
     _builder.append("\t\t");
-    String _name_19 = category.getName();
-    String _firstLower_4 = StringExtensions.toFirstLower(_name_19);
+    String _name_17 = category.getName();
+    String _firstLower_4 = StringExtensions.toFirstLower(_name_17);
     _builder.append(_firstLower_4, "\t\t");
     _builder.append("Dao.makePersistent(");
-    String _name_20 = category.getName();
-    String _firstLower_5 = StringExtensions.toFirstLower(_name_20);
+    String _name_18 = category.getName();
+    String _firstLower_5 = StringExtensions.toFirstLower(_name_18);
     _builder.append(_firstLower_5, "\t\t");
     _builder.append(");");
     _builder.newLineIfNotEmpty();
@@ -221,8 +205,8 @@ public class ControllerGenerator {
     _builder.newLine();
     _builder.append("\t\t");
     _builder.append("model.addAttribute(\"id\", ");
-    String _name_21 = category.getName();
-    String _firstLower_6 = StringExtensions.toFirstLower(_name_21);
+    String _name_19 = category.getName();
+    String _firstLower_6 = StringExtensions.toFirstLower(_name_19);
     _builder.append(_firstLower_6, "\t\t");
     _builder.append(".getId());");
     _builder.newLineIfNotEmpty();
@@ -235,26 +219,26 @@ public class ControllerGenerator {
     _builder.newLine();
     _builder.append("\t");
     _builder.append("@RequestMapping(value = \"/");
-    String _name_22 = category.getName();
-    String _lowerCase_4 = _name_22.toLowerCase();
+    String _name_20 = category.getName();
+    String _lowerCase_4 = _name_20.toLowerCase();
     _builder.append(_lowerCase_4, "\t");
     _builder.append("/show\", method = RequestMethod.GET)");
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
     _builder.append("public String show(");
-    String _name_23 = category.getName();
-    String _firstUpper_11 = StringExtensions.toFirstUpper(_name_23);
-    _builder.append(_firstUpper_11, "\t");
+    String _name_21 = category.getName();
+    String _firstUpper_9 = StringExtensions.toFirstUpper(_name_21);
+    _builder.append(_firstUpper_9, "\t");
     _builder.append(" ");
-    String _name_24 = category.getName();
-    String _firstLower_7 = StringExtensions.toFirstLower(_name_24);
+    String _name_22 = category.getName();
+    String _firstLower_7 = StringExtensions.toFirstLower(_name_22);
     _builder.append(_firstLower_7, "\t");
     _builder.append(") {");
     _builder.newLineIfNotEmpty();
     _builder.append("\t\t");
     _builder.append("return \"");
-    String _name_25 = category.getName();
-    String _lowerCase_5 = _name_25.toLowerCase();
+    String _name_23 = category.getName();
+    String _lowerCase_5 = _name_23.toLowerCase();
     _builder.append(_lowerCase_5, "\t\t");
     _builder.append("/show\";");
     _builder.newLineIfNotEmpty();
@@ -265,8 +249,8 @@ public class ControllerGenerator {
     _builder.newLine();
     _builder.append("\t");
     _builder.append("@RequestMapping(value = \"/");
-    String _name_26 = category.getName();
-    String _lowerCase_6 = _name_26.toLowerCase();
+    String _name_24 = category.getName();
+    String _lowerCase_6 = _name_24.toLowerCase();
     _builder.append(_lowerCase_6, "\t");
     _builder.append("/list\", method = RequestMethod.GET)");
     _builder.newLineIfNotEmpty();
@@ -275,19 +259,19 @@ public class ControllerGenerator {
     _builder.newLine();
     _builder.append("\t\t");
     _builder.append("map.put(\"");
-    String _name_27 = category.getName();
-    String _firstLower_8 = StringExtensions.toFirstLower(_name_27);
+    String _name_25 = category.getName();
+    String _firstLower_8 = StringExtensions.toFirstLower(_name_25);
     _builder.append(_firstLower_8, "\t\t");
     _builder.append("s\", ");
-    String _name_28 = category.getName();
-    String _firstLower_9 = StringExtensions.toFirstLower(_name_28);
+    String _name_26 = category.getName();
+    String _firstLower_9 = StringExtensions.toFirstLower(_name_26);
     _builder.append(_firstLower_9, "\t\t");
     _builder.append("Dao.findAll());");
     _builder.newLineIfNotEmpty();
     _builder.append("\t\t");
     _builder.append("return \"");
-    String _name_29 = category.getName();
-    String _lowerCase_7 = _name_29.toLowerCase();
+    String _name_27 = category.getName();
+    String _lowerCase_7 = _name_27.toLowerCase();
     _builder.append(_lowerCase_7, "\t\t");
     _builder.append("/list\";");
     _builder.newLineIfNotEmpty();
@@ -298,29 +282,29 @@ public class ControllerGenerator {
     _builder.newLine();
     _builder.append("\t");
     _builder.append("@RequestMapping(value = \"/");
-    String _name_30 = category.getName();
-    String _lowerCase_8 = _name_30.toLowerCase();
+    String _name_28 = category.getName();
+    String _lowerCase_8 = _name_28.toLowerCase();
     _builder.append(_lowerCase_8, "\t");
     _builder.append("/delete\", method = RequestMethod.POST)");
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
     _builder.append("public String delete(");
-    String _name_31 = category.getName();
-    String _firstUpper_12 = StringExtensions.toFirstUpper(_name_31);
-    _builder.append(_firstUpper_12, "\t");
+    String _name_29 = category.getName();
+    String _firstUpper_10 = StringExtensions.toFirstUpper(_name_29);
+    _builder.append(_firstUpper_10, "\t");
     _builder.append(" ");
-    String _name_32 = category.getName();
-    String _firstLower_10 = StringExtensions.toFirstLower(_name_32);
+    String _name_30 = category.getName();
+    String _firstLower_10 = StringExtensions.toFirstLower(_name_30);
     _builder.append(_firstLower_10, "\t");
     _builder.append(") {");
     _builder.newLineIfNotEmpty();
     _builder.append("\t\t");
-    String _name_33 = category.getName();
-    String _firstLower_11 = StringExtensions.toFirstLower(_name_33);
+    String _name_31 = category.getName();
+    String _firstLower_11 = StringExtensions.toFirstLower(_name_31);
     _builder.append(_firstLower_11, "\t\t");
     _builder.append("Dao.makeTransient(");
-    String _name_34 = category.getName();
-    String _firstLower_12 = StringExtensions.toFirstLower(_name_34);
+    String _name_32 = category.getName();
+    String _firstLower_12 = StringExtensions.toFirstLower(_name_32);
     _builder.append(_firstLower_12, "\t\t");
     _builder.append(");");
     _builder.newLineIfNotEmpty();
@@ -336,40 +320,30 @@ public class ControllerGenerator {
     _builder.newLine();
     _builder.append("\t");
     _builder.append("@RequestMapping(value = \"/");
-    String _name_35 = category.getName();
-    String _lowerCase_9 = _name_35.toLowerCase();
+    String _name_33 = category.getName();
+    String _lowerCase_9 = _name_33.toLowerCase();
     _builder.append(_lowerCase_9, "\t");
     _builder.append("/edit\", method = RequestMethod.GET)");
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
     _builder.append("public String edit(");
-    String _name_36 = category.getName();
-    String _firstUpper_13 = StringExtensions.toFirstUpper(_name_36);
-    _builder.append(_firstUpper_13, "\t");
+    String _name_34 = category.getName();
+    String _firstUpper_11 = StringExtensions.toFirstUpper(_name_34);
+    _builder.append(_firstUpper_11, "\t");
     _builder.append(" ");
-    String _name_37 = category.getName();
-    String _firstLower_13 = StringExtensions.toFirstLower(_name_37);
+    String _name_35 = category.getName();
+    String _firstLower_13 = StringExtensions.toFirstLower(_name_35);
     _builder.append(_firstLower_13, "\t");
     _builder.append(", Model model) {");
     _builder.newLineIfNotEmpty();
-    {
-      Flow _flow_6 = category.getFlow();
-      boolean _notEquals_3 = (!Objects.equal(_flow_6, null));
-      if (_notEquals_3) {
-        _builder.append("\t\t");
-        _builder.append("model.addAttribute(\"states\", ");
-        Flow _flow_7 = category.getFlow();
-        String _name_38 = _flow_7.getName();
-        String _firstUpper_14 = StringExtensions.toFirstUpper(_name_38);
-        _builder.append(_firstUpper_14, "\t\t");
-        _builder.append(".values());");
-        _builder.newLineIfNotEmpty();
-      }
-    }
+    _builder.append("\t\t");
+    CharSequence _enumValuesToInject_2 = ControllerGenerator.getEnumValuesToInject(category);
+    _builder.append(_enumValuesToInject_2, "\t\t");
+    _builder.newLineIfNotEmpty();
     _builder.append("\t\t");
     _builder.append("return \"");
-    String _name_39 = category.getName();
-    String _lowerCase_10 = _name_39.toLowerCase();
+    String _name_36 = category.getName();
+    String _lowerCase_10 = _name_36.toLowerCase();
     _builder.append(_lowerCase_10, "\t\t");
     _builder.append("/edit\";");
     _builder.newLineIfNotEmpty();
@@ -380,19 +354,19 @@ public class ControllerGenerator {
     _builder.newLine();
     _builder.append("\t");
     _builder.append("@RequestMapping(value = \"/");
-    String _name_40 = category.getName();
-    String _lowerCase_11 = _name_40.toLowerCase();
+    String _name_37 = category.getName();
+    String _lowerCase_11 = _name_37.toLowerCase();
     _builder.append(_lowerCase_11, "\t");
     _builder.append("/edit\", method = RequestMethod.POST)");
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
     _builder.append("public String edit(@Valid ");
-    String _name_41 = category.getName();
-    String _firstUpper_15 = StringExtensions.toFirstUpper(_name_41);
-    _builder.append(_firstUpper_15, "\t");
+    String _name_38 = category.getName();
+    String _firstUpper_12 = StringExtensions.toFirstUpper(_name_38);
+    _builder.append(_firstUpper_12, "\t");
     _builder.append(" ");
-    String _name_42 = category.getName();
-    String _firstLower_14 = StringExtensions.toFirstLower(_name_42);
+    String _name_39 = category.getName();
+    String _firstLower_14 = StringExtensions.toFirstLower(_name_39);
     _builder.append(_firstLower_14, "\t");
     _builder.append(", BindingResult bindingResult, Model model) {");
     _builder.newLineIfNotEmpty();
@@ -400,12 +374,13 @@ public class ControllerGenerator {
     _builder.append("if (bindingResult.hasErrors()) {");
     _builder.newLine();
     _builder.append("\t\t\t");
-    _builder.append("model.addAttribute(\"states\", TestFlow.values());");
-    _builder.newLine();
+    CharSequence _enumValuesToInject_3 = ControllerGenerator.getEnumValuesToInject(category);
+    _builder.append(_enumValuesToInject_3, "\t\t\t");
+    _builder.newLineIfNotEmpty();
     _builder.append("\t\t\t");
     _builder.append("return \"/");
-    String _name_43 = category.getName();
-    String _lowerCase_12 = _name_43.toLowerCase();
+    String _name_40 = category.getName();
+    String _lowerCase_12 = _name_40.toLowerCase();
     _builder.append(_lowerCase_12, "\t\t\t");
     _builder.append("/edit\";");
     _builder.newLineIfNotEmpty();
@@ -413,16 +388,16 @@ public class ControllerGenerator {
     _builder.append("}");
     _builder.newLine();
     _builder.append("\t\t");
-    String _name_44 = category.getName();
-    String _firstUpper_16 = StringExtensions.toFirstUpper(_name_44);
-    _builder.append(_firstUpper_16, "\t\t");
+    String _name_41 = category.getName();
+    String _firstUpper_13 = StringExtensions.toFirstUpper(_name_41);
+    _builder.append(_firstUpper_13, "\t\t");
     _builder.append(" orig =  ");
-    String _name_45 = category.getName();
-    String _firstLower_15 = StringExtensions.toFirstLower(_name_45);
+    String _name_42 = category.getName();
+    String _firstLower_15 = StringExtensions.toFirstLower(_name_42);
     _builder.append(_firstLower_15, "\t\t");
     _builder.append("Dao.findById(");
-    String _name_46 = category.getName();
-    String _firstLower_16 = StringExtensions.toFirstLower(_name_46);
+    String _name_43 = category.getName();
+    String _firstLower_16 = StringExtensions.toFirstLower(_name_43);
     _builder.append(_firstLower_16, "\t\t");
     _builder.append(".getId());");
     _builder.newLineIfNotEmpty();
@@ -432,30 +407,30 @@ public class ControllerGenerator {
         _builder.append("\t\t");
         _builder.append("orig.set");
         Field _field = field.getField();
-        String _name_47 = _field.getName();
-        String _firstUpper_17 = StringExtensions.toFirstUpper(_name_47);
-        _builder.append(_firstUpper_17, "\t\t");
+        String _name_44 = _field.getName();
+        String _firstUpper_14 = StringExtensions.toFirstUpper(_name_44);
+        _builder.append(_firstUpper_14, "\t\t");
         _builder.append("(");
-        String _name_48 = category.getName();
-        String _firstLower_17 = StringExtensions.toFirstLower(_name_48);
+        String _name_45 = category.getName();
+        String _firstLower_17 = StringExtensions.toFirstLower(_name_45);
         _builder.append(_firstLower_17, "\t\t");
         _builder.append(".get");
         Field _field_1 = field.getField();
-        String _name_49 = _field_1.getName();
-        String _firstUpper_18 = StringExtensions.toFirstUpper(_name_49);
-        _builder.append(_firstUpper_18, "\t\t");
+        String _name_46 = _field_1.getName();
+        String _firstUpper_15 = StringExtensions.toFirstUpper(_name_46);
+        _builder.append(_firstUpper_15, "\t\t");
         _builder.append("());");
         _builder.newLineIfNotEmpty();
       }
     }
     {
-      Flow _flow_8 = category.getFlow();
-      boolean _notEquals_4 = (!Objects.equal(_flow_8, null));
-      if (_notEquals_4) {
+      Flow _flow_2 = category.getFlow();
+      boolean _notEquals_1 = (!Objects.equal(_flow_2, null));
+      if (_notEquals_1) {
         _builder.append("\t\t");
         _builder.append("orig.setCurrentFlowState(");
-        String _name_50 = category.getName();
-        String _firstLower_18 = StringExtensions.toFirstLower(_name_50);
+        String _name_47 = category.getName();
+        String _firstLower_18 = StringExtensions.toFirstLower(_name_47);
         _builder.append(_firstLower_18, "\t\t");
         _builder.append(".getCurrentFlowState());");
         _builder.newLineIfNotEmpty();
@@ -463,8 +438,8 @@ public class ControllerGenerator {
     }
     _builder.append("\t\t");
     _builder.append("model.addAttribute(\"id\",  ");
-    String _name_51 = category.getName();
-    String _firstLower_19 = StringExtensions.toFirstLower(_name_51);
+    String _name_48 = category.getName();
+    String _firstLower_19 = StringExtensions.toFirstLower(_name_48);
     _builder.append(_firstLower_19, "\t\t");
     _builder.append(".getId());");
     _builder.newLineIfNotEmpty();
@@ -475,55 +450,55 @@ public class ControllerGenerator {
     _builder.append("}");
     _builder.newLine();
     {
-      Flow _flow_9 = category.getFlow();
-      boolean _notEquals_5 = (!Objects.equal(_flow_9, null));
-      if (_notEquals_5) {
+      Flow _flow_3 = category.getFlow();
+      boolean _notEquals_2 = (!Objects.equal(_flow_3, null));
+      if (_notEquals_2) {
         _builder.append("\t");
         _builder.append("@RequestMapping(value = \"/");
-        String _name_52 = category.getName();
-        String _lowerCase_13 = _name_52.toLowerCase();
+        String _name_49 = category.getName();
+        String _lowerCase_13 = _name_49.toLowerCase();
         _builder.append(_lowerCase_13, "\t");
         _builder.append("/nextState\", method = RequestMethod.POST)");
         _builder.newLineIfNotEmpty();
         _builder.append("\t");
         _builder.append("public String nextState(");
-        String _name_53 = category.getName();
-        String _firstUpper_19 = StringExtensions.toFirstUpper(_name_53);
-        _builder.append(_firstUpper_19, "\t");
+        String _name_50 = category.getName();
+        String _firstUpper_16 = StringExtensions.toFirstUpper(_name_50);
+        _builder.append(_firstUpper_16, "\t");
         _builder.append(" ");
-        String _name_54 = category.getName();
-        String _firstLower_20 = StringExtensions.toFirstLower(_name_54);
+        String _name_51 = category.getName();
+        String _firstLower_20 = StringExtensions.toFirstLower(_name_51);
         _builder.append(_firstLower_20, "\t");
         _builder.append(", Model model) {");
         _builder.newLineIfNotEmpty();
         _builder.append("\t");
         _builder.append("\t");
-        String _name_55 = category.getName();
-        String _firstLower_21 = StringExtensions.toFirstLower(_name_55);
+        String _name_52 = category.getName();
+        String _firstLower_21 = StringExtensions.toFirstLower(_name_52);
         _builder.append(_firstLower_21, "\t\t");
         _builder.append(" = ");
-        String _name_56 = category.getName();
-        String _firstLower_22 = StringExtensions.toFirstLower(_name_56);
+        String _name_53 = category.getName();
+        String _firstLower_22 = StringExtensions.toFirstLower(_name_53);
         _builder.append(_firstLower_22, "\t\t");
         _builder.append("Dao.findById(");
-        String _name_57 = category.getName();
-        String _firstLower_23 = StringExtensions.toFirstLower(_name_57);
+        String _name_54 = category.getName();
+        String _firstLower_23 = StringExtensions.toFirstLower(_name_54);
         _builder.append(_firstLower_23, "\t\t");
         _builder.append(".getId());");
         _builder.newLineIfNotEmpty();
         _builder.append("\t");
         _builder.append("\t");
-        String _name_58 = category.getName();
-        String _firstLower_24 = StringExtensions.toFirstLower(_name_58);
+        String _name_55 = category.getName();
+        String _firstLower_24 = StringExtensions.toFirstLower(_name_55);
         _builder.append(_firstLower_24, "\t\t");
         _builder.append(".setCurrentFlowState(");
-        Flow _flow_10 = category.getFlow();
-        String _name_59 = _flow_10.getName();
-        String _firstUpper_20 = StringExtensions.toFirstUpper(_name_59);
-        _builder.append(_firstUpper_20, "\t\t");
+        Flow _flow_4 = category.getFlow();
+        String _name_56 = _flow_4.getName();
+        String _firstUpper_17 = StringExtensions.toFirstUpper(_name_56);
+        _builder.append(_firstUpper_17, "\t\t");
         _builder.append(".values()[");
-        String _name_60 = category.getName();
-        String _firstLower_25 = StringExtensions.toFirstLower(_name_60);
+        String _name_57 = category.getName();
+        String _firstLower_25 = StringExtensions.toFirstLower(_name_57);
         _builder.append(_firstLower_25, "\t\t");
         _builder.append(".getCurrentFlowState().ordinal() + 1]);");
         _builder.newLineIfNotEmpty();
@@ -533,8 +508,8 @@ public class ControllerGenerator {
         _builder.append("\t");
         _builder.append("\t");
         _builder.append("model.addAttribute(\"id\", ");
-        String _name_61 = category.getName();
-        String _firstLower_26 = StringExtensions.toFirstLower(_name_61);
+        String _name_58 = category.getName();
+        String _firstLower_26 = StringExtensions.toFirstLower(_name_58);
         _builder.append(_firstLower_26, "\t\t");
         _builder.append(".getId());");
         _builder.newLineIfNotEmpty();
@@ -550,50 +525,50 @@ public class ControllerGenerator {
         _builder.newLine();
         _builder.append("\t");
         _builder.append("@RequestMapping(value = \"/");
-        String _name_62 = category.getName();
-        String _lowerCase_14 = _name_62.toLowerCase();
+        String _name_59 = category.getName();
+        String _lowerCase_14 = _name_59.toLowerCase();
         _builder.append(_lowerCase_14, "\t");
         _builder.append("/prevState\", method = RequestMethod.POST)");
         _builder.newLineIfNotEmpty();
         _builder.append("\t");
         _builder.append("public String prevState(");
-        String _name_63 = category.getName();
-        String _firstUpper_21 = StringExtensions.toFirstUpper(_name_63);
-        _builder.append(_firstUpper_21, "\t");
+        String _name_60 = category.getName();
+        String _firstUpper_18 = StringExtensions.toFirstUpper(_name_60);
+        _builder.append(_firstUpper_18, "\t");
         _builder.append(" ");
-        String _name_64 = category.getName();
-        String _firstLower_27 = StringExtensions.toFirstLower(_name_64);
+        String _name_61 = category.getName();
+        String _firstLower_27 = StringExtensions.toFirstLower(_name_61);
         _builder.append(_firstLower_27, "\t");
         _builder.append(", Model model) {");
         _builder.newLineIfNotEmpty();
         _builder.append("\t");
         _builder.append("\t");
-        String _name_65 = category.getName();
-        String _firstLower_28 = StringExtensions.toFirstLower(_name_65);
+        String _name_62 = category.getName();
+        String _firstLower_28 = StringExtensions.toFirstLower(_name_62);
         _builder.append(_firstLower_28, "\t\t");
         _builder.append(" = ");
-        String _name_66 = category.getName();
-        String _firstLower_29 = StringExtensions.toFirstLower(_name_66);
+        String _name_63 = category.getName();
+        String _firstLower_29 = StringExtensions.toFirstLower(_name_63);
         _builder.append(_firstLower_29, "\t\t");
         _builder.append("Dao.findById(");
-        String _name_67 = category.getName();
-        String _firstLower_30 = StringExtensions.toFirstLower(_name_67);
+        String _name_64 = category.getName();
+        String _firstLower_30 = StringExtensions.toFirstLower(_name_64);
         _builder.append(_firstLower_30, "\t\t");
         _builder.append(".getId());");
         _builder.newLineIfNotEmpty();
         _builder.append("\t");
         _builder.append("\t");
-        String _name_68 = category.getName();
-        String _firstLower_31 = StringExtensions.toFirstLower(_name_68);
+        String _name_65 = category.getName();
+        String _firstLower_31 = StringExtensions.toFirstLower(_name_65);
         _builder.append(_firstLower_31, "\t\t");
         _builder.append(".setCurrentFlowState(");
-        Flow _flow_11 = category.getFlow();
-        String _name_69 = _flow_11.getName();
-        String _firstUpper_22 = StringExtensions.toFirstUpper(_name_69);
-        _builder.append(_firstUpper_22, "\t\t");
+        Flow _flow_5 = category.getFlow();
+        String _name_66 = _flow_5.getName();
+        String _firstUpper_19 = StringExtensions.toFirstUpper(_name_66);
+        _builder.append(_firstUpper_19, "\t\t");
         _builder.append(".values()[");
-        String _name_70 = category.getName();
-        String _firstLower_32 = StringExtensions.toFirstLower(_name_70);
+        String _name_67 = category.getName();
+        String _firstLower_32 = StringExtensions.toFirstLower(_name_67);
         _builder.append(_firstLower_32, "\t\t");
         _builder.append(".getCurrentFlowState().ordinal() - 1]);");
         _builder.newLineIfNotEmpty();
@@ -603,8 +578,8 @@ public class ControllerGenerator {
         _builder.append("\t");
         _builder.append("\t");
         _builder.append("model.addAttribute(\"id\", ");
-        String _name_71 = category.getName();
-        String _firstLower_33 = StringExtensions.toFirstLower(_name_71);
+        String _name_68 = category.getName();
+        String _firstLower_33 = StringExtensions.toFirstLower(_name_68);
         _builder.append(_firstLower_33, "\t\t");
         _builder.append(".getId());");
         _builder.newLineIfNotEmpty();
@@ -619,6 +594,72 @@ public class ControllerGenerator {
     }
     _builder.append("}");
     _builder.newLine();
+    return _builder;
+  }
+  
+  public static CharSequence getEnumValuesToInject(final TicketCategory category) {
+    StringConcatenation _builder = new StringConcatenation();
+    {
+      Flow _flow = category.getFlow();
+      boolean _notEquals = (!Objects.equal(_flow, null));
+      if (_notEquals) {
+        _builder.append("model.addAttribute(\"states\", ");
+        Flow _flow_1 = category.getFlow();
+        String _name = _flow_1.getName();
+        String _firstUpper = StringExtensions.toFirstUpper(_name);
+        _builder.append(_firstUpper, "");
+        _builder.append(".values());");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    {
+      EList<TicketField> _ticketFields = category.getTicketFields();
+      for(final TicketField field : _ticketFields) {
+        {
+          Field _field = field.getField();
+          org.nordakademie.mwi.tickets.tickets.Enum _fieldEnum = _field.getFieldEnum();
+          boolean _notEquals_1 = (!Objects.equal(_fieldEnum, null));
+          if (_notEquals_1) {
+            _builder.append("model.addAttribute(\"");
+            Field _field_1 = field.getField();
+            String _name_1 = _field_1.getName();
+            String _firstLower = StringExtensions.toFirstLower(_name_1);
+            _builder.append(_firstLower, "");
+            _builder.append("EnumValues\", ");
+            Field _field_2 = field.getField();
+            String _name_2 = _field_2.getName();
+            String _firstUpper_1 = StringExtensions.toFirstUpper(_name_2);
+            _builder.append(_firstUpper_1, "");
+            _builder.append("Enum.values());");
+            _builder.newLineIfNotEmpty();
+          }
+        }
+      }
+    }
+    return _builder;
+  }
+  
+  public static CharSequence getEnumImports(final TicketCategory category) {
+    StringConcatenation _builder = new StringConcatenation();
+    {
+      EList<TicketField> _ticketFields = category.getTicketFields();
+      for(final TicketField field : _ticketFields) {
+        {
+          Field _field = field.getField();
+          org.nordakademie.mwi.tickets.tickets.Enum _fieldEnum = _field.getFieldEnum();
+          boolean _notEquals = (!Objects.equal(_fieldEnum, null));
+          if (_notEquals) {
+            _builder.append("import org.nordakademie.mwi.ticketSystem.domain.");
+            Field _field_1 = field.getField();
+            String _name = _field_1.getName();
+            String _firstUpper = StringExtensions.toFirstUpper(_name);
+            _builder.append(_firstUpper, "");
+            _builder.append("Enum;");
+            _builder.newLineIfNotEmpty();
+          }
+        }
+      }
+    }
     return _builder;
   }
 }

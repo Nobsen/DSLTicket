@@ -10,6 +10,7 @@ import org.nordakademie.mwi.tickets.TicketsOutputConfigurationProvider
 import org.nordakademie.mwi.tickets.tickets.Flow
 import org.nordakademie.mwi.tickets.tickets.TicketCategory
 import org.nordakademie.mwi.tickets.tickets.TicketSystem
+import org.nordakademie.mwi.tickets.tickets.Field
 
 /**
  * Generates code from your model files on save.
@@ -54,11 +55,22 @@ class TicketsGenerator implements IGenerator {
 
 		var flows = resource.contents.filter(TicketSystem).head.flows;
 
+		// flows
 		for (Flow flow : flows) {
 			fsa.generateFile('org/nordakademie/mwi/ticketSystem/flows/' + flow.name.toFirstUpper + '.java',
 				FlowGenerator.toFlowEnum(flow))
 		}
 
+		var fields = resource.contents.filter(TicketSystem).head.fields;
+		
+		// enums
+		for (Field field : fields) {
+			if (field.fieldEnum != null) {
+				fsa.generateFile('org/nordakademie/mwi/ticketSystem/domain/' + field.name.toFirstUpper + 'Enum.java',
+					EnumFieldGenerator.toEnum(field))
+			}
+		}
+		
 		fsa.generateFile('/navigation.jspf', TicketsOutputConfigurationProvider.JSP_OUTPUT,
 			JspGenerator.toNavigation(categories))
 	}
