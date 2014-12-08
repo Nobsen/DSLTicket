@@ -14,12 +14,6 @@ class JspGenerator {
 			
 			<%@include file="../navigation.jspf"%>
 			
-			<script>
-				$(function() {
-					$( ".datepicker" ).datepicker({ dateFormat: 'dd.mm.yy' });
-				});
-			</script>
-			
 			<div class="container">
 				<h1>«category.description» «IF isCreate»anlegen«ELSE»bearbeiten«ENDIF»</h1>
 				
@@ -31,8 +25,10 @@ class JspGenerator {
 				   	<div class="form-group">
 				   	    <label for="title" class="control-label col-sm-2">«field.field.label»:</label>
 				   	    <div class="col-sm-6">
-				   	    	«IF field.field.fieldType == FieldType.DATE || field.field.fieldType == FieldType.DATE_TIME»
+				   	    	«IF field.field.fieldType == FieldType.DATE»
 				   	    	<form:input class="form-control datepicker" path="«field.field.name.toFirstLower»" />
+				   	    	«ELSEIF field.field.fieldType == FieldType.DATE_TIME»
+				   	    	<form:input class="form-control datetimepicker" path="«field.field.name.toFirstLower»" />
 				   	    	«ELSEIF field.field.fieldType == FieldType.BOOLEAN»
 				   	    	<form:checkbox path="«field.field.name.toFirstLower»" />
 				   	    	«ELSEIF field.field.fieldEnum != null»
@@ -76,8 +72,10 @@ class JspGenerator {
 				   	<div class="form-group">
 				   	    <label for="title" class="control-label col-sm-2">«field.field.label»:</label>
 				   	    <div class="col-sm-6">
-				   	    	«IF field.field.fieldType == FieldType.DATE || field.field.fieldType == FieldType.DATE_TIME»
+				   	    	«IF field.field.fieldType == FieldType.DATE»
 				   	    		<span class="form-control" disabled="true"><fmt:formatDate pattern="dd.MM.yyyy" value="${«category.name.toFirstLower».get«field.field.name.toFirstUpper»().time}"/></span>
+				   	    	«ELSEIF field.field.fieldType == FieldType.DATE_TIME»
+				   	    		<span class="form-control" disabled="true"><fmt:formatDate pattern="dd.MM.yyyy HH:mm" value="${«category.name.toFirstLower».get«field.field.name.toFirstUpper»().time}"/></span>
 				   	    	«ELSEIF field.field.fieldType == FieldType.BOOLEAN»
 				   	    		<input type="checkbox" <c:if test="${«category.name.toFirstLower».«field.field.name.toFirstLower»}">checked="checked"</c:if> disabled="true"/>
 				   	        «ELSE»
@@ -155,31 +153,35 @@ class JspGenerator {
 							<th />
 						</tr>
 					</thead>
-				<c:forEach var="«category.name.toFirstLower»" items="${«category.name.toFirstLower»s}" varStatus="status">
-				    <tr>
-				        <c:url var="showUrl" value="/«category.name.toLowerCase»/show">
-				            <c:param name="id" value="${«category.name.toFirstLower».id}" />
-				        </c:url>
-						<td>${«category.name.toFirstLower».id}</td>
-						«IF category.flow != null»
-							<td>${«category.name.toLowerCase».currentFlowState.label}</td>
-						«ENDIF»
-						«FOR field : category.ticketFields»
-							«IF !field.notOnList»
-								«IF field.field.fieldType == FieldType.DATE || field.field.fieldType == FieldType.DATE_TIME»
-									<td><fmt:formatDate pattern="dd.MM.yyyy" value="${«category.name.toFirstLower».get«field.field.name.toFirstUpper»().time}"/></td>
-								«ELSEIF field.field.fieldType == FieldType.BOOLEAN»
-									<td><input type="checkbox" <c:if test="${«category.name.toFirstLower».«field.field.name.toFirstLower»}">checked="checked"</c:if> disabled="true"/></td>
-								«ELSE»
-									<td>${«category.name.toFirstLower».get«field.field.name.toFirstUpper»()}</td>
+					<tbody>
+						<c:forEach var="«category.name.toFirstLower»" items="${«category.name.toFirstLower»s}" varStatus="status">
+						    <tr>
+						        <c:url var="showUrl" value="/«category.name.toLowerCase»/show">
+						            <c:param name="id" value="${«category.name.toFirstLower».id}" />
+						        </c:url>
+								<td>${«category.name.toFirstLower».id}</td>
+								«IF category.flow != null»
+									<td>${«category.name.toLowerCase».currentFlowState.label}</td>
 								«ENDIF»
-							«ENDIF»
-						«ENDFOR»
-						<td>
-						    <a href='<c:out value="${showUrl}"/>'>Show</a>
-						</td>
-				    </tr>
-				</c:forEach>
+								«FOR field : category.ticketFields»
+									«IF !field.notOnList»
+										«IF field.field.fieldType == FieldType.DATE»
+											<td><fmt:formatDate pattern="dd.MM.yyyy" value="${«category.name.toFirstLower».get«field.field.name.toFirstUpper»().time}"/></td>
+										«ELSEIF field.field.fieldType == FieldType.DATE_TIME»
+											<td><fmt:formatDate pattern="dd.MM.yyyy HH:mm" value="${«category.name.toFirstLower».get«field.field.name.toFirstUpper»().time}"/></td>
+										«ELSEIF field.field.fieldType == FieldType.BOOLEAN»
+											<td><input type="checkbox" <c:if test="${«category.name.toFirstLower».«field.field.name.toFirstLower»}">checked="checked"</c:if> disabled="true"/></td>
+										«ELSE»
+											<td>${«category.name.toFirstLower».get«field.field.name.toFirstUpper»()}</td>
+										«ENDIF»
+									«ENDIF»
+								«ENDFOR»
+								<td>
+								    <a href='<c:out value="${showUrl}"/>'>Show</a>
+								</td>
+						    </tr>
+						</c:forEach>
+					</tbody>
 				</table>
 				
 				<c:url var="createUrl" value="/«category.name.toLowerCase»/create" />
@@ -196,33 +198,76 @@ class JspGenerator {
 			
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 			<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+			<script src="<c:url value="/js/jquery.datetimepicker.js"/>"></script>
 			<link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
 			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
-			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+			<link rel="stylesheet" type="text/css" href="<c:url value="/js/jquery.datetimepicker.css"/>">
 			
-			
+			<script>
+				$(function() {
+					$( ".datepicker" ).datetimepicker({
+						timepicker:false,
+						format:'d.m.Y'
+					});
+					$( ".datetimepicker" ).datetimepicker({
+						format:'d.m.Y H:i'
+					});
+				});
+			</script>
 			
 			<nav class="navbar navbar-default">
 			    <div class="container-fluid">
-			     <div class="navbar-header">
-			     	 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-			     	   <span class="icon-bar"></span>
-			     	   <span class="icon-bar"></span>
-			     	   <span class="icon-bar"></span>                        
-			     	 </button>
-			     	 <a class="navbar-brand" href="#">TicketSystem</a>
-			     </div>
-			     <div class="collapse navbar-collapse" id="myNavbar">
-			         <ul class="nav navbar-nav">
-			      «FOR category : categories»
-			      	<c:url var="«category.name.toFirstLower»Url" value="/«category.name.toLowerCase»/list" />
-			      	    <li><a href='<c:out value="${«category.name.toFirstLower»Url}"/>'>«category.description»</a></li>
-			      «ENDFOR»	
-			      </ul>
-			     </div>
+			        <div class="navbar-header">
+			     	    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+			     	        <span class="icon-bar"></span>
+			     	        <span class="icon-bar"></span>
+			     	        <span class="icon-bar"></span>                        
+			     	    </button>
+			     	    <c:url var="index" value="/index" />
+					    <a class="navbar-brand" href="<c:out value="${index}"/>">TicketSystem</a>
+			        </div>
+			        <div class="collapse navbar-collapse" id="myNavbar">
+			            <ul class="nav navbar-nav">
+				            «FOR category : categories»
+				      	        <c:url var="«category.name.toFirstLower»Url" value="/«category.name.toLowerCase»/list" />
+				      	        <li><a href='<c:out value="${«category.name.toFirstLower»Url}"/>'>«category.description»</a></li>
+				            «ENDFOR»	
+			            </ul>
+			        </div>
 				</div>
 			</nav>
+		'''
+	}
+	
+	def static toIndex(Collection<TicketCategory> categories) {
+		'''
+			<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+			<%@include file="navigation.jspf"%>
+			
+			<div class="container">
+				<h1>Übersicht</h1>
+			
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>Kategorie</th>
+							<th>Anzahl</th>
+						</tr>
+					</thead>
+					<tbody>
+						«FOR category : categories»
+							<tr>
+								<c:url var="«category.name.toFirstLower»Url" value="/«category.name.toLowerCase»/list" />
+								<td><a href='<c:out value="${«category.name.toFirstLower»Url}"/>'>«category.description»</a></td>
+								<td>${«category.name.toFirstLower»Count}</td>
+							</tr>
+			      		«ENDFOR»
+					</tbody>
+				</table>
+			</div>
 		'''
 	}
 }

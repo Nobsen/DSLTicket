@@ -99,22 +99,22 @@ public class DomainGenerator {
           _builder.append("\t");
           _builder.newLine();
           {
-            boolean _or = false;
             Field _field_1 = field_1.getField();
             FieldType _fieldType_1 = _field_1.getFieldType();
             boolean _equals = Objects.equal(_fieldType_1, FieldType.DATE);
             if (_equals) {
-              _or = true;
+              _builder.append("\t");
+              _builder.append("@DateTimeFormat(pattern = \"dd.MM.yyyy\")");
+              _builder.newLine();
             } else {
               Field _field_2 = field_1.getField();
               FieldType _fieldType_2 = _field_2.getFieldType();
               boolean _equals_1 = Objects.equal(_fieldType_2, FieldType.DATE_TIME);
-              _or = _equals_1;
-            }
-            if (_or) {
-              _builder.append("\t");
-              _builder.append("@DateTimeFormat(pattern = \"dd.MM.yyyy\")");
-              _builder.newLine();
+              if (_equals_1) {
+                _builder.append("\t");
+                _builder.append("@DateTimeFormat(pattern = \"dd.MM.yyyy HH:mm\")");
+                _builder.newLine();
+              }
             }
           }
           {

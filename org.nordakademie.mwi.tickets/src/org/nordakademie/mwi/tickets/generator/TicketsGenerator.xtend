@@ -71,8 +71,15 @@ class TicketsGenerator implements IGenerator {
 			}
 		}
 		
+		// navigation and index
 		fsa.generateFile('/navigation.jspf', TicketsOutputConfigurationProvider.JSP_OUTPUT,
 			JspGenerator.toNavigation(categories))
+		
+		fsa.generateFile('/index.jsp', TicketsOutputConfigurationProvider.JSP_OUTPUT,
+			JspGenerator.toIndex(categories))
+			
+		fsa.generateFile('org/nordakademie/mwi/ticketSystem/controller/IndexController.java',
+				ControllerGenerator.toIndexController(categories))
 	}
 
 }

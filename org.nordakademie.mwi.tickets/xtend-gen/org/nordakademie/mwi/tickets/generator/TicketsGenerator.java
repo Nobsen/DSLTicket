@@ -114,5 +114,9 @@ public class TicketsGenerator implements IGenerator {
     }
     CharSequence _navigation = JspGenerator.toNavigation(categories);
     fsa.generateFile("/navigation.jspf", TicketsOutputConfigurationProvider.JSP_OUTPUT, _navigation);
+    CharSequence _index = JspGenerator.toIndex(categories);
+    fsa.generateFile("/index.jsp", TicketsOutputConfigurationProvider.JSP_OUTPUT, _index);
+    CharSequence _indexController = ControllerGenerator.toIndexController(categories);
+    fsa.generateFile("org/nordakademie/mwi/ticketSystem/controller/IndexController.java", _indexController);
   }
 }

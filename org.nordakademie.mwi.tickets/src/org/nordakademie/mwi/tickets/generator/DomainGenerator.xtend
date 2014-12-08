@@ -48,8 +48,10 @@ class DomainGenerator {
 			
 				«FOR field : category.ticketFields»
 					
-					«IF field.field.fieldType == FieldType.DATE || field.field.fieldType == FieldType.DATE_TIME»
+					«IF field.field.fieldType == FieldType.DATE»
 						@DateTimeFormat(pattern = "dd.MM.yyyy")
+					«ELSEIF field.field.fieldType == FieldType.DATE_TIME»
+						@DateTimeFormat(pattern = "dd.MM.yyyy HH:mm")
 					«ENDIF»
 					«IF field.field.fieldType == FieldType.STRING»
 						«IF field.mandatory»

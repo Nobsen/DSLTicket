@@ -1,6 +1,7 @@
 package org.nordakademie.mwi.tickets.generator;
 
 import com.google.common.base.Objects;
+import java.util.Collection;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.xbase.lib.StringExtensions;
@@ -592,6 +593,108 @@ public class ControllerGenerator {
         _builder.newLine();
       }
     }
+    _builder.append("}");
+    _builder.newLine();
+    return _builder;
+  }
+  
+  public static CharSequence toIndexController(final Collection<TicketCategory> categories) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("package org.nordakademie.mwi.ticketSystem.controller;");
+    _builder.newLine();
+    _builder.newLine();
+    {
+      for(final TicketCategory category : categories) {
+        _builder.append("import org.nordakademie.mwi.ticketSystem.dao.");
+        String _name = category.getName();
+        String _firstUpper = StringExtensions.toFirstUpper(_name);
+        _builder.append(_firstUpper, "");
+        _builder.append("Dao;");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    _builder.append("import org.springframework.beans.factory.annotation.Autowired;");
+    _builder.newLine();
+    _builder.append("import org.springframework.stereotype.Controller;");
+    _builder.newLine();
+    _builder.append("import org.springframework.transaction.annotation.Transactional;");
+    _builder.newLine();
+    _builder.append("import org.springframework.ui.Model;");
+    _builder.newLine();
+    _builder.append("import org.springframework.web.bind.annotation.RequestMapping;");
+    _builder.newLine();
+    _builder.append("import org.springframework.web.bind.annotation.RequestMethod;");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("@Controller");
+    _builder.newLine();
+    _builder.append("@Transactional");
+    _builder.newLine();
+    _builder.append("public class IndexController {");
+    _builder.newLine();
+    _builder.newLine();
+    {
+      for(final TicketCategory category_1 : categories) {
+        _builder.append("\t");
+        _builder.append("@Autowired");
+        _builder.newLine();
+        _builder.append("\t");
+        String _name_1 = category_1.getName();
+        String _firstUpper_1 = StringExtensions.toFirstUpper(_name_1);
+        _builder.append(_firstUpper_1, "\t");
+        _builder.append("Dao ");
+        String _name_2 = category_1.getName();
+        String _firstLower = StringExtensions.toFirstLower(_name_2);
+        _builder.append(_firstLower, "\t");
+        _builder.append("Dao;");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    _builder.append("\t");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("@RequestMapping(value = \"/index\", method = RequestMethod.GET)");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("public String create(Model model) {");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.newLine();
+    {
+      for(final TicketCategory category_2 : categories) {
+        _builder.append("\t\t");
+        _builder.append("model.addAttribute(\"");
+        String _name_3 = category_2.getName();
+        String _firstLower_1 = StringExtensions.toFirstLower(_name_3);
+        _builder.append(_firstLower_1, "\t\t");
+        _builder.append("Count\", ");
+        String _name_4 = category_2.getName();
+        String _firstLower_2 = StringExtensions.toFirstLower(_name_4);
+        _builder.append(_firstLower_2, "\t\t");
+        _builder.append("Dao.count());");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    _builder.append("\t\t");
+    _builder.append("return \"index\";");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("@RequestMapping(value = \"/\", method = RequestMethod.GET)");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("public String home() {");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("return \"redirect:index\";");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.newLine();
     _builder.append("}");
     _builder.newLine();
     return _builder;

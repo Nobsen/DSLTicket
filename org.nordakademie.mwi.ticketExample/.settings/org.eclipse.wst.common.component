@@ -3,6 +3,7 @@
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src-gen"/>
+        <wb-resource deploy-path="/js" source-path="/WebContent/js"/>
         <property name="context-root" value="org.nordakademie.mwi.ticketExample"/>
         <property name="java-output-path" value="/org.nordakademie.mwi.ticketExample/build/classes"/>
     </wb-module>

@@ -1,6 +1,7 @@
 package org.nordakademie.mwi.tickets.generator
 
 import org.nordakademie.mwi.tickets.tickets.TicketCategory
+import java.util.Collection
 
 class ControllerGenerator {
 
@@ -119,6 +120,47 @@ class ControllerGenerator {
 						return "redirect:show";
 					}
 				«ENDIF»
+			}
+		'''
+	}
+
+	def static toIndexController(Collection<TicketCategory> categories) {
+		'''
+			package org.nordakademie.mwi.ticketSystem.controller;
+
+			«FOR category : categories»
+			import org.nordakademie.mwi.ticketSystem.dao.«category.name.toFirstUpper»Dao;
+			«ENDFOR»
+			import org.springframework.beans.factory.annotation.Autowired;
+			import org.springframework.stereotype.Controller;
+			import org.springframework.transaction.annotation.Transactional;
+			import org.springframework.ui.Model;
+			import org.springframework.web.bind.annotation.RequestMapping;
+			import org.springframework.web.bind.annotation.RequestMethod;
+			
+			@Controller
+			@Transactional
+			public class IndexController {
+			
+				«FOR category : categories»
+					@Autowired
+					«category.name.toFirstUpper»Dao «category.name.toFirstLower»Dao;
+				«ENDFOR»
+				
+				@RequestMapping(value = "/index", method = RequestMethod.GET)
+				public String create(Model model) {
+				
+					«FOR category : categories»
+						model.addAttribute("«category.name.toFirstLower»Count", «category.name.toFirstLower»Dao.count());
+					«ENDFOR»	
+					return "index";
+				}
+			
+				@RequestMapping(value = "/", method = RequestMethod.GET)
+				public String home() {
+					return "redirect:index";
+				}
+			
 			}
 		'''
 	}
