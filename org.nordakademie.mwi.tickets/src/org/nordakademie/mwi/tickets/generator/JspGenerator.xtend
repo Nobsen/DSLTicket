@@ -16,7 +16,7 @@ class JspGenerator {
 			
 			<script>
 				$(function() {
-					$( "#datepicker" ).datepicker({ dateFormat: 'dd.mm.yy' });
+					$( ".datepicker" ).datepicker({ dateFormat: 'dd.mm.yy' });
 				});
 			</script>
 			
@@ -32,7 +32,7 @@ class JspGenerator {
 				   	    <label for="title" class="control-label col-sm-2">«field.field.label»:</label>
 				   	    <div class="col-sm-6">
 				   	    	«IF field.field.fieldType == FieldType.DATE || field.field.fieldType == FieldType.DATE_TIME»
-				   	    	<form:input class="form-control" id="datepicker" path="«field.field.name.toFirstLower»" />
+				   	    	<form:input class="form-control datepicker" path="«field.field.name.toFirstLower»" />
 				   	    	«ELSEIF field.field.fieldType == FieldType.BOOLEAN»
 				   	    	<form:checkbox path="«field.field.name.toFirstLower»" />
 				   	    	«ELSEIF field.field.fieldEnum != null»
@@ -79,7 +79,7 @@ class JspGenerator {
 				   	    	«IF field.field.fieldType == FieldType.DATE || field.field.fieldType == FieldType.DATE_TIME»
 				   	    		<span class="form-control" disabled="true"><fmt:formatDate pattern="dd.MM.yyyy" value="${«category.name.toFirstLower».get«field.field.name.toFirstUpper»().time}"/></span>
 				   	    	«ELSEIF field.field.fieldType == FieldType.BOOLEAN»
-				   	    		<form:checkbox path="«field.field.name.toFirstLower»" disabled="true"/>
+				   	    		<input type="checkbox" <c:if test="${«category.name.toFirstLower».«field.field.name.toFirstLower»}">checked="checked"</c:if> disabled="true"/>
 				   	        «ELSE»
 				   	    		<span class="form-control" disabled="true">${«category.name.toFirstLower».get«field.field.name.toFirstUpper»()}</span>
 				   	        «ENDIF»
@@ -169,7 +169,7 @@ class JspGenerator {
 								«IF field.field.fieldType == FieldType.DATE || field.field.fieldType == FieldType.DATE_TIME»
 									<td><fmt:formatDate pattern="dd.MM.yyyy" value="${«category.name.toFirstLower».get«field.field.name.toFirstUpper»().time}"/></td>
 								«ELSEIF field.field.fieldType == FieldType.BOOLEAN»
-									<td><form:checkbox path="«field.field.name.toFirstLower»" disabled="true"/><td>
+									<td><input type="checkbox" <c:if test="${«category.name.toFirstLower».«field.field.name.toFirstLower»}">checked="checked"</c:if> disabled="true"/></td>
 								«ELSE»
 									<td>${«category.name.toFirstLower».get«field.field.name.toFirstUpper»()}</td>
 								«ENDIF»

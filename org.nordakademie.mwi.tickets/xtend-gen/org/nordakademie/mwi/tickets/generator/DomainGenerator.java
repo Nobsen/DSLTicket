@@ -112,23 +112,30 @@ public class DomainGenerator {
               _or = _equals_1;
             }
             if (_or) {
+              _builder.append("\t");
+              _builder.append("@DateTimeFormat(pattern = \"dd.MM.yyyy\")");
+              _builder.newLine();
+            }
+          }
+          {
+            Field _field_3 = field_1.getField();
+            FieldType _fieldType_3 = _field_3.getFieldType();
+            boolean _equals_2 = Objects.equal(_fieldType_3, FieldType.STRING);
+            if (_equals_2) {
               {
                 boolean _isMandatory = field_1.isMandatory();
                 if (_isMandatory) {
                   _builder.append("\t");
-                  _builder.append("@NotNull");
+                  _builder.append("@NotBlank");
                   _builder.newLine();
                 }
               }
-              _builder.append("\t");
-              _builder.append("@DateTimeFormat(pattern = \"dd.MM.yyyy\")");
-              _builder.newLine();
             } else {
               {
                 boolean _isMandatory_1 = field_1.isMandatory();
                 if (_isMandatory_1) {
                   _builder.append("\t");
-                  _builder.append("@NotBlank");
+                  _builder.append("@NotNull");
                   _builder.newLine();
                 }
               }
@@ -136,12 +143,12 @@ public class DomainGenerator {
           }
           _builder.append("\t");
           _builder.append("private ");
-          Field _field_3 = field_1.getField();
-          String _javaTypeForField = DomainGenerator.getJavaTypeForField(_field_3);
+          Field _field_4 = field_1.getField();
+          String _javaTypeForField = DomainGenerator.getJavaTypeForField(_field_4);
           _builder.append(_javaTypeForField, "\t");
           _builder.append(" ");
-          Field _field_4 = field_1.getField();
-          String _name_3 = _field_4.getName();
+          Field _field_5 = field_1.getField();
+          String _name_3 = _field_5.getName();
           String _firstLower = StringExtensions.toFirstLower(_name_3);
           _builder.append(_firstLower, "\t");
           _builder.append(";");
@@ -163,12 +170,12 @@ public class DomainGenerator {
         for(final TicketField field_2 : _ticketFields_2) {
           _builder.append("    ");
           _builder.append("public ");
-          Field _field_5 = field_2.getField();
-          String _javaTypeForField_1 = DomainGenerator.getJavaTypeForField(_field_5);
+          Field _field_6 = field_2.getField();
+          String _javaTypeForField_1 = DomainGenerator.getJavaTypeForField(_field_6);
           _builder.append(_javaTypeForField_1, "    ");
           _builder.append(" get");
-          Field _field_6 = field_2.getField();
-          String _name_5 = _field_6.getName();
+          Field _field_7 = field_2.getField();
+          String _name_5 = _field_7.getName();
           String _firstUpper_4 = StringExtensions.toFirstUpper(_name_5);
           _builder.append(_firstUpper_4, "    ");
           _builder.append("() {");
@@ -176,8 +183,8 @@ public class DomainGenerator {
           _builder.append("    ");
           _builder.append("\t");
           _builder.append("return ");
-          Field _field_7 = field_2.getField();
-          String _name_6 = _field_7.getName();
+          Field _field_8 = field_2.getField();
+          String _name_6 = _field_8.getName();
           String _firstLower_1 = StringExtensions.toFirstLower(_name_6);
           _builder.append(_firstLower_1, "    \t");
           _builder.append(";");
@@ -189,17 +196,17 @@ public class DomainGenerator {
           _builder.newLine();
           _builder.append("    ");
           _builder.append("public void set");
-          Field _field_8 = field_2.getField();
-          String _name_7 = _field_8.getName();
+          Field _field_9 = field_2.getField();
+          String _name_7 = _field_9.getName();
           String _firstUpper_5 = StringExtensions.toFirstUpper(_name_7);
           _builder.append(_firstUpper_5, "    ");
           _builder.append("(");
-          Field _field_9 = field_2.getField();
-          String _javaTypeForField_2 = DomainGenerator.getJavaTypeForField(_field_9);
+          Field _field_10 = field_2.getField();
+          String _javaTypeForField_2 = DomainGenerator.getJavaTypeForField(_field_10);
           _builder.append(_javaTypeForField_2, "    ");
           _builder.append(" ");
-          Field _field_10 = field_2.getField();
-          String _name_8 = _field_10.getName();
+          Field _field_11 = field_2.getField();
+          String _name_8 = _field_11.getName();
           String _firstLower_2 = StringExtensions.toFirstLower(_name_8);
           _builder.append(_firstLower_2, "    ");
           _builder.append(") {");
@@ -207,13 +214,13 @@ public class DomainGenerator {
           _builder.append("    ");
           _builder.append(" \t");
           _builder.append("this.");
-          Field _field_11 = field_2.getField();
-          String _name_9 = _field_11.getName();
+          Field _field_12 = field_2.getField();
+          String _name_9 = _field_12.getName();
           String _firstLower_3 = StringExtensions.toFirstLower(_name_9);
           _builder.append(_firstLower_3, "     \t");
           _builder.append(" = ");
-          Field _field_12 = field_2.getField();
-          String _name_10 = _field_12.getName();
+          Field _field_13 = field_2.getField();
+          String _name_10 = _field_13.getName();
           String _firstLower_4 = StringExtensions.toFirstLower(_name_10);
           _builder.append(_firstLower_4, "     \t");
           _builder.append(";");
@@ -304,16 +311,16 @@ public class DomainGenerator {
         for(final TicketField field_3 : _ticketFields_3) {
           _builder.append("\t\t");
           _builder.append("if (");
-          Field _field_13 = field_3.getField();
-          String _name_15 = _field_13.getName();
+          Field _field_14 = field_3.getField();
+          String _name_15 = _field_14.getName();
           String _firstLower_5 = StringExtensions.toFirstLower(_name_15);
           _builder.append(_firstLower_5, "\t\t");
           _builder.append(" == null) {");
           _builder.newLineIfNotEmpty();
           _builder.append("\t\t");
           _builder.append("if (other.");
-          Field _field_14 = field_3.getField();
-          String _name_16 = _field_14.getName();
+          Field _field_15 = field_3.getField();
+          String _name_16 = _field_15.getName();
           String _firstLower_6 = StringExtensions.toFirstLower(_name_16);
           _builder.append(_firstLower_6, "\t\t");
           _builder.append(" != null)");
@@ -324,13 +331,13 @@ public class DomainGenerator {
           _builder.newLine();
           _builder.append("\t\t");
           _builder.append("} else if (!");
-          Field _field_15 = field_3.getField();
-          String _name_17 = _field_15.getName();
+          Field _field_16 = field_3.getField();
+          String _name_17 = _field_16.getName();
           String _firstLower_7 = StringExtensions.toFirstLower(_name_17);
           _builder.append(_firstLower_7, "\t\t");
           _builder.append(".equals(other.");
-          Field _field_16 = field_3.getField();
-          String _name_18 = _field_16.getName();
+          Field _field_17 = field_3.getField();
+          String _name_18 = _field_17.getName();
           String _firstLower_8 = StringExtensions.toFirstLower(_name_18);
           _builder.append(_firstLower_8, "\t\t");
           _builder.append("))");
