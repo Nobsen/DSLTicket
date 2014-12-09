@@ -30,7 +30,12 @@ public class EnumFieldGenerator {
           _builder.appendImmediate(",", "\t");
         }
         _builder.append("\t");
+        String _replaceAll = option.replaceAll("[^a-zA-Z]", "");
+        String _upperCase = _replaceAll.toUpperCase();
+        _builder.append(_upperCase, "\t");
+        _builder.append("(\"");
         _builder.append(option, "\t");
+        _builder.append("\")");
         _builder.newLineIfNotEmpty();
       }
     }
@@ -40,10 +45,18 @@ public class EnumFieldGenerator {
     _builder.append("\t");
     _builder.newLine();
     _builder.append("\t");
-    _builder.append("public boolean isFirst() {");
+    _builder.append("private final String label;");
     _builder.newLine();
+    _builder.append("\t");
+    _builder.newLine();
+    _builder.append("\t");
+    String _name_1 = field.getName();
+    String _firstUpper_1 = StringExtensions.toFirstUpper(_name_1);
+    _builder.append(_firstUpper_1, "\t");
+    _builder.append("Enum(String label) {");
+    _builder.newLineIfNotEmpty();
     _builder.append("\t\t");
-    _builder.append("return this.ordinal() == 0;");
+    _builder.append("this.label = label;");
     _builder.newLine();
     _builder.append("\t");
     _builder.append("}");
@@ -51,13 +64,15 @@ public class EnumFieldGenerator {
     _builder.append("\t");
     _builder.newLine();
     _builder.append("\t");
-    _builder.append("public boolean isLast() {");
+    _builder.append("public String getLabel() {");
     _builder.newLine();
     _builder.append("\t\t");
-    _builder.append("return this.ordinal() == values().length - 1;");
+    _builder.append("return this.label;");
     _builder.newLine();
     _builder.append("\t");
     _builder.append("}");
+    _builder.newLine();
+    _builder.append("\t");
     _builder.newLine();
     _builder.append("}");
     _builder.newLine();

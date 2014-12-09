@@ -32,7 +32,7 @@ class JspGenerator {
 				   	    	«ELSEIF field.field.fieldType == FieldType.BOOLEAN»
 				   	    	<form:checkbox path="«field.field.name.toFirstLower»" />
 				   	    	«ELSEIF field.field.fieldEnum != null»
-				   	    	<form:select class="form-control" path="categorie" items="${«field.field.name.toFirstLower»EnumValues}" />
+				   	    	<form:select class="form-control" path="«field.field.name.toFirstLower»" items="${«field.field.name.toFirstLower»EnumValues}" itemLabel="label" />
 				   	    	«ELSE»
 				   	    	<form:input class="form-control" path="«field.field.name.toFirstLower»" />
 				   	        «ENDIF»
@@ -72,14 +72,16 @@ class JspGenerator {
 				   	<div class="form-group">
 				   	    <label for="title" class="control-label col-sm-2">«field.field.label»:</label>
 				   	    <div class="col-sm-6">
-				   	    	«IF field.field.fieldType == FieldType.DATE»
-				   	    		<span class="form-control" disabled="true"><fmt:formatDate pattern="dd.MM.yyyy" value="${«category.name.toFirstLower».get«field.field.name.toFirstUpper»().time}"/></span>
+				   	        «IF field.field.fieldEnum != null»
+				   	            <span class="form-control" disabled="true">${«category.name.toFirstLower».get«field.field.name.toFirstUpper»().getLabel()}</span>
+				   	    	«ELSEIF field.field.fieldType == FieldType.DATE»
+				   	            <span class="form-control" disabled="true"><fmt:formatDate pattern="dd.MM.yyyy" value="${«category.name.toFirstLower».get«field.field.name.toFirstUpper»().time}"/></span>
 				   	    	«ELSEIF field.field.fieldType == FieldType.DATE_TIME»
-				   	    		<span class="form-control" disabled="true"><fmt:formatDate pattern="dd.MM.yyyy HH:mm" value="${«category.name.toFirstLower».get«field.field.name.toFirstUpper»().time}"/></span>
+				   	            <span class="form-control" disabled="true"><fmt:formatDate pattern="dd.MM.yyyy HH:mm" value="${«category.name.toFirstLower».get«field.field.name.toFirstUpper»().time}"/></span>
 				   	    	«ELSEIF field.field.fieldType == FieldType.BOOLEAN»
-				   	    		<input type="checkbox" <c:if test="${«category.name.toFirstLower».«field.field.name.toFirstLower»}">checked="checked"</c:if> disabled="true"/>
+				   	            <input type="checkbox" <c:if test="${«category.name.toFirstLower».«field.field.name.toFirstLower»}">checked="checked"</c:if> disabled="true"/>
 				   	        «ELSE»
-				   	    		<span class="form-control" disabled="true">${«category.name.toFirstLower».get«field.field.name.toFirstUpper»()}</span>
+				   	            <span class="form-control" disabled="true">${«category.name.toFirstLower».get«field.field.name.toFirstUpper»()}</span>
 				   	        «ENDIF»
 				   	    </div>
 				   	</div>
@@ -161,7 +163,9 @@ class JspGenerator {
 								«ENDIF»
 								«FOR field : category.ticketFields»
 									«IF !field.notOnList»
-										«IF field.field.fieldType == FieldType.DATE»
+										«IF field.field.fieldEnum != null»
+											<td>${«category.name.toFirstLower».get«field.field.name.toFirstUpper»().getLabel()}</td>
+										«ELSEIF field.field.fieldType == FieldType.DATE»
 											<td><fmt:formatDate pattern="dd.MM.yyyy" value="${«category.name.toFirstLower».get«field.field.name.toFirstUpper»().time}"/></td>
 										«ELSEIF field.field.fieldType == FieldType.DATE_TIME»
 											<td><fmt:formatDate pattern="dd.MM.yyyy HH:mm" value="${«category.name.toFirstLower».get«field.field.name.toFirstUpper»().time}"/></td>

@@ -10,17 +10,20 @@ class EnumFieldGenerator {
 			public enum «field.name.toFirstUpper»Enum {
 			
 				«FOR option : field.fieldEnum.option SEPARATOR ','»
-					«option»
+					«option.replaceAll("[^a-zA-Z]", "").toUpperCase»("«option»")
 				«ENDFOR»
 				;
 				
-				public boolean isFirst() {
-					return this.ordinal() == 0;
+				private final String label;
+				
+				«field.name.toFirstUpper»Enum(String label) {
+					this.label = label;
 				}
 				
-				public boolean isLast() {
-					return this.ordinal() == values().length - 1;
+				public String getLabel() {
+					return this.label;
 				}
+				
 			}
 		'''
 	}
