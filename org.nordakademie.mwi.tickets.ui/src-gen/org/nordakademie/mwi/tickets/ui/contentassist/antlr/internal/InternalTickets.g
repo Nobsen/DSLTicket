@@ -1062,9 +1062,11 @@ rule__Enum__Group__0__Impl
     }
 :
 (
-{ before(grammarAccess.getEnumAccess().getOptionAssignment_0()); }
-(rule__Enum__OptionAssignment_0)
-{ after(grammarAccess.getEnumAccess().getOptionAssignment_0()); }
+{ before(grammarAccess.getEnumAccess().getEnumKeyword_0()); }
+
+	'enum' 
+
+{ after(grammarAccess.getEnumAccess().getEnumKeyword_0()); }
 )
 
 ;
@@ -1079,6 +1081,7 @@ rule__Enum__Group__1
     }
 :
 	rule__Enum__Group__1__Impl
+	rule__Enum__Group__2
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -1090,9 +1093,37 @@ rule__Enum__Group__1__Impl
     }
 :
 (
-{ before(grammarAccess.getEnumAccess().getGroup_1()); }
-(rule__Enum__Group_1__0)*
-{ after(grammarAccess.getEnumAccess().getGroup_1()); }
+{ before(grammarAccess.getEnumAccess().getOptionAssignment_1()); }
+(rule__Enum__OptionAssignment_1)
+{ after(grammarAccess.getEnumAccess().getOptionAssignment_1()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__Enum__Group__2
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__Enum__Group__2__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Enum__Group__2__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getEnumAccess().getGroup_2()); }
+(rule__Enum__Group_2__0)*
+{ after(grammarAccess.getEnumAccess().getGroup_2()); }
 )
 
 ;
@@ -1105,29 +1136,31 @@ finally {
 
 
 
-rule__Enum__Group_1__0
+
+
+rule__Enum__Group_2__0
     @init {
 		int stackSize = keepStackSize();
     }
 :
-	rule__Enum__Group_1__0__Impl
-	rule__Enum__Group_1__1
+	rule__Enum__Group_2__0__Impl
+	rule__Enum__Group_2__1
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Enum__Group_1__0__Impl
+rule__Enum__Group_2__0__Impl
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getEnumAccess().getCommaKeyword_1_0()); }
+{ before(grammarAccess.getEnumAccess().getCommaKeyword_2_0()); }
 
 	',' 
 
-{ after(grammarAccess.getEnumAccess().getCommaKeyword_1_0()); }
+{ after(grammarAccess.getEnumAccess().getCommaKeyword_2_0()); }
 )
 
 ;
@@ -1136,26 +1169,26 @@ finally {
 }
 
 
-rule__Enum__Group_1__1
+rule__Enum__Group_2__1
     @init {
 		int stackSize = keepStackSize();
     }
 :
-	rule__Enum__Group_1__1__Impl
+	rule__Enum__Group_2__1__Impl
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Enum__Group_1__1__Impl
+rule__Enum__Group_2__1__Impl
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getEnumAccess().getOptionAssignment_1_1()); }
-(rule__Enum__OptionAssignment_1_1)
-{ after(grammarAccess.getEnumAccess().getOptionAssignment_1_1()); }
+{ before(grammarAccess.getEnumAccess().getOptionAssignment_2_1()); }
+(rule__Enum__OptionAssignment_2_1)
+{ after(grammarAccess.getEnumAccess().getOptionAssignment_2_1()); }
 )
 
 ;
@@ -2440,14 +2473,14 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Enum__OptionAssignment_0
+rule__Enum__OptionAssignment_1
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getEnumAccess().getOptionSTRINGTerminalRuleCall_0_0()); }
-	RULE_STRING{ after(grammarAccess.getEnumAccess().getOptionSTRINGTerminalRuleCall_0_0()); }
+{ before(grammarAccess.getEnumAccess().getOptionSTRINGTerminalRuleCall_1_0()); }
+	RULE_STRING{ after(grammarAccess.getEnumAccess().getOptionSTRINGTerminalRuleCall_1_0()); }
 )
 
 ;
@@ -2455,14 +2488,14 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Enum__OptionAssignment_1_1
+rule__Enum__OptionAssignment_2_1
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getEnumAccess().getOptionSTRINGTerminalRuleCall_1_1_0()); }
-	RULE_STRING{ after(grammarAccess.getEnumAccess().getOptionSTRINGTerminalRuleCall_1_1_0()); }
+{ before(grammarAccess.getEnumAccess().getOptionSTRINGTerminalRuleCall_2_1_0()); }
+	RULE_STRING{ after(grammarAccess.getEnumAccess().getOptionSTRINGTerminalRuleCall_2_1_0()); }
 )
 
 ;

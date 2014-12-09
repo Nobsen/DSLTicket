@@ -430,11 +430,15 @@ ruleEnum returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-((
+(	otherlv_0='enum' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getEnumAccess().getEnumKeyword_0());
+    }
 (
-		lv_option_0_0=RULE_STRING
+(
+		lv_option_1_0=RULE_STRING
 		{
-			newLeafNode(lv_option_0_0, grammarAccess.getEnumAccess().getOptionSTRINGTerminalRuleCall_0_0()); 
+			newLeafNode(lv_option_1_0, grammarAccess.getEnumAccess().getOptionSTRINGTerminalRuleCall_1_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -443,20 +447,20 @@ ruleEnum returns [EObject current=null]
        		addWithLastConsumed(
        			$current, 
        			"option",
-        		lv_option_0_0, 
+        		lv_option_1_0, 
         		"STRING");
 	    }
 
 )
-)(	otherlv_1=',' 
+)(	otherlv_2=',' 
     {
-    	newLeafNode(otherlv_1, grammarAccess.getEnumAccess().getCommaKeyword_1_0());
+    	newLeafNode(otherlv_2, grammarAccess.getEnumAccess().getCommaKeyword_2_0());
     }
 (
 (
-		lv_option_2_0=RULE_STRING
+		lv_option_3_0=RULE_STRING
 		{
-			newLeafNode(lv_option_2_0, grammarAccess.getEnumAccess().getOptionSTRINGTerminalRuleCall_1_1_0()); 
+			newLeafNode(lv_option_3_0, grammarAccess.getEnumAccess().getOptionSTRINGTerminalRuleCall_2_1_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -465,7 +469,7 @@ ruleEnum returns [EObject current=null]
        		addWithLastConsumed(
        			$current, 
        			"option",
-        		lv_option_2_0, 
+        		lv_option_3_0, 
         		"STRING");
 	    }
 

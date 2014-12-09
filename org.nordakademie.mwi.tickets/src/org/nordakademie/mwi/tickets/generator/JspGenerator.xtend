@@ -19,23 +19,30 @@ class JspGenerator {
 				
 				<c:url var="url" value="/«category.name.toLowerCase»/«IF isCreate»create«ELSE»edit«ENDIF»" /> 
 				<form:form action="${url}" commandName="«category.name.toFirstLower»" class="form-horizontal" role="form">
-				    <form:hidden path="id"/>
+				   <form:hidden path="id"/>
 				   «FOR field : category.ticketFields»
 				   	<form:errors path="«field.field.name.toFirstLower»" class="col-sm-offset-2 text-danger" element="div"></form:errors>
 				   	<div class="form-group">
 				   	    <label for="title" class="control-label col-sm-2">«field.field.label»:</label>
 				   	    <div class="col-sm-6">
-				   	    	«IF field.field.fieldType == FieldType.DATE»
-				   	    	<form:input class="form-control datepicker" path="«field.field.name.toFirstLower»" />
-				   	    	«ELSEIF field.field.fieldType == FieldType.DATE_TIME»
-				   	    	<form:input class="form-control datetimepicker" path="«field.field.name.toFirstLower»" />
-				   	    	«ELSEIF field.field.fieldType == FieldType.BOOLEAN»
-				   	    	<form:checkbox path="«field.field.name.toFirstLower»" />
-				   	    	«ELSEIF field.field.fieldEnum != null»
-				   	    	<form:select class="form-control" path="«field.field.name.toFirstLower»" items="${«field.field.name.toFirstLower»EnumValues}" itemLabel="label" />
-				   	    	«ELSE»
-				   	    	<form:input class="form-control" path="«field.field.name.toFirstLower»" />
-				   	        «ENDIF»
+				   	    	<div «IF field.mandatory»class="required-field-block"«ENDIF»>				   	    
+				   	    		«IF field.field.fieldType == FieldType.DATE»
+				   	    			<form:input class="form-control datepicker" path="«field.field.name.toFirstLower»" />
+				   	    		«ELSEIF field.field.fieldType == FieldType.DATE_TIME»
+				   	    			<form:input class="form-control datetimepicker" path="«field.field.name.toFirstLower»" />
+				   	    		«ELSEIF field.field.fieldType == FieldType.BOOLEAN»
+				   	    			<form:checkbox path="«field.field.name.toFirstLower»" />
+				   	    		«ELSEIF field.field.fieldEnum != null»
+				   	    			<form:select class="form-control" path="«field.field.name.toFirstLower»" items="${«field.field.name.toFirstLower»EnumValues}" itemLabel="label" />
+				   	    		«ELSE»
+				   	    			<form:input class="form-control" path="«field.field.name.toFirstLower»" />
+				   	        	«ENDIF»
+				   	        	«IF field.mandatory && (field.field.fieldType != FieldType.BOOLEAN && field.field.fieldEnum == null) »
+				   	        		<div class="required-icon">
+				   	        			<div class="text">*</div>
+				   	        		</div>
+				   	        	«ENDIF»
+				   	        </div>
 				   	    </div>
 				   	</div>
 				   «ENDFOR»
@@ -72,17 +79,17 @@ class JspGenerator {
 				   	<div class="form-group">
 				   	    <label for="title" class="control-label col-sm-2">«field.field.label»:</label>
 				   	    <div class="col-sm-6">
-				   	        «IF field.field.fieldEnum != null»
-				   	            <span class="form-control" disabled="true">${«category.name.toFirstLower».get«field.field.name.toFirstUpper»().getLabel()}</span>
+				   	    	«IF field.field.fieldEnum != null»
+				   	    		<span class="form-control" disabled="true">${«category.name.toFirstLower».get«field.field.name.toFirstUpper»().getLabel()}</span>
 				   	    	«ELSEIF field.field.fieldType == FieldType.DATE»
-				   	            <span class="form-control" disabled="true"><fmt:formatDate pattern="dd.MM.yyyy" value="${«category.name.toFirstLower».get«field.field.name.toFirstUpper»().time}"/></span>
+				   	    		<span class="form-control" disabled="true"><fmt:formatDate pattern="dd.MM.yyyy" value="${«category.name.toFirstLower».get«field.field.name.toFirstUpper»().time}"/></span>
 				   	    	«ELSEIF field.field.fieldType == FieldType.DATE_TIME»
-				   	            <span class="form-control" disabled="true"><fmt:formatDate pattern="dd.MM.yyyy HH:mm" value="${«category.name.toFirstLower».get«field.field.name.toFirstUpper»().time}"/></span>
+				   	    		<span class="form-control" disabled="true"><fmt:formatDate pattern="dd.MM.yyyy HH:mm" value="${«category.name.toFirstLower».get«field.field.name.toFirstUpper»().time}"/></span>
 				   	    	«ELSEIF field.field.fieldType == FieldType.BOOLEAN»
-				   	            <input type="checkbox" <c:if test="${«category.name.toFirstLower».«field.field.name.toFirstLower»}">checked="checked"</c:if> disabled="true"/>
-				   	        «ELSE»
-				   	            <span class="form-control" disabled="true">${«category.name.toFirstLower».get«field.field.name.toFirstUpper»()}</span>
-				   	        «ENDIF»
+				   	    		<input type="checkbox" <c:if test="${«category.name.toFirstLower».«field.field.name.toFirstLower»}">checked="checked"</c:if> disabled="true"/>
+					   	    «ELSE»
+				   	    		<span class="form-control" disabled="true">${«category.name.toFirstLower».get«field.field.name.toFirstUpper»()}</span>
+				   	    	«ENDIF»	
 				   	    </div>
 				   	</div>
 				   «ENDFOR»
@@ -204,6 +211,8 @@ class JspGenerator {
 			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
 			<link rel="stylesheet" type="text/css" href="<c:url value="/js/jquery.datetimepicker.css"/>">
+			<link rel="stylesheet" type="text/css" href="<c:url value="/js/footer.css"/>">
+			<link rel="stylesheet" type="text/css" href="<c:url value="/js/requiredFields.css"/>">
 			
 			<script>
 				$(function() {
@@ -238,6 +247,14 @@ class JspGenerator {
 			        </div>
 				</div>
 			</nav>
+
+
+			<footer class="footer">
+				<div class="container">
+					<p class="text-muted">© Nordakademie MWI 13o Norbert Kleinekarhoff, Patrick Zimmermann</p>
+				</div>
+			</footer>
+			
 		'''
 	}
 	

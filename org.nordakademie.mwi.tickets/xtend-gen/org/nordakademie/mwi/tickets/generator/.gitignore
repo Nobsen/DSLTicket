@@ -8,3 +8,5 @@
 /.FlowGenerator.java._trace
 /.ControllerGenerator.java._trace
 /ControllerGenerator.java
+/.EnumFieldGenerator.java._trace
+/EnumFieldGenerator.java

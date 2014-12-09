@@ -17,7 +17,7 @@ Field:
 	'field' name=QualifiedName label=STRING (fieldType=FieldType | fieldEnum=Enum) ';';
 
 Enum:
-	option+=STRING (',' option+=STRING)*;
+	'enum' option+=STRING (',' option+=STRING)*;
 
 TicketCategory:
 	'ticketCategory' name=QualifiedName description=STRING '{'

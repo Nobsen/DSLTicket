@@ -46,7 +46,7 @@ public class TicketsParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFlowAccess().getGroup_3(), "rule__Flow__Group_3__0");
 					put(grammarAccess.getFieldAccess().getGroup(), "rule__Field__Group__0");
 					put(grammarAccess.getEnumAccess().getGroup(), "rule__Enum__Group__0");
-					put(grammarAccess.getEnumAccess().getGroup_1(), "rule__Enum__Group_1__0");
+					put(grammarAccess.getEnumAccess().getGroup_2(), "rule__Enum__Group_2__0");
 					put(grammarAccess.getTicketCategoryAccess().getGroup(), "rule__TicketCategory__Group__0");
 					put(grammarAccess.getTicketCategoryAccess().getGroup_4(), "rule__TicketCategory__Group_4__0");
 					put(grammarAccess.getTicketCategoryAccess().getGroup_6(), "rule__TicketCategory__Group_6__0");
@@ -70,8 +70,8 @@ public class TicketsParser extends AbstractContentAssistParser {
 					put(grammarAccess.getFieldAccess().getLabelAssignment_2(), "rule__Field__LabelAssignment_2");
 					put(grammarAccess.getFieldAccess().getFieldTypeAssignment_3_0(), "rule__Field__FieldTypeAssignment_3_0");
 					put(grammarAccess.getFieldAccess().getFieldEnumAssignment_3_1(), "rule__Field__FieldEnumAssignment_3_1");
-					put(grammarAccess.getEnumAccess().getOptionAssignment_0(), "rule__Enum__OptionAssignment_0");
-					put(grammarAccess.getEnumAccess().getOptionAssignment_1_1(), "rule__Enum__OptionAssignment_1_1");
+					put(grammarAccess.getEnumAccess().getOptionAssignment_1(), "rule__Enum__OptionAssignment_1");
+					put(grammarAccess.getEnumAccess().getOptionAssignment_2_1(), "rule__Enum__OptionAssignment_2_1");
 					put(grammarAccess.getTicketCategoryAccess().getNameAssignment_1(), "rule__TicketCategory__NameAssignment_1");
 					put(grammarAccess.getTicketCategoryAccess().getDescriptionAssignment_2(), "rule__TicketCategory__DescriptionAssignment_2");
 					put(grammarAccess.getTicketCategoryAccess().getFlowAssignment_4_1(), "rule__TicketCategory__FlowAssignment_4_1");

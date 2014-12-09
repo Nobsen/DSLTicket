@@ -217,37 +217,41 @@ public class TicketsGrammarAccess extends AbstractGrammarElementFinder {
 	public class EnumElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Enum");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cOptionAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cOptionSTRINGTerminalRuleCall_0_0 = (RuleCall)cOptionAssignment_0.eContents().get(0);
-		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final Keyword cCommaKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
-		private final Assignment cOptionAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cOptionSTRINGTerminalRuleCall_1_1_0 = (RuleCall)cOptionAssignment_1_1.eContents().get(0);
+		private final Keyword cEnumKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cOptionAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cOptionSTRINGTerminalRuleCall_1_0 = (RuleCall)cOptionAssignment_1.eContents().get(0);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cCommaKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cOptionAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cOptionSTRINGTerminalRuleCall_2_1_0 = (RuleCall)cOptionAssignment_2_1.eContents().get(0);
 		
 		//Enum:
-		//	option+=STRING ("," option+=STRING)*;
+		//	"enum" option+=STRING ("," option+=STRING)*;
 		public ParserRule getRule() { return rule; }
 
-		//option+=STRING ("," option+=STRING)*
+		//"enum" option+=STRING ("," option+=STRING)*
 		public Group getGroup() { return cGroup; }
 
+		//"enum"
+		public Keyword getEnumKeyword_0() { return cEnumKeyword_0; }
+
 		//option+=STRING
-		public Assignment getOptionAssignment_0() { return cOptionAssignment_0; }
+		public Assignment getOptionAssignment_1() { return cOptionAssignment_1; }
 
 		//STRING
-		public RuleCall getOptionSTRINGTerminalRuleCall_0_0() { return cOptionSTRINGTerminalRuleCall_0_0; }
+		public RuleCall getOptionSTRINGTerminalRuleCall_1_0() { return cOptionSTRINGTerminalRuleCall_1_0; }
 
 		//("," option+=STRING)*
-		public Group getGroup_1() { return cGroup_1; }
+		public Group getGroup_2() { return cGroup_2; }
 
 		//","
-		public Keyword getCommaKeyword_1_0() { return cCommaKeyword_1_0; }
+		public Keyword getCommaKeyword_2_0() { return cCommaKeyword_2_0; }
 
 		//option+=STRING
-		public Assignment getOptionAssignment_1_1() { return cOptionAssignment_1_1; }
+		public Assignment getOptionAssignment_2_1() { return cOptionAssignment_2_1; }
 
 		//STRING
-		public RuleCall getOptionSTRINGTerminalRuleCall_1_1_0() { return cOptionSTRINGTerminalRuleCall_1_1_0; }
+		public RuleCall getOptionSTRINGTerminalRuleCall_2_1_0() { return cOptionSTRINGTerminalRuleCall_2_1_0; }
 	}
 
 	public class TicketCategoryElements extends AbstractParserRuleElementFinder {
@@ -576,7 +580,7 @@ public class TicketsGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cBooleanBooleanKeyword_6_0 = (Keyword)cBooleanEnumLiteralDeclaration_6.eContents().get(0);
 		
 		//// TODO user
-		//enum FieldType:
+		// enum FieldType:
 		//	user | String | Date | dateTime | int | decimal | boolean;
 		public EnumRule getRule() { return rule; }
 
@@ -730,7 +734,7 @@ public class TicketsGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Enum:
-	//	option+=STRING ("," option+=STRING)*;
+	//	"enum" option+=STRING ("," option+=STRING)*;
 	public EnumElements getEnumAccess() {
 		return pEnum;
 	}
@@ -791,7 +795,7 @@ public class TicketsGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//// TODO user
-	//enum FieldType:
+	// enum FieldType:
 	//	user | String | Date | dateTime | int | decimal | boolean;
 	public FieldTypeElements getFieldTypeAccess() {
 		return unknownRuleFieldType;

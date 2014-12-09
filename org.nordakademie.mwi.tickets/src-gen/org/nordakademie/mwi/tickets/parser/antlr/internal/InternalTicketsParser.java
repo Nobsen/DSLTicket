@@ -22,40 +22,41 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalTicketsParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'status'", "';'", "'flow'", "'{'", "'}'", "'field'", "','", "'ticketCategory'", "'fields {'", "'mandatory'", "'notOnList'", "'role'", "'.'", "'create'", "'read'", "'modify'", "'delete'", "'user'", "'String'", "'Date'", "'dateTime'", "'int'", "'decimal'", "'boolean'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'status'", "';'", "'flow'", "'{'", "'}'", "'field'", "'enum'", "','", "'ticketCategory'", "'fields {'", "'mandatory'", "'notOnList'", "'role'", "'.'", "'create'", "'read'", "'modify'", "'delete'", "'user'", "'String'", "'Date'", "'dateTime'", "'int'", "'decimal'", "'boolean'"
     };
-    public static final int RULE_ID=5;
-    public static final int T__29=29;
-    public static final int T__28=28;
-    public static final int T__27=27;
-    public static final int T__26=26;
-    public static final int T__25=25;
-    public static final int T__24=24;
-    public static final int T__23=23;
-    public static final int T__22=22;
-    public static final int RULE_ANY_OTHER=10;
-    public static final int T__21=21;
-    public static final int T__20=20;
-    public static final int RULE_SL_COMMENT=8;
-    public static final int EOF=-1;
-    public static final int RULE_ML_COMMENT=7;
-    public static final int T__30=30;
-    public static final int T__19=19;
-    public static final int T__31=31;
     public static final int RULE_STRING=4;
-    public static final int T__32=32;
-    public static final int T__33=33;
-    public static final int T__16=16;
-    public static final int T__34=34;
+    public static final int RULE_SL_COMMENT=8;
+    public static final int T__19=19;
     public static final int T__15=15;
-    public static final int T__18=18;
+    public static final int T__16=16;
     public static final int T__17=17;
-    public static final int T__12=12;
+    public static final int T__18=18;
     public static final int T__11=11;
-    public static final int T__14=14;
+    public static final int T__33=33;
+    public static final int T__12=12;
+    public static final int T__34=34;
     public static final int T__13=13;
-    public static final int RULE_INT=6;
+    public static final int T__35=35;
+    public static final int T__14=14;
+    public static final int EOF=-1;
+    public static final int T__30=30;
+    public static final int T__31=31;
+    public static final int T__32=32;
+    public static final int RULE_ID=5;
     public static final int RULE_WS=9;
+    public static final int RULE_ANY_OTHER=10;
+    public static final int T__26=26;
+    public static final int T__27=27;
+    public static final int T__28=28;
+    public static final int RULE_INT=6;
+    public static final int T__29=29;
+    public static final int T__22=22;
+    public static final int RULE_ML_COMMENT=7;
+    public static final int T__23=23;
+    public static final int T__24=24;
+    public static final int T__25=25;
+    public static final int T__20=20;
+    public static final int T__21=21;
 
     // delegates
     // delegators
@@ -173,12 +174,12 @@ public class InternalTicketsParser extends AbstractInternalAntlrParser {
                     alt1=3;
                     }
                     break;
-                case 18:
+                case 19:
                     {
                     alt1=4;
                     }
                     break;
-                case 22:
+                case 23:
                     {
                     alt1=5;
                     }
@@ -837,10 +838,10 @@ public class InternalTicketsParser extends AbstractInternalAntlrParser {
             int alt3=2;
             int LA3_0 = input.LA(1);
 
-            if ( ((LA3_0>=28 && LA3_0<=34)) ) {
+            if ( ((LA3_0>=29 && LA3_0<=35)) ) {
                 alt3=1;
             }
-            else if ( (LA3_0==RULE_STRING) ) {
+            else if ( (LA3_0==17) ) {
                 alt3=2;
             }
             else {
@@ -988,32 +989,37 @@ public class InternalTicketsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEnum"
-    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:429:1: ruleEnum returns [EObject current=null] : ( ( (lv_option_0_0= RULE_STRING ) ) (otherlv_1= ',' ( (lv_option_2_0= RULE_STRING ) ) )* ) ;
+    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:429:1: ruleEnum returns [EObject current=null] : (otherlv_0= 'enum' ( (lv_option_1_0= RULE_STRING ) ) (otherlv_2= ',' ( (lv_option_3_0= RULE_STRING ) ) )* ) ;
     public final EObject ruleEnum() throws RecognitionException {
         EObject current = null;
 
-        Token lv_option_0_0=null;
-        Token otherlv_1=null;
-        Token lv_option_2_0=null;
+        Token otherlv_0=null;
+        Token lv_option_1_0=null;
+        Token otherlv_2=null;
+        Token lv_option_3_0=null;
 
          enterRule(); 
             
         try {
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:432:28: ( ( ( (lv_option_0_0= RULE_STRING ) ) (otherlv_1= ',' ( (lv_option_2_0= RULE_STRING ) ) )* ) )
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:433:1: ( ( (lv_option_0_0= RULE_STRING ) ) (otherlv_1= ',' ( (lv_option_2_0= RULE_STRING ) ) )* )
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:432:28: ( (otherlv_0= 'enum' ( (lv_option_1_0= RULE_STRING ) ) (otherlv_2= ',' ( (lv_option_3_0= RULE_STRING ) ) )* ) )
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:433:1: (otherlv_0= 'enum' ( (lv_option_1_0= RULE_STRING ) ) (otherlv_2= ',' ( (lv_option_3_0= RULE_STRING ) ) )* )
             {
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:433:1: ( ( (lv_option_0_0= RULE_STRING ) ) (otherlv_1= ',' ( (lv_option_2_0= RULE_STRING ) ) )* )
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:433:2: ( (lv_option_0_0= RULE_STRING ) ) (otherlv_1= ',' ( (lv_option_2_0= RULE_STRING ) ) )*
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:433:1: (otherlv_0= 'enum' ( (lv_option_1_0= RULE_STRING ) ) (otherlv_2= ',' ( (lv_option_3_0= RULE_STRING ) ) )* )
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:433:3: otherlv_0= 'enum' ( (lv_option_1_0= RULE_STRING ) ) (otherlv_2= ',' ( (lv_option_3_0= RULE_STRING ) ) )*
             {
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:433:2: ( (lv_option_0_0= RULE_STRING ) )
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:434:1: (lv_option_0_0= RULE_STRING )
-            {
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:434:1: (lv_option_0_0= RULE_STRING )
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:435:3: lv_option_0_0= RULE_STRING
-            {
-            lv_option_0_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleEnum820); 
+            otherlv_0=(Token)match(input,17,FOLLOW_17_in_ruleEnum815); 
 
-            			newLeafNode(lv_option_0_0, grammarAccess.getEnumAccess().getOptionSTRINGTerminalRuleCall_0_0()); 
+                	newLeafNode(otherlv_0, grammarAccess.getEnumAccess().getEnumKeyword_0());
+                
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:437:1: ( (lv_option_1_0= RULE_STRING ) )
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:438:1: (lv_option_1_0= RULE_STRING )
+            {
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:438:1: (lv_option_1_0= RULE_STRING )
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:439:3: lv_option_1_0= RULE_STRING
+            {
+            lv_option_1_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleEnum832); 
+
+            			newLeafNode(lv_option_1_0, grammarAccess.getEnumAccess().getOptionSTRINGTerminalRuleCall_1_0()); 
             		
 
             	        if (current==null) {
@@ -1022,7 +1028,7 @@ public class InternalTicketsParser extends AbstractInternalAntlrParser {
                    		addWithLastConsumed(
                    			current, 
                    			"option",
-                    		lv_option_0_0, 
+                    		lv_option_1_0, 
                     		"STRING");
             	    
 
@@ -1031,34 +1037,34 @@ public class InternalTicketsParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:451:2: (otherlv_1= ',' ( (lv_option_2_0= RULE_STRING ) ) )*
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:455:2: (otherlv_2= ',' ( (lv_option_3_0= RULE_STRING ) ) )*
             loop4:
             do {
                 int alt4=2;
                 int LA4_0 = input.LA(1);
 
-                if ( (LA4_0==17) ) {
+                if ( (LA4_0==18) ) {
                     alt4=1;
                 }
 
 
                 switch (alt4) {
             	case 1 :
-            	    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:451:4: otherlv_1= ',' ( (lv_option_2_0= RULE_STRING ) )
+            	    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:455:4: otherlv_2= ',' ( (lv_option_3_0= RULE_STRING ) )
             	    {
-            	    otherlv_1=(Token)match(input,17,FOLLOW_17_in_ruleEnum838); 
+            	    otherlv_2=(Token)match(input,18,FOLLOW_18_in_ruleEnum850); 
 
-            	        	newLeafNode(otherlv_1, grammarAccess.getEnumAccess().getCommaKeyword_1_0());
+            	        	newLeafNode(otherlv_2, grammarAccess.getEnumAccess().getCommaKeyword_2_0());
             	        
-            	    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:455:1: ( (lv_option_2_0= RULE_STRING ) )
-            	    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:456:1: (lv_option_2_0= RULE_STRING )
+            	    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:459:1: ( (lv_option_3_0= RULE_STRING ) )
+            	    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:460:1: (lv_option_3_0= RULE_STRING )
             	    {
-            	    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:456:1: (lv_option_2_0= RULE_STRING )
-            	    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:457:3: lv_option_2_0= RULE_STRING
+            	    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:460:1: (lv_option_3_0= RULE_STRING )
+            	    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:461:3: lv_option_3_0= RULE_STRING
             	    {
-            	    lv_option_2_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleEnum855); 
+            	    lv_option_3_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleEnum867); 
 
-            	    			newLeafNode(lv_option_2_0, grammarAccess.getEnumAccess().getOptionSTRINGTerminalRuleCall_1_1_0()); 
+            	    			newLeafNode(lv_option_3_0, grammarAccess.getEnumAccess().getOptionSTRINGTerminalRuleCall_2_1_0()); 
             	    		
 
             	    	        if (current==null) {
@@ -1067,7 +1073,7 @@ public class InternalTicketsParser extends AbstractInternalAntlrParser {
             	           		addWithLastConsumed(
             	           			current, 
             	           			"option",
-            	            		lv_option_2_0, 
+            	            		lv_option_3_0, 
             	            		"STRING");
             	    	    
 
@@ -1106,7 +1112,7 @@ public class InternalTicketsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTicketCategory"
-    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:481:1: entryRuleTicketCategory returns [EObject current=null] : iv_ruleTicketCategory= ruleTicketCategory EOF ;
+    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:485:1: entryRuleTicketCategory returns [EObject current=null] : iv_ruleTicketCategory= ruleTicketCategory EOF ;
     public final EObject entryRuleTicketCategory() throws RecognitionException {
         EObject current = null;
 
@@ -1114,17 +1120,17 @@ public class InternalTicketsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:482:2: (iv_ruleTicketCategory= ruleTicketCategory EOF )
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:483:2: iv_ruleTicketCategory= ruleTicketCategory EOF
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:486:2: (iv_ruleTicketCategory= ruleTicketCategory EOF )
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:487:2: iv_ruleTicketCategory= ruleTicketCategory EOF
             {
              newCompositeNode(grammarAccess.getTicketCategoryRule()); 
-            pushFollow(FOLLOW_ruleTicketCategory_in_entryRuleTicketCategory898);
+            pushFollow(FOLLOW_ruleTicketCategory_in_entryRuleTicketCategory910);
             iv_ruleTicketCategory=ruleTicketCategory();
 
             state._fsp--;
 
              current =iv_ruleTicketCategory; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleTicketCategory908); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleTicketCategory920); 
 
             }
 
@@ -1142,7 +1148,7 @@ public class InternalTicketsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTicketCategory"
-    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:490:1: ruleTicketCategory returns [EObject current=null] : (otherlv_0= 'ticketCategory' ( (lv_name_1_0= ruleQualifiedName ) ) ( (lv_description_2_0= RULE_STRING ) ) otherlv_3= '{' (otherlv_4= 'flow' ( ( ruleQualifiedName ) ) otherlv_6= ';' )? otherlv_7= 'fields {' ( ( (lv_ticketFields_8_0= ruleTicketField ) ) otherlv_9= ';' )* otherlv_10= '}' otherlv_11= '}' ) ;
+    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:494:1: ruleTicketCategory returns [EObject current=null] : (otherlv_0= 'ticketCategory' ( (lv_name_1_0= ruleQualifiedName ) ) ( (lv_description_2_0= RULE_STRING ) ) otherlv_3= '{' (otherlv_4= 'flow' ( ( ruleQualifiedName ) ) otherlv_6= ';' )? otherlv_7= 'fields {' ( ( (lv_ticketFields_8_0= ruleTicketField ) ) otherlv_9= ';' )* otherlv_10= '}' otherlv_11= '}' ) ;
     public final EObject ruleTicketCategory() throws RecognitionException {
         EObject current = null;
 
@@ -1163,26 +1169,26 @@ public class InternalTicketsParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:493:28: ( (otherlv_0= 'ticketCategory' ( (lv_name_1_0= ruleQualifiedName ) ) ( (lv_description_2_0= RULE_STRING ) ) otherlv_3= '{' (otherlv_4= 'flow' ( ( ruleQualifiedName ) ) otherlv_6= ';' )? otherlv_7= 'fields {' ( ( (lv_ticketFields_8_0= ruleTicketField ) ) otherlv_9= ';' )* otherlv_10= '}' otherlv_11= '}' ) )
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:494:1: (otherlv_0= 'ticketCategory' ( (lv_name_1_0= ruleQualifiedName ) ) ( (lv_description_2_0= RULE_STRING ) ) otherlv_3= '{' (otherlv_4= 'flow' ( ( ruleQualifiedName ) ) otherlv_6= ';' )? otherlv_7= 'fields {' ( ( (lv_ticketFields_8_0= ruleTicketField ) ) otherlv_9= ';' )* otherlv_10= '}' otherlv_11= '}' )
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:497:28: ( (otherlv_0= 'ticketCategory' ( (lv_name_1_0= ruleQualifiedName ) ) ( (lv_description_2_0= RULE_STRING ) ) otherlv_3= '{' (otherlv_4= 'flow' ( ( ruleQualifiedName ) ) otherlv_6= ';' )? otherlv_7= 'fields {' ( ( (lv_ticketFields_8_0= ruleTicketField ) ) otherlv_9= ';' )* otherlv_10= '}' otherlv_11= '}' ) )
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:498:1: (otherlv_0= 'ticketCategory' ( (lv_name_1_0= ruleQualifiedName ) ) ( (lv_description_2_0= RULE_STRING ) ) otherlv_3= '{' (otherlv_4= 'flow' ( ( ruleQualifiedName ) ) otherlv_6= ';' )? otherlv_7= 'fields {' ( ( (lv_ticketFields_8_0= ruleTicketField ) ) otherlv_9= ';' )* otherlv_10= '}' otherlv_11= '}' )
             {
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:494:1: (otherlv_0= 'ticketCategory' ( (lv_name_1_0= ruleQualifiedName ) ) ( (lv_description_2_0= RULE_STRING ) ) otherlv_3= '{' (otherlv_4= 'flow' ( ( ruleQualifiedName ) ) otherlv_6= ';' )? otherlv_7= 'fields {' ( ( (lv_ticketFields_8_0= ruleTicketField ) ) otherlv_9= ';' )* otherlv_10= '}' otherlv_11= '}' )
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:494:3: otherlv_0= 'ticketCategory' ( (lv_name_1_0= ruleQualifiedName ) ) ( (lv_description_2_0= RULE_STRING ) ) otherlv_3= '{' (otherlv_4= 'flow' ( ( ruleQualifiedName ) ) otherlv_6= ';' )? otherlv_7= 'fields {' ( ( (lv_ticketFields_8_0= ruleTicketField ) ) otherlv_9= ';' )* otherlv_10= '}' otherlv_11= '}'
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:498:1: (otherlv_0= 'ticketCategory' ( (lv_name_1_0= ruleQualifiedName ) ) ( (lv_description_2_0= RULE_STRING ) ) otherlv_3= '{' (otherlv_4= 'flow' ( ( ruleQualifiedName ) ) otherlv_6= ';' )? otherlv_7= 'fields {' ( ( (lv_ticketFields_8_0= ruleTicketField ) ) otherlv_9= ';' )* otherlv_10= '}' otherlv_11= '}' )
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:498:3: otherlv_0= 'ticketCategory' ( (lv_name_1_0= ruleQualifiedName ) ) ( (lv_description_2_0= RULE_STRING ) ) otherlv_3= '{' (otherlv_4= 'flow' ( ( ruleQualifiedName ) ) otherlv_6= ';' )? otherlv_7= 'fields {' ( ( (lv_ticketFields_8_0= ruleTicketField ) ) otherlv_9= ';' )* otherlv_10= '}' otherlv_11= '}'
             {
-            otherlv_0=(Token)match(input,18,FOLLOW_18_in_ruleTicketCategory945); 
+            otherlv_0=(Token)match(input,19,FOLLOW_19_in_ruleTicketCategory957); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getTicketCategoryAccess().getTicketCategoryKeyword_0());
                 
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:498:1: ( (lv_name_1_0= ruleQualifiedName ) )
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:499:1: (lv_name_1_0= ruleQualifiedName )
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:502:1: ( (lv_name_1_0= ruleQualifiedName ) )
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:503:1: (lv_name_1_0= ruleQualifiedName )
             {
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:499:1: (lv_name_1_0= ruleQualifiedName )
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:500:3: lv_name_1_0= ruleQualifiedName
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:503:1: (lv_name_1_0= ruleQualifiedName )
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:504:3: lv_name_1_0= ruleQualifiedName
             {
              
             	        newCompositeNode(grammarAccess.getTicketCategoryAccess().getNameQualifiedNameParserRuleCall_1_0()); 
             	    
-            pushFollow(FOLLOW_ruleQualifiedName_in_ruleTicketCategory966);
+            pushFollow(FOLLOW_ruleQualifiedName_in_ruleTicketCategory978);
             lv_name_1_0=ruleQualifiedName();
 
             state._fsp--;
@@ -1204,13 +1210,13 @@ public class InternalTicketsParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:516:2: ( (lv_description_2_0= RULE_STRING ) )
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:517:1: (lv_description_2_0= RULE_STRING )
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:520:2: ( (lv_description_2_0= RULE_STRING ) )
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:521:1: (lv_description_2_0= RULE_STRING )
             {
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:517:1: (lv_description_2_0= RULE_STRING )
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:518:3: lv_description_2_0= RULE_STRING
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:521:1: (lv_description_2_0= RULE_STRING )
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:522:3: lv_description_2_0= RULE_STRING
             {
-            lv_description_2_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleTicketCategory983); 
+            lv_description_2_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleTicketCategory995); 
 
             			newLeafNode(lv_description_2_0, grammarAccess.getTicketCategoryAccess().getDescriptionSTRINGTerminalRuleCall_2_0()); 
             		
@@ -1230,11 +1236,11 @@ public class InternalTicketsParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,14,FOLLOW_14_in_ruleTicketCategory1000); 
+            otherlv_3=(Token)match(input,14,FOLLOW_14_in_ruleTicketCategory1012); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getTicketCategoryAccess().getLeftCurlyBracketKeyword_3());
                 
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:538:1: (otherlv_4= 'flow' ( ( ruleQualifiedName ) ) otherlv_6= ';' )?
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:542:1: (otherlv_4= 'flow' ( ( ruleQualifiedName ) ) otherlv_6= ';' )?
             int alt5=2;
             int LA5_0 = input.LA(1);
 
@@ -1243,17 +1249,17 @@ public class InternalTicketsParser extends AbstractInternalAntlrParser {
             }
             switch (alt5) {
                 case 1 :
-                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:538:3: otherlv_4= 'flow' ( ( ruleQualifiedName ) ) otherlv_6= ';'
+                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:542:3: otherlv_4= 'flow' ( ( ruleQualifiedName ) ) otherlv_6= ';'
                     {
-                    otherlv_4=(Token)match(input,13,FOLLOW_13_in_ruleTicketCategory1013); 
+                    otherlv_4=(Token)match(input,13,FOLLOW_13_in_ruleTicketCategory1025); 
 
                         	newLeafNode(otherlv_4, grammarAccess.getTicketCategoryAccess().getFlowKeyword_4_0());
                         
-                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:542:1: ( ( ruleQualifiedName ) )
-                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:543:1: ( ruleQualifiedName )
+                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:546:1: ( ( ruleQualifiedName ) )
+                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:547:1: ( ruleQualifiedName )
                     {
-                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:543:1: ( ruleQualifiedName )
-                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:544:3: ruleQualifiedName
+                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:547:1: ( ruleQualifiedName )
+                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:548:3: ruleQualifiedName
                     {
 
                     			if (current==null) {
@@ -1263,7 +1269,7 @@ public class InternalTicketsParser extends AbstractInternalAntlrParser {
                      
                     	        newCompositeNode(grammarAccess.getTicketCategoryAccess().getFlowFlowCrossReference_4_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleQualifiedName_in_ruleTicketCategory1036);
+                    pushFollow(FOLLOW_ruleQualifiedName_in_ruleTicketCategory1048);
                     ruleQualifiedName();
 
                     state._fsp--;
@@ -1277,7 +1283,7 @@ public class InternalTicketsParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_6=(Token)match(input,12,FOLLOW_12_in_ruleTicketCategory1048); 
+                    otherlv_6=(Token)match(input,12,FOLLOW_12_in_ruleTicketCategory1060); 
 
                         	newLeafNode(otherlv_6, grammarAccess.getTicketCategoryAccess().getSemicolonKeyword_4_2());
                         
@@ -1287,11 +1293,11 @@ public class InternalTicketsParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_7=(Token)match(input,19,FOLLOW_19_in_ruleTicketCategory1062); 
+            otherlv_7=(Token)match(input,20,FOLLOW_20_in_ruleTicketCategory1074); 
 
                 	newLeafNode(otherlv_7, grammarAccess.getTicketCategoryAccess().getFieldsKeyword_5());
                 
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:565:1: ( ( (lv_ticketFields_8_0= ruleTicketField ) ) otherlv_9= ';' )*
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:569:1: ( ( (lv_ticketFields_8_0= ruleTicketField ) ) otherlv_9= ';' )*
             loop6:
             do {
                 int alt6=2;
@@ -1304,18 +1310,18 @@ public class InternalTicketsParser extends AbstractInternalAntlrParser {
 
                 switch (alt6) {
             	case 1 :
-            	    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:565:2: ( (lv_ticketFields_8_0= ruleTicketField ) ) otherlv_9= ';'
+            	    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:569:2: ( (lv_ticketFields_8_0= ruleTicketField ) ) otherlv_9= ';'
             	    {
-            	    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:565:2: ( (lv_ticketFields_8_0= ruleTicketField ) )
-            	    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:566:1: (lv_ticketFields_8_0= ruleTicketField )
+            	    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:569:2: ( (lv_ticketFields_8_0= ruleTicketField ) )
+            	    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:570:1: (lv_ticketFields_8_0= ruleTicketField )
             	    {
-            	    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:566:1: (lv_ticketFields_8_0= ruleTicketField )
-            	    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:567:3: lv_ticketFields_8_0= ruleTicketField
+            	    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:570:1: (lv_ticketFields_8_0= ruleTicketField )
+            	    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:571:3: lv_ticketFields_8_0= ruleTicketField
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getTicketCategoryAccess().getTicketFieldsTicketFieldParserRuleCall_6_0_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleTicketField_in_ruleTicketCategory1084);
+            	    pushFollow(FOLLOW_ruleTicketField_in_ruleTicketCategory1096);
             	    lv_ticketFields_8_0=ruleTicketField();
 
             	    state._fsp--;
@@ -1337,7 +1343,7 @@ public class InternalTicketsParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    otherlv_9=(Token)match(input,12,FOLLOW_12_in_ruleTicketCategory1096); 
+            	    otherlv_9=(Token)match(input,12,FOLLOW_12_in_ruleTicketCategory1108); 
 
             	        	newLeafNode(otherlv_9, grammarAccess.getTicketCategoryAccess().getSemicolonKeyword_6_1());
             	        
@@ -1350,11 +1356,11 @@ public class InternalTicketsParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_10=(Token)match(input,15,FOLLOW_15_in_ruleTicketCategory1110); 
+            otherlv_10=(Token)match(input,15,FOLLOW_15_in_ruleTicketCategory1122); 
 
                 	newLeafNode(otherlv_10, grammarAccess.getTicketCategoryAccess().getRightCurlyBracketKeyword_7());
                 
-            otherlv_11=(Token)match(input,15,FOLLOW_15_in_ruleTicketCategory1122); 
+            otherlv_11=(Token)match(input,15,FOLLOW_15_in_ruleTicketCategory1134); 
 
                 	newLeafNode(otherlv_11, grammarAccess.getTicketCategoryAccess().getRightCurlyBracketKeyword_8());
                 
@@ -1379,7 +1385,7 @@ public class InternalTicketsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTicketField"
-    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:603:1: entryRuleTicketField returns [EObject current=null] : iv_ruleTicketField= ruleTicketField EOF ;
+    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:607:1: entryRuleTicketField returns [EObject current=null] : iv_ruleTicketField= ruleTicketField EOF ;
     public final EObject entryRuleTicketField() throws RecognitionException {
         EObject current = null;
 
@@ -1387,17 +1393,17 @@ public class InternalTicketsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:604:2: (iv_ruleTicketField= ruleTicketField EOF )
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:605:2: iv_ruleTicketField= ruleTicketField EOF
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:608:2: (iv_ruleTicketField= ruleTicketField EOF )
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:609:2: iv_ruleTicketField= ruleTicketField EOF
             {
              newCompositeNode(grammarAccess.getTicketFieldRule()); 
-            pushFollow(FOLLOW_ruleTicketField_in_entryRuleTicketField1158);
+            pushFollow(FOLLOW_ruleTicketField_in_entryRuleTicketField1170);
             iv_ruleTicketField=ruleTicketField();
 
             state._fsp--;
 
              current =iv_ruleTicketField; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleTicketField1168); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleTicketField1180); 
 
             }
 
@@ -1415,7 +1421,7 @@ public class InternalTicketsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTicketField"
-    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:612:1: ruleTicketField returns [EObject current=null] : ( ( ( ruleQualifiedName ) ) ( (lv_mandatory_1_0= 'mandatory' ) )? ( (lv_notOnList_2_0= 'notOnList' ) )? ) ;
+    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:616:1: ruleTicketField returns [EObject current=null] : ( ( ( ruleQualifiedName ) ) ( (lv_mandatory_1_0= 'mandatory' ) )? ( (lv_notOnList_2_0= 'notOnList' ) )? ) ;
     public final EObject ruleTicketField() throws RecognitionException {
         EObject current = null;
 
@@ -1425,17 +1431,17 @@ public class InternalTicketsParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:615:28: ( ( ( ( ruleQualifiedName ) ) ( (lv_mandatory_1_0= 'mandatory' ) )? ( (lv_notOnList_2_0= 'notOnList' ) )? ) )
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:616:1: ( ( ( ruleQualifiedName ) ) ( (lv_mandatory_1_0= 'mandatory' ) )? ( (lv_notOnList_2_0= 'notOnList' ) )? )
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:619:28: ( ( ( ( ruleQualifiedName ) ) ( (lv_mandatory_1_0= 'mandatory' ) )? ( (lv_notOnList_2_0= 'notOnList' ) )? ) )
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:620:1: ( ( ( ruleQualifiedName ) ) ( (lv_mandatory_1_0= 'mandatory' ) )? ( (lv_notOnList_2_0= 'notOnList' ) )? )
             {
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:616:1: ( ( ( ruleQualifiedName ) ) ( (lv_mandatory_1_0= 'mandatory' ) )? ( (lv_notOnList_2_0= 'notOnList' ) )? )
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:616:2: ( ( ruleQualifiedName ) ) ( (lv_mandatory_1_0= 'mandatory' ) )? ( (lv_notOnList_2_0= 'notOnList' ) )?
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:620:1: ( ( ( ruleQualifiedName ) ) ( (lv_mandatory_1_0= 'mandatory' ) )? ( (lv_notOnList_2_0= 'notOnList' ) )? )
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:620:2: ( ( ruleQualifiedName ) ) ( (lv_mandatory_1_0= 'mandatory' ) )? ( (lv_notOnList_2_0= 'notOnList' ) )?
             {
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:616:2: ( ( ruleQualifiedName ) )
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:617:1: ( ruleQualifiedName )
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:620:2: ( ( ruleQualifiedName ) )
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:621:1: ( ruleQualifiedName )
             {
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:617:1: ( ruleQualifiedName )
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:618:3: ruleQualifiedName
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:621:1: ( ruleQualifiedName )
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:622:3: ruleQualifiedName
             {
 
             			if (current==null) {
@@ -1445,7 +1451,7 @@ public class InternalTicketsParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getTicketFieldAccess().getFieldFieldCrossReference_0_0()); 
             	    
-            pushFollow(FOLLOW_ruleQualifiedName_in_ruleTicketField1216);
+            pushFollow(FOLLOW_ruleQualifiedName_in_ruleTicketField1228);
             ruleQualifiedName();
 
             state._fsp--;
@@ -1459,21 +1465,21 @@ public class InternalTicketsParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:631:2: ( (lv_mandatory_1_0= 'mandatory' ) )?
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:635:2: ( (lv_mandatory_1_0= 'mandatory' ) )?
             int alt7=2;
             int LA7_0 = input.LA(1);
 
-            if ( (LA7_0==20) ) {
+            if ( (LA7_0==21) ) {
                 alt7=1;
             }
             switch (alt7) {
                 case 1 :
-                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:632:1: (lv_mandatory_1_0= 'mandatory' )
+                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:636:1: (lv_mandatory_1_0= 'mandatory' )
                     {
-                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:632:1: (lv_mandatory_1_0= 'mandatory' )
-                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:633:3: lv_mandatory_1_0= 'mandatory'
+                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:636:1: (lv_mandatory_1_0= 'mandatory' )
+                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:637:3: lv_mandatory_1_0= 'mandatory'
                     {
-                    lv_mandatory_1_0=(Token)match(input,20,FOLLOW_20_in_ruleTicketField1234); 
+                    lv_mandatory_1_0=(Token)match(input,21,FOLLOW_21_in_ruleTicketField1246); 
 
                             newLeafNode(lv_mandatory_1_0, grammarAccess.getTicketFieldAccess().getMandatoryMandatoryKeyword_1_0());
                         
@@ -1492,21 +1498,21 @@ public class InternalTicketsParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:646:3: ( (lv_notOnList_2_0= 'notOnList' ) )?
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:650:3: ( (lv_notOnList_2_0= 'notOnList' ) )?
             int alt8=2;
             int LA8_0 = input.LA(1);
 
-            if ( (LA8_0==21) ) {
+            if ( (LA8_0==22) ) {
                 alt8=1;
             }
             switch (alt8) {
                 case 1 :
-                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:647:1: (lv_notOnList_2_0= 'notOnList' )
+                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:651:1: (lv_notOnList_2_0= 'notOnList' )
                     {
-                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:647:1: (lv_notOnList_2_0= 'notOnList' )
-                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:648:3: lv_notOnList_2_0= 'notOnList'
+                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:651:1: (lv_notOnList_2_0= 'notOnList' )
+                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:652:3: lv_notOnList_2_0= 'notOnList'
                     {
-                    lv_notOnList_2_0=(Token)match(input,21,FOLLOW_21_in_ruleTicketField1266); 
+                    lv_notOnList_2_0=(Token)match(input,22,FOLLOW_22_in_ruleTicketField1278); 
 
                             newLeafNode(lv_notOnList_2_0, grammarAccess.getTicketFieldAccess().getNotOnListNotOnListKeyword_2_0());
                         
@@ -1546,7 +1552,7 @@ public class InternalTicketsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleRole"
-    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:669:1: entryRuleRole returns [EObject current=null] : iv_ruleRole= ruleRole EOF ;
+    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:673:1: entryRuleRole returns [EObject current=null] : iv_ruleRole= ruleRole EOF ;
     public final EObject entryRuleRole() throws RecognitionException {
         EObject current = null;
 
@@ -1554,17 +1560,17 @@ public class InternalTicketsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:670:2: (iv_ruleRole= ruleRole EOF )
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:671:2: iv_ruleRole= ruleRole EOF
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:674:2: (iv_ruleRole= ruleRole EOF )
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:675:2: iv_ruleRole= ruleRole EOF
             {
              newCompositeNode(grammarAccess.getRoleRule()); 
-            pushFollow(FOLLOW_ruleRole_in_entryRuleRole1316);
+            pushFollow(FOLLOW_ruleRole_in_entryRuleRole1328);
             iv_ruleRole=ruleRole();
 
             state._fsp--;
 
              current =iv_ruleRole; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleRole1326); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleRole1338); 
 
             }
 
@@ -1582,7 +1588,7 @@ public class InternalTicketsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRole"
-    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:678:1: ruleRole returns [EObject current=null] : (otherlv_0= 'role' ( (lv_name_1_0= ruleQualifiedName ) ) ( (lv_description_2_0= RULE_STRING ) ) otherlv_3= '{' ( ( (lv_rolepermissions_4_0= ruleRolePermission ) ) otherlv_5= ';' )* otherlv_6= '}' ) ;
+    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:682:1: ruleRole returns [EObject current=null] : (otherlv_0= 'role' ( (lv_name_1_0= ruleQualifiedName ) ) ( (lv_description_2_0= RULE_STRING ) ) otherlv_3= '{' ( ( (lv_rolepermissions_4_0= ruleRolePermission ) ) otherlv_5= ';' )* otherlv_6= '}' ) ;
     public final EObject ruleRole() throws RecognitionException {
         EObject current = null;
 
@@ -1599,26 +1605,26 @@ public class InternalTicketsParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:681:28: ( (otherlv_0= 'role' ( (lv_name_1_0= ruleQualifiedName ) ) ( (lv_description_2_0= RULE_STRING ) ) otherlv_3= '{' ( ( (lv_rolepermissions_4_0= ruleRolePermission ) ) otherlv_5= ';' )* otherlv_6= '}' ) )
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:682:1: (otherlv_0= 'role' ( (lv_name_1_0= ruleQualifiedName ) ) ( (lv_description_2_0= RULE_STRING ) ) otherlv_3= '{' ( ( (lv_rolepermissions_4_0= ruleRolePermission ) ) otherlv_5= ';' )* otherlv_6= '}' )
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:685:28: ( (otherlv_0= 'role' ( (lv_name_1_0= ruleQualifiedName ) ) ( (lv_description_2_0= RULE_STRING ) ) otherlv_3= '{' ( ( (lv_rolepermissions_4_0= ruleRolePermission ) ) otherlv_5= ';' )* otherlv_6= '}' ) )
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:686:1: (otherlv_0= 'role' ( (lv_name_1_0= ruleQualifiedName ) ) ( (lv_description_2_0= RULE_STRING ) ) otherlv_3= '{' ( ( (lv_rolepermissions_4_0= ruleRolePermission ) ) otherlv_5= ';' )* otherlv_6= '}' )
             {
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:682:1: (otherlv_0= 'role' ( (lv_name_1_0= ruleQualifiedName ) ) ( (lv_description_2_0= RULE_STRING ) ) otherlv_3= '{' ( ( (lv_rolepermissions_4_0= ruleRolePermission ) ) otherlv_5= ';' )* otherlv_6= '}' )
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:682:3: otherlv_0= 'role' ( (lv_name_1_0= ruleQualifiedName ) ) ( (lv_description_2_0= RULE_STRING ) ) otherlv_3= '{' ( ( (lv_rolepermissions_4_0= ruleRolePermission ) ) otherlv_5= ';' )* otherlv_6= '}'
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:686:1: (otherlv_0= 'role' ( (lv_name_1_0= ruleQualifiedName ) ) ( (lv_description_2_0= RULE_STRING ) ) otherlv_3= '{' ( ( (lv_rolepermissions_4_0= ruleRolePermission ) ) otherlv_5= ';' )* otherlv_6= '}' )
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:686:3: otherlv_0= 'role' ( (lv_name_1_0= ruleQualifiedName ) ) ( (lv_description_2_0= RULE_STRING ) ) otherlv_3= '{' ( ( (lv_rolepermissions_4_0= ruleRolePermission ) ) otherlv_5= ';' )* otherlv_6= '}'
             {
-            otherlv_0=(Token)match(input,22,FOLLOW_22_in_ruleRole1363); 
+            otherlv_0=(Token)match(input,23,FOLLOW_23_in_ruleRole1375); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getRoleAccess().getRoleKeyword_0());
                 
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:686:1: ( (lv_name_1_0= ruleQualifiedName ) )
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:687:1: (lv_name_1_0= ruleQualifiedName )
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:690:1: ( (lv_name_1_0= ruleQualifiedName ) )
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:691:1: (lv_name_1_0= ruleQualifiedName )
             {
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:687:1: (lv_name_1_0= ruleQualifiedName )
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:688:3: lv_name_1_0= ruleQualifiedName
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:691:1: (lv_name_1_0= ruleQualifiedName )
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:692:3: lv_name_1_0= ruleQualifiedName
             {
              
             	        newCompositeNode(grammarAccess.getRoleAccess().getNameQualifiedNameParserRuleCall_1_0()); 
             	    
-            pushFollow(FOLLOW_ruleQualifiedName_in_ruleRole1384);
+            pushFollow(FOLLOW_ruleQualifiedName_in_ruleRole1396);
             lv_name_1_0=ruleQualifiedName();
 
             state._fsp--;
@@ -1640,13 +1646,13 @@ public class InternalTicketsParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:704:2: ( (lv_description_2_0= RULE_STRING ) )
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:705:1: (lv_description_2_0= RULE_STRING )
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:708:2: ( (lv_description_2_0= RULE_STRING ) )
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:709:1: (lv_description_2_0= RULE_STRING )
             {
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:705:1: (lv_description_2_0= RULE_STRING )
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:706:3: lv_description_2_0= RULE_STRING
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:709:1: (lv_description_2_0= RULE_STRING )
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:710:3: lv_description_2_0= RULE_STRING
             {
-            lv_description_2_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleRole1401); 
+            lv_description_2_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleRole1413); 
 
             			newLeafNode(lv_description_2_0, grammarAccess.getRoleAccess().getDescriptionSTRINGTerminalRuleCall_2_0()); 
             		
@@ -1666,11 +1672,11 @@ public class InternalTicketsParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,14,FOLLOW_14_in_ruleRole1418); 
+            otherlv_3=(Token)match(input,14,FOLLOW_14_in_ruleRole1430); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getRoleAccess().getLeftCurlyBracketKeyword_3());
                 
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:726:1: ( ( (lv_rolepermissions_4_0= ruleRolePermission ) ) otherlv_5= ';' )*
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:730:1: ( ( (lv_rolepermissions_4_0= ruleRolePermission ) ) otherlv_5= ';' )*
             loop9:
             do {
                 int alt9=2;
@@ -1683,18 +1689,18 @@ public class InternalTicketsParser extends AbstractInternalAntlrParser {
 
                 switch (alt9) {
             	case 1 :
-            	    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:726:2: ( (lv_rolepermissions_4_0= ruleRolePermission ) ) otherlv_5= ';'
+            	    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:730:2: ( (lv_rolepermissions_4_0= ruleRolePermission ) ) otherlv_5= ';'
             	    {
-            	    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:726:2: ( (lv_rolepermissions_4_0= ruleRolePermission ) )
-            	    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:727:1: (lv_rolepermissions_4_0= ruleRolePermission )
+            	    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:730:2: ( (lv_rolepermissions_4_0= ruleRolePermission ) )
+            	    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:731:1: (lv_rolepermissions_4_0= ruleRolePermission )
             	    {
-            	    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:727:1: (lv_rolepermissions_4_0= ruleRolePermission )
-            	    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:728:3: lv_rolepermissions_4_0= ruleRolePermission
+            	    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:731:1: (lv_rolepermissions_4_0= ruleRolePermission )
+            	    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:732:3: lv_rolepermissions_4_0= ruleRolePermission
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getRoleAccess().getRolepermissionsRolePermissionParserRuleCall_4_0_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleRolePermission_in_ruleRole1440);
+            	    pushFollow(FOLLOW_ruleRolePermission_in_ruleRole1452);
             	    lv_rolepermissions_4_0=ruleRolePermission();
 
             	    state._fsp--;
@@ -1716,7 +1722,7 @@ public class InternalTicketsParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    otherlv_5=(Token)match(input,12,FOLLOW_12_in_ruleRole1452); 
+            	    otherlv_5=(Token)match(input,12,FOLLOW_12_in_ruleRole1464); 
 
             	        	newLeafNode(otherlv_5, grammarAccess.getRoleAccess().getSemicolonKeyword_4_1());
             	        
@@ -1729,7 +1735,7 @@ public class InternalTicketsParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_6=(Token)match(input,15,FOLLOW_15_in_ruleRole1466); 
+            otherlv_6=(Token)match(input,15,FOLLOW_15_in_ruleRole1478); 
 
                 	newLeafNode(otherlv_6, grammarAccess.getRoleAccess().getRightCurlyBracketKeyword_5());
                 
@@ -1754,7 +1760,7 @@ public class InternalTicketsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleRolePermission"
-    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:760:1: entryRuleRolePermission returns [EObject current=null] : iv_ruleRolePermission= ruleRolePermission EOF ;
+    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:764:1: entryRuleRolePermission returns [EObject current=null] : iv_ruleRolePermission= ruleRolePermission EOF ;
     public final EObject entryRuleRolePermission() throws RecognitionException {
         EObject current = null;
 
@@ -1762,17 +1768,17 @@ public class InternalTicketsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:761:2: (iv_ruleRolePermission= ruleRolePermission EOF )
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:762:2: iv_ruleRolePermission= ruleRolePermission EOF
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:765:2: (iv_ruleRolePermission= ruleRolePermission EOF )
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:766:2: iv_ruleRolePermission= ruleRolePermission EOF
             {
              newCompositeNode(grammarAccess.getRolePermissionRule()); 
-            pushFollow(FOLLOW_ruleRolePermission_in_entryRuleRolePermission1502);
+            pushFollow(FOLLOW_ruleRolePermission_in_entryRuleRolePermission1514);
             iv_ruleRolePermission=ruleRolePermission();
 
             state._fsp--;
 
              current =iv_ruleRolePermission; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleRolePermission1512); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleRolePermission1524); 
 
             }
 
@@ -1790,7 +1796,7 @@ public class InternalTicketsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRolePermission"
-    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:769:1: ruleRolePermission returns [EObject current=null] : ( ( ( ruleQualifiedName ) ) ( (lv_permissions_1_0= rulePermission ) ) (otherlv_2= ',' ( (lv_permissions_3_0= rulePermission ) ) )* ) ;
+    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:773:1: ruleRolePermission returns [EObject current=null] : ( ( ( ruleQualifiedName ) ) ( (lv_permissions_1_0= rulePermission ) ) (otherlv_2= ',' ( (lv_permissions_3_0= rulePermission ) ) )* ) ;
     public final EObject ruleRolePermission() throws RecognitionException {
         EObject current = null;
 
@@ -1803,17 +1809,17 @@ public class InternalTicketsParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:772:28: ( ( ( ( ruleQualifiedName ) ) ( (lv_permissions_1_0= rulePermission ) ) (otherlv_2= ',' ( (lv_permissions_3_0= rulePermission ) ) )* ) )
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:773:1: ( ( ( ruleQualifiedName ) ) ( (lv_permissions_1_0= rulePermission ) ) (otherlv_2= ',' ( (lv_permissions_3_0= rulePermission ) ) )* )
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:776:28: ( ( ( ( ruleQualifiedName ) ) ( (lv_permissions_1_0= rulePermission ) ) (otherlv_2= ',' ( (lv_permissions_3_0= rulePermission ) ) )* ) )
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:777:1: ( ( ( ruleQualifiedName ) ) ( (lv_permissions_1_0= rulePermission ) ) (otherlv_2= ',' ( (lv_permissions_3_0= rulePermission ) ) )* )
             {
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:773:1: ( ( ( ruleQualifiedName ) ) ( (lv_permissions_1_0= rulePermission ) ) (otherlv_2= ',' ( (lv_permissions_3_0= rulePermission ) ) )* )
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:773:2: ( ( ruleQualifiedName ) ) ( (lv_permissions_1_0= rulePermission ) ) (otherlv_2= ',' ( (lv_permissions_3_0= rulePermission ) ) )*
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:777:1: ( ( ( ruleQualifiedName ) ) ( (lv_permissions_1_0= rulePermission ) ) (otherlv_2= ',' ( (lv_permissions_3_0= rulePermission ) ) )* )
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:777:2: ( ( ruleQualifiedName ) ) ( (lv_permissions_1_0= rulePermission ) ) (otherlv_2= ',' ( (lv_permissions_3_0= rulePermission ) ) )*
             {
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:773:2: ( ( ruleQualifiedName ) )
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:774:1: ( ruleQualifiedName )
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:777:2: ( ( ruleQualifiedName ) )
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:778:1: ( ruleQualifiedName )
             {
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:774:1: ( ruleQualifiedName )
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:775:3: ruleQualifiedName
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:778:1: ( ruleQualifiedName )
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:779:3: ruleQualifiedName
             {
 
             			if (current==null) {
@@ -1823,7 +1829,7 @@ public class InternalTicketsParser extends AbstractInternalAntlrParser {
              
             	        newCompositeNode(grammarAccess.getRolePermissionAccess().getFieldFieldCrossReference_0_0()); 
             	    
-            pushFollow(FOLLOW_ruleQualifiedName_in_ruleRolePermission1560);
+            pushFollow(FOLLOW_ruleQualifiedName_in_ruleRolePermission1572);
             ruleQualifiedName();
 
             state._fsp--;
@@ -1837,16 +1843,16 @@ public class InternalTicketsParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:788:2: ( (lv_permissions_1_0= rulePermission ) )
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:789:1: (lv_permissions_1_0= rulePermission )
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:792:2: ( (lv_permissions_1_0= rulePermission ) )
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:793:1: (lv_permissions_1_0= rulePermission )
             {
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:789:1: (lv_permissions_1_0= rulePermission )
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:790:3: lv_permissions_1_0= rulePermission
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:793:1: (lv_permissions_1_0= rulePermission )
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:794:3: lv_permissions_1_0= rulePermission
             {
              
             	        newCompositeNode(grammarAccess.getRolePermissionAccess().getPermissionsPermissionEnumRuleCall_1_0()); 
             	    
-            pushFollow(FOLLOW_rulePermission_in_ruleRolePermission1581);
+            pushFollow(FOLLOW_rulePermission_in_ruleRolePermission1593);
             lv_permissions_1_0=rulePermission();
 
             state._fsp--;
@@ -1868,35 +1874,35 @@ public class InternalTicketsParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:806:2: (otherlv_2= ',' ( (lv_permissions_3_0= rulePermission ) ) )*
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:810:2: (otherlv_2= ',' ( (lv_permissions_3_0= rulePermission ) ) )*
             loop10:
             do {
                 int alt10=2;
                 int LA10_0 = input.LA(1);
 
-                if ( (LA10_0==17) ) {
+                if ( (LA10_0==18) ) {
                     alt10=1;
                 }
 
 
                 switch (alt10) {
             	case 1 :
-            	    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:806:4: otherlv_2= ',' ( (lv_permissions_3_0= rulePermission ) )
+            	    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:810:4: otherlv_2= ',' ( (lv_permissions_3_0= rulePermission ) )
             	    {
-            	    otherlv_2=(Token)match(input,17,FOLLOW_17_in_ruleRolePermission1594); 
+            	    otherlv_2=(Token)match(input,18,FOLLOW_18_in_ruleRolePermission1606); 
 
             	        	newLeafNode(otherlv_2, grammarAccess.getRolePermissionAccess().getCommaKeyword_2_0());
             	        
-            	    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:810:1: ( (lv_permissions_3_0= rulePermission ) )
-            	    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:811:1: (lv_permissions_3_0= rulePermission )
+            	    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:814:1: ( (lv_permissions_3_0= rulePermission ) )
+            	    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:815:1: (lv_permissions_3_0= rulePermission )
             	    {
-            	    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:811:1: (lv_permissions_3_0= rulePermission )
-            	    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:812:3: lv_permissions_3_0= rulePermission
+            	    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:815:1: (lv_permissions_3_0= rulePermission )
+            	    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:816:3: lv_permissions_3_0= rulePermission
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getRolePermissionAccess().getPermissionsPermissionEnumRuleCall_2_1_0()); 
             	    	    
-            	    pushFollow(FOLLOW_rulePermission_in_ruleRolePermission1615);
+            	    pushFollow(FOLLOW_rulePermission_in_ruleRolePermission1627);
             	    lv_permissions_3_0=rulePermission();
 
             	    state._fsp--;
@@ -1948,7 +1954,7 @@ public class InternalTicketsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleQualifiedName"
-    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:836:1: entryRuleQualifiedName returns [String current=null] : iv_ruleQualifiedName= ruleQualifiedName EOF ;
+    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:840:1: entryRuleQualifiedName returns [String current=null] : iv_ruleQualifiedName= ruleQualifiedName EOF ;
     public final String entryRuleQualifiedName() throws RecognitionException {
         String current = null;
 
@@ -1956,17 +1962,17 @@ public class InternalTicketsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:837:2: (iv_ruleQualifiedName= ruleQualifiedName EOF )
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:838:2: iv_ruleQualifiedName= ruleQualifiedName EOF
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:841:2: (iv_ruleQualifiedName= ruleQualifiedName EOF )
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:842:2: iv_ruleQualifiedName= ruleQualifiedName EOF
             {
              newCompositeNode(grammarAccess.getQualifiedNameRule()); 
-            pushFollow(FOLLOW_ruleQualifiedName_in_entryRuleQualifiedName1654);
+            pushFollow(FOLLOW_ruleQualifiedName_in_entryRuleQualifiedName1666);
             iv_ruleQualifiedName=ruleQualifiedName();
 
             state._fsp--;
 
              current =iv_ruleQualifiedName.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleQualifiedName1665); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleQualifiedName1677); 
 
             }
 
@@ -1984,7 +1990,7 @@ public class InternalTicketsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleQualifiedName"
-    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:845:1: ruleQualifiedName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) ;
+    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:849:1: ruleQualifiedName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) ;
     public final AntlrDatatypeRuleToken ruleQualifiedName() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -1995,40 +2001,40 @@ public class InternalTicketsParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:848:28: ( (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) )
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:849:1: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:852:28: ( (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) )
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:853:1: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
             {
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:849:1: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:849:6: this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )*
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:853:1: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:853:6: this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )*
             {
-            this_ID_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleQualifiedName1705); 
+            this_ID_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleQualifiedName1717); 
 
             		current.merge(this_ID_0);
                 
              
                 newLeafNode(this_ID_0, grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_0()); 
                 
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:856:1: (kw= '.' this_ID_2= RULE_ID )*
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:860:1: (kw= '.' this_ID_2= RULE_ID )*
             loop11:
             do {
                 int alt11=2;
                 int LA11_0 = input.LA(1);
 
-                if ( (LA11_0==23) ) {
+                if ( (LA11_0==24) ) {
                     alt11=1;
                 }
 
 
                 switch (alt11) {
             	case 1 :
-            	    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:857:2: kw= '.' this_ID_2= RULE_ID
+            	    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:861:2: kw= '.' this_ID_2= RULE_ID
             	    {
-            	    kw=(Token)match(input,23,FOLLOW_23_in_ruleQualifiedName1724); 
+            	    kw=(Token)match(input,24,FOLLOW_24_in_ruleQualifiedName1736); 
 
             	            current.merge(kw);
             	            newLeafNode(kw, grammarAccess.getQualifiedNameAccess().getFullStopKeyword_1_0()); 
             	        
-            	    this_ID_2=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleQualifiedName1739); 
+            	    this_ID_2=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleQualifiedName1751); 
 
             	    		current.merge(this_ID_2);
             	        
@@ -2065,7 +2071,7 @@ public class InternalTicketsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePermission"
-    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:877:1: rulePermission returns [Enumerator current=null] : ( (enumLiteral_0= 'create' ) | (enumLiteral_1= 'read' ) | (enumLiteral_2= 'modify' ) | (enumLiteral_3= 'delete' ) ) ;
+    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:881:1: rulePermission returns [Enumerator current=null] : ( (enumLiteral_0= 'create' ) | (enumLiteral_1= 'read' ) | (enumLiteral_2= 'modify' ) | (enumLiteral_3= 'delete' ) ) ;
     public final Enumerator rulePermission() throws RecognitionException {
         Enumerator current = null;
 
@@ -2076,28 +2082,28 @@ public class InternalTicketsParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:879:28: ( ( (enumLiteral_0= 'create' ) | (enumLiteral_1= 'read' ) | (enumLiteral_2= 'modify' ) | (enumLiteral_3= 'delete' ) ) )
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:880:1: ( (enumLiteral_0= 'create' ) | (enumLiteral_1= 'read' ) | (enumLiteral_2= 'modify' ) | (enumLiteral_3= 'delete' ) )
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:883:28: ( ( (enumLiteral_0= 'create' ) | (enumLiteral_1= 'read' ) | (enumLiteral_2= 'modify' ) | (enumLiteral_3= 'delete' ) ) )
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:884:1: ( (enumLiteral_0= 'create' ) | (enumLiteral_1= 'read' ) | (enumLiteral_2= 'modify' ) | (enumLiteral_3= 'delete' ) )
             {
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:880:1: ( (enumLiteral_0= 'create' ) | (enumLiteral_1= 'read' ) | (enumLiteral_2= 'modify' ) | (enumLiteral_3= 'delete' ) )
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:884:1: ( (enumLiteral_0= 'create' ) | (enumLiteral_1= 'read' ) | (enumLiteral_2= 'modify' ) | (enumLiteral_3= 'delete' ) )
             int alt12=4;
             switch ( input.LA(1) ) {
-            case 24:
+            case 25:
                 {
                 alt12=1;
                 }
                 break;
-            case 25:
+            case 26:
                 {
                 alt12=2;
                 }
                 break;
-            case 26:
+            case 27:
                 {
                 alt12=3;
                 }
                 break;
-            case 27:
+            case 28:
                 {
                 alt12=4;
                 }
@@ -2111,12 +2117,12 @@ public class InternalTicketsParser extends AbstractInternalAntlrParser {
 
             switch (alt12) {
                 case 1 :
-                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:880:2: (enumLiteral_0= 'create' )
+                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:884:2: (enumLiteral_0= 'create' )
                     {
-                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:880:2: (enumLiteral_0= 'create' )
-                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:880:4: enumLiteral_0= 'create'
+                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:884:2: (enumLiteral_0= 'create' )
+                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:884:4: enumLiteral_0= 'create'
                     {
-                    enumLiteral_0=(Token)match(input,24,FOLLOW_24_in_rulePermission1800); 
+                    enumLiteral_0=(Token)match(input,25,FOLLOW_25_in_rulePermission1812); 
 
                             current = grammarAccess.getPermissionAccess().getCreateEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_0, grammarAccess.getPermissionAccess().getCreateEnumLiteralDeclaration_0()); 
@@ -2128,12 +2134,12 @@ public class InternalTicketsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:886:6: (enumLiteral_1= 'read' )
+                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:890:6: (enumLiteral_1= 'read' )
                     {
-                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:886:6: (enumLiteral_1= 'read' )
-                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:886:8: enumLiteral_1= 'read'
+                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:890:6: (enumLiteral_1= 'read' )
+                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:890:8: enumLiteral_1= 'read'
                     {
-                    enumLiteral_1=(Token)match(input,25,FOLLOW_25_in_rulePermission1817); 
+                    enumLiteral_1=(Token)match(input,26,FOLLOW_26_in_rulePermission1829); 
 
                             current = grammarAccess.getPermissionAccess().getReadEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_1, grammarAccess.getPermissionAccess().getReadEnumLiteralDeclaration_1()); 
@@ -2145,12 +2151,12 @@ public class InternalTicketsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:892:6: (enumLiteral_2= 'modify' )
+                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:896:6: (enumLiteral_2= 'modify' )
                     {
-                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:892:6: (enumLiteral_2= 'modify' )
-                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:892:8: enumLiteral_2= 'modify'
+                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:896:6: (enumLiteral_2= 'modify' )
+                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:896:8: enumLiteral_2= 'modify'
                     {
-                    enumLiteral_2=(Token)match(input,26,FOLLOW_26_in_rulePermission1834); 
+                    enumLiteral_2=(Token)match(input,27,FOLLOW_27_in_rulePermission1846); 
 
                             current = grammarAccess.getPermissionAccess().getModifyEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_2, grammarAccess.getPermissionAccess().getModifyEnumLiteralDeclaration_2()); 
@@ -2162,12 +2168,12 @@ public class InternalTicketsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:898:6: (enumLiteral_3= 'delete' )
+                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:902:6: (enumLiteral_3= 'delete' )
                     {
-                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:898:6: (enumLiteral_3= 'delete' )
-                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:898:8: enumLiteral_3= 'delete'
+                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:902:6: (enumLiteral_3= 'delete' )
+                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:902:8: enumLiteral_3= 'delete'
                     {
-                    enumLiteral_3=(Token)match(input,27,FOLLOW_27_in_rulePermission1851); 
+                    enumLiteral_3=(Token)match(input,28,FOLLOW_28_in_rulePermission1863); 
 
                             current = grammarAccess.getPermissionAccess().getDeleteEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_3, grammarAccess.getPermissionAccess().getDeleteEnumLiteralDeclaration_3()); 
@@ -2199,7 +2205,7 @@ public class InternalTicketsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFieldType"
-    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:908:1: ruleFieldType returns [Enumerator current=null] : ( (enumLiteral_0= 'user' ) | (enumLiteral_1= 'String' ) | (enumLiteral_2= 'Date' ) | (enumLiteral_3= 'dateTime' ) | (enumLiteral_4= 'int' ) | (enumLiteral_5= 'decimal' ) | (enumLiteral_6= 'boolean' ) ) ;
+    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:912:1: ruleFieldType returns [Enumerator current=null] : ( (enumLiteral_0= 'user' ) | (enumLiteral_1= 'String' ) | (enumLiteral_2= 'Date' ) | (enumLiteral_3= 'dateTime' ) | (enumLiteral_4= 'int' ) | (enumLiteral_5= 'decimal' ) | (enumLiteral_6= 'boolean' ) ) ;
     public final Enumerator ruleFieldType() throws RecognitionException {
         Enumerator current = null;
 
@@ -2213,43 +2219,43 @@ public class InternalTicketsParser extends AbstractInternalAntlrParser {
 
          enterRule(); 
         try {
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:910:28: ( ( (enumLiteral_0= 'user' ) | (enumLiteral_1= 'String' ) | (enumLiteral_2= 'Date' ) | (enumLiteral_3= 'dateTime' ) | (enumLiteral_4= 'int' ) | (enumLiteral_5= 'decimal' ) | (enumLiteral_6= 'boolean' ) ) )
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:911:1: ( (enumLiteral_0= 'user' ) | (enumLiteral_1= 'String' ) | (enumLiteral_2= 'Date' ) | (enumLiteral_3= 'dateTime' ) | (enumLiteral_4= 'int' ) | (enumLiteral_5= 'decimal' ) | (enumLiteral_6= 'boolean' ) )
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:914:28: ( ( (enumLiteral_0= 'user' ) | (enumLiteral_1= 'String' ) | (enumLiteral_2= 'Date' ) | (enumLiteral_3= 'dateTime' ) | (enumLiteral_4= 'int' ) | (enumLiteral_5= 'decimal' ) | (enumLiteral_6= 'boolean' ) ) )
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:915:1: ( (enumLiteral_0= 'user' ) | (enumLiteral_1= 'String' ) | (enumLiteral_2= 'Date' ) | (enumLiteral_3= 'dateTime' ) | (enumLiteral_4= 'int' ) | (enumLiteral_5= 'decimal' ) | (enumLiteral_6= 'boolean' ) )
             {
-            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:911:1: ( (enumLiteral_0= 'user' ) | (enumLiteral_1= 'String' ) | (enumLiteral_2= 'Date' ) | (enumLiteral_3= 'dateTime' ) | (enumLiteral_4= 'int' ) | (enumLiteral_5= 'decimal' ) | (enumLiteral_6= 'boolean' ) )
+            // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:915:1: ( (enumLiteral_0= 'user' ) | (enumLiteral_1= 'String' ) | (enumLiteral_2= 'Date' ) | (enumLiteral_3= 'dateTime' ) | (enumLiteral_4= 'int' ) | (enumLiteral_5= 'decimal' ) | (enumLiteral_6= 'boolean' ) )
             int alt13=7;
             switch ( input.LA(1) ) {
-            case 28:
+            case 29:
                 {
                 alt13=1;
                 }
                 break;
-            case 29:
+            case 30:
                 {
                 alt13=2;
                 }
                 break;
-            case 30:
+            case 31:
                 {
                 alt13=3;
                 }
                 break;
-            case 31:
+            case 32:
                 {
                 alt13=4;
                 }
                 break;
-            case 32:
+            case 33:
                 {
                 alt13=5;
                 }
                 break;
-            case 33:
+            case 34:
                 {
                 alt13=6;
                 }
                 break;
-            case 34:
+            case 35:
                 {
                 alt13=7;
                 }
@@ -2263,12 +2269,12 @@ public class InternalTicketsParser extends AbstractInternalAntlrParser {
 
             switch (alt13) {
                 case 1 :
-                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:911:2: (enumLiteral_0= 'user' )
+                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:915:2: (enumLiteral_0= 'user' )
                     {
-                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:911:2: (enumLiteral_0= 'user' )
-                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:911:4: enumLiteral_0= 'user'
+                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:915:2: (enumLiteral_0= 'user' )
+                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:915:4: enumLiteral_0= 'user'
                     {
-                    enumLiteral_0=(Token)match(input,28,FOLLOW_28_in_ruleFieldType1896); 
+                    enumLiteral_0=(Token)match(input,29,FOLLOW_29_in_ruleFieldType1908); 
 
                             current = grammarAccess.getFieldTypeAccess().getUserEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_0, grammarAccess.getFieldTypeAccess().getUserEnumLiteralDeclaration_0()); 
@@ -2280,12 +2286,12 @@ public class InternalTicketsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:917:6: (enumLiteral_1= 'String' )
+                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:921:6: (enumLiteral_1= 'String' )
                     {
-                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:917:6: (enumLiteral_1= 'String' )
-                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:917:8: enumLiteral_1= 'String'
+                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:921:6: (enumLiteral_1= 'String' )
+                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:921:8: enumLiteral_1= 'String'
                     {
-                    enumLiteral_1=(Token)match(input,29,FOLLOW_29_in_ruleFieldType1913); 
+                    enumLiteral_1=(Token)match(input,30,FOLLOW_30_in_ruleFieldType1925); 
 
                             current = grammarAccess.getFieldTypeAccess().getStringEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_1, grammarAccess.getFieldTypeAccess().getStringEnumLiteralDeclaration_1()); 
@@ -2297,12 +2303,12 @@ public class InternalTicketsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:923:6: (enumLiteral_2= 'Date' )
+                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:927:6: (enumLiteral_2= 'Date' )
                     {
-                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:923:6: (enumLiteral_2= 'Date' )
-                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:923:8: enumLiteral_2= 'Date'
+                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:927:6: (enumLiteral_2= 'Date' )
+                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:927:8: enumLiteral_2= 'Date'
                     {
-                    enumLiteral_2=(Token)match(input,30,FOLLOW_30_in_ruleFieldType1930); 
+                    enumLiteral_2=(Token)match(input,31,FOLLOW_31_in_ruleFieldType1942); 
 
                             current = grammarAccess.getFieldTypeAccess().getDateEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_2, grammarAccess.getFieldTypeAccess().getDateEnumLiteralDeclaration_2()); 
@@ -2314,12 +2320,12 @@ public class InternalTicketsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:929:6: (enumLiteral_3= 'dateTime' )
+                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:933:6: (enumLiteral_3= 'dateTime' )
                     {
-                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:929:6: (enumLiteral_3= 'dateTime' )
-                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:929:8: enumLiteral_3= 'dateTime'
+                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:933:6: (enumLiteral_3= 'dateTime' )
+                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:933:8: enumLiteral_3= 'dateTime'
                     {
-                    enumLiteral_3=(Token)match(input,31,FOLLOW_31_in_ruleFieldType1947); 
+                    enumLiteral_3=(Token)match(input,32,FOLLOW_32_in_ruleFieldType1959); 
 
                             current = grammarAccess.getFieldTypeAccess().getDateTimeEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_3, grammarAccess.getFieldTypeAccess().getDateTimeEnumLiteralDeclaration_3()); 
@@ -2331,12 +2337,12 @@ public class InternalTicketsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:935:6: (enumLiteral_4= 'int' )
+                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:939:6: (enumLiteral_4= 'int' )
                     {
-                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:935:6: (enumLiteral_4= 'int' )
-                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:935:8: enumLiteral_4= 'int'
+                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:939:6: (enumLiteral_4= 'int' )
+                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:939:8: enumLiteral_4= 'int'
                     {
-                    enumLiteral_4=(Token)match(input,32,FOLLOW_32_in_ruleFieldType1964); 
+                    enumLiteral_4=(Token)match(input,33,FOLLOW_33_in_ruleFieldType1976); 
 
                             current = grammarAccess.getFieldTypeAccess().getIntEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_4, grammarAccess.getFieldTypeAccess().getIntEnumLiteralDeclaration_4()); 
@@ -2348,12 +2354,12 @@ public class InternalTicketsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:941:6: (enumLiteral_5= 'decimal' )
+                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:945:6: (enumLiteral_5= 'decimal' )
                     {
-                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:941:6: (enumLiteral_5= 'decimal' )
-                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:941:8: enumLiteral_5= 'decimal'
+                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:945:6: (enumLiteral_5= 'decimal' )
+                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:945:8: enumLiteral_5= 'decimal'
                     {
-                    enumLiteral_5=(Token)match(input,33,FOLLOW_33_in_ruleFieldType1981); 
+                    enumLiteral_5=(Token)match(input,34,FOLLOW_34_in_ruleFieldType1993); 
 
                             current = grammarAccess.getFieldTypeAccess().getDecimalEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_5, grammarAccess.getFieldTypeAccess().getDecimalEnumLiteralDeclaration_5()); 
@@ -2365,12 +2371,12 @@ public class InternalTicketsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:947:6: (enumLiteral_6= 'boolean' )
+                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:951:6: (enumLiteral_6= 'boolean' )
                     {
-                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:947:6: (enumLiteral_6= 'boolean' )
-                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:947:8: enumLiteral_6= 'boolean'
+                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:951:6: (enumLiteral_6= 'boolean' )
+                    // ../org.nordakademie.mwi.tickets/src-gen/org/nordakademie/mwi/tickets/parser/antlr/internal/InternalTickets.g:951:8: enumLiteral_6= 'boolean'
                     {
-                    enumLiteral_6=(Token)match(input,34,FOLLOW_34_in_ruleFieldType1998); 
+                    enumLiteral_6=(Token)match(input,35,FOLLOW_35_in_ruleFieldType2010); 
 
                             current = grammarAccess.getFieldTypeAccess().getBooleanEnumLiteralDeclaration_6().getEnumLiteral().getInstance();
                             newLeafNode(enumLiteral_6, grammarAccess.getFieldTypeAccess().getBooleanEnumLiteralDeclaration_6()); 
@@ -2407,11 +2413,11 @@ public class InternalTicketsParser extends AbstractInternalAntlrParser {
 
     public static final BitSet FOLLOW_ruleTicketSystem_in_entryRuleTicketSystem75 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleTicketSystem85 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStatus_in_ruleTicketSystem131 = new BitSet(new long[]{0x0000000000452802L});
-    public static final BitSet FOLLOW_ruleFlow_in_ruleTicketSystem158 = new BitSet(new long[]{0x0000000000452802L});
-    public static final BitSet FOLLOW_ruleField_in_ruleTicketSystem185 = new BitSet(new long[]{0x0000000000452802L});
-    public static final BitSet FOLLOW_ruleTicketCategory_in_ruleTicketSystem212 = new BitSet(new long[]{0x0000000000452802L});
-    public static final BitSet FOLLOW_ruleRole_in_ruleTicketSystem239 = new BitSet(new long[]{0x0000000000452802L});
+    public static final BitSet FOLLOW_ruleStatus_in_ruleTicketSystem131 = new BitSet(new long[]{0x0000000000892802L});
+    public static final BitSet FOLLOW_ruleFlow_in_ruleTicketSystem158 = new BitSet(new long[]{0x0000000000892802L});
+    public static final BitSet FOLLOW_ruleField_in_ruleTicketSystem185 = new BitSet(new long[]{0x0000000000892802L});
+    public static final BitSet FOLLOW_ruleTicketCategory_in_ruleTicketSystem212 = new BitSet(new long[]{0x0000000000892802L});
+    public static final BitSet FOLLOW_ruleRole_in_ruleTicketSystem239 = new BitSet(new long[]{0x0000000000892802L});
     public static final BitSet FOLLOW_ruleStatus_in_entryRuleStatus276 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleStatus286 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_11_in_ruleStatus323 = new BitSet(new long[]{0x0000000000000020L});
@@ -2430,64 +2436,65 @@ public class InternalTicketsParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_EOF_in_entryRuleField590 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_16_in_ruleField627 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_ruleQualifiedName_in_ruleField648 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleField665 = new BitSet(new long[]{0x00000007F0000010L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleField665 = new BitSet(new long[]{0x0000000FE0020000L});
     public static final BitSet FOLLOW_ruleFieldType_in_ruleField692 = new BitSet(new long[]{0x0000000000001000L});
     public static final BitSet FOLLOW_ruleEnum_in_ruleField719 = new BitSet(new long[]{0x0000000000001000L});
     public static final BitSet FOLLOW_12_in_ruleField732 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleEnum_in_entryRuleEnum768 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleEnum778 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleEnum820 = new BitSet(new long[]{0x0000000000020002L});
-    public static final BitSet FOLLOW_17_in_ruleEnum838 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleEnum855 = new BitSet(new long[]{0x0000000000020002L});
-    public static final BitSet FOLLOW_ruleTicketCategory_in_entryRuleTicketCategory898 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleTicketCategory908 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_18_in_ruleTicketCategory945 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleTicketCategory966 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleTicketCategory983 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_14_in_ruleTicketCategory1000 = new BitSet(new long[]{0x0000000000082000L});
-    public static final BitSet FOLLOW_13_in_ruleTicketCategory1013 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleTicketCategory1036 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_12_in_ruleTicketCategory1048 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_19_in_ruleTicketCategory1062 = new BitSet(new long[]{0x0000000000008020L});
-    public static final BitSet FOLLOW_ruleTicketField_in_ruleTicketCategory1084 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_12_in_ruleTicketCategory1096 = new BitSet(new long[]{0x0000000000008020L});
-    public static final BitSet FOLLOW_15_in_ruleTicketCategory1110 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_15_in_ruleTicketCategory1122 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTicketField_in_entryRuleTicketField1158 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleTicketField1168 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleTicketField1216 = new BitSet(new long[]{0x0000000000300002L});
-    public static final BitSet FOLLOW_20_in_ruleTicketField1234 = new BitSet(new long[]{0x0000000000200002L});
-    public static final BitSet FOLLOW_21_in_ruleTicketField1266 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRole_in_entryRuleRole1316 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleRole1326 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_22_in_ruleRole1363 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleRole1384 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleRole1401 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_14_in_ruleRole1418 = new BitSet(new long[]{0x0000000000008020L});
-    public static final BitSet FOLLOW_ruleRolePermission_in_ruleRole1440 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_12_in_ruleRole1452 = new BitSet(new long[]{0x0000000000008020L});
-    public static final BitSet FOLLOW_15_in_ruleRole1466 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRolePermission_in_entryRuleRolePermission1502 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleRolePermission1512 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleRolePermission1560 = new BitSet(new long[]{0x000000000F000000L});
-    public static final BitSet FOLLOW_rulePermission_in_ruleRolePermission1581 = new BitSet(new long[]{0x0000000000020002L});
-    public static final BitSet FOLLOW_17_in_ruleRolePermission1594 = new BitSet(new long[]{0x000000000F000000L});
-    public static final BitSet FOLLOW_rulePermission_in_ruleRolePermission1615 = new BitSet(new long[]{0x0000000000020002L});
-    public static final BitSet FOLLOW_ruleQualifiedName_in_entryRuleQualifiedName1654 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleQualifiedName1665 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleQualifiedName1705 = new BitSet(new long[]{0x0000000000800002L});
-    public static final BitSet FOLLOW_23_in_ruleQualifiedName1724 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleQualifiedName1739 = new BitSet(new long[]{0x0000000000800002L});
-    public static final BitSet FOLLOW_24_in_rulePermission1800 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_rulePermission1817 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_26_in_rulePermission1834 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_27_in_rulePermission1851 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_28_in_ruleFieldType1896 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_29_in_ruleFieldType1913 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_30_in_ruleFieldType1930 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_31_in_ruleFieldType1947 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_32_in_ruleFieldType1964 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_33_in_ruleFieldType1981 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_34_in_ruleFieldType1998 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_17_in_ruleEnum815 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleEnum832 = new BitSet(new long[]{0x0000000000040002L});
+    public static final BitSet FOLLOW_18_in_ruleEnum850 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleEnum867 = new BitSet(new long[]{0x0000000000040002L});
+    public static final BitSet FOLLOW_ruleTicketCategory_in_entryRuleTicketCategory910 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleTicketCategory920 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_19_in_ruleTicketCategory957 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleTicketCategory978 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleTicketCategory995 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_14_in_ruleTicketCategory1012 = new BitSet(new long[]{0x0000000000102000L});
+    public static final BitSet FOLLOW_13_in_ruleTicketCategory1025 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleTicketCategory1048 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_12_in_ruleTicketCategory1060 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_20_in_ruleTicketCategory1074 = new BitSet(new long[]{0x0000000000008020L});
+    public static final BitSet FOLLOW_ruleTicketField_in_ruleTicketCategory1096 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_12_in_ruleTicketCategory1108 = new BitSet(new long[]{0x0000000000008020L});
+    public static final BitSet FOLLOW_15_in_ruleTicketCategory1122 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_15_in_ruleTicketCategory1134 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTicketField_in_entryRuleTicketField1170 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleTicketField1180 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleTicketField1228 = new BitSet(new long[]{0x0000000000600002L});
+    public static final BitSet FOLLOW_21_in_ruleTicketField1246 = new BitSet(new long[]{0x0000000000400002L});
+    public static final BitSet FOLLOW_22_in_ruleTicketField1278 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRole_in_entryRuleRole1328 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleRole1338 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_23_in_ruleRole1375 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleRole1396 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleRole1413 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_14_in_ruleRole1430 = new BitSet(new long[]{0x0000000000008020L});
+    public static final BitSet FOLLOW_ruleRolePermission_in_ruleRole1452 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_12_in_ruleRole1464 = new BitSet(new long[]{0x0000000000008020L});
+    public static final BitSet FOLLOW_15_in_ruleRole1478 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleRolePermission_in_entryRuleRolePermission1514 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleRolePermission1524 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_ruleRolePermission1572 = new BitSet(new long[]{0x000000001E000000L});
+    public static final BitSet FOLLOW_rulePermission_in_ruleRolePermission1593 = new BitSet(new long[]{0x0000000000040002L});
+    public static final BitSet FOLLOW_18_in_ruleRolePermission1606 = new BitSet(new long[]{0x000000001E000000L});
+    public static final BitSet FOLLOW_rulePermission_in_ruleRolePermission1627 = new BitSet(new long[]{0x0000000000040002L});
+    public static final BitSet FOLLOW_ruleQualifiedName_in_entryRuleQualifiedName1666 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleQualifiedName1677 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleQualifiedName1717 = new BitSet(new long[]{0x0000000001000002L});
+    public static final BitSet FOLLOW_24_in_ruleQualifiedName1736 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleQualifiedName1751 = new BitSet(new long[]{0x0000000001000002L});
+    public static final BitSet FOLLOW_25_in_rulePermission1812 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_26_in_rulePermission1829 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_27_in_rulePermission1846 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_28_in_rulePermission1863 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_29_in_ruleFieldType1908 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_30_in_ruleFieldType1925 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_31_in_ruleFieldType1942 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_32_in_ruleFieldType1959 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_33_in_ruleFieldType1976 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_34_in_ruleFieldType1993 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_35_in_ruleFieldType2010 = new BitSet(new long[]{0x0000000000000002L});
 
 }
