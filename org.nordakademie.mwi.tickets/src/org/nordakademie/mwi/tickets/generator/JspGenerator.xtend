@@ -120,7 +120,7 @@ class JspGenerator {
 				            </form:form>
 				        «ENDIF»
 				    </div>
-				  </div>
+			    </div>
 			</div>
 		'''
 	}

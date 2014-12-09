@@ -508,7 +508,7 @@ public class JspGenerator {
     _builder.append("\t    ");
     _builder.append("</div>");
     _builder.newLine();
-    _builder.append("\t  ");
+    _builder.append("    ");
     _builder.append("</div>");
     _builder.newLine();
     _builder.append("</div>");
