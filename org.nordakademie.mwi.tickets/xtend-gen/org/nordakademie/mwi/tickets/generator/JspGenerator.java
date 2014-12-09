@@ -854,23 +854,25 @@ public class JspGenerator {
     _builder.newLine();
     {
       for(final TicketCategory category : categories) {
+        _builder.append("\t            ");
         _builder.append("<c:url var=\"");
         String _name = category.getName();
         String _firstLower = StringExtensions.toFirstLower(_name);
-        _builder.append(_firstLower, "");
+        _builder.append(_firstLower, "\t            ");
         _builder.append("Url\" value=\"/");
         String _name_1 = category.getName();
         String _lowerCase = _name_1.toLowerCase();
-        _builder.append(_lowerCase, "");
+        _builder.append(_lowerCase, "\t            ");
         _builder.append("/list\" />");
         _builder.newLineIfNotEmpty();
+        _builder.append("\t            ");
         _builder.append("<li><a href=\'<c:out value=\"${");
         String _name_2 = category.getName();
         String _firstLower_1 = StringExtensions.toFirstLower(_name_2);
-        _builder.append(_firstLower_1, "");
+        _builder.append(_firstLower_1, "\t            ");
         _builder.append("Url}\"/>\'>");
         String _description = category.getDescription();
-        _builder.append(_description, "");
+        _builder.append(_description, "\t            ");
         _builder.append("</a></li>");
         _builder.newLineIfNotEmpty();
       }

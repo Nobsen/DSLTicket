@@ -227,8 +227,8 @@ class JspGenerator {
 			        <div class="collapse navbar-collapse" id="myNavbar">
 			            <ul class="nav navbar-nav">
 				            «FOR category : categories»
-				      	        <c:url var="«category.name.toFirstLower»Url" value="/«category.name.toLowerCase»/list" />
-				      	        <li><a href='<c:out value="${«category.name.toFirstLower»Url}"/>'>«category.description»</a></li>
+				            <c:url var="«category.name.toFirstLower»Url" value="/«category.name.toLowerCase»/list" />
+				            <li><a href='<c:out value="${«category.name.toFirstLower»Url}"/>'>«category.description»</a></li>
 				            «ENDFOR»	
 			            </ul>
 			        </div>
