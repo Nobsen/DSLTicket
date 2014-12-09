@@ -93,36 +93,32 @@ class JspGenerator {
 				   	</div>
 				   «ENDIF»
 				   <div class="btn-group col-sm-offset-2"> 
-				       <c:url var="editUrl" value="/«category.name.toLowerCase»/edit">
-					       <c:param name="id" value="${«category.name.toFirstLower».id}" />
-					   </c:url>
-				       <div class="btn">
-					       <a class="btn btn-default" href='<c:out value="${editUrl}"/>'>Bearbeiten</a>
-					   </div>
-				       <c:url var="deleteUrl" value="/«category.name.toLowerCase»/delete">
-				           <c:param name="id" value="${«category.name.toFirstLower».id}" />
-				       </c:url>
-				       <form:form action="${deleteUrl}" class="btn">
+				        <c:url var="editUrl" value="/«category.name.toLowerCase»/edit">
+					        <c:param name="id" value="${«category.name.toFirstLower».id}" />
+					    </c:url>
+				        <div class="btn">
+					        <a class="btn btn-default" href='<c:out value="${editUrl}"/>'>Bearbeiten</a>
+					    </div>
+				        <c:url var="deleteUrl" value="/«category.name.toLowerCase»/delete">
+				            <c:param name="id" value="${«category.name.toFirstLower».id}" />
+				        </c:url>
+				        <form:form action="${deleteUrl}" class="btn">
 				           <button type="submit" class="btn btn-default">Löschen</button>
-				       </form:form>
-				       «IF category.flow != null»
-				       	<c:if test="${!«category.name.toFirstLower».currentFlowState.isFirst()}" >
-				       		 <c:url var="prevStateUrl" value="/«category.name.toLowerCase»/prevState" >
-				       		     <c:param name="id" value="${«category.name.toFirstLower».id}" />
-				       		 </c:url>
-				       		 <form:form action="${prevStateUrl}" class="btn">
-				       		     <button type="submit" class="btn btn-default">Vorheriger Status</button>
-				       		 </form:form>
-				       	</c:if>
-				       	<c:if test="${!«category.name.toFirstLower».currentFlowState.isLast()}" >
-				       	 <c:url var="nextStateUrl" value="/«category.name.toLowerCase»/nextState" >
-				       	     <c:param name="id" value="${«category.name.toFirstLower».id}" />
-				       	 </c:url>
-				       	 <form:form action="${nextStateUrl}" class="btn">
-				       	     <button type="submit" class="btn btn-default">Nächster Status</button>
-				       	</form:form>
-				       	</c:if>
-				       «ENDIF»
+				        </form:form>
+				        «IF category.flow != null»
+				            <c:url var="prevStateUrl" value="/«category.name.toLowerCase»/prevState" >
+				                <c:param name="id" value="${«category.name.toFirstLower».id}" />
+				            </c:url>
+				            <form:form action="${prevStateUrl}" class="btn">
+				                <button type="submit" class="btn btn-default"<c:if test="${«category.name.toFirstLower».currentFlowState.isFirst()}" >disabled="true"</c:if>>Vorheriger Status</button>
+				            </form:form>
+				            <c:url var="nextStateUrl" value="/«category.name.toLowerCase»/nextState" >
+				                <c:param name="id" value="${«category.name.toFirstLower».id}" />
+				            </c:url>
+				            <form:form action="${nextStateUrl}" class="btn">
+				                <button type="submit" class="btn btn-default" <c:if test="${«category.name.toFirstLower».currentFlowState.isLast()}" >disabled="true"</c:if>>Nächster Status</button>
+				            </form:form>
+				        «ENDIF»
 				    </div>
 				  </div>
 			</div>
