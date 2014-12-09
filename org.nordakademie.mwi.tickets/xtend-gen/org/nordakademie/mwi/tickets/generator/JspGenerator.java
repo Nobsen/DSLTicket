@@ -77,7 +77,7 @@ public class JspGenerator {
         String _name_2 = _field.getName();
         String _firstLower_1 = StringExtensions.toFirstLower(_name_2);
         _builder.append(_firstLower_1, "\t   ");
-        _builder.append("\" class=\"col-sm-offset-2\" element=\"div\"></form:errors>");
+        _builder.append("\" class=\"col-sm-offset-2 text-danger\" element=\"div\"></form:errors>");
         _builder.newLineIfNotEmpty();
         _builder.append("\t   ");
         _builder.append("<div class=\"form-group\">");
@@ -186,7 +186,7 @@ public class JspGenerator {
         _builder.append("<label for=\"title\" class=\"control-label col-sm-2\">Aktueller Status:</label>");
         _builder.newLine();
         _builder.append("\t   ");
-        _builder.append("\t   ");
+        _builder.append("\t");
         _builder.append("<div class=\"col-sm-6\">");
         _builder.newLine();
         _builder.append("\t   ");
@@ -194,30 +194,30 @@ public class JspGenerator {
         _builder.append("<form:select class=\"form-control\" path=\"currentFlowState\" items=\"${states}\" itemLabel=\"label\" />");
         _builder.newLine();
         _builder.append("\t   ");
-        _builder.append("\t ");
-        _builder.append("</div");
+        _builder.append("\t");
+        _builder.append("</div>");
         _builder.newLine();
         _builder.append("\t   ");
         _builder.append("</div>");
         _builder.newLine();
       }
     }
-    _builder.append("\t   ");
+    _builder.append("\t    ");
     _builder.append("<div class=\"form-group\"> ");
     _builder.newLine();
-    _builder.append("\t       ");
+    _builder.append("\t        ");
     _builder.append("<div class=\"col-sm-offset-2 col-sm-10\">");
     _builder.newLine();
-    _builder.append("\t           ");
+    _builder.append("\t            ");
     _builder.append("<button type=\"submit\" class=\"btn btn-default\">Speichern</button>");
     _builder.newLine();
-    _builder.append("\t       ");
+    _builder.append("\t        ");
     _builder.append("</div>");
     _builder.newLine();
     _builder.append("\t    ");
     _builder.append("</div>");
     _builder.newLine();
-    _builder.append("\t   ");
+    _builder.append("    ");
     _builder.append("</form:form>");
     _builder.newLine();
     _builder.append("</div>");
@@ -242,7 +242,7 @@ public class JspGenerator {
     _builder.append("<h1>");
     String _description = category.getDescription();
     _builder.append(_description, "\t");
-    _builder.append(" show</h1>");
+    _builder.append(" anzeigen</h1>");
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
     _builder.newLine();
@@ -381,7 +381,7 @@ public class JspGenerator {
       }
     }
     _builder.append("\t   ");
-    _builder.append("<div class=\"form-group\"> ");
+    _builder.append("<div class=\"btn-group col-sm-offset-2\"> ");
     _builder.newLine();
     _builder.append("\t       ");
     _builder.append("<c:url var=\"editUrl\" value=\"/");
@@ -401,7 +401,7 @@ public class JspGenerator {
     _builder.append("</c:url>");
     _builder.newLine();
     _builder.append("\t       ");
-    _builder.append("<div class=\"col-sm-offset-2 col-sm-10\">");
+    _builder.append("<div class=\"btn\">");
     _builder.newLine();
     _builder.append("\t\t       ");
     _builder.append("<a class=\"btn btn-default\" href=\'<c:out value=\"${editUrl}\"/>\'>Bearbeiten</a>");
@@ -427,10 +427,10 @@ public class JspGenerator {
     _builder.append("</c:url>");
     _builder.newLine();
     _builder.append("\t       ");
-    _builder.append("<form:form action=\"${deleteUrl}\" class=\"col-sm-offset-2 col-sm-10\">");
+    _builder.append("<form:form action=\"${deleteUrl}\" class=\"btn\">");
     _builder.newLine();
     _builder.append("\t           ");
-    _builder.append("<button type=\"submit\" class=\"btn btn-default\">Delete</button>");
+    _builder.append("<button type=\"submit\" class=\"btn btn-default\">Löschen</button>");
     _builder.newLine();
     _builder.append("\t       ");
     _builder.append("</form:form>");
@@ -468,11 +468,11 @@ public class JspGenerator {
         _builder.newLine();
         _builder.append("\t       ");
         _builder.append("\t ");
-        _builder.append("<form:form action=\"${prevStateUrl}\" class=\"col-sm-offset-2 col-sm-10\">");
+        _builder.append("<form:form action=\"${prevStateUrl}\" class=\"btn\">");
         _builder.newLine();
         _builder.append("\t       ");
         _builder.append("\t     ");
-        _builder.append("<button type=\"submit\" class=\"btn btn-default\">Prev State</button>");
+        _builder.append("<button type=\"submit\" class=\"btn btn-default\">Vorheriger Status</button>");
         _builder.newLine();
         _builder.append("\t       ");
         _builder.append("\t ");
@@ -510,11 +510,11 @@ public class JspGenerator {
         _builder.newLine();
         _builder.append("\t       ");
         _builder.append(" ");
-        _builder.append("<form:form action=\"${nextStateUrl}\" class=\"col-sm-offset-2 col-sm-10\">");
+        _builder.append("<form:form action=\"${nextStateUrl}\" class=\"btn\">");
         _builder.newLine();
         _builder.append("\t       ");
         _builder.append("     ");
-        _builder.append("<button type=\"submit\" class=\"btn btn-default\">Next State</button>");
+        _builder.append("<button type=\"submit\" class=\"btn btn-default\">Nächster Status</button>");
         _builder.newLine();
         _builder.append("\t       ");
         _builder.append("</form:form>");
@@ -739,7 +739,7 @@ public class JspGenerator {
     _builder.append("<td>");
     _builder.newLine();
     _builder.append("\t\t\t\t\t    ");
-    _builder.append("<a href=\'<c:out value=\"${showUrl}\"/>\'>Show</a>");
+    _builder.append("<a class=\"btn btn-default btn-xs\" href=\'<c:out value=\"${showUrl}\"/>\'>Anzeigen</a>");
     _builder.newLine();
     _builder.append("\t\t\t\t\t");
     _builder.append("</td>");
@@ -769,7 +769,7 @@ public class JspGenerator {
     _builder.append("<div>");
     _builder.newLine();
     _builder.append("\t    ");
-    _builder.append("<a href=\'<c:out value=\"${createUrl}\"/>\'>Create</a>");
+    _builder.append("<a class=\"btn btn-default\" href=\'<c:out value=\"${createUrl}\"/>\'>Anlegen</a>");
     _builder.newLine();
     _builder.append("\t");
     _builder.append("</div>");

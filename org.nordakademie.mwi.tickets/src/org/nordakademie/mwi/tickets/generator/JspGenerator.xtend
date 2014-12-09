@@ -21,7 +21,7 @@ class JspGenerator {
 				<form:form action="${url}" commandName="«category.name.toFirstLower»" class="form-horizontal" role="form">
 				    <form:hidden path="id"/>
 				   «FOR field : category.ticketFields»
-				   	<form:errors path="«field.field.name.toFirstLower»" class="col-sm-offset-2" element="div"></form:errors>
+				   	<form:errors path="«field.field.name.toFirstLower»" class="col-sm-offset-2 text-danger" element="div"></form:errors>
 				   	<div class="form-group">
 				   	    <label for="title" class="control-label col-sm-2">«field.field.label»:</label>
 				   	    <div class="col-sm-6">
@@ -42,17 +42,17 @@ class JspGenerator {
 				   «IF category.flow != null»
 				   	<div class="form-group"> 
 				   		<label for="title" class="control-label col-sm-2">Aktueller Status:</label>
-				   		   <div class="col-sm-6">
+				   		<div class="col-sm-6">
 				   		 	<form:select class="form-control" path="currentFlowState" items="${states}" itemLabel="label" />
-				   		 </div
+				   		</div>
 				   	</div>
 				   «ENDIF»
-				   <div class="form-group"> 
-				       <div class="col-sm-offset-2 col-sm-10">
-				           <button type="submit" class="btn btn-default">Speichern</button>
-				       </div>
+				    <div class="form-group"> 
+				        <div class="col-sm-offset-2 col-sm-10">
+				            <button type="submit" class="btn btn-default">Speichern</button>
+				        </div>
 				    </div>
-				   </form:form>
+			    </form:form>
 			</div>
 		'''
 	}
@@ -65,7 +65,7 @@ class JspGenerator {
 			
 			<%@include file="../navigation.jspf"%>
 			<div class="container">
-				<h1>«category.description» show</h1>
+				<h1>«category.description» anzeigen</h1>
 				
 				<div class="form-horizontal">
 				   «FOR field : category.ticketFields»
@@ -92,34 +92,34 @@ class JspGenerator {
 				   		</div>
 				   	</div>
 				   «ENDIF»
-				   <div class="form-group"> 
+				   <div class="btn-group col-sm-offset-2"> 
 				       <c:url var="editUrl" value="/«category.name.toLowerCase»/edit">
 					       <c:param name="id" value="${«category.name.toFirstLower».id}" />
 					   </c:url>
-				       <div class="col-sm-offset-2 col-sm-10">
+				       <div class="btn">
 					       <a class="btn btn-default" href='<c:out value="${editUrl}"/>'>Bearbeiten</a>
 					   </div>
 				       <c:url var="deleteUrl" value="/«category.name.toLowerCase»/delete">
 				           <c:param name="id" value="${«category.name.toFirstLower».id}" />
 				       </c:url>
-				       <form:form action="${deleteUrl}" class="col-sm-offset-2 col-sm-10">
-				           <button type="submit" class="btn btn-default">Delete</button>
+				       <form:form action="${deleteUrl}" class="btn">
+				           <button type="submit" class="btn btn-default">Löschen</button>
 				       </form:form>
 				       «IF category.flow != null»
 				       	<c:if test="${!«category.name.toFirstLower».currentFlowState.isFirst()}" >
 				       		 <c:url var="prevStateUrl" value="/«category.name.toLowerCase»/prevState" >
 				       		     <c:param name="id" value="${«category.name.toFirstLower».id}" />
 				       		 </c:url>
-				       		 <form:form action="${prevStateUrl}" class="col-sm-offset-2 col-sm-10">
-				       		     <button type="submit" class="btn btn-default">Prev State</button>
+				       		 <form:form action="${prevStateUrl}" class="btn">
+				       		     <button type="submit" class="btn btn-default">Vorheriger Status</button>
 				       		 </form:form>
 				       	</c:if>
 				       	<c:if test="${!«category.name.toFirstLower».currentFlowState.isLast()}" >
 				       	 <c:url var="nextStateUrl" value="/«category.name.toLowerCase»/nextState" >
 				       	     <c:param name="id" value="${«category.name.toFirstLower».id}" />
 				       	 </c:url>
-				       	 <form:form action="${nextStateUrl}" class="col-sm-offset-2 col-sm-10">
-				       	     <button type="submit" class="btn btn-default">Next State</button>
+				       	 <form:form action="${nextStateUrl}" class="btn">
+				       	     <button type="submit" class="btn btn-default">Nächster Status</button>
 				       	</form:form>
 				       	</c:if>
 				       «ENDIF»
@@ -177,7 +177,7 @@ class JspGenerator {
 									«ENDIF»
 								«ENDFOR»
 								<td>
-								    <a href='<c:out value="${showUrl}"/>'>Show</a>
+								    <a class="btn btn-default btn-xs" href='<c:out value="${showUrl}"/>'>Anzeigen</a>
 								</td>
 						    </tr>
 						</c:forEach>
@@ -186,7 +186,7 @@ class JspGenerator {
 				
 				<c:url var="createUrl" value="/«category.name.toLowerCase»/create" />
 				<div>
-				    <a href='<c:out value="${createUrl}"/>'>Create</a>
+				    <a class="btn btn-default" href='<c:out value="${createUrl}"/>'>Anlegen</a>
 				</div>
 			</div>
 		'''
