@@ -14,6 +14,7 @@
 				<th>Von Datum</th>
 				<th>Bis Datum</th>
 				<th>Ersteller</th>
+				<th>Erreichbar</th>
 				<th>Telefonnr.</th>
 				<th>E-Mail</th>
 				<th />
@@ -31,6 +32,7 @@
 					<td><fmt:formatDate pattern="dd.MM.yyyy HH:mm" value="${holidayRequest.getDateFrom().time}"/></td>
 					<td><fmt:formatDate pattern="dd.MM.yyyy HH:mm" value="${holidayRequest.getDateUntil().time}"/></td>
 					<td>${holidayRequest.getCreator()}</td>
+					<td><input type="checkbox" <c:if test="${holidayRequest.accessible}">checked="checked"</c:if> disabled="true"/></td>
 					<td>${holidayRequest.getPhoneNo()}</td>
 					<td>${holidayRequest.getEMail()}</td>
 					<td>

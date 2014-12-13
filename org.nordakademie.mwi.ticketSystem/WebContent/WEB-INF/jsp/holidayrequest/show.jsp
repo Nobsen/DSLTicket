@@ -32,6 +32,12 @@
 	       </div>
 	   </div>
 	   <div class="form-group">
+	       <label for="title" class="control-label col-sm-2">Erreichbar:</label>
+	       <div class="col-sm-6">
+	       	<input type="checkbox" <c:if test="${holidayRequest.accessible}">checked="checked"</c:if> disabled="true"/>
+	       </div>
+	   </div>
+	   <div class="form-group">
 	       <label for="title" class="control-label col-sm-2">Telefonnr.:</label>
 	       <div class="col-sm-6">
 	       	<span class="form-control" disabled="true">${holidayRequest.getPhoneNo()}</span>

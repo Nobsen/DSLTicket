@@ -58,6 +58,15 @@
 	           </div>
 	       </div>
 	   </div>
+	   <form:errors path="accessible" class="col-sm-offset-2 text-danger" element="div"></form:errors>
+	   <div class="form-group">
+	       <label for="title" class="control-label col-sm-2">Erreichbar:</label>
+	       <div class="col-sm-6">
+	       	<div class="required-field-block">				   	    
+	       		<form:checkbox path="accessible" />
+	           </div>
+	       </div>
+	   </div>
 	   <form:errors path="phoneNo" class="col-sm-offset-2 text-danger" element="div"></form:errors>
 	   <div class="form-group">
 	       <label for="title" class="control-label col-sm-2">Telefonnr.:</label>

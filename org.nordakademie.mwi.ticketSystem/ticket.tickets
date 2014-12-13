@@ -1,12 +1,13 @@
 field Titel "Titel" String ;
 field Description "Beschreibung" String;
-field Categorie "Kategorie" "Normal","Mittel","Schwer","System steht!";
+field Categorie "Kategorie" enum "Normal","Mittel","Schwer","System steht!";
 field Comment "Kommentar" String;
 field ExpectedResolutionDate "Erw. Lösungsdatum" Date;
 field ExpectedEffortInHours "Erw. Aufwand in Std." decimal;
 field SolveDate "Abschlusszeitpunkt" dateTime;
-field OperatingSystem "Betriebssystem" "Windows","iOS", "Linux", "Android";
+field OperatingSystem "Betriebssystem" enum "Windows","iOS", "Linux", "Android";
 field PhoneNo "Telefonnr." String;
+field NoOfCalls "Anzahl Anrufe" int;
 field EMail "E-Mail" String; 
 field Creator "Ersteller" user;
 field Accessible "Erreichbar" boolean;
@@ -31,6 +32,7 @@ flow BugFlow {
 	InDevelopment;
 	Testing;
 	Closed;
+	Reopen;
 }
 
 flow HolidayFlow {
@@ -48,6 +50,9 @@ ticketCategory Bug "Fehler" {
 		Categorie;
 		Creator mandatory notOnList;
 		ExpectedResolutionDate mandatory;
+		ExpectedEffortInHours;
+		OperatingSystem;
+		NoOfCalls notOnList;
 		PhoneNo notOnList;
 		EMail notOnList;
 		SolveDate notOnList;
@@ -61,19 +66,20 @@ ticketCategory HolidayRequest "Urlaubsantrag" {
 		DateFrom mandatory;
 		DateUntil mandatory;
 		Creator mandatory;
+		Accessible mandatory;
 		PhoneNo;
 		EMail;
 		}
 }
 
-role Developer "Entwickler"{
+role Developer "Entwickler" {
 	Creator read;
 	Description modify,delete;
 	Titel read,modify;
 	
 }
 
-role Supervisor "Vorgesetzter"{
+role Supervisor "Vorgesetzter" {
 	Description read,modify,delete; 
 	SolveDate read,modify,delete;
 }

@@ -67,6 +67,33 @@
 	           </div>
 	       </div>
 	   </div>
+	   <form:errors path="expectedEffortInHours" class="col-sm-offset-2 text-danger" element="div"></form:errors>
+	   <div class="form-group">
+	       <label for="title" class="control-label col-sm-2">Erw. Aufwand in Std.:</label>
+	       <div class="col-sm-6">
+	       	<div >				   	    
+	       		<form:input class="form-control" path="expectedEffortInHours" />
+	           </div>
+	       </div>
+	   </div>
+	   <form:errors path="operatingSystem" class="col-sm-offset-2 text-danger" element="div"></form:errors>
+	   <div class="form-group">
+	       <label for="title" class="control-label col-sm-2">Betriebssystem:</label>
+	       <div class="col-sm-6">
+	       	<div >				   	    
+	       		<form:select class="form-control" path="operatingSystem" items="${operatingSystemEnumValues}" itemLabel="label" />
+	           </div>
+	       </div>
+	   </div>
+	   <form:errors path="noOfCalls" class="col-sm-offset-2 text-danger" element="div"></form:errors>
+	   <div class="form-group">
+	       <label for="title" class="control-label col-sm-2">Anzahl Anrufe:</label>
+	       <div class="col-sm-6">
+	       	<div >				   	    
+	       		<form:input class="form-control" path="noOfCalls" />
+	           </div>
+	       </div>
+	   </div>
 	   <form:errors path="phoneNo" class="col-sm-offset-2 text-danger" element="div"></form:errors>
 	   <div class="form-group">
 	       <label for="title" class="control-label col-sm-2">Telefonnr.:</label>

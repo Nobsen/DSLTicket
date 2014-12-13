@@ -38,6 +38,24 @@
 	       </div>
 	   </div>
 	   <div class="form-group">
+	       <label for="title" class="control-label col-sm-2">Erw. Aufwand in Std.:</label>
+	       <div class="col-sm-6">
+	       	<span class="form-control" disabled="true">${bug.getExpectedEffortInHours()}</span>
+	       </div>
+	   </div>
+	   <div class="form-group">
+	       <label for="title" class="control-label col-sm-2">Betriebssystem:</label>
+	       <div class="col-sm-6">
+	       	<span class="form-control" disabled="true">${bug.getOperatingSystem().getLabel()}</span>
+	       </div>
+	   </div>
+	   <div class="form-group">
+	       <label for="title" class="control-label col-sm-2">Anzahl Anrufe:</label>
+	       <div class="col-sm-6">
+	       	<span class="form-control" disabled="true">${bug.getNoOfCalls()}</span>
+	       </div>
+	   </div>
+	   <div class="form-group">
 	       <label for="title" class="control-label col-sm-2">Telefonnr.:</label>
 	       <div class="col-sm-6">
 	       	<span class="form-control" disabled="true">${bug.getPhoneNo()}</span>

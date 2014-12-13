@@ -14,6 +14,8 @@
 				<th>Beschreibung</th>
 				<th>Kategorie</th>
 				<th>Erw. Lösungsdatum</th>
+				<th>Erw. Aufwand in Std.</th>
+				<th>Betriebssystem</th>
 				<th />
 			</tr>
 		</thead>
@@ -29,6 +31,8 @@
 					<td>${bug.getDescription()}</td>
 					<td>${bug.getCategorie().getLabel()}</td>
 					<td><fmt:formatDate pattern="dd.MM.yyyy" value="${bug.getExpectedResolutionDate().time}"/></td>
+					<td>${bug.getExpectedEffortInHours()}</td>
+					<td>${bug.getOperatingSystem().getLabel()}</td>
 					<td>
 					    <a class="btn btn-default btn-xs" href='<c:out value="${showUrl}"/>'>Anzeigen</a>
 					</td>
