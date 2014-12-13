@@ -1,0 +1,79 @@
+field Titel "Titel" String ;
+field Description "Beschreibung" String;
+field Categorie "Kategorie" "Normal","Mittel","Schwer","System steht!";
+field Comment "Kommentar" String;
+field ExpectedResolutionDate "Erw. Lösungsdatum" Date;
+field ExpectedEffortInHours "Erw. Aufwand in Std." decimal;
+field SolveDate "Abschlusszeitpunkt" dateTime;
+field OperatingSystem "Betriebssystem" "Windows","iOS", "Linux", "Android";
+field PhoneNo "Telefonnr." String;
+field EMail "E-Mail" String; 
+field Creator "Ersteller" user;
+field Accessible "Erreichbar" boolean;
+field DateFrom "Von Datum" dateTime;
+field DateUntil "Bis Datum" dateTime;
+
+status Created "Erstellt";
+status InProgress "In Bearbeitung";
+status InDevelopment "In der Entwicklung";
+status Testing "Im Test";
+status Waiting "Wartend";
+status NeedMoreDetail "Mehr Informationen benötigt";
+status Reopen "Wieder geöffnet";
+status Request "Neuanforderung";
+status Rejected "Abgewiesen";
+status Approved "Genehmigt";
+status Closed "Geschlossen";
+
+flow BugFlow {
+	Created;
+	InProgress;
+	InDevelopment;
+	Testing;
+	Closed;
+}
+
+flow HolidayFlow {
+	Created;
+	InProgress;
+	Approved;
+	Rejected;
+}
+
+ticketCategory Bug "Fehler" {
+	flow BugFlow;
+	fields {
+		Titel mandatory;
+		Description mandatory;
+		Categorie;
+		Creator mandatory notOnList;
+		ExpectedResolutionDate mandatory;
+		PhoneNo notOnList;
+		EMail notOnList;
+		SolveDate notOnList;
+		}
+}
+
+ticketCategory HolidayRequest "Urlaubsantrag" {
+	flow HolidayFlow;
+	fields {
+		Description mandatory;
+		DateFrom mandatory;
+		DateUntil mandatory;
+		Creator mandatory;
+		PhoneNo;
+		EMail;
+		}
+}
+
+role Developer "Entwickler"{
+	Creator read;
+	Description modify,delete;
+	Titel read,modify;
+	
+}
+
+role Supervisor "Vorgesetzter"{
+	Description read,modify,delete; 
+	SolveDate read,modify,delete;
+}

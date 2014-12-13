@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:lang="http://www.springframework.org/schema/lang"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd 
+	http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-4.1.xsd  
+	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.1.xsd 
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd
+	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.1.xsd
+	http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.1.xsd
+	http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-4.1.xsd">
+
+	<!-- Spring configuration for Server -->
+
+	<!-- ========================= GENERAL DEFINITIONS ========================= -->
+	<!-- Enable annotation based configuration of beans -->
+	<context:annotation-config />
+	
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+      <property name="prefix" value="/WEB-INF/jsp/" />
+      <property name="suffix" value=".jsp" />
+   </bean>
+	
+	<bean id="dbPropertyConfigurer" lazy-init="false"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath:dbConfig.properties</value>
+			</list>
+		</property>
+		<property name="ignoreResourceNotFound" value="false" />
+		<property name="ignoreUnresolvablePlaceholders" value="true" />
+	</bean>
+	<bean id="dataSource" lazy-init="false" depends-on="dbPropertyConfigurer"
+		class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+		<property name="driverClass" value="${dataSource.driverClass}" />
+		<property name="jdbcUrl" value="${dataSource.jdbcUrl}" />
+		<property name="user" value="${dataSource.user}" />
+		<property name="password" value="${dataSource.password}" />
+
+		<property name="maxPoolSize" value="${dataSource.maxPoolSize}" />
+		<property name="minPoolSize" value="${dataSource.minPoolSize}" />
+		<property name="initialPoolSize" value="${dataSource.initialPoolSize}" />
+		<property name="acquireIncrement" value="${dataSource.acquireIncrement}" />
+		<property name="acquireRetryAttempts" value="${dataSource.acquireRetryAttempts}" />
+		<property name="breakAfterAcquireFailure" value="false" />
+		<property name="acquireRetryDelay" value="1000" />
+		<property name="checkoutTimeout" value="15000" />
+		<property name="maxIdleTime" value="3600" />
+		<property name="maxIdleTimeExcessConnections" value="1200" />
+		<property name="testConnectionOnCheckout" value="${dataSource.testCheckout}" />
+		<property name="testConnectionOnCheckin" value="${dataSource.testCheckin}" />
+		<property name="idleConnectionTestPeriod" value="${dataSource.idleConnectionTestPeriod}" />
+		<property name="preferredTestQuery" value="${dataSource.preferredTestQuery}" />
+		<property name="maxStatements" value="${dataSource.maxStatements}" />
+		<property name="maxStatementsPerConnection" value="${dataSource.maxStatementsPerConnection}" />
+		<property name="numHelperThreads" value="${dataSource.numHelperThreads}" />
+	</bean>
+
+	<bean id="sessionFactory" lazy-init="false" depends-on="dataSource"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.${database.type}Dialect</prop>
+				<prop key="hibernate.hbm2ddl.auto">${dataSource.hbm2ddl}</prop>
+				<prop key="hibernate.jdbc.batch_size">0</prop>
+				<prop key="hibernate.show_sql">false</prop>
+				<prop key="hibernate.format.sql">true</prop>
+				<prop key="hibernate.use_sql_comments">false</prop>
+				<prop key="hibernate.generate_statistics">false</prop>
+				<prop key="hibernate.dynamic.update">true</prop>
+				<prop key="hibernate.globally_quoted_identifiers">true</prop>
+			</props>
+		</property>
+
+		<property name="packagesToScan">
+			<list>
+			    <value>org.nordakademie.mwi.ticketSystem</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="transactionManager" lazy-init="false" depends-on="sessionFactory"
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<tx:annotation-driven />
+	
+	<!-- Automatically detect beans -->
+	<context:component-scan base-package="org.nordakademie.mwi.ticketSystem" />
+
+	<mvc:annotation-driven />
+	
+	<bean id="messageSource"
+        class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basename" value="messages" />
+    </bean>
+</beans>

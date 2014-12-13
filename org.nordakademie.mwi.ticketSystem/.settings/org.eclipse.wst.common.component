@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="org.nordakademie.mwi.ticketSystem">
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src-gen"/>
+        <wb-resource deploy-path="/js" source-path="/WebContent/js"/>
+        <property name="java-output-path" value="/org.nordakademie.mwi.ticketSystem/build/classes"/>
+        <property name="context-root" value="org.nordakademie.mwi.ticketSystem"/>
+    </wb-module>
+</project-modules>
