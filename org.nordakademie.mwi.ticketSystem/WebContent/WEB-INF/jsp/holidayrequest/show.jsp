@@ -7,6 +7,12 @@
 	<h1>Urlaubsantrag anzeigen</h1>
 	
 	<div class="form-horizontal">
+		<div class="form-group">
+	   	    <label for="title" class="control-label col-sm-2">Erstellt:</label>
+	   	    <div class="col-sm-6">
+   	    		<span class="form-control" disabled="true"><fmt:formatDate pattern="dd.MM.yyyy HH:mm" value="${holidayRequest.getCreated().time}"/></span>
+	   	    </div>
+	   	</div>
 	   <div class="form-group">
 	       <label for="title" class="control-label col-sm-2">Beschreibung:</label>
 	       <div class="col-sm-6">

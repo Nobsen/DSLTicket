@@ -75,6 +75,12 @@ class JspGenerator {
 				<h1>«category.description» anzeigen</h1>
 				
 				<div class="form-horizontal">
+					<div class="form-group">
+				   	    <label for="title" class="control-label col-sm-2">Erstellt:</label>
+				   	    <div class="col-sm-6">
+			   	    		<span class="form-control" disabled="true"><fmt:formatDate pattern="dd.MM.yyyy HH:mm" value="${«category.name.toFirstLower».getCreated().time}"/></span>
+				   	    </div>
+				   	</div>
 				   «FOR field : category.ticketFields»
 				   	<div class="form-group">
 				   	    <label for="title" class="control-label col-sm-2">«field.field.label»:</label>
