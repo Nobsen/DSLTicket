@@ -19,11 +19,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 /**
- * Abstract superclass for all Hibernate-classes in this package. Implementation uses the plain Hibernate API. Using this API
- * means we don't automatically get nice Spring DataAccessExceptions from our data access code. This is why we add the
- * {@link Repository} annotation to our class. Completing the picture is the the
- * {@link org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor} to create a little proxy that does the
- * translation.
+ * Abstract superclass for all Hibernate-classes in this package. Implementation uses the plain Hibernate API. 
  * 
  * @param <T> Domain object type that is supported by a specific implementation
  * @param <ID> Specifies the technical entity id of the supported domain object type
